@@ -1,0 +1,6 @@
+Model,Feature_set,MAE_mean_eV,MAE_std_eV,R2_mean,R2_std,CV_folds
+LightGBM,full,0.5083,0.2526,0.1103,0.2924,5
+CatBoost,full,0.565,0.3014,-0.0772,0.5033,5
+XGBoost,full,0.5942,0.3489,-0.3424,0.7164,5
+Random Forest,full,0.5857,0.3326,-0.3642,0.6898,5
+Linear Regression,full,0.7496,0.2934,-0.8039,0.4128,5

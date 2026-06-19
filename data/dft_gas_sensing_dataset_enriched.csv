@@ -1,0 +1,481 @@
+DOI,Journal,Year,Material,Material_Class,Doping,Gas,DFT_Software,Functional,Adsorption_Energy_eV,Charge_Transfer_e,Adsorption_Distance_A,Bandgap_Before_eV,Bandgap_After_eV,Bandgap_Change_eV,WorkFunction_Before_eV,WorkFunction_After_eV,WorkFunction_Change_eV,Sensitivity,Selectivity,Response_Time,Recovery_Time,Detection_Limit,Gas_MolecularWeight,Gas_XLogP,Gas_TPSA,Gas_HeavyAtomCount,Gas_HBondDonorCount,Gas_HBondAcceptorCount,Mat_Group,Mat_Layers,Mat_MetalFraction
+10.1088/0957-4484/20/18/185504,Nanotechnology,2009,Graphene,2D Carbon,,CO,CASTEP,LDA (CA-PZ),-0.12,-0.01,3.02,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.0
+10.1088/0957-4484/20/18/185504,Nanotechnology,2009,Graphene,2D Carbon,,NO,CASTEP,LDA (CA-PZ),-0.3,0.04,2.43,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.0
+10.1088/0957-4484/20/18/185504,Nanotechnology,2009,Graphene,2D Carbon,,NO2,CASTEP,LDA (CA-PZ),-0.48,-0.19,2.73,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.0
+10.1088/0957-4484/20/18/185504,Nanotechnology,2009,Graphene,2D Carbon,,NH3,CASTEP,LDA (CA-PZ),-0.11,0.02,2.85,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.0
+10.1088/0957-4484/20/18/185504,Nanotechnology,2009,B-doped Graphene,2D Carbon,B,CO,CASTEP,LDA (CA-PZ),-0.14,-0.02,2.97,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.01
+10.1088/0957-4484/20/18/185504,Nanotechnology,2009,B-doped Graphene,2D Carbon,B,NO,CASTEP,LDA (CA-PZ),-1.07,0.15,1.99,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.01
+10.1088/0957-4484/20/18/185504,Nanotechnology,2009,B-doped Graphene,2D Carbon,B,NO2,CASTEP,LDA (CA-PZ),-1.37,-0.34,1.67,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.01
+10.1088/0957-4484/20/18/185504,Nanotechnology,2009,B-doped Graphene,2D Carbon,B,NH3,CASTEP,LDA (CA-PZ),-0.5,0.4,1.66,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.01
+10.1088/0957-4484/20/18/185504,Nanotechnology,2009,N-doped Graphene,2D Carbon,N,CO,CASTEP,LDA (CA-PZ),-0.14,0.0,3.15,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.01
+10.1088/0957-4484/20/18/185504,Nanotechnology,2009,N-doped Graphene,2D Carbon,N,NO,CASTEP,LDA (CA-PZ),-0.4,0.01,2.32,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.01
+10.1088/0957-4484/20/18/185504,Nanotechnology,2009,N-doped Graphene,2D Carbon,N,NO2,CASTEP,LDA (CA-PZ),-0.98,-0.55,2.87,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.01
+10.1088/0957-4484/20/18/185504,Nanotechnology,2009,N-doped Graphene,2D Carbon,N,NH3,CASTEP,LDA (CA-PZ),-0.12,0.04,2.86,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.01
+10.1088/0957-4484/20/18/185504,Nanotechnology,2009,Defective Graphene,2D Carbon,vacancy,CO,CASTEP,LDA (CA-PZ),-2.33,0.26,1.33,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.0
+10.1088/0957-4484/20/18/185504,Nanotechnology,2009,Defective Graphene,2D Carbon,vacancy,NO,CASTEP,LDA (CA-PZ),-3.04,-0.29,1.34,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.0
+10.1088/0957-4484/20/18/185504,Nanotechnology,2009,Defective Graphene,2D Carbon,vacancy,NO2,CASTEP,LDA (CA-PZ),-3.04,-0.38,1.42,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.0
+10.1088/0957-4484/20/18/185504,Nanotechnology,2009,Defective Graphene,2D Carbon,vacancy,NH3,CASTEP,LDA (CA-PZ),-0.24,0.02,2.61,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,H2O,Abinit,PBE,0.0184,0.021,3.7,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,H2O,Abinit,PBE,0.0187,0.021,3.7,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,H2O,Abinit,PBE,0.0203,0.021,3.69,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,H2O,Abinit,PBE,0.0238,0.013,3.55,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,H2O,Abinit,PBE,0.0237,0.015,3.56,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,H2O,Abinit,PBE,0.0265,0.014,3.55,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,H2O,Abinit,PBE,0.0178,-0.009,4.05,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,H2O,Abinit,PBE,0.0185,-0.009,4.05,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,H2O,Abinit,PBE,0.0194,-0.01,4.02,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,H2O,Abinit,PBE,0.047,-0.025,3.5,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,NH3,Abinit,PBE,0.0211,0.026,3.86,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,NH3,Abinit,PBE,0.0201,0.026,3.86,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,NH3,Abinit,PBE,0.0308,0.027,3.81,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,NH3,Abinit,PBE,0.0147,0.001,4.08,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,NH3,Abinit,PBE,0.0156,0.0,3.97,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,NH3,Abinit,PBE,0.0247,-0.001,3.92,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,CO,Abinit,PBE,0.01,0.019,3.75,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,CO,Abinit,PBE,0.0096,0.019,3.75,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,CO,Abinit,PBE,0.0131,0.019,3.73,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,CO,Abinit,PBE,0.0084,0.009,3.72,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,CO,Abinit,PBE,0.0096,0.01,3.7,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,CO,Abinit,PBE,0.014,0.013,3.74,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,CO,Abinit,PBE,0.0141,0.012,3.74,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,NO2,Abinit,PBE,0.0674,-0.099,3.61,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,NO2,Abinit,PBE,0.0653,-0.099,3.61,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,NO2,Abinit,PBE,0.0626,-0.098,3.64,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,NO2,Abinit,PBE,0.0547,-0.089,3.83,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,NO2,Abinit,PBE,0.0545,-0.09,3.93,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,NO2,Abinit,PBE,0.0667,-0.102,3.83,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,NO,Abinit,PBE,0.0157,0.006,4.35,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,NO,Abinit,PBE,0.014,0.006,4.35,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,NO,Abinit,PBE,0.0126,0.007,4.11,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,NO,Abinit,PBE,0.0106,0.005,4.27,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,NO,Abinit,PBE,0.0279,0.018,3.71,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.0
+10.1103/PhysRevB.77.125416,Physical Review B,2008,Graphene,2D Carbon,,NO,Abinit,PBE,0.0285,0.017,3.76,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.0
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,CO,VASP,PBE,-0.003,,3.5,1.52,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,CO,VASP,DFT-D2,-0.073,,3.5,1.52,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,CO,VASP,optPBE-vdw,-0.163,,3.5,1.52,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,CO,VASP,revPBE-vdw,-0.143,,3.5,1.52,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,CO2,VASP,PBE,-0.004,,3.18,1.52,,,,,,,,,,,44.009,0.9,34.1,3,0,2,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,CO2,VASP,DFT-D2,-0.139,,3.18,1.52,,,,,,,,,,,44.009,0.9,34.1,3,0,2,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,CO2,VASP,optPBE-vdw,-0.253,,3.18,1.52,,,,,,,,,,,44.009,0.9,34.1,3,0,2,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,CO2,VASP,revPBE-vdw,-0.21,,3.18,1.52,,,,,,,,,,,44.009,0.9,34.1,3,0,2,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,NH3,VASP,PBE,-0.009,,,1.52,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,NH3,VASP,DFT-D2,-0.127,,,1.52,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,NH3,VASP,optPBE-vdw,-0.176,,,1.52,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,NH3,VASP,revPBE-vdw,-0.13,,,1.52,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,NO,VASP,PBE,-0.066,,,1.52,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,NO,VASP,DFT-D2,-0.153,,,1.52,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,NO,VASP,optPBE-vdw,-0.254,,,1.52,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,NO,VASP,revPBE-vdw,-0.239,,,1.52,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,NO2,VASP,PBE,-0.036,-0.034,,1.52,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,NO2,VASP,DFT-D2,-0.138,-0.034,,1.52,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,NO2,VASP,optPBE-vdw,-0.287,-0.034,,1.52,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.1016/j.cplett.2014.01.043,Chemical Physics Letters,2014,MoS2,TMD,,NO2,VASP,revPBE-vdw,-0.241,-0.034,,1.52,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.1186/1556-276X-8-425,Nanoscale Research Letters,2013,MoS2,TMD,,H2,VASP,LSDA,-0.082,0.004,,1.86,,,,,,,,,,,2.016,0.0,0.0,0,0,0,tmd,1,0.33
+10.1186/1556-276X-8-425,Nanoscale Research Letters,2013,MoS2,TMD,,O2,VASP,LSDA,-0.116,0.04,,1.86,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,tmd,1,0.33
+10.1186/1556-276X-8-425,Nanoscale Research Letters,2013,MoS2,TMD,,H2O,VASP,LSDA,-0.234,0.01,,1.86,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,tmd,1,0.33
+10.1186/1556-276X-8-425,Nanoscale Research Letters,2013,MoS2,TMD,,NH3,VASP,LSDA,-0.25,-0.069,2.46,1.86,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd,1,0.33
+10.1186/1556-276X-8-425,Nanoscale Research Letters,2013,MoS2,TMD,,NO,VASP,LSDA,-0.211,0.022,,1.86,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.1186/1556-276X-8-425,Nanoscale Research Letters,2013,MoS2,TMD,,NO2,VASP,LSDA,-0.276,0.1,,1.86,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.1186/1556-276X-8-425,Nanoscale Research Letters,2013,MoS2,TMD,,CO,VASP,LSDA,-0.128,0.004,2.95,1.86,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd,1,0.33
+10.3762/bjnano.9.156,Beilstein Journal of Nanotechnology,2018,MoS2,TMD,,NO,,,-0.18,,2.839,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.3762/bjnano.9.156,Beilstein Journal of Nanotechnology,2018,MoS2,TMD,,NO2,,,-0.233,,2.829,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.3762/bjnano.9.156,Beilstein Journal of Nanotechnology,2018,WS2,TMD,,NO,,,-0.165,,2.735,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.3762/bjnano.9.156,Beilstein Journal of Nanotechnology,2018,WS2,TMD,,NO2,,,-0.201,,2.931,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Ti2CO2,MXene,,H2,VASP,PBE,-0.07,,,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Ti2CO2,MXene,,NH3,VASP,PBE,-0.37,-0.15,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Ti2CO2,MXene,,H2O,VASP,PBE,-0.21,,,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Ti2CO2,MXene,,CO,VASP,PBE,-0.13,,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Ti2CO2,MXene,,CO2,VASP,PBE,-0.2,,,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Ti2CO2,MXene,,N2,VASP,PBE,-0.13,,,,,,,,,,,,,,28.014,0.1,47.6,2,0,2,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Ti2CO2,MXene,,NO,VASP,PBE,-0.25,,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Ti2CO2,MXene,,NO2,VASP,PBE,-0.17,,,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Ti2CO2,MXene,,H2S,VASP,PBE,-0.24,,,,,,,,,,,,,,34.08,0.5,1.0,1,1,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Ti2CO2,MXene,,SO2,VASP,PBE,-0.26,,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,V2CO2,MXene,,H2,VASP,PBE,-0.09,,,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,V2CO2,MXene,,NH3,VASP,PBE,-0.48,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,V2CO2,MXene,,H2O,VASP,PBE,-0.45,,,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,V2CO2,MXene,,CO,VASP,PBE,-0.14,,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,V2CO2,MXene,,CO2,VASP,PBE,-0.36,,,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,V2CO2,MXene,,N2,VASP,PBE,-0.36,,,,,,,,,,,,,,28.014,0.1,47.6,2,0,2,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,V2CO2,MXene,,NO,VASP,PBE,-0.73,-0.2,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,V2CO2,MXene,,NO2,VASP,PBE,-0.18,,,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,V2CO2,MXene,,H2S,VASP,PBE,-0.51,,,,,,,,,,,,,,34.08,0.5,1.0,1,1,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,V2CO2,MXene,,SO2,VASP,PBE,-0.27,,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Nb2CO2,MXene,,H2,VASP,PBE,-0.06,,,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Nb2CO2,MXene,,NH3,VASP,PBE,-0.5,-0.17,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Nb2CO2,MXene,,H2O,VASP,PBE,-0.2,,,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Nb2CO2,MXene,,CO,VASP,PBE,-0.12,,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Nb2CO2,MXene,,CO2,VASP,PBE,-0.2,,,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Nb2CO2,MXene,,N2,VASP,PBE,-0.12,,,,,,,,,,,,,,28.014,0.1,47.6,2,0,2,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Nb2CO2,MXene,,NO,VASP,PBE,-0.21,,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Nb2CO2,MXene,,NO2,VASP,PBE,-0.18,,,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Nb2CO2,MXene,,H2S,VASP,PBE,-0.24,,,,,,,,,,,,,,34.08,0.5,1.0,1,1,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Nb2CO2,MXene,,SO2,VASP,PBE,-0.29,,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Mo2CO2,MXene,,NH3,VASP,PBE,-0.4,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Mo2CO2,MXene,,NO,VASP,PBE,-0.8,-0.22,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Mo2CO2,MXene,,H2S,VASP,PBE,-0.39,,,,,,,,,,,,,,34.08,0.5,1.0,1,1,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Mo2CO2,MXene,,SO2,VASP,PBE,-0.28,,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Mo2CO2,MXene,,NO2,VASP,PBE,-0.26,,,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Mo2CO2,MXene,,H2O,VASP,PBE,-0.21,,,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Mo2CO2,MXene,,CO2,VASP,PBE,-0.21,,,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Mo2CO2,MXene,,CO,VASP,PBE,-0.12,,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,mxene,1,0.25
+10.1039/C7CP08622A,Physical Chemistry Chemical Physics,2018,Mo2CO2,MXene,,N2,VASP,PBE,-0.12,,,,,,,,,,,,,,28.014,0.1,47.6,2,0,2,mxene,1,0.25
+10.1039/D4CP04127E,Physical Chemistry Chemical Physics,2025,Ti3C2O2,MXene,,CO,,,-0.096,,,,,,,,,6.0,,,,,28.010,0.7,1.0,2,0,1,mxene,1,0.3
+10.1039/D4CP04127E,Physical Chemistry Chemical Physics,2025,Ti3C2O2,MXene,,NH3,,,-0.344,,,,,,,,,12.0,,,,,17.031,-0.7,1.0,1,1,1,mxene,1,0.3
+10.1039/D4CP04127E,Physical Chemistry Chemical Physics,2025,Ti3C2O2,MXene,,NO,,,-0.349,,,,,,,,,6.0,,,,,30.006,0.2,18.1,2,0,1,mxene,1,0.3
+10.1039/D4CP04127E,Physical Chemistry Chemical Physics,2025,Ti3C2O2,MXene,,NH3,,,-0.551,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,mxene,1,0.3
+10.1039/D4CP04127E,Physical Chemistry Chemical Physics,2025,Ti3C2O2,MXene,,NO,,,-0.403,,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,mxene,1,0.3
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,N2,Quantum ESPRESSO,PBE-GGA,0.4,0.067,3.807,,,,,,,,,,,,28.014,0.1,47.6,2,0,2,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,N2,Quantum ESPRESSO,PBE-GGA,0.4,0.067,3.807,,,,,,,,,,,,28.014,0.1,47.6,2,0,2,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,N2,Quantum ESPRESSO,PBE-GGA,0.4,0.067,2.936,,,,,,,,,,,,28.014,0.1,47.6,2,0,2,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,H2,Quantum ESPRESSO,PBE-GGA,0.4,0.067,3.807,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,H2,Quantum ESPRESSO,PBE-GGA,0.4,0.067,3.807,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,H2,Quantum ESPRESSO,PBE-GGA,0.4,0.067,2.936,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,CO2,Quantum ESPRESSO,PBE-GGA,0.4,0.067,3.807,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,CO2,Quantum ESPRESSO,PBE-GGA,0.4,0.067,3.807,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,CO2,Quantum ESPRESSO,PBE-GGA,0.4,0.067,2.936,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,NH3,Quantum ESPRESSO,PBE-GGA,0.55,0.022,2.594,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,H2S,Quantum ESPRESSO,PBE-GGA,0.8,0.006,2.842,,,,,,,,,,,,34.08,0.5,1.0,1,1,1,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,H2O,Quantum ESPRESSO,PBE-GGA,0.63,0.004,2.401,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,CO2,Quantum ESPRESSO,PBE-GGA,1.38,1.273,2.089,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,CO2,Quantum ESPRESSO,PBE-GGA,0.26,0.021,2.666,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,CO2,Quantum ESPRESSO,PBE-GGA,0.28,0.039,2.979,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,CO,Quantum ESPRESSO,PBE-GGA,1.07,0.989,1.478,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,CO,Quantum ESPRESSO,PBE-GGA,0.78,0.972,1.707,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,CO,Quantum ESPRESSO,PBE-GGA,0.73,0.499,2.26,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,NO,Quantum ESPRESSO,PBE-GGA,3.19,2.051,1.439,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,NO,Quantum ESPRESSO,PBE-GGA,3.19,2.051,1.439,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,NO,Quantum ESPRESSO,PBE-GGA,3.19,2.051,1.439,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,NO2,Quantum ESPRESSO,PBE-GGA,2.72,1.058,2.193,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,NO2,Quantum ESPRESSO,PBE-GGA,2.47,0.871,2.394,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,NO2,Quantum ESPRESSO,PBE-GGA,2.32,0.835,2.317,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,O2,Quantum ESPRESSO,PBE-GGA,3.64,1.342,2.111,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,O2,Quantum ESPRESSO,PBE-GGA,3.64,1.339,2.111,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,O2,Quantum ESPRESSO,PBE-GGA,2.61,1.261,2.086,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,SO2,Quantum ESPRESSO,PBE-GGA,1.93,0.827,1.874,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,SO2,Quantum ESPRESSO,PBE-GGA,0.89,0.469,2.227,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,mxene_defect,1,0.22
+10.25073/2588-1124.v38n1.DJ.4653,VNU Journal of Science: Mathematics-Physics,2022,Sc2CO2 (O-vacancy),MXene,,SO2,Quantum ESPRESSO,PBE-GGA,1.48,0.692,2.187,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,mxene_defect,1,0.22
+10.5162/IMCS2010/P1.3.21,Proceedings IMCS,2010,SnO2,Metal Oxide,,NH3,VASP,r-PBE,-1.14,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,metal_oxide,1,0.33
+10.5162/IMCS2010/P1.3.21,Proceedings IMCS,2010,SnO2,Metal Oxide,,NH3,VASP,r-PBE,-0.73,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,metal_oxide,1,0.33
+10.5162/IMCS2010/P1.3.21,Proceedings IMCS,2010,SnO2,Metal Oxide,,NH3,VASP,r-PBE,-1.58,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,metal_oxide,1,0.33
+10.1039/D2CP01234H,Doctoral thesis / literature compilation (UCL),2022,SnO2,Metal Oxide,,NH3,,DFT-GGA,-1.29,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,metal_oxide,1,0.33
+10.1039/D2CP01234H,Doctoral thesis / literature compilation (UCL),2022,SnO2,Metal Oxide,,NH3,,DFT-GGA,-1.85,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,metal_oxide,1,0.33
+10.1039/D2CP01234H,Doctoral thesis / literature compilation (UCL),2022,SnO2,Metal Oxide,,NH3,,DFT-GGA,-0.81,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,metal_oxide,1,0.33
+10.1039/D2CP01234H,Doctoral thesis / literature compilation (UCL),2022,SnO2,Metal Oxide,,NH3,,DFT-GGA,-1.32,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,metal_oxide,1,0.33
+10.1039/D2CP01234H,Doctoral thesis / literature compilation (UCL),2022,SnO2,Metal Oxide,,NH3,,DFT-GGA,-1.92,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,metal_oxide,1,0.33
+10.1039/D2CP01234H,Doctoral thesis / literature compilation (UCL),2022,SnO2,Metal Oxide,,NH3,,DFT-GGA,-2.48,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,metal_oxide,1,0.33
+10.1016/j.snb.2006.08.054,Sensors and Actuators B: Chemical,2006,SnO2,Metal Oxide,,NO,SIESTA,GGA,-1.2,,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,metal_oxide,1,0.33
+10.1088/1742-6596/3042/1/012026,Journal of Physics: Conference Series,2024,SnO2,Metal Oxide,,NO2,,,-0.004,,3.71,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,metal_oxide,1,0.33
+10.1088/1742-6596/3042/1/012026,Journal of Physics: Conference Series,2024,SnO2,Metal Oxide,,NO2,,,-0.24,,2.99,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,metal_oxide,1,0.33
+10.1039/C3NR06670C,Nanoscale,2014,MoS2,TMD,,NO,,,-0.54,0.085,2.1,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.1039/C3NR06670C,Nanoscale,2014,MoS2,TMD,,NO2,,,-0.94,0.04,2.15,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.1039/C3NR06670C,Nanoscale,2014,MoS2,TMD,,CO,,,-0.42,0.01,2.45,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd,1,0.33
+10.1039/C3NR06670C,Nanoscale,2014,MoS2,TMD,,CO2,,,-0.45,0.013,2.74,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,tmd,1,0.33
+10.1039/C3NR06670C,Nanoscale,2014,MoS2,TMD,,NH3,,,-0.49,0.085,2.79,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd,1,0.33
+10.1039/C3NR06670C,Nanoscale,2014,MoS2,TMD,,NO,,,-0.72,0.24,1.62,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.1039/C3NR06670C,Nanoscale,2014,MoS2,TMD,,NO2,,,-0.91,0.06,2.15,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.1039/C3NR06670C,Nanoscale,2014,MoS2,TMD,,CO,,,-0.43,0.01,2.39,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd,1,0.33
+10.1039/C3NR06670C,Nanoscale,2014,MoS2,TMD,,CO2,,,-0.47,0.016,2.56,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,tmd,1,0.33
+10.1039/C3NR06670C,Nanoscale,2014,MoS2,TMD,,NH3,,,-0.55,0.09,2.39,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd,1,0.33
+10.1038/srep08052,Scientific Reports,2014,MoS2,TMD,,NO2,,HSE06,-0.14,,,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.1038/srep08052,Scientific Reports,2014,MoS2,TMD,,NH3,,HSE06,-0.16,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,,H2,CASTEP,GGA-PBE,-0.05927,-0.05,,1.721,,,,,,,,,,,2.016,0.0,0.0,0,0,0,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,,N2,CASTEP,GGA-PBE,-0.10482,0.01,,1.721,,,,,,,,,,,28.014,0.1,47.6,2,0,2,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,,CO,CASTEP,GGA-PBE,-0.12183,0.01,,1.721,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,,CO2,CASTEP,GGA-PBE,-0.16891,-0.03,,1.721,,,,,,,,,,,44.009,0.9,34.1,3,0,2,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,,CH4,CASTEP,GGA-PBE,-0.1711,-0.05,,1.721,,,,,,,,,,,16.043,0.6,0.0,1,0,0,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,,H2O,CASTEP,GGA-PBE,-0.16602,-0.03,,1.721,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,,NH3,CASTEP,GGA-PBE,-0.1776,-0.01,,1.721,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,,NO,CASTEP,GGA-PBE,-0.21875,0.0,,1.721,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,,NO2,CASTEP,GGA-PBE,-0.28799,-0.12,,1.721,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,vacancy,NH3,CASTEP,GGA-PBE,-0.17119,,,1.721,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,vacancy,NH3,CASTEP,GGA-PBE,-0.16164,,,1.721,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,vacancy,NO2,CASTEP,GGA-PBE,-1.02272,,,1.721,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,vacancy,NO2,CASTEP,GGA-PBE,-0.28291,,,1.721,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,vacancy,NO,CASTEP,GGA-PBE,-1.26054,,,1.721,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,vacancy,NO,CASTEP,GGA-PBE,-3.0592,,,1.721,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,,NH3,CASTEP,GGA-PBE,-0.20828,,,1.721,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,,NH3,CASTEP,GGA-PBE,-0.241,,,1.721,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,,NH3,CASTEP,GGA-PBE,-0.25679,,,1.721,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,,NO2,CASTEP,GGA-PBE,-0.31376,,,1.721,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,,NO2,CASTEP,GGA-PBE,-0.32481,,,1.721,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,,NO2,CASTEP,GGA-PBE,-0.34074,,,1.721,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,,NO,CASTEP,GGA-PBE,-0.22992,,,1.721,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,,NO,CASTEP,GGA-PBE,-0.25684,,,1.721,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.1088/2053-1591/ac021d,Materials Research Express,2021,MoS2,TMD,,NO,CASTEP,GGA-PBE,-0.27902,,,1.721,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.1016/j.cplett.2018.10.057,Chemical Physics Letters,2018,Al-doped MoS2,TMD,Al,SO2,,DFT,-2.33,-0.343,1.763,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,tmd_doped,1,0.34
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,H2,VASP,LDA,-0.068,,2.86,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,H2,VASP,LDA,-0.075,,2.86,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,H2,VASP,LDA,-0.037,,2.87,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,O2,VASP,LDA,-0.184,,2.62,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,O2,VASP,LDA,-0.213,,2.49,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,O2,VASP,LDA,-0.119,,3.09,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,H2O,VASP,LDA,-0.229,,2.63,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,H2O,VASP,LDA,-0.218,,2.68,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,H2O,VASP,LDA,-0.108,,3.14,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,NH3,VASP,LDA,-0.216,,2.49,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,NH3,VASP,LDA,-0.201,,2.76,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,NH3,VASP,LDA,-0.062,,3.25,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,NO,VASP,LDA,-0.129,,2.77,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,NO,VASP,LDA,-0.206,,2.77,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,NO,VASP,LDA,-0.099,,3.47,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,NO,VASP,LDA,-0.215,,2.76,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,NO2,VASP,LDA,-0.412,,2.68,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,NO2,VASP,LDA,-0.354,,2.68,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,NO2,VASP,LDA,-0.333,,2.74,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,CO,VASP,LDA,-0.127,,2.9,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,CO,VASP,LDA,-0.111,,2.9,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,CO,VASP,LDA,-0.031,,2.95,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd,1,0.33
+10.1063/1.4922049,Journal of Chemical Physics,2015,WS2,TMD,,CO,VASP,LDA,-0.075,,2.9,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd,1,0.33
+10.3390/computation11120235,Computation,2023,Graphene,2D Carbon,,SO2,DMol3,GGA-PBE,-0.32,-0.095,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.0
+10.3390/computation11120235,Computation,2023,N-doped Graphene,2D Carbon,N,SO2,DMol3,GGA-PBE,-0.48,-0.236,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.01
+10.3390/computation11120235,Computation,2023,Ga-doped Graphene,2D Carbon,Ga,SO2,DMol3,GGA-PBE,-2.61,-0.148,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.02
+10.3390/computation11120235,Computation,2023,N-Ga co-doped Graphene,2D Carbon,N-Ga,SO2,DMol3,GGA-PBE,-2.75,-0.258,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.04
+10.3390/computation11120235,Computation,2023,N-Ga co-doped Graphene,2D Carbon,N-Ga,SO2,DMol3,GGA-PBE,-2.55,-0.214,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.04
+10.3390/computation11120235,Computation,2023,N-Ga co-doped Graphene,2D Carbon,N-Ga,SO2,DMol3,GGA-PBE,-2.53,-0.218,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.04
+10.3390/molecules29215086,Molecules,2024,Co-MoTe2,TMD,Co,CO,CASTEP,GGA-PBE,-0.167,-0.032,3.522,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd_decorated,1,0.36
+10.3390/molecules29215086,Molecules,2024,Co-MoTe2,TMD,Co,CH3CHO,CASTEP,GGA-PBE,-0.392,-0.084,3.288,,,,,,,,,,,,44.05,-0.3,17.1,3,0,1,tmd_decorated,1,0.36
+10.3390/molecules29215086,Molecules,2024,Co-MoTe2,TMD,Co,C6H6,CASTEP,GGA-PBE,-0.667,-0.083,3.558,,,,,,,,,,,,78.11,2.1,0.0,6,0,0,tmd_decorated,1,0.36
+10.3390/molecules29215086,Molecules,2024,V-MoTe2,TMD,V,CO,CASTEP,GGA-PBE,-1.221,-0.832,1.925,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd_decorated,1,0.36
+10.3390/molecules29215086,Molecules,2024,V-MoTe2,TMD,V,CH3CHO,CASTEP,GGA-PBE,-0.405,-0.082,3.151,,,,,,,,,,,,44.05,-0.3,17.1,3,0,1,tmd_decorated,1,0.36
+10.3390/molecules29215086,Molecules,2024,V-MoTe2,TMD,V,C6H6,CASTEP,GGA-PBE,-0.711,0.22,3.447,,,,,,,,,,,,78.11,2.1,0.0,6,0,0,tmd_decorated,1,0.36
+10.3390/molecules29215086,Molecules,2024,W-MoTe2,TMD,W,CO,CASTEP,GGA-PBE,-0.515,-0.119,2.027,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd_decorated,1,0.36
+10.3390/molecules29215086,Molecules,2024,W-MoTe2,TMD,W,CH3CHO,CASTEP,GGA-PBE,-0.386,-0.079,3.383,,,,,,,,,,,,44.05,-0.3,17.1,3,0,1,tmd_decorated,1,0.36
+10.3390/molecules29215086,Molecules,2024,W-MoTe2,TMD,W,C6H6,CASTEP,GGA-PBE,-0.618,-0.063,3.708,,,,,,,,,,,,78.11,2.1,0.0,6,0,0,tmd_decorated,1,0.36
+10.3390/molecules29215086,Molecules,2024,Zr-MoTe2,TMD,Zr,CO,CASTEP,GGA-PBE,-0.592,-0.046,2.348,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd_decorated,1,0.36
+10.3390/molecules29215086,Molecules,2024,Zr-MoTe2,TMD,Zr,CH3CHO,CASTEP,GGA-PBE,-0.439,-0.063,3.512,,,,,,,,,,,,44.05,-0.3,17.1,3,0,1,tmd_decorated,1,0.36
+10.3390/molecules29215086,Molecules,2024,Zr-MoTe2,TMD,Zr,C6H6,CASTEP,GGA-PBE,-0.8,-0.085,3.685,,,,,,,,,,,,78.11,2.1,0.0,6,0,0,tmd_decorated,1,0.36
+10.3390/molecules27103176,Molecules,2022,Au-MoTe2,TMD,Au,SO2,CASTEP,GGA-PBE,-0.98,-0.259,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,tmd_decorated,1,0.36
+10.3390/molecules27103176,Molecules,2022,Ag-MoTe2,TMD,Ag,SO2,CASTEP,GGA-PBE,-0.81,-0.341,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,tmd_decorated,1,0.36
+10.3390/molecules27103176,Molecules,2022,Cu-MoTe2,TMD,Cu,SO2,CASTEP,GGA-PBE,-1.18,-0.316,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,tmd_decorated,1,0.36
+10.3390/molecules27103176,Molecules,2022,Au-MoTe2,TMD,Au,SOF2,CASTEP,GGA-PBE,-0.49,-0.147,,,,,,,,,,,,,86.06,0.5,36.3,4,0,4,tmd_decorated,1,0.36
+10.3390/molecules27103176,Molecules,2022,Ag-MoTe2,TMD,Ag,SOF2,CASTEP,GGA-PBE,-0.4,-0.158,,,,,,,,,,,,,86.06,0.5,36.3,4,0,4,tmd_decorated,1,0.36
+10.3390/molecules27103176,Molecules,2022,Cu-MoTe2,TMD,Cu,SOF2,CASTEP,GGA-PBE,-0.6,0.077,,,,,,,,,,,,,86.06,0.5,36.3,4,0,4,tmd_decorated,1,0.36
+10.3390/molecules27103176,Molecules,2022,Au-MoTe2,TMD,Au,HF,CASTEP,GGA-PBE,-0.23,-0.033,,,,,,,,,,,,,20.0064,0.6,0.0,1,1,1,tmd_decorated,1,0.36
+10.3390/molecules27103176,Molecules,2022,Ag-MoTe2,TMD,Ag,HF,CASTEP,GGA-PBE,-0.32,-0.007,,,,,,,,,,,,,20.0064,0.6,0.0,1,1,1,tmd_decorated,1,0.36
+10.3390/molecules27103176,Molecules,2022,Cu-MoTe2,TMD,Cu,HF,CASTEP,GGA-PBE,-0.33,0.031,,,,,,,,,,,,,20.0064,0.6,0.0,1,1,1,tmd_decorated,1,0.36
+10.1186/s11671-020-03361-6,Nanoscale Research Letters,2020,Rh-MoTe2,TMD,Rh,SO2,DMol3,GGA-PBE,-1.65,-0.333,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,tmd_decorated,1,0.36
+10.1186/s11671-020-03361-6,Nanoscale Research Letters,2020,Rh-MoTe2,TMD,Rh,SOF2,DMol3,GGA-PBE,-0.46,0.04,,,,,,,,,,,,,86.06,0.5,36.3,4,0,4,tmd_decorated,1,0.36
+10.1186/s11671-020-03361-6,Nanoscale Research Letters,2020,Rh-MoTe2,TMD,Rh,SO2F2,DMol3,GGA-PBE,-2.12,-0.753,,,,,,,,,,,,,102.06,0.7,42.5,5,0,4,tmd_decorated,1,0.36
+10.1016/j.apsusc.2020.146180,Applied Surface Science,2020,Ni-doped Graphene,2D Carbon,Ni,SO2,CASTEP,GGA-PBE,-4.213,-0.387,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.02
+10.1016/j.apsusc.2020.146180,Applied Surface Science,2020,Pd-doped Graphene,2D Carbon,Pd,SO2,CASTEP,GGA-PBE,-5.779,-0.363,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.02
+10.1039/C4DT01401D,Dalton Transactions,2014,Co@Graphene,2D Carbon,Co,O2,VASP,GGA-PBE,-3.63,,,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,carbon_2d,1,0.02
+10.1039/C4DT01401D,Dalton Transactions,2014,Co@Graphene,2D Carbon,Co,H2O,VASP,GGA-PBE,-0.8,,,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,carbon_2d,1,0.02
+10.1039/C4DT01401D,Dalton Transactions,2014,Co@Graphene,2D Carbon,Co,NO,VASP,GGA-PBE,-4.41,,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.02
+10.1039/C4DT01401D,Dalton Transactions,2014,Co@Graphene,2D Carbon,Co,NO2,VASP,GGA-PBE,-3.15,,,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.02
+10.1039/C4DT01401D,Dalton Transactions,2014,Co@Graphene,2D Carbon,Co,CO,VASP,GGA-PBE,-2.46,,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.02
+10.1039/C4DT01401D,Dalton Transactions,2014,Co@Graphene,2D Carbon,Co,NH3,VASP,GGA-PBE,-0.98,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.02
+10.1039/C4DT01401D,Dalton Transactions,2014,Fe@Graphene,2D Carbon,Fe,O2,VASP,GGA-PBE,-3.75,,,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,carbon_2d,1,0.02
+10.1039/C4DT01401D,Dalton Transactions,2014,Fe@Graphene,2D Carbon,Fe,H2O,VASP,GGA-PBE,-0.77,,,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,carbon_2d,1,0.02
+10.1039/C4DT01401D,Dalton Transactions,2014,Fe@Graphene,2D Carbon,Fe,NO,VASP,GGA-PBE,-3.93,,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.02
+10.1039/C4DT01401D,Dalton Transactions,2014,Fe@Graphene,2D Carbon,Fe,NO2,VASP,GGA-PBE,-3.23,,,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.02
+10.1039/C4DT01401D,Dalton Transactions,2014,Fe@Graphene,2D Carbon,Fe,CO,VASP,GGA-PBE,-2.16,,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.02
+10.1039/C4DT01401D,Dalton Transactions,2014,Fe@Graphene,2D Carbon,Fe,NH3,VASP,GGA-PBE,-1.55,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.02
+10.1140/epjb/e2012-30853-y,European Physical Journal B,2013,Graphene,2D Carbon,,SO2,CASTEP,GGA-PBE,-0.012,-0.077,3.279,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.0
+10.1140/epjb/e2012-30853-y,European Physical Journal B,2013,B-doped Graphene,2D Carbon,B,SO2,CASTEP,GGA-PBE,-0.205,-0.11,3.162,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.01
+10.1140/epjb/e2012-30853-y,European Physical Journal B,2013,N-doped Graphene,2D Carbon,N,SO2,CASTEP,GGA-PBE,-0.172,-0.263,3.478,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.01
+10.1140/epjb/e2012-30853-y,European Physical Journal B,2013,Al-doped Graphene,2D Carbon,Al,SO2,CASTEP,GGA-PBE,-1.262,-0.744,1.825,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.02
+10.1140/epjb/e2012-30853-y,European Physical Journal B,2013,Si-doped Graphene,2D Carbon,Si,SO2,CASTEP,GGA-PBE,-0.902,-0.959,1.737,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.02
+10.1140/epjb/e2012-30853-y,European Physical Journal B,2013,Pt-doped Graphene,2D Carbon,Pt,SO2,CASTEP,GGA-PBE,-1.018,-0.55,2.229,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.02
+10.1140/epjb/e2012-30853-y,European Physical Journal B,2013,Mn-doped Graphene,2D Carbon,Mn,SO2,CASTEP,GGA-PBE,-1.729,-0.599,1.905,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.02
+10.1140/epjb/e2012-30853-y,European Physical Journal B,2013,Cr-doped Graphene,2D Carbon,Cr,SO2,CASTEP,GGA-PBE,-1.675,-0.672,1.927,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.02
+10.1140/epjb/e2012-30853-y,European Physical Journal B,2013,Ag-doped Graphene,2D Carbon,Ag,SO2,CASTEP,GGA-PBE,-0.968,-0.454,2.173,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.02
+10.1140/epjb/e2012-30853-y,European Physical Journal B,2013,Au-doped Graphene,2D Carbon,Au,SO2,CASTEP,GGA-PBE,-1.284,-0.479,2.167,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.02
+10.1016/j.apsusc.2015.03.068,Applied Surface Science,2015,Graphene,2D Carbon,,CO,VASP,GGA-PBE,-0.08,0.015,3.22,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.0
+10.1016/j.apsusc.2015.03.068,Applied Surface Science,2015,Pd-doped Graphene,2D Carbon,Pd,CO,VASP,GGA-PBE,-1.05,0.155,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.02
+10.1016/j.apsusc.2015.03.068,Applied Surface Science,2015,Graphene,2D Carbon,,NO2,VASP,GGA-PBE,-0.24,0.204,,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.0
+10.1016/j.apsusc.2015.03.068,Applied Surface Science,2015,Pd-doped Graphene,2D Carbon,Pd,NO2,VASP,GGA-PBE,-2.17,0.663,,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.02
+10.1039/C8TA08407F,Journal of Materials Chemistry A,2019,Janus MoSSe,TMD,,O2,VASP,GGA-PBE,-0.104,0.035,3.13,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,tmd_janus,1,0.33
+10.1039/C8TA08407F,Journal of Materials Chemistry A,2019,Janus MoSSe,TMD,,O2,VASP,GGA-PBE,-0.101,0.018,3.09,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,tmd_janus,1,0.33
+10.1039/C8TA08407F,Journal of Materials Chemistry A,2019,Janus MoSSe,TMD,,NO2,VASP,GGA-PBE,-0.245,0.107,2.84,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_janus,1,0.33
+10.1039/C8TA08407F,Journal of Materials Chemistry A,2019,Janus MoSSe,TMD,,NO2,VASP,GGA-PBE,-0.216,0.069,2.78,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_janus,1,0.33
+10.1039/D0RA06760A,RSC Advances,2020,B-doped Graphene (1B),2D Carbon,B,CO,VASP,GGA-PBE,-0.105,,3.42,0.14,0.18,0.04,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.01
+10.1039/D0RA06760A,RSC Advances,2020,B-doped Graphene (1B),2D Carbon,B,NH3,VASP,GGA-PBE,-0.259,,3.22,0.14,0.24,0.1,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.01
+10.1039/D0RA06760A,RSC Advances,2020,B-pattern Graphene (a1),2D Carbon,B,CO,VASP,GGA-PBE,-0.025,,3.59,0.21,0.24,0.03,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.02
+10.1039/D0RA06760A,RSC Advances,2020,B-pattern Graphene (a1),2D Carbon,B,NH3,VASP,GGA-PBE,-0.561,,1.67,0.21,0.54,0.33,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.02
+10.1039/D0RA06760A,RSC Advances,2020,B-pattern Graphene (c1),2D Carbon,B,CO,VASP,GGA-PBE,-0.028,,4.03,0.16,0.16,0.0,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.02
+10.1039/D0RA06760A,RSC Advances,2020,B-pattern Graphene (c1),2D Carbon,B,NH3,VASP,GGA-PBE,-1.021,,1.646,0.16,0.26,0.1,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.02
+10.1039/D0RA06760A,RSC Advances,2020,B-pattern Graphene (d1),2D Carbon,B,CO,VASP,GGA-PBE,-0.309,,3.06,0.57,0.64,0.07,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.02
+10.1039/D0RA06760A,RSC Advances,2020,B-pattern Graphene (d1),2D Carbon,B,NH3,VASP,GGA-PBE,-0.33,,3.58,0.57,0.65,0.08,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.02
+10.1039/D0RA06760A,RSC Advances,2020,B-pattern Graphene (f1),2D Carbon,B,CO,VASP,GGA-PBE,-0.291,,3.14,0.58,0.63,0.05,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.02
+10.1039/D0RA06760A,RSC Advances,2020,B-pattern Graphene (f1),2D Carbon,B,NH3,VASP,GGA-PBE,-1.047,,1.64,0.58,0.83,0.25,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.02
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Cu-substituted MoS2,TMD,Cu,H2,VASP,GGA-PBE,-0.45,0.02,,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Cu-substituted MoS2,TMD,Cu,O2,VASP,GGA-PBE,-1.07,-0.5,,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Cu-substituted MoS2,TMD,Cu,N2,VASP,GGA-PBE,-0.66,-0.09,,,,,,,,,,,,,28.014,0.1,47.6,2,0,2,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Cu-substituted MoS2,TMD,Cu,CO,VASP,GGA-PBE,-1.24,-0.1,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Cu-substituted MoS2,TMD,Cu,NO,VASP,GGA-PBE,-1.44,-0.28,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Ag-substituted MoS2,TMD,Ag,H2,VASP,GGA-PBE,-0.27,0.05,,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Ag-substituted MoS2,TMD,Ag,O2,VASP,GGA-PBE,-0.57,-0.42,,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Ag-substituted MoS2,TMD,Ag,N2,VASP,GGA-PBE,-0.33,-0.02,,,,,,,,,,,,,28.014,0.1,47.6,2,0,2,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Ag-substituted MoS2,TMD,Ag,CO,VASP,GGA-PBE,-0.77,-0.01,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Ag-substituted MoS2,TMD,Ag,NO,VASP,GGA-PBE,-0.35,-0.19,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Au-substituted MoS2,TMD,Au,H2,VASP,GGA-PBE,-0.23,0.06,,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Au-substituted MoS2,TMD,Au,O2,VASP,GGA-PBE,-0.51,-0.4,,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Au-substituted MoS2,TMD,Au,N2,VASP,GGA-PBE,-0.29,-0.02,,,,,,,,,,,,,28.014,0.1,47.6,2,0,2,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Au-substituted MoS2,TMD,Au,CO,VASP,GGA-PBE,-0.13,0.0,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Au-substituted MoS2,TMD,Au,NO,VASP,GGA-PBE,-0.11,-0.25,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Cu2-substituted MoS2,TMD,Cu,H2,VASP,GGA-PBE,-0.395,0.03,,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Cu2-substituted MoS2,TMD,Cu,O2,VASP,GGA-PBE,-1.65,-0.85,,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Cu2-substituted MoS2,TMD,Cu,N2,VASP,GGA-PBE,-0.66,-0.12,,,,,,,,,,,,,28.014,0.1,47.6,2,0,2,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Cu2-substituted MoS2,TMD,Cu,CO,VASP,GGA-PBE,-1.31,-0.12,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Cu2-substituted MoS2,TMD,Cu,NO,VASP,GGA-PBE,-1.69,-0.51,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Ag2-substituted MoS2,TMD,Ag,H2,VASP,GGA-PBE,-0.23,0.04,,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Ag2-substituted MoS2,TMD,Ag,O2,VASP,GGA-PBE,-0.97,-0.6,,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Ag2-substituted MoS2,TMD,Ag,N2,VASP,GGA-PBE,-0.32,-0.02,,,,,,,,,,,,,28.014,0.1,47.6,2,0,2,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Ag2-substituted MoS2,TMD,Ag,CO,VASP,GGA-PBE,-0.8,-0.03,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Ag2-substituted MoS2,TMD,Ag,NO,VASP,GGA-PBE,-0.93,-0.25,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Au2-substituted MoS2,TMD,Au,H2,VASP,GGA-PBE,-0.22,0.06,,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Au2-substituted MoS2,TMD,Au,O2,VASP,GGA-PBE,-0.96,-0.71,,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Au2-substituted MoS2,TMD,Au,N2,VASP,GGA-PBE,-0.26,-0.02,,,,,,,,,,,,,28.014,0.1,47.6,2,0,2,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Au2-substituted MoS2,TMD,Au,CO,VASP,GGA-PBE,-1.08,-0.05,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,tmd_substituted,1,0.34
+10.3390/ijms241210284,International Journal of Molecular Sciences,2023,Au2-substituted MoS2,TMD,Au,NO,VASP,GGA-PBE,-1.11,-0.37,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd_substituted,1,0.34
+10.3390/molecules201019540,Molecules,2015,Fe-embedded Graphene,2D Carbon,Fe,O2,VASP,GGA-PBE,-2.05,,1.85,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,carbon_2d,1,0.02
+10.3390/molecules201019540,Molecules,2015,Co-embedded Graphene,2D Carbon,Co,O2,VASP,GGA-PBE,-1.74,,1.9,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,carbon_2d,1,0.02
+10.3390/molecules201019540,Molecules,2015,Ni-embedded Graphene,2D Carbon,Ni,O2,VASP,GGA-PBE,-1.52,,1.94,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,carbon_2d,1,0.02
+10.3390/molecules201019540,Molecules,2015,Cu-embedded Graphene,2D Carbon,Cu,O2,VASP,GGA-PBE,-1.3,,1.92,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,carbon_2d,1,0.02
+10.3390/molecules201019540,Molecules,2015,Zn-embedded Graphene,2D Carbon,Zn,O2,VASP,GGA-PBE,-0.71,,2.02,,,,,,,,,,,,31.999,-1.1,34.1,2,0,2,carbon_2d,1,0.02
+10.3390/molecules201019540,Molecules,2015,Fe-embedded Graphene,2D Carbon,Fe,CO,VASP,GGA-PBE,-1.23,,1.91,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.02
+10.3390/molecules201019540,Molecules,2015,Co-embedded Graphene,2D Carbon,Co,CO,VASP,GGA-PBE,-1.1,,1.89,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.02
+10.3390/molecules201019540,Molecules,2015,Ni-embedded Graphene,2D Carbon,Ni,CO,VASP,GGA-PBE,-1.12,,1.87,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.02
+10.3390/molecules201019540,Molecules,2015,Cu-embedded Graphene,2D Carbon,Cu,CO,VASP,GGA-PBE,-1.13,,1.87,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.02
+10.3390/molecules201019540,Molecules,2015,Zn-embedded Graphene,2D Carbon,Zn,CO,VASP,GGA-PBE,-0.94,,1.94,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.02
+10.3390/molecules201019540,Molecules,2015,Fe-embedded Graphene,2D Carbon,Fe,NO,VASP,GGA-PBE,-1.3,,1.77,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.02
+10.3390/molecules201019540,Molecules,2015,Co-embedded Graphene,2D Carbon,Co,NO,VASP,GGA-PBE,-1.18,,1.77,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.02
+10.3390/molecules201019540,Molecules,2015,Ni-embedded Graphene,2D Carbon,Ni,NO,VASP,GGA-PBE,-1.13,,1.74,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.02
+10.3390/molecules201019540,Molecules,2015,Cu-embedded Graphene,2D Carbon,Cu,NO,VASP,GGA-PBE,-1.0,,1.79,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.02
+10.3390/molecules201019540,Molecules,2015,Zn-embedded Graphene,2D Carbon,Zn,NO,VASP,GGA-PBE,-0.69,,1.99,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.02
+10.21203/rs.3.rs-1780644/v1,Research Square (preprint),2022,Fe-N co-doped Graphene,2D Carbon,Fe-N,CO,CASTEP,GGA-PBE,-1.641,,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.02
+10.21203/rs.3.rs-1780644/v1,Research Square (preprint),2022,Fe-N co-doped Graphene,2D Carbon,Fe-N,NO,CASTEP,GGA-PBE,-2.081,,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.02
+10.21203/rs.3.rs-1780644/v1,Research Square (preprint),2022,Fe-N co-doped Graphene,2D Carbon,Fe-N,NO2,CASTEP,GGA-PBE,-1.345,,,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.02
+10.21203/rs.3.rs-1780644/v1,Research Square (preprint),2022,Fe-N co-doped Graphene,2D Carbon,Fe-N,CO2,CASTEP,GGA-PBE,-0.154,,,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,carbon_2d,1,0.02
+10.21203/rs.3.rs-1780644/v1,Research Square (preprint),2022,Fe-N co-doped Graphene,2D Carbon,Fe-N,H2S,CASTEP,GGA-PBE,-0.371,,,,,,,,,,,,,,34.08,0.5,1.0,1,1,1,carbon_2d,1,0.02
+10.21203/rs.3.rs-1780644/v1,Research Square (preprint),2022,Fe-N co-doped Graphene,2D Carbon,Fe-N,NH3,CASTEP,GGA-PBE,-0.46,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.02
+10.21203/rs.3.rs-1780644/v1,Research Square (preprint),2022,Fe-N co-doped Graphene,2D Carbon,Fe-N,SO2,CASTEP,GGA-PBE,-0.62,,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.02
+10.53730/ijhs.v6nS7.13392,International Journal of Health Sciences,2022,Graphene,2D Carbon,,SO2,Gaussian,B3LYP/6-31G(d),-0.26,0.002,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.0
+10.53730/ijhs.v6nS7.13392,International Journal of Health Sciences,2022,Al-doped Graphene,2D Carbon,Al,SO2,Gaussian,B3LYP/6-31G(d),-0.55,0.025,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.02
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe,TMD,,H2S,VASP,GGA-PBE,-0.156,0.011,2.292,,,,,,,,,,,,34.08,0.5,1.0,1,1,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe,TMD,,H2S,VASP,GGA-PBE,-0.147,-0.001,3.019,,,,,,,,,,,,34.08,0.5,1.0,1,1,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (MoV),TMD,,H2S,VASP,GGA-PBE,-0.232,0.01,2.074,,,,,,,,,,,,34.08,0.5,1.0,1,1,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (MoV),TMD,,H2S,VASP,GGA-PBE,-0.146,0.002,3.103,,,,,,,,,,,,34.08,0.5,1.0,1,1,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (SeV),TMD,,H2S,VASP,GGA-PBE,-0.232,0.017,1.572,,,,,,,,,,,,34.08,0.5,1.0,1,1,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (SeV),TMD,,H2S,VASP,GGA-PBE,-0.222,-0.003,2.044,,,,,,,,,,,,34.08,0.5,1.0,1,1,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (S/SeV),TMD,,H2S,VASP,GGA-PBE,-0.238,0.018,1.609,,,,,,,,,,,,34.08,0.5,1.0,1,1,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (S/SeV),TMD,,H2S,VASP,GGA-PBE,-0.222,-0.002,2.128,,,,,,,,,,,,34.08,0.5,1.0,1,1,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe,TMD,,NH3,VASP,GGA-PBE,-0.14,-0.005,2.379,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe,TMD,,NH3,VASP,GGA-PBE,-0.203,-0.028,2.559,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (MoV),TMD,,NH3,VASP,GGA-PBE,-0.146,-0.01,2.499,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (MoV),TMD,,NH3,VASP,GGA-PBE,-0.16,-0.004,2.484,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (SeV),TMD,,NH3,VASP,GGA-PBE,-0.281,0.019,0.876,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (SeV),TMD,,NH3,VASP,GGA-PBE,-0.216,0.001,1.963,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (S/SeV),TMD,,NH3,VASP,GGA-PBE,-0.274,0.022,0.913,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (S/SeV),TMD,,NH3,VASP,GGA-PBE,-0.177,-0.004,2.569,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe,TMD,,NO2,VASP,GGA-PBE,-0.252,0.137,2.502,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe,TMD,,NO2,VASP,GGA-PBE,-0.204,0.094,2.479,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (MoV),TMD,,NO2,VASP,GGA-PBE,-0.314,0.196,2.351,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (MoV),TMD,,NO2,VASP,GGA-PBE,-0.266,0.185,2.195,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (SeV),TMD,,NO2,VASP,GGA-PBE,-3.36,1.027,1.776,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (SeV),TMD,,NO2,VASP,GGA-PBE,-0.288,0.243,1.518,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (S/SeV),TMD,,NO2,VASP,GGA-PBE,-3.404,1.077,1.364,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (S/SeV),TMD,,NO2,VASP,GGA-PBE,-0.273,0.257,1.534,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe,TMD,,NO,VASP,GGA-PBE,-0.089,0.01,2.748,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe,TMD,,NO,VASP,GGA-PBE,-0.117,0.006,2.624,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (MoV),TMD,,NO,VASP,GGA-PBE,-0.164,-0.056,2.285,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (MoV),TMD,,NO,VASP,GGA-PBE,-0.435,0.038,1.526,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (SeV),TMD,,NO,VASP,GGA-PBE,-0.219,0.059,1.462,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (SeV),TMD,,NO,VASP,GGA-PBE,-2.788,0.915,0.0,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (S/SeV),TMD,,NO,VASP,GGA-PBE,-0.083,0.027,1.666,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd_janus,1,0.33
+10.1016/j.apsusc.2019.06.049,Applied Surface Science,2019,Janus MoSSe (S/SeV),TMD,,NO,VASP,GGA-PBE,-2.894,1.058,0.0,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,tmd_janus,1,0.33
+10.3390/chemosensors9080227,Chemosensors,2021,Ag-doped Graphene,2D Carbon,Ag,NO2,CASTEP,GGA-PBE,-2.209,-0.45,0.2224,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.02
+10.3390/chemosensors9080227,Chemosensors,2021,Ag-doped Graphene,2D Carbon,Ag,NH3,CASTEP,GGA-PBE,-1.115,0.136,0.2295,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.02
+10.3390/chemosensors9080227,Chemosensors,2021,Ag-doped Graphene,2D Carbon,Ag,H2O,CASTEP,GGA-PBE,-0.93,0.122,0.2297,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,carbon_2d,1,0.02
+10.3390/chemosensors9080227,Chemosensors,2021,Ag-doped Graphene,2D Carbon,Ag,CO2,CASTEP,GGA-PBE,-0.36,0.018,0.2626,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,carbon_2d,1,0.02
+10.3390/chemosensors9080227,Chemosensors,2021,Ag-doped Graphene,2D Carbon,Ag,CH4,CASTEP,GGA-PBE,-0.335,0.031,0.2218,,,,,,,,,,,,16.043,0.6,0.0,1,0,0,carbon_2d,1,0.02
+10.3390/chemosensors9080227,Chemosensors,2021,Ag-doped Graphene,2D Carbon,Ag,C2H6,CASTEP,GGA-PBE,-0.514,0.05,0.2395,,,,,,,,,,,,30.07,1.3,0.0,2,0,0,carbon_2d,1,0.02
+10.1016/j.apsusc.2015.03.056,Applied Surface Science,2015,Co-anchored Graphene,2D Carbon,Co,CO,VASP,GGA-PBE,-0.62,,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.02
+10.1016/j.apsusc.2015.03.056,Applied Surface Science,2015,Co-anchored Graphene,2D Carbon,Co,NO,VASP,GGA-PBE,-1.51,,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.02
+10.1016/j.apsusc.2015.03.056,Applied Surface Science,2015,Co-anchored Graphene,2D Carbon,Co,SO2,VASP,GGA-PBE,-1.07,,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.02
+10.1016/j.apsusc.2015.03.056,Applied Surface Science,2015,Co-anchored Graphene,2D Carbon,Co,NH3,VASP,GGA-PBE,-1.46,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.02
+10.1016/j.apsusc.2017.08.216,Applied Surface Science,2018,Fe-doped Graphene,2D Carbon,Fe,CO,Gaussian,PBE/Def2-SVP,-1.6,,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.02
+10.1016/j.apsusc.2017.08.216,Applied Surface Science,2018,Fe-doped Graphene,2D Carbon,Fe,SO2,Gaussian,PBE/Def2-SVP,-1.8,,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.02
+10.3390/s20143932,Sensors,2020,Zigzag Graphene Nanoribbon,2D Carbon,,NO,ATK-VNL,DFT (ATK),-0.273,-0.104,2.88,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_1d,1,0.0
+10.3390/s20143932,Sensors,2020,Zigzag Graphene Nanoribbon,2D Carbon,,NO2,ATK-VNL,DFT (ATK),-0.225,0.04,3.11,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_1d,1,0.0
+10.3390/s20143932,Sensors,2020,Zigzag Graphene Nanoribbon,2D Carbon,,NH3,ATK-VNL,DFT (ATK),-0.092,-0.018,3.03,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_1d,1,0.0
+10.3390/s20143932,Sensors,2020,ZGNR-O (epoxy),2D Carbon,O,NO,ATK-VNL,DFT (ATK),-0.318,0.132,2.66,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_1d,1,0.0
+10.3390/s20143932,Sensors,2020,ZGNR-O (epoxy),2D Carbon,O,NO2,ATK-VNL,DFT (ATK),-0.212,0.031,3.15,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_1d,1,0.0
+10.3390/s20143932,Sensors,2020,ZGNR-O (epoxy),2D Carbon,O,NH3,ATK-VNL,DFT (ATK),-0.124,-0.128,3.15,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_1d,1,0.0
+10.3390/s20143932,Sensors,2020,ZGNR-OH (hydroxyl),2D Carbon,OH,NO,ATK-VNL,DFT (ATK),-0.641,-0.146,2.24,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_1d,1,0.0
+10.3390/s20143932,Sensors,2020,ZGNR-OH (hydroxyl),2D Carbon,OH,NO2,ATK-VNL,DFT (ATK),-0.618,0.074,1.74,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_1d,1,0.0
+10.3390/s20143932,Sensors,2020,ZGNR-OH (hydroxyl),2D Carbon,OH,NH3,ATK-VNL,DFT (ATK),-0.244,-0.137,2.18,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_1d,1,0.0
+10.3390/s20143932,Sensors,2020,ZGNR-O-OH (epoxy+hydroxyl),2D Carbon,O+OH,NO,ATK-VNL,DFT (ATK),-0.625,-0.118,1.98,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_1d,1,0.0
+10.3390/s20143932,Sensors,2020,ZGNR-O-OH (epoxy+hydroxyl),2D Carbon,O+OH,NO2,ATK-VNL,DFT (ATK),-0.953,0.092,1.68,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_1d,1,0.0
+10.3390/s20143932,Sensors,2020,ZGNR-O-OH (epoxy+hydroxyl),2D Carbon,O+OH,NH3,ATK-VNL,DFT (ATK),-0.219,-0.141,2.45,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_1d,1,0.0
+10.3390/s19092123,Sensors,2019,Few-Layer MoS2,2D TMDC,,NO2,VASP,GGA-PBE,-0.05,,3.128,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,3,0.33
+10.3390/s19092123,Sensors,2019,Few-Layer MoS2,2D TMDC,,NO2,VASP,GGA-PBE,-0.021,,3.12,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,3,0.33
+10.3390/s19092123,Sensors,2019,Few-Layer MoS2,2D TMDC,,NO2,VASP,GGA-PBE,-0.027,,3.124,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd,3,0.33
+10.3390/nano11010100,Nanomaterials,2021,Ir-modified MoS2,2D TMDC,Ir,H2S,CASTEP,GGA-PBE,-2.323,0.286,1.583,2.088,0.398,-1.69,,,,,,,,,34.08,0.5,1.0,1,1,1,tmd_decorated,1,0.34
+10.3390/nano11010100,Nanomaterials,2021,Ir-modified MoS2,2D TMDC,Ir,SO2,CASTEP,GGA-PBE,-1.757,0.114,2.175,2.088,0.398,-1.69,,,,,,,,,64.07,0.1,35.1,3,0,3,tmd_decorated,1,0.34
+10.3390/nano11010100,Nanomaterials,2021,Ir-modified MoS2,2D TMDC,Ir,SOF2,CASTEP,GGA-PBE,-1.492,0.154,2.171,2.088,0.398,-1.69,,,,,,,,,86.06,0.5,36.3,4,0,4,tmd_decorated,1,0.34
+10.3390/nano10061215,Nanomaterials,2020,1H-HfS2,2D TMDC,,NH3,VASP,GGA-PBE+D3,-0.647,0.015,2.43,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1H-HfS2,2D TMDC,,NO2,VASP,GGA-PBE+D3,-0.456,-0.179,2.02,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1H-ZrS2,2D TMDC,,NH3,VASP,GGA-PBE+D3,-0.332,0.152,3.6,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1H-ZrS2,2D TMDC,,NO2,VASP,GGA-PBE+D3,-0.666,-0.199,3.24,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1H-HfSe2,2D TMDC,,NH3,VASP,GGA-PBE+D3,-0.199,0.045,3.38,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1H-HfSe2,2D TMDC,,NO2,VASP,GGA-PBE+D3,-0.399,-0.22,2.2,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1H-ZrSe2,2D TMDC,,NH3,VASP,GGA-PBE+D3,-0.518,0.081,2.49,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1H-ZrSe2,2D TMDC,,NO2,VASP,GGA-PBE+D3,-0.609,-0.309,2.17,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1H-HfTe2,2D TMDC,,NH3,VASP,GGA-PBE+D3,-0.208,0.033,3.56,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1H-HfTe2,2D TMDC,,NO2,VASP,GGA-PBE+D3,-0.965,-0.252,2.28,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1H-ZrTe2,2D TMDC,,NH3,VASP,GGA-PBE+D3,-0.208,0.009,3.55,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1H-ZrTe2,2D TMDC,,NO2,VASP,GGA-PBE+D3,-0.942,-0.622,2.28,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1T-HfS2,2D TMDC,,NH3,VASP,GGA-PBE+D3,-0.447,0.195,2.42,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1T-HfS2,2D TMDC,,NO2,VASP,GGA-PBE+D3,-0.204,-0.05,3.3,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1T-ZrS2,2D TMDC,,NH3,VASP,GGA-PBE+D3,-0.587,0.117,2.44,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1T-ZrS2,2D TMDC,,NO2,VASP,GGA-PBE+D3,-0.214,-0.132,2.66,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1T-HfSe2,2D TMDC,,NH3,VASP,GGA-PBE+D3,-0.191,0.128,2.45,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1T-HfSe2,2D TMDC,,NO2,VASP,GGA-PBE+D3,-0.279,-0.257,4.82,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1T-ZrSe2,2D TMDC,,NH3,VASP,GGA-PBE+D3,-0.345,0.033,2.48,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1T-ZrSe2,2D TMDC,,NO2,VASP,GGA-PBE+D3,-0.269,-0.14,4.35,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1T-HfTe2,2D TMDC,,NH3,VASP,GGA-PBE+D3,-0.198,0.053,3.58,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1T-HfTe2,2D TMDC,,NO2,VASP,GGA-PBE+D3,-0.667,-0.185,5.12,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1T-ZrTe2,2D TMDC,,NH3,VASP,GGA-PBE+D3,-0.166,0.018,3.87,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,tmd_4b,1,0.33
+10.3390/nano10061215,Nanomaterials,2020,1T-ZrTe2,2D TMDC,,NO2,VASP,GGA-PBE+D3,-0.672,-0.619,3.21,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,tmd_4b,1,0.33
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (1B),2D Carbon,B,NO,VASP,GGA-PBE,-0.163,,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.01
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (1B),2D Carbon,B,NO2,VASP,GGA-PBE,-0.61,,,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.01
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (1B),2D Carbon,B,NH3,VASP,GGA-PBE,-0.15,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.01
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (1B),2D Carbon,B,CO,VASP,GGA-PBE,-0.11,,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.01
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (1B),2D Carbon,B,CO2,VASP,GGA-PBE,-0.16,,,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,carbon_2d,1,0.01
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (1B),2D Carbon,B,H2O,VASP,GGA-PBE,-0.18,,,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,carbon_2d,1,0.01
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (1B),2D Carbon,B,SO2,VASP,GGA-PBE,-0.36,,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.01
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (1B),2D Carbon,B,H2,VASP,GGA-PBE,-0.06,,,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,carbon_2d,1,0.01
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (2B-II),2D Carbon,B,NO,VASP,GGA-PBE,-0.89,,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.02
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (2B-II),2D Carbon,B,NO2,VASP,GGA-PBE,-0.72,,,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.02
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (2B-II),2D Carbon,B,NH3,VASP,GGA-PBE,-0.04,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.02
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (2B-II),2D Carbon,B,CO,VASP,GGA-PBE,-0.11,,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.02
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (2B-II),2D Carbon,B,CO2,VASP,GGA-PBE,-0.15,,,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,carbon_2d,1,0.02
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (2B-II),2D Carbon,B,H2O,VASP,GGA-PBE,-0.21,,,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,carbon_2d,1,0.02
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (2B-II),2D Carbon,B,SO2,VASP,GGA-PBE,-0.278,,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.02
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (2B-II),2D Carbon,B,H2,VASP,GGA-PBE,-0.06,,,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,carbon_2d,1,0.02
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (2B-III),2D Carbon,B,NO,VASP,GGA-PBE,-0.54,,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.02
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (2B-III),2D Carbon,B,NO2,VASP,GGA-PBE,-0.77,,,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.02
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (2B-III),2D Carbon,B,NH3,VASP,GGA-PBE,-0.06,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.02
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (2B-III),2D Carbon,B,CO,VASP,GGA-PBE,-0.14,,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.02
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (2B-III),2D Carbon,B,CO2,VASP,GGA-PBE,-0.09,,,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,carbon_2d,1,0.02
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (2B-III),2D Carbon,B,H2O,VASP,GGA-PBE,-0.2,,,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,carbon_2d,1,0.02
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (2B-III),2D Carbon,B,SO2,VASP,GGA-PBE,-0.34,,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.02
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (2B-III),2D Carbon,B,H2,VASP,GGA-PBE,-0.08,,,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,carbon_2d,1,0.02
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (3B-II),2D Carbon,B,NO,VASP,GGA-PBE,-0.69,,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.03
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (3B-II),2D Carbon,B,NO2,VASP,GGA-PBE,-0.9,,,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.03
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (3B-II),2D Carbon,B,NH3,VASP,GGA-PBE,-0.08,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.03
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (3B-II),2D Carbon,B,CO,VASP,GGA-PBE,-0.1,,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.03
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (3B-II),2D Carbon,B,CO2,VASP,GGA-PBE,-0.17,,,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,carbon_2d,1,0.03
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (3B-II),2D Carbon,B,H2O,VASP,GGA-PBE,-0.23,,,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,carbon_2d,1,0.03
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (3B-II),2D Carbon,B,SO2,VASP,GGA-PBE,-0.27,,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.03
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (3B-II),2D Carbon,B,H2,VASP,GGA-PBE,-0.06,,,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,carbon_2d,1,0.03
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (3B-III),2D Carbon,B,NO,VASP,GGA-PBE,-1.23,,,,,,,,,,,,,,30.006,0.2,18.1,2,0,1,carbon_2d,1,0.03
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (3B-III),2D Carbon,B,NO2,VASP,GGA-PBE,-1.6,,,,,,,,,,,,,,46.006,-0.3,30.4,3,0,2,carbon_2d,1,0.03
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (3B-III),2D Carbon,B,NH3,VASP,GGA-PBE,-0.49,,,,,,,,,,,,,,17.031,-0.7,1.0,1,1,1,carbon_2d,1,0.03
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (3B-III),2D Carbon,B,CO,VASP,GGA-PBE,-0.03,,,,,,,,,,,,,,28.010,0.7,1.0,2,0,1,carbon_2d,1,0.03
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (3B-III),2D Carbon,B,CO2,VASP,GGA-PBE,-0.19,,,,,,,,,,,,,,44.009,0.9,34.1,3,0,2,carbon_2d,1,0.03
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (3B-III),2D Carbon,B,H2O,VASP,GGA-PBE,-0.32,,,,,,,,,,,,,,18.015,-0.5,1.0,1,1,1,carbon_2d,1,0.03
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (3B-III),2D Carbon,B,SO2,VASP,GGA-PBE,-0.48,,,,,,,,,,,,,,64.07,0.1,35.1,3,0,3,carbon_2d,1,0.03
+10.3390/chemengineering10030042,ChemEngineering,2026,Multi-B Graphene (3B-III),2D Carbon,B,H2,VASP,GGA-PBE,-0.08,,,,,,,,,,,,,,2.016,0.0,0.0,0,0,0,carbon_2d,1,0.03
