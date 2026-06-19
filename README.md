@@ -326,25 +326,199 @@ python literature_search.py
 
 ---
 
-## 10. Project structure
+## 10. Repository layout & directory workflow
+
+This section maps **every folder and file** in the repo, how they connect, and which commands produce which outputs.
+
+### 10.1 Annotated directory tree
 
 ```
-btp/
-├── README.md                          ← this report
-├── requirements.txt
-├── data/                              ← all CSV/JSON/model outputs
-├── scripts/
-│   ├── build_dataset.py               ← Phase 1
-│   ├── enrich_descriptors.py          ← Phase 2
-│   ├── train_models.py                ← Phase 3
-│   ├── predict_screening.py           ← Phase 3b screening
-│   ├── ml_common.py                   ← shared ML utilities
-│   ├── literature_search.py           ← OpenAlex candidate search
-│   └── config.py                      ← target journals, gases, CSV schema
-├── reference_prior_work/                ← earlier experimental ML prototype
-└── canvases/
-    └── dft-dataset-catalog.canvas.tsx ← interactive data browser
+btp/                                    # Project root (B.T.P. gas-sensor ML pipeline)
+│
+├── README.md                           # Full project report (this document)
+├── requirements.txt                    # Python dependencies (pandas, sklearn, boosters, joblib)
+│
+├── scripts/                            # All executable pipeline code
+│   ├── config.py                       # TARGET_JOURNALS, TARGET_GASES, CSV_COLUMNS schema
+│   ├── build_dataset.py                # Phase 1 — literature → curated CSV/JSON
+│   ├── enrich_descriptors.py           # Phase 2 — PubChem gas + material descriptors
+│   ├── train_models.py                 # Phase 3 — train, CV, error analysis, save model
+│   ├── predict_screening.py            # Phase 3b — rank material–gas pairs
+│   ├── ml_common.py                    # Shared loaders, splits, preprocessors, model registry
+│   ├── literature_search.py            # OpenAlex search → literature_candidates.*
+│   └── generate_canvas.py              # Optional — builds interactive catalog canvas JSON/TSX
+│
+├── data/                               # All generated datasets & ML artifacts (do not edit by hand)
+│   │
+│   │  ── Phase 1 outputs (build_dataset.py) ──
+│   ├── dft_gas_sensing_dataset.csv     # Master dataset (metadata + labels + all columns)
+│   ├── dft_gas_sensing_dataset_ml.csv  # ML column subset (input to Phase 2)
+│   ├── curated_records.json            # Same rows as JSON (machine-readable)
+│   ├── paper_registry.csv              # Row count per source DOI
+│   ├── dataset_full_with_sources.csv   # Every row + DOI URL + extraction notes
+│   │
+│   │  ── Literature discovery (literature_search.py) ──
+│   ├── literature_candidates.csv       # OpenAlex papers to extract next
+│   ├── literature_candidates.json      # Same, JSON format
+│   │
+│   │  ── Phase 2 outputs (enrich_descriptors.py) ──
+│   ├── dft_gas_sensing_dataset_enriched.csv   # ML CSV + gas/material features
+│   ├── gas_descriptor_cache.json       # Cached PubChem API responses (18 gases)
+│   │
+│   │  ── Phase 3 outputs (train_models.py) ──
+│   ├── ml_benchmark.csv                # Single 80/20 material holdout scores
+│   ├── ml_cv_results.csv               # 5-fold material-grouped CV (mean ± std)
+│   ├── ml_feature_ablation.csv         # descriptors_only vs full features
+│   ├── ml_oof_predictions.csv          # Out-of-fold predictions (all 480 rows)
+│   ├── ml_error_by_gas.csv             # MAE/R² breakdown by gas
+│   ├── ml_error_by_mat_group.csv       # MAE/R² breakdown by Mat_Group
+│   ├── ml_error_by_functional.csv      # MAE/R² breakdown by DFT functional
+│   ├── ml_model_meta.json              # Best model name, feature list, train stats
+│   │
+│   │  ── Phase 3b outputs (predict_screening.py) ──
+│   ├── ml_screening_ranked.csv         # Ranked predicted adsorption energies
+│   │
+│   │  ── Optional canvas helper ──
+│   ├── canvas_payload.json             # Embedded data for IDE catalog canvas
+│   │
+│   └── models/
+│       └── best_model.joblib           # Saved LightGBM sklearn Pipeline (for screening)
+│
+└── reference_prior_work/               # Earlier experimental prototype (not used as DFT labels)
+    ├── README.md                       # Notes on prior ~20-row experimental dataset
+    ├── gas_sensor_data.csv             # Experimental sensor data
+    └── model.py                        # Prototype ML script
 ```
+
+### 10.2 Data-flow diagram (which script writes what)
+
+```mermaid
+flowchart TD
+  subgraph inputs [Inputs]
+    PDF[Peer-reviewed papers / tables]
+    OA[OpenAlex API]
+    PC[PubChem API]
+  end
+
+  subgraph phase1 [Phase 1 — build_dataset.py]
+    BD[build_dataset.py]
+    BD --> DS[dft_gas_sensing_dataset.csv]
+    BD --> ML[dft_gas_sensing_dataset_ml.csv]
+    BD --> CR[curated_records.json]
+    BD --> PR[paper_registry.csv]
+    BD --> SRC[dataset_full_with_sources.csv]
+  end
+
+  subgraph discover [Discovery — literature_search.py]
+    LS[literature_search.py]
+    LS --> LC[literature_candidates.csv]
+  end
+
+  subgraph phase2 [Phase 2 — enrich_descriptors.py]
+    EN[enrich_descriptors.py]
+    PC --> EN
+    ML --> EN
+    EN --> ENC[gas_descriptor_cache.json]
+    EN --> ENR[dft_gas_sensing_dataset_enriched.csv]
+  end
+
+  subgraph phase3 [Phase 3 — train_models.py]
+    TR[train_models.py]
+    ENR --> TR
+    TR --> BM[ml_benchmark.csv]
+    TR --> CV[ml_cv_results.csv]
+    TR --> ABL[ml_feature_ablation.csv]
+    TR --> OOF[ml_oof_predictions.csv]
+    TR --> ERR[ml_error_by_*.csv]
+    TR --> META[ml_model_meta.json]
+    TR --> MODEL[models/best_model.joblib]
+  end
+
+  subgraph phase3b [Phase 3b — predict_screening.py]
+    PS[predict_screening.py]
+    MODEL --> PS
+    ENR --> PS
+    PS --> SCR[ml_screening_ranked.csv]
+  end
+
+  PDF --> BD
+  OA --> LS
+```
+
+### 10.3 Operational workflows
+
+#### Workflow A — Full rebuild (from scratch)
+
+Use after adding new papers or changing `build_dataset.py`.
+
+```bash
+pip install -r requirements.txt
+cd scripts
+python build_dataset.py          # → data/dft_gas_sensing_dataset*.csv, curated_records.json, …
+python enrich_descriptors.py     # → enriched.csv, gas_descriptor_cache.json
+python train_models.py           # → ml_*.csv, models/best_model.joblib
+python predict_screening.py --top 20   # → ml_screening_ranked.csv
+```
+
+#### Workflow B — Add one new paper
+
+1. Open `scripts/build_dataset.py` → add a `def paper_name():` builder using `record()`.
+2. Register it in `build_all_curated_records()` builders list.
+3. Run **Workflow A** (all three phases).
+
+Alternative: append rows to `data/supplemental_records.json` (if present) and run only `build_dataset.py` + Phase 2 + 3.
+
+#### Workflow C — Retrain only (dataset unchanged)
+
+```bash
+cd scripts
+python train_models.py
+```
+
+Reads `dft_gas_sensing_dataset_enriched.csv` → refreshes all `ml_*.csv` and `best_model.joblib`.
+
+#### Workflow D — Screen material–gas pairs
+
+```bash
+cd scripts
+python predict_screening.py                              # all known pairs, full ranking
+python predict_screening.py --top 20                     # top 20 strongest binding
+python predict_screening.py --material "MoS2" --gas NO2  # single prediction
+```
+
+Requires `data/models/best_model.joblib` (run `train_models.py` first).
+
+#### Workflow E — Find new papers to extract
+
+```bash
+cd scripts
+python literature_search.py    # → literature_candidates.csv (421+ OpenAlex hits)
+```
+
+Manual step: read PDFs, extract tables, then **Workflow B**.
+
+#### Workflow F — Regenerate interactive catalog (optional)
+
+```bash
+cd scripts
+python generate_canvas.py      # → ../canvases/dft-dataset-catalog.canvas.tsx (if canvas dir exists)
+```
+
+### 10.4 Script reference
+
+| Script | Reads | Writes | When to run |
+|--------|-------|--------|-------------|
+| `build_dataset.py` | Builder functions in code, optional `supplemental_records.json` | `dft_gas_sensing_dataset*.csv`, `curated_records.json`, `paper_registry.csv`, `dataset_full_with_sources.csv` | After new literature extractions |
+| `literature_search.py` | `config.py` journal list, OpenAlex API | `literature_candidates.csv/json` | When searching for new source papers |
+| `enrich_descriptors.py` | `dft_gas_sensing_dataset_ml.csv`, PubChem API | `dft_gas_sensing_dataset_enriched.csv`, `gas_descriptor_cache.json` | After Phase 1 or when gas/material rules change |
+| `train_models.py` | `dft_gas_sensing_dataset_enriched.csv` | `ml_*.csv`, `models/best_model.joblib`, `ml_model_meta.json` | After Phase 2 or when ML code changes |
+| `predict_screening.py` | `best_model.joblib`, enriched schema | `ml_screening_ranked.csv` | When ranking candidate pairs |
+| `generate_canvas.py` | `dataset_full_with_sources.csv`, `paper_registry.csv` | Canvas TSX + `canvas_payload.json` | Optional visualization |
+| `config.py` | — | — | Edit only; defines schema and search targets |
+
+### 10.5 `reference_prior_work/` (out of pipeline)
+
+This folder is **not** part of the DFT pipeline. It holds an earlier **experimental** gas-sensor ML attempt (~20 rows, lab measurements). The current project uses **DFT literature values** as labels instead. Keep it for comparison only.
 
 ---
 
