@@ -1,0 +1,11 @@
+material_absorber,material_etl,material_htl,absorber_band_gap_eV,etl_band_gap_eV,htl_band_gap_eV,cbo_eV,vbo_eV,absorber_etl_type,absorber_htl_type,gap_method,functional,gap_type,material_class,source_doi,source_paper
+MnPS3,CoPS3,MnPS3,2.85,1.3,2.85,-1.65,0.0,Type I,Type I,experimental_UPS_absorption,experiment,optical_absorption_edge,2D_exfoliated_MPS3,10.1038/s41699-025-00578-w,Paper2 MPS3 experimental UPS/XPS (Fig 2d)
+MnPS3,NiPS3,MnPS3,2.85,1.4,2.85,-1.65,0.0,Type I,Type I,experimental_UPS_absorption,experiment,optical_absorption_edge,2D_exfoliated_MPS3,10.1038/s41699-025-00578-w,Paper2 MPS3 experimental UPS/XPS (Fig 2d)
+FePS3,CoPS3,FePS3,1.35,1.3,1.35,-0.75,0.0,Type I,Type I,experimental_UPS_absorption,experiment,optical_absorption_edge,2D_exfoliated_MPS3,10.1038/s41699-025-00578-w,Paper2 MPS3 experimental UPS/XPS (Fig 2d)
+FePS3,NiPS3,FePS3,1.35,1.4,1.35,-0.75,0.0,Type I,Type I,experimental_UPS_absorption,experiment,optical_absorption_edge,2D_exfoliated_MPS3,10.1038/s41699-025-00578-w,Paper2 MPS3 experimental UPS/XPS (Fig 2d)
+CoPS3,MnPS3,CoPS3,1.3,2.85,1.3,1.65,0.0,Type I,Type I,experimental_UPS_absorption,experiment,optical_absorption_edge,2D_exfoliated_MPS3,10.1038/s41699-025-00578-w,Paper2 MPS3 experimental UPS/XPS (Fig 2d)
+CoPS3,FePS3,CoPS3,1.3,1.35,1.3,0.75,0.0,Type I,Type I,experimental_UPS_absorption,experiment,optical_absorption_edge,2D_exfoliated_MPS3,10.1038/s41699-025-00578-w,Paper2 MPS3 experimental UPS/XPS (Fig 2d)
+CoPS3,NiPS3,CoPS3,1.3,1.4,1.3,-0.0,0.0,Type I,Type I,experimental_UPS_absorption,experiment,optical_absorption_edge,2D_exfoliated_MPS3,10.1038/s41699-025-00578-w,Paper2 MPS3 experimental UPS/XPS (Fig 2d)
+NiPS3,MnPS3,NiPS3,1.4,2.85,1.4,1.65,0.0,Type I,Type I,experimental_UPS_absorption,experiment,optical_absorption_edge,2D_exfoliated_MPS3,10.1038/s41699-025-00578-w,Paper2 MPS3 experimental UPS/XPS (Fig 2d)
+NiPS3,FePS3,NiPS3,1.4,1.35,1.4,0.75,0.0,Type I,Type I,experimental_UPS_absorption,experiment,optical_absorption_edge,2D_exfoliated_MPS3,10.1038/s41699-025-00578-w,Paper2 MPS3 experimental UPS/XPS (Fig 2d)
+NiPS3,CoPS3,NiPS3,1.4,1.3,1.4,0.0,0.0,Type I,Type I,experimental_UPS_absorption,experiment,optical_absorption_edge,2D_exfoliated_MPS3,10.1038/s41699-025-00578-w,Paper2 MPS3 experimental UPS/XPS (Fig 2d)

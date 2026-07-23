@@ -1,0 +1,2 @@
+material,Eg_eV,chi_eV,gap_method,gap_type,notes,source_doi
+K2GeI6,1.28,,DFT_direct_gap,fundamental_quasiparticle,chi only in Table S1 (SI not in main PDF); Eg agrees with Noor et al. ~1.27 eV,10.1007/s44291-026-00245-4

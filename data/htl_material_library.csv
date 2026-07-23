@@ -1,0 +1,25 @@
+material,Eg_eV,chi_eV,chi_source,layer_role,material_class,record_type,source_doi,source_paper,source_table
+C6PcH2,1.6000,3.7000,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s41598-025-98351-y,K2TiI6 SCAPS device tables,Table 2
+C6TBTAPH2,1.5900,3.5800,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s41598-025-98351-y,K2TiI6 SCAPS device tables,Table 2
+CFTS,1.3000,3.3000,literature_SCAPS,htl,contact_layer,htl_library,10.1016/j.nxmate.2026.102491,Cs3Sb2Br9 SCAPS device tables,Table 1
+CNTS,1.7400,3.8700,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s41598-024-81797-x,CsPbZnIBr2 SCAPS device tables,Table 2
+Cu2Te,1.1800,4.2000,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s41598-024-81797-x,CsPbZnIBr2 SCAPS device tables,Table 2
+CuAlO2,3.4600,2.5000,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s41598-025-98351-y,K2TiI6 SCAPS device tables,Table 2
+CuI,3.1000,2.1000,literature_SCAPS,htl,contact_layer,htl_library,10.1007/s11082-026-08738-y,BeSiP2 SCAPS device tables,Table 2
+CuSCN,3.6000,1.7000,literature_SCAPS,htl,contact_layer,htl_library,10.1007/s11082-026-08738-y,BeSiP2 SCAPS device tables,Table 2
+D-PBTTT-14,2.1600,3.2000,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s41598-025-98351-y,K2TiI6 SCAPS device tables,Table 2
+GaAs,1.4200,4.0700,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s41598-024-81797-x,CsPbZnIBr2 SCAPS device tables,Table 2
+MEH-PPV,2.1000,2.8000,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s41598-024-81797-x,CsPbZnIBr2 SCAPS device tables,Table 2
+MoO3,3.0000,2.3000,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s41598-025-98351-y,K2TiI6 SCAPS device tables,Table 2
+MoS2,1.2900,4.2000,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s41598-024-81797-x,CsPbZnIBr2 SCAPS device tables,Table 2
+MWCNTs,1.5500,3.6400,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s41598-025-98351-y,K2TiI6 SCAPS device tables,Table 2
+NiCo2O4,2.3000,3.4800,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s41598-025-98351-y,K2TiI6 SCAPS device tables,Table 2
+NiO,3.6000,1.8000,literature_SCAPS,htl,contact_layer,htl_library,10.1007/s11082-026-08738-y,BeSiP2 SCAPS device tables,Table 2
+nPB,2.4000,3.0000,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s41598-025-98351-y,K2TiI6 SCAPS device tables,Table 2
+PTAA,2.9600,2.3000,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s41598-025-98351-y,K2TiI6 SCAPS device tables,Table 2
+TiO2:N,3.0000,2.2000,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s41598-025-98351-y,K2TiI6 SCAPS device tables,Table 2
+V2O5,2.2000,3.4000,literature_SCAPS,htl,contact_layer,htl_library,10.1007/s11082-026-08738-y,BeSiP2 SCAPS device tables,Table 2
+Zn3P2,1.5000,4.2000,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s41598-024-81797-x,CsPbZnIBr2 SCAPS device tables,Table 2
+ZnTe,2.2500,3.7300,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s41598-024-81797-x,CsPbZnIBr2 SCAPS device tables,Table 2
+Spiro-OMeTAD,3.0000,2.0500,literature_SCAPS,htl,contact_layer,verified_contact,10.1016/j.solener.2014.09.049,Minemoto & Murata Solar Energy 2014 — SCAPS perovskite device parameters,Table 1
+CuPc,1.7000,3.5000,literature_SCAPS,htl,contact_layer,verified_contact,10.1038/s41598-025-98351-y,Aligned to phthalocyanine HTL family in K2TiI6 SCAPS tables (C6PcH2 Eg=1.6 χ=3.7); CuPc SCAPS-typical Eg=1.7 χ=3.5,Table 2 family

@@ -1,0 +1,2137 @@
+material,Eg_eV,chi_eV,role,chi_source
+1T-CaI2,4.56,2.54,monolayer,literature_HSE06_monolayer
+1T-CdBr2,4.32,3.62,monolayer,literature_HSE06_monolayer
+1T-CdCl2,5.36,3.509999999999999,monolayer,literature_HSE06_monolayer
+1T-CdI2,2.99,3.5699999999999994,monolayer,literature_HSE06_monolayer
+1T-GeBr2,3.09,4.15,monolayer,literature_HSE06_monolayer
+1T-GeI2,2.64,3.6999999999999997,monolayer,literature_HSE06_monolayer
+1T-HfS2,2.04,5.02,monolayer,literature_HSE06_monolayer
+1T-HfSe2,1.1,4.91,monolayer,literature_HSE06_monolayer
+1T-HgBr2,3.79,3.9000000000000004,monolayer,literature_HSE06_monolayer
+1T-MgBr2,5.86,2.3,monolayer,literature_HSE06_monolayer
+1T-MgCl2,7.49,1.7300000000000004,monolayer,literature_HSE06_monolayer
+1T-MgI2,4.16,2.5599999999999996,monolayer,literature_HSE06_monolayer
+1T-NiO2,3.29,6.680000000000001,monolayer,literature_HSE06_monolayer
+1T-OTl2,1.51,3.8900000000000006,monolayer,literature_HSE06_monolayer
+1T-PbI2,2.65,4.07,monolayer,literature_HSE06_monolayer
+1T-PdTe2,0.09,4.36,monolayer,literature_HSE06_monolayer
+1T-PtO2,3.5,4.539999999999999,monolayer,literature_HSE06_monolayer
+1T-PtS2,2.65,4.27,monolayer,literature_HSE06_monolayer
+1T-PtSe2,1.72,4.13,monolayer,literature_HSE06_monolayer
+1T-PtTe2,0.62,3.8999999999999995,monolayer,literature_HSE06_monolayer
+1T-SnS2,2.48,4.970000000000001,monolayer,literature_HSE06_monolayer
+1T-SnSe2,1.44,5.18,monolayer,literature_HSE06_monolayer
+1T-STl2,1.89,3.2600000000000007,monolayer,literature_HSE06_monolayer
+1T-TiS2,0.71,5.71,monolayer,literature_HSE06_monolayer
+1T-YbI2,2.35,2.8400000000000003,monolayer,literature_HSE06_monolayer
+1T-ZnBr2,4.61,3.21,monolayer,literature_HSE06_monolayer
+1T-ZnCl2,6.12,2.6800000000000006,monolayer,literature_HSE06_monolayer
+1T-ZnI2,2.59,3.8500000000000005,monolayer,literature_HSE06_monolayer
+1T-ZrS2,1.95,5.25,monolayer,literature_HSE06_monolayer
+1T-ZrSe2,0.94,5.210000000000001,monolayer,literature_HSE06_monolayer
+1T_d-ReS2,1.96,4.28,monolayer,literature_HSE06_monolayer
+1T_d-ReSe2,1.7,3.8,monolayer,literature_HSE06_monolayer
+2H-GeI2,2.36,3.9600000000000004,monolayer,literature_HSE06_monolayer
+2H-MoS2,2.22,4.220000000000001,monolayer,literature_HSE06_monolayer
+2H-MoSe2,1.95,3.8599999999999994,monolayer,literature_HSE06_monolayer
+2H-MoTe2,1.5,3.75,monolayer,literature_HSE06_monolayer
+2H-WS2,2.2,3.88,monolayer,literature_HSE06_monolayer
+2H-WSe2,1.88,3.58,monolayer,literature_HSE06_monolayer
+2H-WTe2,1.3,3.62,monolayer,literature_HSE06_monolayer
+2H-ZrCl2,1.55,3.0300000000000002,monolayer,literature_HSE06_monolayer
+AgNbLaAlO6,4.1645432,3.5512,absorber,ml_plus_family_prior
+AgNbLaGaO6,4.454628775,3.5629,absorber,ml_plus_family_prior
+AgNbLaInO6,4.192522296,3.5736,absorber,ml_plus_family_prior
+AgNbMgTiO6,3.963856895,3.5499,absorber,ml_plus_family_prior
+AgNbSnTiO6,2.881239408,3.6817,absorber,ml_plus_family_prior
+AgNbYAlO6,3.958215489,3.542,absorber,ml_plus_family_prior
+AgTaAgNbO6,3.367340076,3.7118,absorber,ml_plus_family_prior
+AgTaBaSnO6,4.115527804,3.6044,absorber,ml_plus_family_prior
+AgTaBaTiO6,3.65187538,3.5922,absorber,ml_plus_family_prior
+AgTaCaGeO6,4.596741977,3.5738,absorber,ml_plus_family_prior
+AgTaCaSiO6,4.787204683,3.5643,absorber,ml_plus_family_prior
+AgTaCaSnO6,4.567418298,3.5938,absorber,ml_plus_family_prior
+AgTaCaTiO6,3.856408782,3.5927,absorber,ml_plus_family_prior
+AgTaCsNbO6,3.257419299,3.6688,absorber,ml_plus_family_prior
+AgTaCsVO6,2.169553701,3.8164,absorber,ml_plus_family_prior
+AgTaGaNbO6,1.784718332,3.8403,absorber,ml_plus_family_prior
+AgTaGaTaO6,2.285462409,3.7393,absorber,ml_plus_family_prior
+AgTaKNbO6,3.43280078,3.6895,absorber,ml_plus_family_prior
+AgTaKSbO6,4.253437286,3.5737,absorber,ml_plus_family_prior
+AgTaLaAlO6,4.544527043,3.543,absorber,ml_plus_family_prior
+AgTaLaGaO6,4.428479438,3.574,absorber,ml_plus_family_prior
+AgTaLaInO6,4.598427211,3.5679,absorber,ml_plus_family_prior
+AgTaLiNbO6,3.554350261,3.5966,absorber,ml_plus_family_prior
+AgTaLiVO6,1.661856626,3.8711,absorber,ml_plus_family_prior
+AgTaMgTiO6,4.541470588,3.5443,absorber,ml_plus_family_prior
+AgTaNaNbO6,3.523501827,3.6894,absorber,ml_plus_family_prior
+AgTaNaSbO6,4.383274568,3.5779,absorber,ml_plus_family_prior
+AgTaNaVO6,1.67087028,3.8711,absorber,ml_plus_family_prior
+AgTaPbHfO6,4.468824182,3.5699,absorber,ml_plus_family_prior
+AgTaPbTiO6,3.806312329,3.5971,absorber,ml_plus_family_prior
+AgTaPbZrO6,4.43593134,3.5849,absorber,ml_plus_family_prior
+AgTaRbNbO6,3.372019754,3.7118,absorber,ml_plus_family_prior
+AgTaSnHfO6,3.676099376,3.6285,absorber,ml_plus_family_prior
+AgTaSnTiO6,3.280047217,3.7178,absorber,ml_plus_family_prior
+AgTaSnZrO6,3.671961049,3.6303,absorber,ml_plus_family_prior
+AgTaSrGeO6,4.544428383,3.5701,absorber,ml_plus_family_prior
+AgTaSrSiO6,4.692218139,3.5632,absorber,ml_plus_family_prior
+AgTaSrSnO6,4.170643623,3.6044,absorber,ml_plus_family_prior
+AgTaSrTiO6,3.79098509,3.5936,absorber,ml_plus_family_prior
+AgTaTlNbO6,1.792464465,3.879,absorber,ml_plus_family_prior
+AgTaYAlO6,4.914572548,3.5333,absorber,ml_plus_family_prior
+AlAs,2.35,3.23,monolayer,literature_HSE06_monolayer
+AlN,4.04,1.96,monolayer,literature_HSE06_monolayer
+AlP,3.14,2.6199999999999997,monolayer,literature_HSE06_monolayer
+AlSb_b,2.09,2.29,monolayer,literature_HSE06_monolayer
+As_b,2.06,3.48,monolayer,literature_HSE06_monolayer
+As_w,1.25,3.71,monolayer,literature_HSE06_monolayer
+BaHfAgNbO6,4.078047088,3.5585,absorber,ml_plus_family_prior
+BaHfAgTaO6,4.189891965,3.5759,absorber,ml_plus_family_prior
+BaHfBaSnO6,6.081554918,3.5628,absorber,ml_plus_family_prior
+BaHfBaTiO6,4.617955975,3.5671,absorber,ml_plus_family_prior
+BaHfBaZrO6,6.343123966,3.5448,absorber,ml_plus_family_prior
+BaHfCaGeO6,6.350080917,3.5452,absorber,ml_plus_family_prior
+BaHfCaHfO6,7.105780282,3.4741,absorber,ml_plus_family_prior
+BaHfCaSiO6,7.124555422,3.4729,absorber,ml_plus_family_prior
+BaHfCaSnO6,6.149864419,3.5642,absorber,ml_plus_family_prior
+BaHfCaTiO6,4.881718641,3.5569,absorber,ml_plus_family_prior
+BaHfCaZrO6,6.793831407,3.5297,absorber,ml_plus_family_prior
+BaHfCsNbO6,4.17192157,3.5778,absorber,ml_plus_family_prior
+BaHfCsTaO6,4.954141388,3.5605,absorber,ml_plus_family_prior
+BaHfCsVO6,2.024082776,3.849,absorber,ml_plus_family_prior
+BaHfGaNbO6,2.740038109,3.7279,absorber,ml_plus_family_prior
+BaHfGaTaO6,3.468891843,3.6669,absorber,ml_plus_family_prior
+BaHfInNbO6,1.490876326,3.8394,absorber,ml_plus_family_prior
+BaHfInTaO6,2.148573734,3.8072,absorber,ml_plus_family_prior
+BaHfKNbO6,4.237405144,3.5746,absorber,ml_plus_family_prior
+BaHfKSbO6,5.319984256,3.5646,absorber,ml_plus_family_prior
+BaHfKTaO6,5.043565766,3.5739,absorber,ml_plus_family_prior
+BaHfLaAlO6,6.842296397,3.4637,absorber,ml_plus_family_prior
+BaHfLaGaO6,7.087096038,3.4721,absorber,ml_plus_family_prior
+BaHfLaInO6,6.388361955,3.5381,absorber,ml_plus_family_prior
+BaHfLaScO6,7.259237807,3.4723,absorber,ml_plus_family_prior
+BaHfLiNbO6,4.346862988,3.5789,absorber,ml_plus_family_prior
+BaHfLiTaO6,5.156989314,3.5629,absorber,ml_plus_family_prior
+BaHfLiVO6,1.950932284,3.853,absorber,ml_plus_family_prior
+BaHfMgTiO6,5.157325978,3.5394,absorber,ml_plus_family_prior
+BaHfMgZrO6,7.180769915,3.4516,absorber,ml_plus_family_prior
+BaHfNaNbO6,4.323594526,3.5789,absorber,ml_plus_family_prior
+BaHfNaSbO6,5.605111851,3.5323,absorber,ml_plus_family_prior
+BaHfNaTaO6,5.133972612,3.5718,absorber,ml_plus_family_prior
+BaHfNaVO6,1.943310423,3.853,absorber,ml_plus_family_prior
+BaHfPbHfO6,5.861282859,3.5403,absorber,ml_plus_family_prior
+BaHfPbTiO6,4.716210837,3.5694,absorber,ml_plus_family_prior
+BaHfPbZrO6,5.798471802,3.544,absorber,ml_plus_family_prior
+BaHfRbNbO6,4.19891716,3.5759,absorber,ml_plus_family_prior
+BaHfRbTaO6,4.999203073,3.562,absorber,ml_plus_family_prior
+BaHfSnHfO6,5.154654591,3.5924,absorber,ml_plus_family_prior
+BaHfSnTiO6,4.117831884,3.6025,absorber,ml_plus_family_prior
+BaHfSnZrO6,5.129260058,3.6037,absorber,ml_plus_family_prior
+BaHfSrGeO6,6.108099686,3.5438,absorber,ml_plus_family_prior
+BaHfSrHfO6,6.703417504,3.537,absorber,ml_plus_family_prior
+BaHfSrSiO6,7.100622387,3.4711,absorber,ml_plus_family_prior
+BaHfSrSnO6,6.260326191,3.5628,absorber,ml_plus_family_prior
+BaHfSrTiO6,4.711382223,3.5659,absorber,ml_plus_family_prior
+BaHfSrZrO6,6.459329422,3.5448,absorber,ml_plus_family_prior
+BaHfTlNbO6,2.787349496,3.8396,absorber,ml_plus_family_prior
+BaHfTlTaO6,3.519530094,3.6917,absorber,ml_plus_family_prior
+BaHfYAlO6,7.467627553,3.4637,absorber,ml_plus_family_prior
+BAs,1.43,3.7800000000000002,monolayer,literature_HSE06_monolayer
+BaSnAgNbO6,4.196255316,3.6024,absorber,ml_plus_family_prior
+BaSnBaTiO6,4.610173391,3.5944,absorber,ml_plus_family_prior
+BaSnCaGeO6,2.613094084,3.8699,absorber,ml_plus_family_prior
+BaSnCaSiO6,3.328665599,3.7132,absorber,ml_plus_family_prior
+BaSnCaSnO6,3.237558695,3.6852,absorber,ml_plus_family_prior
+BaSnCaTiO6,4.634935362,3.5947,absorber,ml_plus_family_prior
+BaSnLaAlO6,5.229700982,3.5624,absorber,ml_plus_family_prior
+BaSnLaGaO6,3.753770355,3.6136,absorber,ml_plus_family_prior
+BaSnLaInO6,3.824912325,3.6232,absorber,ml_plus_family_prior
+BaSnLiNbO6,4.985344912,3.5906,absorber,ml_plus_family_prior
+BaSnLiVO6,2.187158914,3.8375,absorber,ml_plus_family_prior
+BaSnMgTiO6,4.682433617,3.5742,absorber,ml_plus_family_prior
+BaSnMgZrO6,5.534709008,3.5412,absorber,ml_plus_family_prior
+BaSnNaNbO6,4.950429901,3.5891,absorber,ml_plus_family_prior
+BaSnNaSbO6,1.584677745,3.8745,absorber,ml_plus_family_prior
+BaSnNaVO6,2.182041303,3.8375,absorber,ml_plus_family_prior
+BaSnSnTiO6,4.156500556,3.6015,absorber,ml_plus_family_prior
+BaSnSrGeO6,1.902720005,3.8806,absorber,ml_plus_family_prior
+BaSnSrSiO6,3.060194418,3.6585,absorber,ml_plus_family_prior
+BaSnSrSnO6,2.664761815,3.8559,absorber,ml_plus_family_prior
+BaSnSrTiO6,4.845106688,3.5946,absorber,ml_plus_family_prior
+BaTiAgNbO6,3.238934908,3.662,absorber,ml_plus_family_prior
+BaTiCaGeO6,4.544465349,3.5677,absorber,ml_plus_family_prior
+BaTiCaSiO6,4.314413855,3.5704,absorber,ml_plus_family_prior
+BaTiCaSnO6,4.63511974,3.5947,absorber,ml_plus_family_prior
+BaTiCaTiO6,3.834829908,3.5927,absorber,ml_plus_family_prior
+BaTiCsNbO6,3.933396345,3.5694,absorber,ml_plus_family_prior
+BaTiCsVO6,2.387688728,3.8131,absorber,ml_plus_family_prior
+BaTiLaAlO6,4.924750863,3.5305,absorber,ml_plus_family_prior
+BaTiLaGaO6,5.227039321,3.554,absorber,ml_plus_family_prior
+BaTiLaInO6,5.084089538,3.5692,absorber,ml_plus_family_prior
+BaTiLiNbO6,3.463015828,3.6847,absorber,ml_plus_family_prior
+BaTiLiVO6,2.517040515,3.7842,absorber,ml_plus_family_prior
+BaTiMgTiO6,4.287310033,3.5501,absorber,ml_plus_family_prior
+BaTiMgZrO6,5.285884852,3.5436,absorber,ml_plus_family_prior
+BaTiNaNbO6,3.438581234,3.6826,absorber,ml_plus_family_prior
+BaTiNaSbO6,3.997105561,3.5551,absorber,ml_plus_family_prior
+BaTiNaVO6,2.180167758,3.8275,absorber,ml_plus_family_prior
+BaTiSnTiO6,2.851249888,3.7677,absorber,ml_plus_family_prior
+BaTiSrGeO6,4.35844875,3.5794,absorber,ml_plus_family_prior
+BaTiSrSiO6,4.207262042,3.5658,absorber,ml_plus_family_prior
+BaTiSrSnO6,4.859086368,3.5946,absorber,ml_plus_family_prior
+BaTiSrTiO6,3.773082118,3.5936,absorber,ml_plus_family_prior
+BaTiTlTaO6,2.184473305,3.8428,absorber,ml_plus_family_prior
+BaTiYAlO6,4.942037308,3.5305,absorber,ml_plus_family_prior
+BaZrAgNbO6,4.048794437,3.5621,absorber,ml_plus_family_prior
+BaZrAgTaO6,4.158986001,3.5804,absorber,ml_plus_family_prior
+BaZrBaSnO6,6.142792824,3.5683,absorber,ml_plus_family_prior
+BaZrBaTiO6,4.586349916,3.5692,absorber,ml_plus_family_prior
+BaZrCaGeO6,5.912270768,3.5496,absorber,ml_plus_family_prior
+BaZrCaSiO6,6.640590237,3.5434,absorber,ml_plus_family_prior
+BaZrCaSnO6,6.572670735,3.5698,absorber,ml_plus_family_prior
+BaZrCaTiO6,4.883903763,3.5589,absorber,ml_plus_family_prior
+BaZrCaZrO6,6.311282226,3.5463,absorber,ml_plus_family_prior
+BaZrCsNbO6,4.133326334,3.5804,absorber,ml_plus_family_prior
+BaZrCsTaO6,4.861702868,3.5614,absorber,ml_plus_family_prior
+BaZrCsVO6,2.395969852,3.7657,absorber,ml_plus_family_prior
+BaZrGaNbO6,2.741399812,3.6998,absorber,ml_plus_family_prior
+BaZrGaTaO6,3.420362849,3.6775,absorber,ml_plus_family_prior
+BaZrInNbO6,1.504016995,3.7944,absorber,ml_plus_family_prior
+BaZrInTaO6,2.115610367,3.7548,absorber,ml_plus_family_prior
+BaZrKNbO6,4.192233183,3.5785,absorber,ml_plus_family_prior
+BaZrKSbO6,5.244987496,3.5664,absorber,ml_plus_family_prior
+BaZrKTaO6,4.946851271,3.5614,absorber,ml_plus_family_prior
+BaZrLaAlO6,6.675560233,3.5237,absorber,ml_plus_family_prior
+BaZrLaGaO6,6.801343992,3.5284,absorber,ml_plus_family_prior
+BaZrLaInO6,6.468202648,3.5431,absorber,ml_plus_family_prior
+BaZrLaScO6,6.949118842,3.4784,absorber,ml_plus_family_prior
+BaZrLiNbO6,4.294253113,3.5772,absorber,ml_plus_family_prior
+BaZrLiTaO6,5.060782046,3.576,absorber,ml_plus_family_prior
+BaZrLiVO6,1.971169487,3.7932,absorber,ml_plus_family_prior
+BaZrMgTiO6,5.389081221,3.5439,absorber,ml_plus_family_prior
+BaZrMgZrO6,6.96083831,3.4516,absorber,ml_plus_family_prior
+BaZrNaNbO6,4.270644268,3.5772,absorber,ml_plus_family_prior
+BaZrNaSbO6,5.526897153,3.5385,absorber,ml_plus_family_prior
+BaZrNaTaO6,5.030675991,3.576,absorber,ml_plus_family_prior
+BaZrNaVO6,1.958775816,3.7932,absorber,ml_plus_family_prior
+BaZrPbHfO6,5.798203095,3.544,absorber,ml_plus_family_prior
+BaZrPbTiO6,4.688503642,3.5714,absorber,ml_plus_family_prior
+BaZrPbZrO6,5.739209581,3.5343,absorber,ml_plus_family_prior
+BaZrRbNbO6,4.158490708,3.5804,absorber,ml_plus_family_prior
+BaZrRbTaO6,4.904996208,3.5614,absorber,ml_plus_family_prior
+BaZrSnHfO6,5.129425153,3.6037,absorber,ml_plus_family_prior
+BaZrSnTiO6,4.11156648,3.6045,absorber,ml_plus_family_prior
+BaZrSnZrO6,5.112918696,3.6042,absorber,ml_plus_family_prior
+BaZrSrGeO6,6.035786095,3.5498,absorber,ml_plus_family_prior
+BaZrSrHfO6,6.459207069,3.5448,absorber,ml_plus_family_prior
+BaZrSrSiO6,6.576553008,3.5419,absorber,ml_plus_family_prior
+BaZrSrSnO6,6.428286699,3.5683,absorber,ml_plus_family_prior
+BaZrSrTiO6,4.67649105,3.568,absorber,ml_plus_family_prior
+BaZrSrZrO6,6.259867326,3.5448,absorber,ml_plus_family_prior
+BaZrTlNbO6,2.79832233,3.7979,absorber,ml_plus_family_prior
+BaZrTlTaO6,3.480467428,3.6922,absorber,ml_plus_family_prior
+BaZrYAlO6,7.104402829,3.4687,absorber,ml_plus_family_prior
+BeSiP2,1.4,4.2,absorber,literature_SCAPS
+BN,5.68,0.8799999999999999,monolayer,literature_HSE06_monolayer
+BP,1.59,3.84,monolayer,literature_HSE06_monolayer
+BSb,0.91,3.92,monolayer,literature_HSE06_monolayer
+C6PcH2,1.6,3.7,htl,literature_SCAPS
+C6TBTAPH2,1.59,3.58,htl,literature_SCAPS
+CaGeAgNbO6,4.220841195,3.5781,absorber,ml_plus_family_prior
+CaGeCaSiO6,4.171278359,3.577,absorber,ml_plus_family_prior
+CaGeCaSnO6,3.503853221,3.7091,absorber,ml_plus_family_prior
+CaGeCaTiO6,4.802428919,3.57,absorber,ml_plus_family_prior
+CaGeLaAlO6,5.708900913,3.5128,absorber,ml_plus_family_prior
+CaGeLaGaO6,4.068071283,3.559,absorber,ml_plus_family_prior
+CaGeLaInO6,4.288775178,3.5768,absorber,ml_plus_family_prior
+CaGeMgTiO6,5.224069822,3.5441,absorber,ml_plus_family_prior
+CaGeSnTiO6,3.350439602,3.7255,absorber,ml_plus_family_prior
+CaGeYAlO6,6.231533057,3.5268,absorber,ml_plus_family_prior
+CaHfAgNbO6,4.219675653,3.5744,absorber,ml_plus_family_prior
+CaHfAgTaO6,5.065212369,3.5742,absorber,ml_plus_family_prior
+CaHfBaSnO6,6.318267248,3.5642,absorber,ml_plus_family_prior
+CaHfBaTiO6,4.891229032,3.5569,absorber,ml_plus_family_prior
+CaHfBaZrO6,6.78352084,3.5297,absorber,ml_plus_family_prior
+CaHfCaGeO6,6.975336372,3.4792,absorber,ml_plus_family_prior
+CaHfCaSiO6,7.339484884,3.4729,absorber,ml_plus_family_prior
+CaHfCaSnO6,6.545899417,3.5642,absorber,ml_plus_family_prior
+CaHfCaTiO6,5.2391328,3.5597,absorber,ml_plus_family_prior
+CaHfCaZrO6,7.019655916,3.4803,absorber,ml_plus_family_prior
+CaHfCsNbO6,4.18714751,3.5751,absorber,ml_plus_family_prior
+CaHfCsVO6,2.234427829,3.832,absorber,ml_plus_family_prior
+CaHfGaNbO6,2.259002479,3.7594,absorber,ml_plus_family_prior
+CaHfGaTaO6,3.12564489,3.6359,absorber,ml_plus_family_prior
+CaHfInNbO6,1.454858937,3.8397,absorber,ml_plus_family_prior
+CaHfInTaO6,2.03089957,3.8265,absorber,ml_plus_family_prior
+CaHfKNbO6,4.596569242,3.5701,absorber,ml_plus_family_prior
+CaHfKSbO6,5.501346172,3.5652,absorber,ml_plus_family_prior
+CaHfLaAlO6,7.680848563,3.4655,absorber,ml_plus_family_prior
+CaHfLaGaO6,7.195321372,3.4735,absorber,ml_plus_family_prior
+CaHfLaInO6,6.615394048,3.5396,absorber,ml_plus_family_prior
+CaHfLaScO6,7.286131811,3.4741,absorber,ml_plus_family_prior
+CaHfLiNbO6,4.85855487,3.5703,absorber,ml_plus_family_prior
+CaHfLiVO6,2.939415754,3.6534,absorber,ml_plus_family_prior
+CaHfMgTiO6,5.757074701,3.5026,absorber,ml_plus_family_prior
+CaHfMgZrO6,7.657304806,3.4541,absorber,ml_plus_family_prior
+CaHfNaNbO6,5.09102671,3.5735,absorber,ml_plus_family_prior
+CaHfNaSbO6,5.696946038,3.5257,absorber,ml_plus_family_prior
+CaHfNaTaO6,5.899206132,3.5384,absorber,ml_plus_family_prior
+CaHfNaVO6,2.576282825,3.7998,absorber,ml_plus_family_prior
+CaHfPbHfO6,5.946077772,3.5425,absorber,ml_plus_family_prior
+CaHfPbTiO6,4.343194061,3.5788,absorber,ml_plus_family_prior
+CaHfPbZrO6,5.663239448,3.535,absorber,ml_plus_family_prior
+CaHfRbNbO6,4.347730015,3.5785,absorber,ml_plus_family_prior
+CaHfSnHfO6,5.099139427,3.603,absorber,ml_plus_family_prior
+CaHfSnTiO6,3.395877585,3.7117,absorber,ml_plus_family_prior
+CaHfSnZrO6,4.960405248,3.5938,absorber,ml_plus_family_prior
+CaHfSrGeO6,6.296526494,3.5452,absorber,ml_plus_family_prior
+CaHfSrHfO6,7.245106988,3.4741,absorber,ml_plus_family_prior
+CaHfSrSiO6,7.311458271,3.4729,absorber,ml_plus_family_prior
+CaHfSrSnO6,6.441396629,3.5642,absorber,ml_plus_family_prior
+CaHfSrTiO6,5.063213848,3.5714,absorber,ml_plus_family_prior
+CaHfSrZrO6,7.258641193,3.4803,absorber,ml_plus_family_prior
+CaHfTlNbO6,2.785946526,3.8383,absorber,ml_plus_family_prior
+CaHfTlTaO6,3.488495574,3.6936,absorber,ml_plus_family_prior
+CaHfYAlO6,8.019541754,3.4655,absorber,ml_plus_family_prior
+CaSiAgNbO6,3.835308947,3.5907,absorber,ml_plus_family_prior
+CaSiCaSnO6,4.523794734,3.5898,absorber,ml_plus_family_prior
+CaSiCaTiO6,4.563855279,3.5591,absorber,ml_plus_family_prior
+CaSiLaAlO6,7.763296446,3.4651,absorber,ml_plus_family_prior
+CaSiLaGaO6,5.420695949,3.5551,absorber,ml_plus_family_prior
+CaSiLaInO6,5.447420818,3.5592,absorber,ml_plus_family_prior
+CaSiMgTiO6,4.905223459,3.5366,absorber,ml_plus_family_prior
+CaSiSnTiO6,2.549360828,3.8181,absorber,ml_plus_family_prior
+CaSiYAlO6,8.343255111,3.4651,absorber,ml_plus_family_prior
+CaSnAgNbO6,3.845223245,3.6254,absorber,ml_plus_family_prior
+CaSnCaTiO6,5.021395043,3.5882,absorber,ml_plus_family_prior
+CaSnLaAlO6,5.731598265,3.5301,absorber,ml_plus_family_prior
+CaSnLaGaO6,4.421397112,3.6033,absorber,ml_plus_family_prior
+CaSnLaInO6,4.332199336,3.6035,absorber,ml_plus_family_prior
+CaSnMgTiO6,5.246768531,3.5684,absorber,ml_plus_family_prior
+CaSnSnTiO6,2.72801287,3.8642,absorber,ml_plus_family_prior
+CaSnYAlO6,5.902973047,3.5426,absorber,ml_plus_family_prior
+CaTiAgNbO6,3.399832758,3.696,absorber,ml_plus_family_prior
+CaTiLaAlO6,5.239331703,3.5332,absorber,ml_plus_family_prior
+CaTiLaGaO6,5.340395495,3.557,absorber,ml_plus_family_prior
+CaTiLaInO6,5.218969424,3.5579,absorber,ml_plus_family_prior
+CaTiMgTiO6,4.786930752,3.548,absorber,ml_plus_family_prior
+CaTiSnTiO6,2.795444748,3.8533,absorber,ml_plus_family_prior
+CaTiYAlO6,5.421790832,3.5351,absorber,ml_plus_family_prior
+CaZrAgNbO6,4.352637765,3.5811,absorber,ml_plus_family_prior
+CaZrAgTaO6,5.00355801,3.5643,absorber,ml_plus_family_prior
+CaZrBaSnO6,6.571947433,3.5698,absorber,ml_plus_family_prior
+CaZrBaTiO6,4.941329535,3.5589,absorber,ml_plus_family_prior
+CaZrCaGeO6,6.336280867,3.5513,absorber,ml_plus_family_prior
+CaZrCaSiO6,6.891564761,3.4773,absorber,ml_plus_family_prior
+CaZrCaSnO6,6.688083161,3.5681,absorber,ml_plus_family_prior
+CaZrCaTiO6,5.26054136,3.5638,absorber,ml_plus_family_prior
+CaZrCsNbO6,4.287619027,3.577,absorber,ml_plus_family_prior
+CaZrCsVO6,2.604377392,3.76,absorber,ml_plus_family_prior
+CaZrGaNbO6,2.228163324,3.7097,absorber,ml_plus_family_prior
+CaZrGaTaO6,3.014914456,3.6166,absorber,ml_plus_family_prior
+CaZrInNbO6,1.456944238,3.7946,absorber,ml_plus_family_prior
+CaZrInTaO6,2.057918429,3.7703,absorber,ml_plus_family_prior
+CaZrKNbO6,4.630967138,3.5722,absorber,ml_plus_family_prior
+CaZrKSbO6,5.399489278,3.5693,absorber,ml_plus_family_prior
+CaZrLaAlO6,6.792712674,3.5141,absorber,ml_plus_family_prior
+CaZrLaGaO6,6.915401065,3.4796,absorber,ml_plus_family_prior
+CaZrLaInO6,6.732697601,3.5428,absorber,ml_plus_family_prior
+CaZrLaScO6,7.106711864,3.4803,absorber,ml_plus_family_prior
+CaZrLiNbO6,5.120245746,3.5741,absorber,ml_plus_family_prior
+CaZrLiTaO6,5.605585615,3.5395,absorber,ml_plus_family_prior
+CaZrLiVO6,3.120799521,3.6527,absorber,ml_plus_family_prior
+CaZrMgTiO6,5.924793527,3.5192,absorber,ml_plus_family_prior
+CaZrMgZrO6,7.080509925,3.4541,absorber,ml_plus_family_prior
+CaZrNaNbO6,5.162790192,3.5672,absorber,ml_plus_family_prior
+CaZrNaSbO6,5.537664127,3.5395,absorber,ml_plus_family_prior
+CaZrNaTaO6,5.939519026,3.5452,absorber,ml_plus_family_prior
+CaZrNaVO6,2.457278723,3.6919,absorber,ml_plus_family_prior
+CaZrPbHfO6,5.966256093,3.5487,absorber,ml_plus_family_prior
+CaZrPbTiO6,4.496582604,3.5695,absorber,ml_plus_family_prior
+CaZrPbZrO6,5.921731313,3.5479,absorber,ml_plus_family_prior
+CaZrRbNbO6,4.296312174,3.577,absorber,ml_plus_family_prior
+CaZrSnHfO6,4.966758775,3.5938,absorber,ml_plus_family_prior
+CaZrSnTiO6,3.500428614,3.6963,absorber,ml_plus_family_prior
+CaZrSrGeO6,6.114467667,3.5513,absorber,ml_plus_family_prior
+CaZrSrHfO6,7.245451656,3.4803,absorber,ml_plus_family_prior
+CaZrSrSiO6,6.832765223,3.4773,absorber,ml_plus_family_prior
+CaZrSrSnO6,6.724869435,3.5681,absorber,ml_plus_family_prior
+CaZrSrTiO6,5.078140778,3.5735,absorber,ml_plus_family_prior
+CaZrSrZrO6,6.802271822,3.5297,absorber,ml_plus_family_prior
+CaZrTlNbO6,2.711079064,3.8056,absorber,ml_plus_family_prior
+CaZrTlTaO6,3.399255554,3.6992,absorber,ml_plus_family_prior
+CaZrYAlO6,7.690766219,3.4705,absorber,ml_plus_family_prior
+CdS,2.4,4.18,etl,literature_SCAPS
+CdZnS,3.2,4.2,etl,literature_SCAPS
+CFTS,1.3,3.3,htl,literature_SCAPS
+CH3NH3PbBr3,2.32,3.7614,absorber,ml_plus_family_prior
+CH3NH3PbCl3,2.88,3.5102,absorber,ml_plus_family_prior
+CH3NH3PbI3,1.55,3.7946,absorber,ml_plus_family_prior
+CNTS,1.74,3.87,htl,literature_SCAPS
+Cs2AgAlBr6,1.0258,3.694,absorber,ml_plus_family_prior
+Cs2AgAlBr6 (cubic),1.0274,3.694,absorber,ml_plus_family_prior
+Cs2AgAlBr6 (orthorhombic),1.0258,3.694,absorber,ml_plus_family_prior
+Cs2AgAlCl6,2.1569,3.6838,absorber,ml_plus_family_prior
+Cs2AgAlCl6 (cubic),2.1892,3.6851,absorber,ml_plus_family_prior
+Cs2AgAlCl6 (orthorhombic),2.1569,3.6838,absorber,ml_plus_family_prior
+Cs2AgAlI6,0.8116,3.7389,absorber,ml_plus_family_prior
+Cs2AgAlI6 (orthorhombic),0.8116,3.7389,absorber,ml_plus_family_prior
+Cs2AgAsBr6,0.7785,3.9408,absorber,ml_plus_family_prior
+Cs2AgAsBr6 (cubic),0.781,3.9398,absorber,ml_plus_family_prior
+Cs2AgAsBr6 (orthorhombic),0.7785,3.9408,absorber,ml_plus_family_prior
+Cs2AgAsCl6,1.2717,3.9363,absorber,ml_plus_family_prior
+Cs2AgAsCl6 (cubic),1.2792,3.9363,absorber,ml_plus_family_prior
+Cs2AgAsCl6 (orthorhombic),1.2717,3.9363,absorber,ml_plus_family_prior
+Cs2AgAsI6,0.2816,3.9126,absorber,ml_plus_family_prior
+Cs2AgAsI6 (cubic),0.2692,3.9154,absorber,ml_plus_family_prior
+Cs2AgAsI6 (orthorhombic),0.2816,3.9126,absorber,ml_plus_family_prior
+Cs2AgBiBr6,1.1666,3.8834,absorber,ml_plus_family_prior
+Cs2AgBiBr6 (cubic),1.1399,3.8819,absorber,ml_plus_family_prior
+Cs2AgBiBr6 (orthorhombic),1.1666,3.8834,absorber,ml_plus_family_prior
+Cs2AgBiCl6,1.5403,3.9355,absorber,ml_plus_family_prior
+Cs2AgBiCl6 (cubic),1.5671,3.9355,absorber,ml_plus_family_prior
+Cs2AgBiCl6 (orthorhombic),1.5403,3.9355,absorber,ml_plus_family_prior
+Cs2AgBiI6,0.7825,3.9228,absorber,ml_plus_family_prior
+Cs2AgBiI6 (cubic),0.6515,3.9171,absorber,ml_plus_family_prior
+Cs2AgBiI6 (orthorhombic),0.7825,3.9228,absorber,ml_plus_family_prior
+Cs2AgGaBr6,0.5295,3.9041,absorber,ml_plus_family_prior
+Cs2AgGaBr6 (orthorhombic),0.5295,3.9041,absorber,ml_plus_family_prior
+Cs2AgGaCl6,0.8793,3.934,absorber,ml_plus_family_prior
+Cs2AgGaCl6 (cubic),0.9376,3.9431,absorber,ml_plus_family_prior
+Cs2AgGaCl6 (orthorhombic),0.8793,3.934,absorber,ml_plus_family_prior
+Cs2AgGaI6,0.5187,3.8796,absorber,ml_plus_family_prior
+Cs2AgGaI6 (orthorhombic),0.5187,3.8796,absorber,ml_plus_family_prior
+Cs2AgInBr6,0.3022,3.8481,absorber,ml_plus_family_prior
+Cs2AgInBr6 (cubic),0.1818,3.8505,absorber,ml_plus_family_prior
+Cs2AgInBr6 (orthorhombic),0.3022,3.8481,absorber,ml_plus_family_prior
+Cs2AgInCl6,1.007,3.813,absorber,ml_plus_family_prior
+Cs2AgInCl6 (cubic),1.0098,3.813,absorber,ml_plus_family_prior
+Cs2AgInCl6 (orthorhombic),1.007,3.813,absorber,ml_plus_family_prior
+Cs2AgInI6,0.4092,3.8235,absorber,ml_plus_family_prior
+Cs2AgInI6 (orthorhombic),0.4092,3.8235,absorber,ml_plus_family_prior
+Cs2AgSbBr6,0.8555,3.8965,absorber,ml_plus_family_prior
+Cs2AgSbBr6 (cubic),0.8519,3.8965,absorber,ml_plus_family_prior
+Cs2AgSbBr6 (orthorhombic),0.8555,3.8965,absorber,ml_plus_family_prior
+Cs2AgSbCl6,1.3456,3.9019,absorber,ml_plus_family_prior
+Cs2AgSbCl6 (cubic),1.3481,3.9019,absorber,ml_plus_family_prior
+Cs2AgSbCl6 (orthorhombic),1.3456,3.9019,absorber,ml_plus_family_prior
+Cs2AgSbI6,0.5516,3.888,absorber,ml_plus_family_prior
+Cs2AgSbI6 (cubic),0.3495,3.8868,absorber,ml_plus_family_prior
+Cs2AgSbI6 (orthorhombic),0.5516,3.888,absorber,ml_plus_family_prior
+Cs2AuAlBr6,2.2396,3.6615,absorber,ml_plus_family_prior
+Cs2AuAlBr6 (orthorhombic),2.2396,3.6615,absorber,ml_plus_family_prior
+Cs2AuAlCl6,3.0945,3.5287,absorber,ml_plus_family_prior
+Cs2AuAlCl6 (cubic),0.3603,3.8193,absorber,ml_plus_family_prior
+Cs2AuAlCl6 (orthorhombic),3.0945,3.5287,absorber,ml_plus_family_prior
+Cs2AuAlI6,1.7988,3.6708,absorber,ml_plus_family_prior
+Cs2AuAlI6 (orthorhombic),1.7988,3.6708,absorber,ml_plus_family_prior
+Cs2AuAsCl6,0.0619,3.9862,absorber,ml_plus_family_prior
+Cs2AuAsCl6 (cubic),0.0619,3.9862,absorber,ml_plus_family_prior
+Cs2AuBiBr6,0.1715,3.947,absorber,ml_plus_family_prior
+Cs2AuBiBr6 (cubic),0.1284,3.947,absorber,ml_plus_family_prior
+Cs2AuBiBr6 (orthorhombic),0.1715,3.947,absorber,ml_plus_family_prior
+Cs2AuBiCl6,0.3403,3.9875,absorber,ml_plus_family_prior
+Cs2AuBiCl6 (cubic),0.4324,3.9887,absorber,ml_plus_family_prior
+Cs2AuBiCl6 (orthorhombic),0.3403,3.9875,absorber,ml_plus_family_prior
+Cs2AuBiI6,0.0997,3.9224,absorber,ml_plus_family_prior
+Cs2AuBiI6 (orthorhombic),0.0997,3.9224,absorber,ml_plus_family_prior
+Cs2AuGaBr6,1.2103,3.8487,absorber,ml_plus_family_prior
+Cs2AuGaBr6 (orthorhombic),1.2103,3.8487,absorber,ml_plus_family_prior
+Cs2AuGaCl6,1.6446,3.8962,absorber,ml_plus_family_prior
+Cs2AuGaCl6 (orthorhombic),1.6446,3.8962,absorber,ml_plus_family_prior
+Cs2AuGaI6,0.711,3.8899,absorber,ml_plus_family_prior
+Cs2AuGaI6 (orthorhombic),0.711,3.8899,absorber,ml_plus_family_prior
+Cs2AuInBr6,1.2281,3.8097,absorber,ml_plus_family_prior
+Cs2AuInBr6 (orthorhombic),1.2281,3.8097,absorber,ml_plus_family_prior
+Cs2AuInCl6,1.4335,3.8764,absorber,ml_plus_family_prior
+Cs2AuInCl6 (orthorhombic),1.4335,3.8764,absorber,ml_plus_family_prior
+Cs2AuInI6,0.7908,3.8256,absorber,ml_plus_family_prior
+Cs2AuInI6 (orthorhombic),0.7908,3.8256,absorber,ml_plus_family_prior
+Cs2AuSbCl6,0.1614,3.9609,absorber,ml_plus_family_prior
+Cs2AuSbCl6 (cubic),0.1614,3.9609,absorber,ml_plus_family_prior
+Cs2CuAlBr6,1.5463,3.6938,absorber,ml_plus_family_prior
+Cs2CuAlBr6 (orthorhombic),1.5463,3.6938,absorber,ml_plus_family_prior
+Cs2CuAlCl6,1.8101,3.7282,absorber,ml_plus_family_prior
+Cs2CuAlCl6 (cubic),0.6212,3.8056,absorber,ml_plus_family_prior
+Cs2CuAlCl6 (orthorhombic),1.8101,3.7282,absorber,ml_plus_family_prior
+Cs2CuAlI6,1.1815,3.6686,absorber,ml_plus_family_prior
+Cs2CuAlI6 (orthorhombic),1.1815,3.6686,absorber,ml_plus_family_prior
+Cs2CuAsBr6,0.201,3.9242,absorber,ml_plus_family_prior
+Cs2CuAsBr6 (cubic),0.2252,3.9242,absorber,ml_plus_family_prior
+Cs2CuAsBr6 (orthorhombic),0.201,3.9242,absorber,ml_plus_family_prior
+Cs2CuAsCl6,0.3624,3.9665,absorber,ml_plus_family_prior
+Cs2CuAsCl6 (cubic),0.5367,3.9678,absorber,ml_plus_family_prior
+Cs2CuAsCl6 (orthorhombic),0.3624,3.9665,absorber,ml_plus_family_prior
+Cs2CuBiBr6,0.5429,3.9283,absorber,ml_plus_family_prior
+Cs2CuBiBr6 (cubic),0.5649,3.9283,absorber,ml_plus_family_prior
+Cs2CuBiBr6 (orthorhombic),0.5429,3.9283,absorber,ml_plus_family_prior
+Cs2CuBiCl6,0.671,3.9852,absorber,ml_plus_family_prior
+Cs2CuBiCl6 (cubic),0.7609,3.9808,absorber,ml_plus_family_prior
+Cs2CuBiCl6 (orthorhombic),0.671,3.9852,absorber,ml_plus_family_prior
+Cs2CuBiI6,0.4616,3.9026,absorber,ml_plus_family_prior
+Cs2CuBiI6 (cubic),0.2847,3.9033,absorber,ml_plus_family_prior
+Cs2CuBiI6 (orthorhombic),0.4616,3.9026,absorber,ml_plus_family_prior
+Cs2CuGaBr6,0.7958,3.8921,absorber,ml_plus_family_prior
+Cs2CuGaBr6 (orthorhombic),0.7958,3.8921,absorber,ml_plus_family_prior
+Cs2CuGaCl6,1.0981,3.8683,absorber,ml_plus_family_prior
+Cs2CuGaCl6 (orthorhombic),1.0981,3.8683,absorber,ml_plus_family_prior
+Cs2CuGaI6,0.5666,3.863,absorber,ml_plus_family_prior
+Cs2CuGaI6 (orthorhombic),0.5666,3.863,absorber,ml_plus_family_prior
+Cs2CuInBr6,0.4291,3.8323,absorber,ml_plus_family_prior
+Cs2CuInBr6 (orthorhombic),0.4291,3.8323,absorber,ml_plus_family_prior
+Cs2CuInCl6,0.501,3.8813,absorber,ml_plus_family_prior
+Cs2CuInCl6 (orthorhombic),0.501,3.8813,absorber,ml_plus_family_prior
+Cs2CuInI6,0.6155,3.7976,absorber,ml_plus_family_prior
+Cs2CuInI6 (orthorhombic),0.6155,3.7976,absorber,ml_plus_family_prior
+Cs2CuSbBr6,0.3218,3.8981,absorber,ml_plus_family_prior
+Cs2CuSbBr6 (cubic),0.3254,3.8981,absorber,ml_plus_family_prior
+Cs2CuSbBr6 (orthorhombic),0.3218,3.8981,absorber,ml_plus_family_prior
+Cs2CuSbCl6,0.5323,3.9429,absorber,ml_plus_family_prior
+Cs2CuSbCl6 (cubic),0.6478,3.9366,absorber,ml_plus_family_prior
+Cs2CuSbCl6 (orthorhombic),0.5323,3.9429,absorber,ml_plus_family_prior
+Cs2CuSbI6,0.2081,3.8747,absorber,ml_plus_family_prior
+Cs2CuSbI6 (orthorhombic),0.2081,3.8747,absorber,ml_plus_family_prior
+Cs2InAlBr6,2.0668,3.6313,absorber,ml_plus_family_prior
+Cs2InAlBr6 (cubic),1.9981,3.651,absorber,ml_plus_family_prior
+Cs2InAlBr6 (orthorhombic),2.0668,3.6313,absorber,ml_plus_family_prior
+Cs2InAlCl6,2.9825,3.5281,absorber,ml_plus_family_prior
+Cs2InAlCl6 (cubic),2.9697,3.5282,absorber,ml_plus_family_prior
+Cs2InAlCl6 (orthorhombic),2.9825,3.5281,absorber,ml_plus_family_prior
+Cs2InAlI6,1.0898,3.6138,absorber,ml_plus_family_prior
+Cs2InAlI6 (cubic),0.9201,3.6718,absorber,ml_plus_family_prior
+Cs2InAlI6 (orthorhombic),1.0898,3.6138,absorber,ml_plus_family_prior
+Cs2InAsBr6,0.1509,3.8415,absorber,ml_plus_family_prior
+Cs2InAsBr6 (cubic),0.1267,3.8415,absorber,ml_plus_family_prior
+Cs2InAsBr6 (orthorhombic),0.1509,3.8415,absorber,ml_plus_family_prior
+Cs2InAsCl6,0.6284,3.8792,absorber,ml_plus_family_prior
+Cs2InAsCl6 (cubic),0.6019,3.8804,absorber,ml_plus_family_prior
+Cs2InAsCl6 (orthorhombic),0.6284,3.8792,absorber,ml_plus_family_prior
+Cs2InAsI6,0.1046,3.8175,absorber,ml_plus_family_prior
+Cs2InAsI6 (cubic),0.1046,3.8175,absorber,ml_plus_family_prior
+Cs2InBiBr6,0.6112,3.8378,absorber,ml_plus_family_prior
+Cs2InBiBr6 (orthorhombic),0.6112,3.8378,absorber,ml_plus_family_prior
+Cs2InBiCl6,1.081,3.8359,absorber,ml_plus_family_prior
+Cs2InBiCl6 (cubic),0.4401,3.8965,absorber,ml_plus_family_prior
+Cs2InBiCl6 (orthorhombic),1.081,3.8359,absorber,ml_plus_family_prior
+Cs2InBiI6,0.2795,3.8241,absorber,ml_plus_family_prior
+Cs2InBiI6 (cubic),0.2804,3.8241,absorber,ml_plus_family_prior
+Cs2InBiI6 (orthorhombic),0.2795,3.8241,absorber,ml_plus_family_prior
+Cs2InGaBr6,0.6177,3.8157,absorber,ml_plus_family_prior
+Cs2InGaBr6 (cubic),1.016,3.7458,absorber,ml_plus_family_prior
+Cs2InGaBr6 (orthorhombic),0.6177,3.8157,absorber,ml_plus_family_prior
+Cs2InGaCl6,1.5679,3.8473,absorber,ml_plus_family_prior
+Cs2InGaCl6 (cubic),1.7994,3.8406,absorber,ml_plus_family_prior
+Cs2InGaCl6 (orthorhombic),1.5679,3.8473,absorber,ml_plus_family_prior
+Cs2InGaI6,0.4448,3.8014,absorber,ml_plus_family_prior
+Cs2InGaI6 (cubic),0.2606,3.8044,absorber,ml_plus_family_prior
+Cs2InGaI6 (orthorhombic),0.4448,3.8014,absorber,ml_plus_family_prior
+Cs2InInBr6,1.0754,3.7913,absorber,ml_plus_family_prior
+Cs2InInBr6 (cubic),0.8082,3.8475,absorber,ml_plus_family_prior
+Cs2InInBr6 (orthorhombic),1.0754,3.7913,absorber,ml_plus_family_prior
+Cs2InInCl6,1.8437,3.8587,absorber,ml_plus_family_prior
+Cs2InInCl6 (cubic),1.5767,3.8736,absorber,ml_plus_family_prior
+Cs2InInCl6 (orthorhombic),1.8437,3.8587,absorber,ml_plus_family_prior
+Cs2InInI6,0.3965,3.8224,absorber,ml_plus_family_prior
+Cs2InInI6 (orthorhombic),0.3965,3.8224,absorber,ml_plus_family_prior
+Cs2InSbBr6,0.5839,3.8287,absorber,ml_plus_family_prior
+Cs2InSbBr6 (cubic),0.087,3.8369,absorber,ml_plus_family_prior
+Cs2InSbBr6 (orthorhombic),0.5839,3.8287,absorber,ml_plus_family_prior
+Cs2InSbCl6,1.0928,3.8135,absorber,ml_plus_family_prior
+Cs2InSbCl6 (cubic),0.5387,3.8829,absorber,ml_plus_family_prior
+Cs2InSbCl6 (orthorhombic),1.0928,3.8135,absorber,ml_plus_family_prior
+Cs2InSbI6,0.304,3.8104,absorber,ml_plus_family_prior
+Cs2InSbI6 (cubic),0.1914,3.8129,absorber,ml_plus_family_prior
+Cs2InSbI6 (orthorhombic),0.304,3.8104,absorber,ml_plus_family_prior
+Cs2TlAlBr6,2.5708,3.5968,absorber,ml_plus_family_prior
+Cs2TlAlBr6 (cubic),2.6282,3.6389,absorber,ml_plus_family_prior
+Cs2TlAlBr6 (orthorhombic),2.5708,3.5968,absorber,ml_plus_family_prior
+Cs2TlAlCl6,3.6166,3.4618,absorber,ml_plus_family_prior
+Cs2TlAlCl6 (cubic),3.6705,3.4595,absorber,ml_plus_family_prior
+Cs2TlAlCl6 (orthorhombic),3.6166,3.4618,absorber,ml_plus_family_prior
+Cs2TlAlI6,1.4478,3.6828,absorber,ml_plus_family_prior
+Cs2TlAlI6 (cubic),1.3469,3.6832,absorber,ml_plus_family_prior
+Cs2TlAlI6 (orthorhombic),1.4478,3.6828,absorber,ml_plus_family_prior
+Cs2TlAsBr6,1.1689,3.8759,absorber,ml_plus_family_prior
+Cs2TlAsBr6 (cubic),0.8269,3.9244,absorber,ml_plus_family_prior
+Cs2TlAsBr6 (orthorhombic),1.1689,3.8759,absorber,ml_plus_family_prior
+Cs2TlAsCl6,1.588,3.9319,absorber,ml_plus_family_prior
+Cs2TlAsCl6 (cubic),1.26,3.9348,absorber,ml_plus_family_prior
+Cs2TlAsCl6 (orthorhombic),1.588,3.9319,absorber,ml_plus_family_prior
+Cs2TlAsI6,0.8489,3.8969,absorber,ml_plus_family_prior
+Cs2TlAsI6 (cubic),0.4876,3.912,absorber,ml_plus_family_prior
+Cs2TlAsI6 (orthorhombic),0.8489,3.8969,absorber,ml_plus_family_prior
+Cs2TlBiBr6,1.2606,3.9011,absorber,ml_plus_family_prior
+Cs2TlBiBr6 (cubic),0.6537,3.9414,absorber,ml_plus_family_prior
+Cs2TlBiBr6 (orthorhombic),1.2606,3.9011,absorber,ml_plus_family_prior
+Cs2TlBiCl6,1.7189,3.9367,absorber,ml_plus_family_prior
+Cs2TlBiCl6 (cubic),1.1018,3.9285,absorber,ml_plus_family_prior
+Cs2TlBiCl6 (orthorhombic),1.7189,3.9367,absorber,ml_plus_family_prior
+Cs2TlBiI6,0.8517,3.9044,absorber,ml_plus_family_prior
+Cs2TlBiI6 (cubic),0.2898,3.9197,absorber,ml_plus_family_prior
+Cs2TlBiI6 (orthorhombic),0.8517,3.9044,absorber,ml_plus_family_prior
+Cs2TlGaBr6,1.5515,3.8531,absorber,ml_plus_family_prior
+Cs2TlGaBr6 (cubic),1.4557,3.8574,absorber,ml_plus_family_prior
+Cs2TlGaBr6 (orthorhombic),1.5515,3.8531,absorber,ml_plus_family_prior
+Cs2TlGaCl6,2.4604,3.659,absorber,ml_plus_family_prior
+Cs2TlGaCl6 (cubic),2.4214,3.7569,absorber,ml_plus_family_prior
+Cs2TlGaCl6 (orthorhombic),2.4604,3.659,absorber,ml_plus_family_prior
+Cs2TlGaI6,0.636,3.8728,absorber,ml_plus_family_prior
+Cs2TlGaI6 (cubic),0.4918,3.8794,absorber,ml_plus_family_prior
+Cs2TlGaI6 (orthorhombic),0.636,3.8728,absorber,ml_plus_family_prior
+Cs2TlInBr6,1.8644,3.8162,absorber,ml_plus_family_prior
+Cs2TlInBr6 (cubic),1.6335,3.8304,absorber,ml_plus_family_prior
+Cs2TlInBr6 (orthorhombic),1.8644,3.8162,absorber,ml_plus_family_prior
+Cs2TlInCl6,2.6723,3.7873,absorber,ml_plus_family_prior
+Cs2TlInCl6 (cubic),2.4561,3.7562,absorber,ml_plus_family_prior
+Cs2TlInCl6 (orthorhombic),2.6723,3.7873,absorber,ml_plus_family_prior
+Cs2TlInI6,1.0243,3.7506,absorber,ml_plus_family_prior
+Cs2TlInI6 (cubic),0.7898,3.8256,absorber,ml_plus_family_prior
+Cs2TlInI6 (orthorhombic),1.0243,3.7506,absorber,ml_plus_family_prior
+Cs2TlSbBr6,1.2416,3.8595,absorber,ml_plus_family_prior
+Cs2TlSbBr6 (cubic),0.6989,3.9214,absorber,ml_plus_family_prior
+Cs2TlSbBr6 (orthorhombic),1.2416,3.8595,absorber,ml_plus_family_prior
+Cs2TlSbCl6,1.666,3.889,absorber,ml_plus_family_prior
+Cs2TlSbCl6 (cubic),1.12,3.8851,absorber,ml_plus_family_prior
+Cs2TlSbCl6 (orthorhombic),1.666,3.889,absorber,ml_plus_family_prior
+Cs2TlSbI6,0.9189,3.8715,absorber,ml_plus_family_prior
+Cs2TlSbI6 (cubic),0.3599,3.8868,absorber,ml_plus_family_prior
+Cs2TlSbI6 (orthorhombic),0.9189,3.8715,absorber,ml_plus_family_prior
+Cs3Sb2Br9,1.952,3.98,absorber,literature_SCAPS
+CsNbAgNbO6,3.33017012,3.7067,absorber,ml_plus_family_prior
+CsNbBaSnO6,4.222506347,3.6012,absorber,ml_plus_family_prior
+CsNbCaGeO6,3.77620684,3.6015,absorber,ml_plus_family_prior
+CsNbCaSiO6,3.244987246,3.6567,absorber,ml_plus_family_prior
+CsNbCaSnO6,4.0016578,3.5891,absorber,ml_plus_family_prior
+CsNbCaTiO6,3.781984576,3.5928,absorber,ml_plus_family_prior
+CsNbCsTaO6,3.431655002,3.6895,absorber,ml_plus_family_prior
+CsNbGaNbO6,1.568671522,3.8462,absorber,ml_plus_family_prior
+CsNbGaTaO6,1.689092986,3.847,absorber,ml_plus_family_prior
+CsNbInNbO6,0.772474049,3.8478,absorber,ml_plus_family_prior
+CsNbKNbO6,3.371381999,3.7114,absorber,ml_plus_family_prior
+CsNbKSbO6,3.252953266,3.6663,absorber,ml_plus_family_prior
+CsNbLaAlO6,3.970550913,3.5424,absorber,ml_plus_family_prior
+CsNbLaGaO6,4.445701186,3.5629,absorber,ml_plus_family_prior
+CsNbLaInO6,4.659075089,3.5667,absorber,ml_plus_family_prior
+CsNbLiNbO6,3.358618162,3.7062,absorber,ml_plus_family_prior
+CsNbMgTiO6,3.70530303,3.5761,absorber,ml_plus_family_prior
+CsNbMgZrO6,5.068744498,3.5542,absorber,ml_plus_family_prior
+CsNbNaNbO6,3.456134098,3.6876,absorber,ml_plus_family_prior
+CsNbNaSbO6,3.475302498,3.6868,absorber,ml_plus_family_prior
+CsNbPbHfO6,4.125761782,3.5812,absorber,ml_plus_family_prior
+CsNbPbTiO6,3.806622078,3.5971,absorber,ml_plus_family_prior
+CsNbPbZrO6,4.100090389,3.5844,absorber,ml_plus_family_prior
+CsNbRbNbO6,3.389681924,3.7036,absorber,ml_plus_family_prior
+CsNbSnHfO6,3.837245653,3.6275,absorber,ml_plus_family_prior
+CsNbSnTiO6,2.905831639,3.6717,absorber,ml_plus_family_prior
+CsNbSnZrO6,3.396033234,3.7115,absorber,ml_plus_family_prior
+CsNbSrGeO6,3.617636293,3.6013,absorber,ml_plus_family_prior
+CsNbSrSiO6,3.264936787,3.6815,absorber,ml_plus_family_prior
+CsNbSrSnO6,4.520872076,3.5935,absorber,ml_plus_family_prior
+CsNbSrTiO6,3.872904631,3.5936,absorber,ml_plus_family_prior
+CsNbTlNbO6,2.10377581,3.8175,absorber,ml_plus_family_prior
+CsNbYAlO6,3.724349822,3.565,absorber,ml_plus_family_prior
+CsPb0.625Zn0.375IBr2,1.05,4.27,absorber,literature_SCAPS
+CsPbBr2Cl,2.65,3.7444,absorber,ml_plus_family_prior
+CsPbBr2I,2.11,3.8069,absorber,ml_plus_family_prior
+CsPbBr3,2.36,3.8005,absorber,ml_plus_family_prior
+CsPbBrI2,1.92,3.839,absorber,ml_plus_family_prior
+CsPbCl2Br,2.74,3.7341,absorber,ml_plus_family_prior
+CsPbCl3,2.98,3.5565,absorber,ml_plus_family_prior
+CsPbClBr2,2.51,3.6907,absorber,ml_plus_family_prior
+CsPbI2Br,2.0,3.8431,absorber,ml_plus_family_prior
+CsPbI3,1.73,3.8408,absorber,ml_plus_family_prior
+CsTaAgNbO6,3.258149897,3.6688,absorber,ml_plus_family_prior
+CsTaAgTaO6,3.808143901,3.5967,absorber,ml_plus_family_prior
+CsTaBaSnO6,4.584905096,3.5935,absorber,ml_plus_family_prior
+CsTaBaTiO6,3.902959037,3.5937,absorber,ml_plus_family_prior
+CsTaCaGeO6,4.184887473,3.5788,absorber,ml_plus_family_prior
+CsTaCaHfO6,4.97375148,3.5617,absorber,ml_plus_family_prior
+CsTaCaSiO6,4.136175518,3.5724,absorber,ml_plus_family_prior
+CsTaCaSnO6,4.523695478,3.5938,absorber,ml_plus_family_prior
+CsTaCaTiO6,3.849509114,3.5927,absorber,ml_plus_family_prior
+CsTaCaZrO6,4.972347834,3.5638,absorber,ml_plus_family_prior
+CsTaCsVO6,2.139696775,3.807,absorber,ml_plus_family_prior
+CsTaGaNbO6,1.689655245,3.847,absorber,ml_plus_family_prior
+CsTaGaTaO6,2.162289219,3.7539,absorber,ml_plus_family_prior
+CsTaKNbO6,3.29564536,3.7061,absorber,ml_plus_family_prior
+CsTaKSbO6,3.598247689,3.5955,absorber,ml_plus_family_prior
+CsTaKTaO6,3.829263824,3.5971,absorber,ml_plus_family_prior
+CsTaLaAlO6,4.790851813,3.5436,absorber,ml_plus_family_prior
+CsTaLaGaO6,5.274671803,3.5556,absorber,ml_plus_family_prior
+CsTaLaInO6,5.039008801,3.5719,absorber,ml_plus_family_prior
+CsTaLaScO6,5.224512176,3.5615,absorber,ml_plus_family_prior
+CsTaLiNbO6,3.3951785,3.7003,absorber,ml_plus_family_prior
+CsTaLiTaO6,3.91261728,3.5967,absorber,ml_plus_family_prior
+CsTaLiVO6,2.351802857,3.8052,absorber,ml_plus_family_prior
+CsTaMgTiO6,3.791325966,3.5754,absorber,ml_plus_family_prior
+CsTaMgZrO6,5.85854129,3.519,absorber,ml_plus_family_prior
+CsTaNaNbO6,3.375315176,3.702,absorber,ml_plus_family_prior
+CsTaNaSbO6,3.85601142,3.596,absorber,ml_plus_family_prior
+CsTaNaTaO6,3.893347423,3.5967,absorber,ml_plus_family_prior
+CsTaNaVO6,2.0949465,3.8007,absorber,ml_plus_family_prior
+CsTaPbHfO6,4.840162189,3.5735,absorber,ml_plus_family_prior
+CsTaPbTiO6,3.441401642,3.6861,absorber,ml_plus_family_prior
+CsTaPbZrO6,4.867170086,3.5649,absorber,ml_plus_family_prior
+CsTaRbNbO6,3.239810056,3.665,absorber,ml_plus_family_prior
+CsTaRbTaO6,3.759439299,3.5961,absorber,ml_plus_family_prior
+CsTaSnHfO6,3.975569031,3.5908,absorber,ml_plus_family_prior
+CsTaSnTiO6,3.066637476,3.6617,absorber,ml_plus_family_prior
+CsTaSnZrO6,4.550292742,3.596,absorber,ml_plus_family_prior
+CsTaSrGeO6,3.981506845,3.5635,absorber,ml_plus_family_prior
+CsTaSrHfO6,5.048941056,3.5739,absorber,ml_plus_family_prior
+CsTaSrSiO6,4.170938456,3.5716,absorber,ml_plus_family_prior
+CsTaSrSnO6,4.909403889,3.588,absorber,ml_plus_family_prior
+CsTaSrTiO6,3.506011227,3.6858,absorber,ml_plus_family_prior
+CsTaSrZrO6,4.95376077,3.5625,absorber,ml_plus_family_prior
+CsTaTlNbO6,2.277721909,3.8324,absorber,ml_plus_family_prior
+CsTaTlTaO6,2.209663313,3.834,absorber,ml_plus_family_prior
+CsTaYAlO6,4.67918643,3.5434,absorber,ml_plus_family_prior
+CsVBaSnO6,2.072447249,3.8315,absorber,ml_plus_family_prior
+CsVCaGeO6,1.540581216,3.8797,absorber,ml_plus_family_prior
+CsVCaSiO6,1.083685684,3.8768,absorber,ml_plus_family_prior
+CsVCaSnO6,1.797516438,3.8826,absorber,ml_plus_family_prior
+CsVCaTiO6,2.424146688,3.8112,absorber,ml_plus_family_prior
+CsVGaNbO6,0.725860475,3.8959,absorber,ml_plus_family_prior
+CsVGaTaO6,0.427417209,3.8856,absorber,ml_plus_family_prior
+CsVKSbO6,1.53383603,3.8362,absorber,ml_plus_family_prior
+CsVLaAlO6,1.617153328,3.6989,absorber,ml_plus_family_prior
+CsVLaGaO6,1.929652967,3.7892,absorber,ml_plus_family_prior
+CsVLaInO6,2.385279742,3.7818,absorber,ml_plus_family_prior
+CsVLiVO6,1.676047872,3.8733,absorber,ml_plus_family_prior
+CsVMgZrO6,2.234714469,3.7664,absorber,ml_plus_family_prior
+CsVNaSbO6,1.663055524,3.8275,absorber,ml_plus_family_prior
+CsVNaVO6,1.695828684,3.8733,absorber,ml_plus_family_prior
+CsVPbTiO6,2.173707247,3.8304,absorber,ml_plus_family_prior
+CsVSnTiO6,1.531649409,3.9117,absorber,ml_plus_family_prior
+CsVSrGeO6,1.535642736,3.882,absorber,ml_plus_family_prior
+CsVSrSiO6,1.081372328,3.8768,absorber,ml_plus_family_prior
+CsVSrSnO6,2.126154005,3.821,absorber,ml_plus_family_prior
+CsVSrTiO6,2.402826221,3.8131,absorber,ml_plus_family_prior
+CsVTlTaO6,1.04242215,3.8473,absorber,ml_plus_family_prior
+CsVYAlO6,1.373149472,3.7045,absorber,ml_plus_family_prior
+Cu2Te,1.18,4.2,htl,literature_SCAPS
+CuAlO2,3.46,2.5,htl,literature_SCAPS
+CuI,3.1,2.1,htl,literature_SCAPS
+CuSCN,3.6,1.7,htl,literature_SCAPS
+D-PBTTT-14,2.16,3.2,htl,literature_SCAPS
+GaAs,1.42,4.07,htl,literature_SCAPS
+GaAs_b,1.88,3.76,monolayer,literature_HSE06_monolayer
+GaN,3.23,2.8000000000000003,monolayer,literature_HSE06_monolayer
+GaNbAgNbO6,1.455146082,3.8485,absorber,ml_plus_family_prior
+GaNbBaSnO6,3.13985473,3.6525,absorber,ml_plus_family_prior
+GaNbBaTiO6,1.844905752,3.8154,absorber,ml_plus_family_prior
+GaNbCaGeO6,2.128865476,3.7583,absorber,ml_plus_family_prior
+GaNbCaSiO6,1.379197283,3.8574,absorber,ml_plus_family_prior
+GaNbCaSnO6,1.843996924,3.8246,absorber,ml_plus_family_prior
+GaNbCaTiO6,1.464554512,3.8571,absorber,ml_plus_family_prior
+GaNbLaAlO6,2.126529305,3.5869,absorber,ml_plus_family_prior
+GaNbLaGaO6,2.674483127,3.7072,absorber,ml_plus_family_prior
+GaNbLaInO6,2.493512245,3.5872,absorber,ml_plus_family_prior
+GaNbLiNbO6,1.401236812,3.8499,absorber,ml_plus_family_prior
+GaNbMgTiO6,1.202758352,3.8393,absorber,ml_plus_family_prior
+GaNbMgZrO6,2.970601472,3.6143,absorber,ml_plus_family_prior
+GaNbNaNbO6,1.403098217,3.8499,absorber,ml_plus_family_prior
+GaNbNaSbO6,2.154979683,3.7139,absorber,ml_plus_family_prior
+GaNbPbTiO6,1.511721496,3.8595,absorber,ml_plus_family_prior
+GaNbSnTiO6,1.460795557,3.8853,absorber,ml_plus_family_prior
+GaNbSrGeO6,2.167031343,3.7672,absorber,ml_plus_family_prior
+GaNbSrSiO6,1.440511905,3.8564,absorber,ml_plus_family_prior
+GaNbSrSnO6,3.271136372,3.6903,absorber,ml_plus_family_prior
+GaNbSrTiO6,1.487434643,3.8571,absorber,ml_plus_family_prior
+GaNbYAlO6,1.671893478,3.6831,absorber,ml_plus_family_prior
+GaP_b,2.49,1.7999999999999998,monolayer,literature_HSE06_monolayer
+GaSb_b,1.13,3.24,monolayer,literature_HSE06_monolayer
+GaTaAgNbO6,1.784907466,3.8403,absorber,ml_plus_family_prior
+GaTaBaSnO6,3.486954934,3.6831,absorber,ml_plus_family_prior
+GaTaBaTiO6,1.851214389,3.8154,absorber,ml_plus_family_prior
+GaTaCaGeO6,2.921206721,3.6317,absorber,ml_plus_family_prior
+GaTaCaSiO6,2.257882411,3.7515,absorber,ml_plus_family_prior
+GaTaCaSnO6,2.563279251,3.6956,absorber,ml_plus_family_prior
+GaTaCaTiO6,1.842666325,3.8154,absorber,ml_plus_family_prior
+GaTaGaNbO6,1.453259658,3.8485,absorber,ml_plus_family_prior
+GaTaKNbO6,1.723389689,3.8449,absorber,ml_plus_family_prior
+GaTaKSbO6,2.325015967,3.6907,absorber,ml_plus_family_prior
+GaTaLaAlO6,2.910652372,3.5806,absorber,ml_plus_family_prior
+GaTaLaGaO6,3.453258672,3.6645,absorber,ml_plus_family_prior
+GaTaLaInO6,3.425265999,3.6737,absorber,ml_plus_family_prior
+GaTaLaScO6,3.262926712,3.6693,absorber,ml_plus_family_prior
+GaTaLiNbO6,1.730675149,3.8416,absorber,ml_plus_family_prior
+GaTaMgTiO6,2.177120432,3.7584,absorber,ml_plus_family_prior
+GaTaMgZrO6,3.255670251,3.639,absorber,ml_plus_family_prior
+GaTaNaNbO6,1.73072672,3.8416,absorber,ml_plus_family_prior
+GaTaNaSbO6,2.542490811,3.6496,absorber,ml_plus_family_prior
+GaTaPbTiO6,1.883185973,3.8145,absorber,ml_plus_family_prior
+GaTaPbZrO6,3.467447345,3.67,absorber,ml_plus_family_prior
+GaTaRbNbO6,1.714869864,3.8457,absorber,ml_plus_family_prior
+GaTaSnTiO6,1.835986128,3.8345,absorber,ml_plus_family_prior
+GaTaSrGeO6,2.733559859,3.7247,absorber,ml_plus_family_prior
+GaTaSrSiO6,2.327024022,3.7303,absorber,ml_plus_family_prior
+GaTaSrSnO6,3.714192995,3.6141,absorber,ml_plus_family_prior
+GaTaSrTiO6,1.855608911,3.8154,absorber,ml_plus_family_prior
+GaTaTlNbO6,1.474651584,3.8481,absorber,ml_plus_family_prior
+GaTaTlTaO6,1.966914479,3.8001,absorber,ml_plus_family_prior
+GaTaYAlO6,2.555522585,3.5716,absorber,ml_plus_family_prior
+GeC,2.91,2.34,monolayer,literature_HSE06_monolayer
+GeSn_b,0.46,4.07,monolayer,literature_HSE06_monolayer
+GeTiAgNbO6,2.840460427,3.759,absorber,ml_plus_family_prior
+GeTiAgTaO6,3.419571663,3.7013,absorber,ml_plus_family_prior
+GeTiBaHfO6,4.160952852,3.5793,absorber,ml_plus_family_prior
+GeTiBaSnO6,3.552575952,3.6307,absorber,ml_plus_family_prior
+GeTiBaTiO6,3.190106777,3.6577,absorber,ml_plus_family_prior
+GeTiBaZrO6,4.148723815,3.5819,absorber,ml_plus_family_prior
+GeTiCaGeO6,3.248836082,3.6754,absorber,ml_plus_family_prior
+GeTiCaHfO6,3.885293853,3.5994,absorber,ml_plus_family_prior
+GeTiCaSiO6,3.563046045,3.5932,absorber,ml_plus_family_prior
+GeTiCaSnO6,3.331224808,3.7263,absorber,ml_plus_family_prior
+GeTiCaTiO6,3.007996942,3.6421,absorber,ml_plus_family_prior
+GeTiCaZrO6,3.893225008,3.6015,absorber,ml_plus_family_prior
+GeTiCsNbO6,3.02429532,3.6422,absorber,ml_plus_family_prior
+GeTiCsTaO6,3.254019469,3.6744,absorber,ml_plus_family_prior
+GeTiCsVO6,1.834517323,3.864,absorber,ml_plus_family_prior
+GeTiGaNbO6,1.797455269,3.8535,absorber,ml_plus_family_prior
+GeTiGaTaO6,2.269047123,3.768,absorber,ml_plus_family_prior
+GeTiInNbO6,0.989026589,3.7882,absorber,ml_plus_family_prior
+GeTiInTaO6,1.143574754,3.8038,absorber,ml_plus_family_prior
+GeTiKNbO6,2.948122057,3.6546,absorber,ml_plus_family_prior
+GeTiKSbO6,3.049450929,3.645,absorber,ml_plus_family_prior
+GeTiKTaO6,3.408221117,3.7051,absorber,ml_plus_family_prior
+GeTiLaAlO6,4.01895421,3.5353,absorber,ml_plus_family_prior
+GeTiLaGaO6,3.822508306,3.5869,absorber,ml_plus_family_prior
+GeTiLaInO6,3.725860364,3.5951,absorber,ml_plus_family_prior
+GeTiLaScO6,4.188933802,3.5764,absorber,ml_plus_family_prior
+GeTiLiNbO6,2.90126163,3.6619,absorber,ml_plus_family_prior
+GeTiLiTaO6,3.43696678,3.6909,absorber,ml_plus_family_prior
+GeTiLiVO6,1.430327721,3.8938,absorber,ml_plus_family_prior
+GeTiMgTiO6,3.188325122,3.6475,absorber,ml_plus_family_prior
+GeTiMgZrO6,3.893705018,3.5827,absorber,ml_plus_family_prior
+GeTiNaNbO6,2.767900919,3.8512,absorber,ml_plus_family_prior
+GeTiNaSbO6,3.04215647,3.6434,absorber,ml_plus_family_prior
+GeTiNaTaO6,3.398923557,3.7051,absorber,ml_plus_family_prior
+GeTiNaVO6,1.463812125,3.8936,absorber,ml_plus_family_prior
+GeTiPbHfO6,4.156892394,3.5814,absorber,ml_plus_family_prior
+GeTiPbTiO6,3.584303518,3.6007,absorber,ml_plus_family_prior
+GeTiPbZrO6,4.235235964,3.5808,absorber,ml_plus_family_prior
+GeTiRbNbO6,2.910860625,3.6578,absorber,ml_plus_family_prior
+GeTiRbTaO6,3.33362419,3.7123,absorber,ml_plus_family_prior
+GeTiSnHfO6,3.861168711,3.6305,absorber,ml_plus_family_prior
+GeTiSnTiO6,2.741981864,3.8777,absorber,ml_plus_family_prior
+GeTiSnZrO6,3.576358601,3.6344,absorber,ml_plus_family_prior
+GeTiSrGeO6,3.339568708,3.7145,absorber,ml_plus_family_prior
+GeTiSrHfO6,4.184483885,3.5773,absorber,ml_plus_family_prior
+GeTiSrSiO6,3.520429543,3.6863,absorber,ml_plus_family_prior
+GeTiSrSnO6,3.597625931,3.6302,absorber,ml_plus_family_prior
+GeTiSrTiO6,3.093917255,3.6535,absorber,ml_plus_family_prior
+GeTiSrZrO6,4.125636681,3.5819,absorber,ml_plus_family_prior
+GeTiTlNbO6,2.289670031,3.8541,absorber,ml_plus_family_prior
+GeTiTlTaO6,2.508634061,3.804,absorber,ml_plus_family_prior
+GeTiYAlO6,3.701089196,3.5661,absorber,ml_plus_family_prior
+HC(NH2)2PbBr3,2.23,3.7725,absorber,ml_plus_family_prior
+HC(NH2)2PbI3,1.48,3.7992,absorber,ml_plus_family_prior
+HfS3,1.87,2.7199999999999998,monolayer,literature_HSE06_monolayer
+HfSe3,0.98,3.32,monolayer,literature_HSE06_monolayer
+InAs_b,1.04,3.05,monolayer,literature_HSE06_monolayer
+InN,1.35,3.7600000000000002,monolayer,literature_HSE06_monolayer
+InNbBaSnO6,1.66922478,3.8526,absorber,ml_plus_family_prior
+InNbCaGeO6,0.796683747,3.8568,absorber,ml_plus_family_prior
+InNbCaSnO6,1.90683703,3.83,absorber,ml_plus_family_prior
+InNbGaNbO6,0.128888784,3.8246,absorber,ml_plus_family_prior
+InNbLaAlO6,0.82273265,3.7021,absorber,ml_plus_family_prior
+InNbLaGaO6,1.15967416,3.7549,absorber,ml_plus_family_prior
+InNbLaInO6,1.745350249,3.8218,absorber,ml_plus_family_prior
+InNbLiNbO6,0.292528091,3.8438,absorber,ml_plus_family_prior
+InNbMgTiO6,1.151989547,3.7877,absorber,ml_plus_family_prior
+InNbMgZrO6,1.268264192,3.7886,absorber,ml_plus_family_prior
+InNbNaNbO6,0.10662043,3.8463,absorber,ml_plus_family_prior
+InNbNaSbO6,0.574152511,3.8244,absorber,ml_plus_family_prior
+InNbSrGeO6,0.781410482,3.8584,absorber,ml_plus_family_prior
+InNbSrSnO6,1.823241323,3.8433,absorber,ml_plus_family_prior
+InNbYAlO6,0.63471935,3.7056,absorber,ml_plus_family_prior
+InP_b,1.16,3.2,monolayer,literature_HSE06_monolayer
+InSb_b,0.97,3.12,monolayer,literature_HSE06_monolayer
+InTaBaSnO6,1.909782068,3.8308,absorber,ml_plus_family_prior
+InTaCaGeO6,1.127620733,3.7909,absorber,ml_plus_family_prior
+InTaCaSnO6,1.237723535,3.837,absorber,ml_plus_family_prior
+InTaLaAlO6,1.498605746,3.6643,absorber,ml_plus_family_prior
+InTaLaInO6,2.261798705,3.8038,absorber,ml_plus_family_prior
+InTaLaScO6,2.234428288,3.8039,absorber,ml_plus_family_prior
+InTaNaSbO6,0.818105099,3.8176,absorber,ml_plus_family_prior
+InTaPbHfO6,2.199561857,3.8218,absorber,ml_plus_family_prior
+InTaPbZrO6,2.166244692,3.7737,absorber,ml_plus_family_prior
+InTaSnHfO6,2.150852251,3.8379,absorber,ml_plus_family_prior
+InTaSnZrO6,2.123350206,3.7779,absorber,ml_plus_family_prior
+InTaSrSiO6,0.823857766,3.8508,absorber,ml_plus_family_prior
+InTaSrSnO6,2.094100616,3.8082,absorber,ml_plus_family_prior
+InTaYAlO6,1.302498436,3.6641,absorber,ml_plus_family_prior
+K2AgAlBr6,1.8055,3.6923,absorber,ml_plus_family_prior
+K2AgAlBr6 (cubic),1.0488,3.7012,absorber,ml_plus_family_prior
+K2AgAlBr6 (orthorhombic),1.8055,3.6923,absorber,ml_plus_family_prior
+K2AgAlCl6,2.5992,3.6355,absorber,ml_plus_family_prior
+K2AgAlCl6 (cubic),2.1587,3.6827,absorber,ml_plus_family_prior
+K2AgAlCl6 (orthorhombic),2.5992,3.6355,absorber,ml_plus_family_prior
+K2AgAlI6,1.0595,3.6749,absorber,ml_plus_family_prior
+K2AgAlI6 (orthorhombic),1.0595,3.6749,absorber,ml_plus_family_prior
+K2AgAsBr6,1.2224,3.8848,absorber,ml_plus_family_prior
+K2AgAsBr6 (cubic),0.7009,3.9466,absorber,ml_plus_family_prior
+K2AgAsBr6 (orthorhombic),1.2224,3.8848,absorber,ml_plus_family_prior
+K2AgAsCl6,1.6011,3.9304,absorber,ml_plus_family_prior
+K2AgAsCl6 (cubic),1.1805,3.9246,absorber,ml_plus_family_prior
+K2AgAsCl6 (orthorhombic),1.6011,3.9304,absorber,ml_plus_family_prior
+K2AgAsI6,0.8718,3.895,absorber,ml_plus_family_prior
+K2AgAsI6 (cubic),0.204,3.9134,absorber,ml_plus_family_prior
+K2AgAsI6 (orthorhombic),0.8718,3.895,absorber,ml_plus_family_prior
+K2AgBiBr6,1.4152,3.9002,absorber,ml_plus_family_prior
+K2AgBiBr6 (cubic),1.1002,3.8849,absorber,ml_plus_family_prior
+K2AgBiBr6 (orthorhombic),1.4152,3.9002,absorber,ml_plus_family_prior
+K2AgBiCl6,1.7561,3.9289,absorber,ml_plus_family_prior
+K2AgBiCl6 (cubic),1.5173,3.9384,absorber,ml_plus_family_prior
+K2AgBiCl6 (orthorhombic),1.7561,3.9289,absorber,ml_plus_family_prior
+K2AgBiI6,1.0267,3.8474,absorber,ml_plus_family_prior
+K2AgBiI6 (cubic),0.6179,3.9074,absorber,ml_plus_family_prior
+K2AgBiI6 (orthorhombic),1.0267,3.8474,absorber,ml_plus_family_prior
+K2AgGaBr6,0.8539,3.8858,absorber,ml_plus_family_prior
+K2AgGaBr6 (orthorhombic),0.8539,3.8858,absorber,ml_plus_family_prior
+K2AgGaCl6,1.4588,3.8982,absorber,ml_plus_family_prior
+K2AgGaCl6 (cubic),0.8293,3.9377,absorber,ml_plus_family_prior
+K2AgGaCl6 (orthorhombic),1.4588,3.8982,absorber,ml_plus_family_prior
+K2AgGaI6,0.5749,3.8721,absorber,ml_plus_family_prior
+K2AgGaI6 (orthorhombic),0.5749,3.8721,absorber,ml_plus_family_prior
+K2AgInBr6,1.0475,3.7854,absorber,ml_plus_family_prior
+K2AgInBr6 (cubic),0.131,3.8496,absorber,ml_plus_family_prior
+K2AgInBr6 (orthorhombic),1.0475,3.7854,absorber,ml_plus_family_prior
+K2AgInCl6,1.5675,3.8721,absorber,ml_plus_family_prior
+K2AgInCl6 (cubic),0.9338,3.8871,absorber,ml_plus_family_prior
+K2AgInCl6 (orthorhombic),1.5675,3.8721,absorber,ml_plus_family_prior
+K2AgInI6,0.6171,3.8127,absorber,ml_plus_family_prior
+K2AgInI6 (orthorhombic),0.6171,3.8127,absorber,ml_plus_family_prior
+K2AgSbBr6,1.3449,3.8587,absorber,ml_plus_family_prior
+K2AgSbBr6 (cubic),0.7905,3.9101,absorber,ml_plus_family_prior
+K2AgSbBr6 (orthorhombic),1.3449,3.8587,absorber,ml_plus_family_prior
+K2AgSbCl6,1.7291,3.8847,absorber,ml_plus_family_prior
+K2AgSbCl6 (cubic),1.277,3.8985,absorber,ml_plus_family_prior
+K2AgSbCl6 (orthorhombic),1.7291,3.8847,absorber,ml_plus_family_prior
+K2AgSbI6,0.9636,3.8108,absorber,ml_plus_family_prior
+K2AgSbI6 (cubic),0.2952,3.8853,absorber,ml_plus_family_prior
+K2AgSbI6 (orthorhombic),0.9636,3.8108,absorber,ml_plus_family_prior
+K2AuAlBr6,2.1912,3.6443,absorber,ml_plus_family_prior
+K2AuAlBr6 (orthorhombic),2.1912,3.6443,absorber,ml_plus_family_prior
+K2AuAlCl6,2.6579,3.6763,absorber,ml_plus_family_prior
+K2AuAlCl6 (cubic),0.3487,3.8178,absorber,ml_plus_family_prior
+K2AuAlCl6 (orthorhombic),2.6579,3.6763,absorber,ml_plus_family_prior
+K2AuAlI6,1.7916,3.6702,absorber,ml_plus_family_prior
+K2AuAlI6 (orthorhombic),1.7916,3.6702,absorber,ml_plus_family_prior
+K2AuAsBr6,1.9325,3.8638,absorber,ml_plus_family_prior
+K2AuAsBr6 (orthorhombic),1.9325,3.8638,absorber,ml_plus_family_prior
+K2AuAsCl6,2.0922,3.8633,absorber,ml_plus_family_prior
+K2AuAsCl6 (orthorhombic),2.0922,3.8633,absorber,ml_plus_family_prior
+K2AuAsI6,1.5857,3.8671,absorber,ml_plus_family_prior
+K2AuAsI6 (orthorhombic),1.5857,3.8671,absorber,ml_plus_family_prior
+K2AuBiBr6,2.0364,3.8524,absorber,ml_plus_family_prior
+K2AuBiBr6 (cubic),0.0912,3.9454,absorber,ml_plus_family_prior
+K2AuBiBr6 (orthorhombic),2.0364,3.8524,absorber,ml_plus_family_prior
+K2AuBiCl6,2.2396,3.8779,absorber,ml_plus_family_prior
+K2AuBiCl6 (cubic),0.3961,3.9859,absorber,ml_plus_family_prior
+K2AuBiCl6 (orthorhombic),2.2396,3.8779,absorber,ml_plus_family_prior
+K2AuBiI6,0.0997,3.9205,absorber,ml_plus_family_prior
+K2AuBiI6 (orthorhombic),0.0997,3.9205,absorber,ml_plus_family_prior
+K2AuGaBr6,1.4898,3.8547,absorber,ml_plus_family_prior
+K2AuGaBr6 (orthorhombic),1.4898,3.8547,absorber,ml_plus_family_prior
+K2AuGaCl6,2.0261,3.8335,absorber,ml_plus_family_prior
+K2AuGaCl6 (orthorhombic),2.0261,3.8335,absorber,ml_plus_family_prior
+K2AuGaI6,0.707,3.888,absorber,ml_plus_family_prior
+K2AuGaI6 (orthorhombic),0.707,3.888,absorber,ml_plus_family_prior
+K2AuInBr6,1.3315,3.8301,absorber,ml_plus_family_prior
+K2AuInBr6 (orthorhombic),1.3315,3.8301,absorber,ml_plus_family_prior
+K2AuInCl6,1.8298,3.8554,absorber,ml_plus_family_prior
+K2AuInCl6 (orthorhombic),1.8298,3.8554,absorber,ml_plus_family_prior
+K2AuInI6,0.8704,3.8074,absorber,ml_plus_family_prior
+K2AuInI6 (orthorhombic),0.8704,3.8074,absorber,ml_plus_family_prior
+K2AuSbBr6,1.8013,3.8378,absorber,ml_plus_family_prior
+K2AuSbBr6 (orthorhombic),1.8013,3.8378,absorber,ml_plus_family_prior
+K2AuSbCl6,2.1145,3.8114,absorber,ml_plus_family_prior
+K2AuSbCl6 (cubic),0.105,3.9581,absorber,ml_plus_family_prior
+K2AuSbCl6 (orthorhombic),2.1145,3.8114,absorber,ml_plus_family_prior
+K2AuSbI6,1.6469,3.8314,absorber,ml_plus_family_prior
+K2AuSbI6 (orthorhombic),1.6469,3.8314,absorber,ml_plus_family_prior
+K2CuAlBr6,1.3813,3.7,absorber,ml_plus_family_prior
+K2CuAlBr6 (orthorhombic),1.3813,3.7,absorber,ml_plus_family_prior
+K2CuAlCl6,1.2013,3.736,absorber,ml_plus_family_prior
+K2CuAlCl6 (cubic),0.6905,3.82,absorber,ml_plus_family_prior
+K2CuAlCl6 (orthorhombic),1.2013,3.736,absorber,ml_plus_family_prior
+K2CuAlI6,1.3283,3.6724,absorber,ml_plus_family_prior
+K2CuAlI6 (orthorhombic),1.3283,3.6724,absorber,ml_plus_family_prior
+K2CuAsBr6,0.5174,3.9199,absorber,ml_plus_family_prior
+K2CuAsBr6 (cubic),0.1748,3.9226,absorber,ml_plus_family_prior
+K2CuAsBr6 (orthorhombic),0.5174,3.9199,absorber,ml_plus_family_prior
+K2CuAsCl6,0.6427,3.9593,absorber,ml_plus_family_prior
+K2CuAsCl6 (cubic),0.5018,3.9661,absorber,ml_plus_family_prior
+K2CuAsCl6 (orthorhombic),0.6427,3.9593,absorber,ml_plus_family_prior
+K2CuAsI6,0.4083,3.8936,absorber,ml_plus_family_prior
+K2CuAsI6 (orthorhombic),0.4083,3.8936,absorber,ml_plus_family_prior
+K2CuBiBr6,0.8057,3.9288,absorber,ml_plus_family_prior
+K2CuBiBr6 (cubic),0.5536,3.9268,absorber,ml_plus_family_prior
+K2CuBiBr6 (orthorhombic),0.8057,3.9288,absorber,ml_plus_family_prior
+K2CuBiCl6,1.1863,3.9128,absorber,ml_plus_family_prior
+K2CuBiCl6 (cubic),0.7442,3.9817,absorber,ml_plus_family_prior
+K2CuBiCl6 (orthorhombic),1.1863,3.9128,absorber,ml_plus_family_prior
+K2CuBiI6,0.6416,3.8941,absorber,ml_plus_family_prior
+K2CuBiI6 (cubic),0.2537,3.9036,absorber,ml_plus_family_prior
+K2CuBiI6 (orthorhombic),0.6416,3.8941,absorber,ml_plus_family_prior
+K2CuGaBr6,0.8095,3.8896,absorber,ml_plus_family_prior
+K2CuGaBr6 (orthorhombic),0.8095,3.8896,absorber,ml_plus_family_prior
+K2CuGaCl6,0.8205,3.9252,absorber,ml_plus_family_prior
+K2CuGaCl6 (orthorhombic),0.8205,3.9252,absorber,ml_plus_family_prior
+K2CuGaI6,0.4593,3.8611,absorber,ml_plus_family_prior
+K2CuGaI6 (orthorhombic),0.4593,3.8611,absorber,ml_plus_family_prior
+K2CuInBr6,0.4747,3.8314,absorber,ml_plus_family_prior
+K2CuInBr6 (orthorhombic),0.4747,3.8314,absorber,ml_plus_family_prior
+K2CuInCl6,0.3592,3.8791,absorber,ml_plus_family_prior
+K2CuInCl6 (orthorhombic),0.3592,3.8791,absorber,ml_plus_family_prior
+K2CuInI6,0.5467,3.8057,absorber,ml_plus_family_prior
+K2CuInI6 (orthorhombic),0.5467,3.8057,absorber,ml_plus_family_prior
+K2CuSbBr6,0.6292,3.8862,absorber,ml_plus_family_prior
+K2CuSbBr6 (cubic),0.2896,3.896,absorber,ml_plus_family_prior
+K2CuSbBr6 (orthorhombic),0.6292,3.8862,absorber,ml_plus_family_prior
+K2CuSbCl6,1.2445,3.8763,absorber,ml_plus_family_prior
+K2CuSbCl6 (cubic),0.6278,3.9307,absorber,ml_plus_family_prior
+K2CuSbCl6 (orthorhombic),1.2445,3.8763,absorber,ml_plus_family_prior
+K2CuSbI6,0.4952,3.8687,absorber,ml_plus_family_prior
+K2CuSbI6 (orthorhombic),0.4952,3.8687,absorber,ml_plus_family_prior
+K2GeI6,1.28,4.05,absorber,family_prior_vacancy_ordered_iodide
+K2InAlBr6,2.429,3.6317,absorber,ml_plus_family_prior
+K2InAlBr6 (cubic),1.8402,3.643,absorber,ml_plus_family_prior
+K2InAlBr6 (orthorhombic),2.429,3.6317,absorber,ml_plus_family_prior
+K2InAlCl6,3.3174,3.582,absorber,ml_plus_family_prior
+K2InAlCl6 (cubic),2.7501,3.6762,absorber,ml_plus_family_prior
+K2InAlCl6 (orthorhombic),3.3174,3.582,absorber,ml_plus_family_prior
+K2InAlI6,1.3827,3.6383,absorber,ml_plus_family_prior
+K2InAlI6 (cubic),0.8048,3.6797,absorber,ml_plus_family_prior
+K2InAlI6 (orthorhombic),1.3827,3.6383,absorber,ml_plus_family_prior
+K2InAsBr6,0.9382,3.8301,absorber,ml_plus_family_prior
+K2InAsBr6 (cubic),0.1191,3.8405,absorber,ml_plus_family_prior
+K2InAsBr6 (orthorhombic),0.9382,3.8301,absorber,ml_plus_family_prior
+K2InAsCl6,1.513,3.8687,absorber,ml_plus_family_prior
+K2InAsCl6 (cubic),0.3006,3.8885,absorber,ml_plus_family_prior
+K2InAsCl6 (orthorhombic),1.513,3.8687,absorber,ml_plus_family_prior
+K2InAsI6,0.5268,3.8133,absorber,ml_plus_family_prior
+K2InAsI6 (cubic),0.15,3.8161,absorber,ml_plus_family_prior
+K2InAsI6 (orthorhombic),0.5268,3.8133,absorber,ml_plus_family_prior
+K2InBiBr6,1.0211,3.7696,absorber,ml_plus_family_prior
+K2InBiBr6 (cubic),0.1729,3.8496,absorber,ml_plus_family_prior
+K2InBiBr6 (orthorhombic),1.0211,3.7696,absorber,ml_plus_family_prior
+K2InBiCl6,1.5136,3.8746,absorber,ml_plus_family_prior
+K2InBiCl6 (cubic),0.2369,3.8985,absorber,ml_plus_family_prior
+K2InBiCl6 (orthorhombic),1.5136,3.8746,absorber,ml_plus_family_prior
+K2InBiI6,0.5802,3.817,absorber,ml_plus_family_prior
+K2InBiI6 (cubic),0.3548,3.821,absorber,ml_plus_family_prior
+K2InBiI6 (orthorhombic),0.5802,3.817,absorber,ml_plus_family_prior
+K2InGaBr6,1.1309,3.7595,absorber,ml_plus_family_prior
+K2InGaBr6 (cubic),0.793,3.8264,absorber,ml_plus_family_prior
+K2InGaBr6 (orthorhombic),1.1309,3.7595,absorber,ml_plus_family_prior
+K2InGaCl6,2.0393,3.8053,absorber,ml_plus_family_prior
+K2InGaCl6 (cubic),1.5348,3.8501,absorber,ml_plus_family_prior
+K2InGaCl6 (orthorhombic),2.0393,3.8053,absorber,ml_plus_family_prior
+K2InGaI6,0.7663,3.8074,absorber,ml_plus_family_prior
+K2InGaI6 (cubic),0.1346,3.8031,absorber,ml_plus_family_prior
+K2InGaI6 (orthorhombic),0.7663,3.8074,absorber,ml_plus_family_prior
+K2InInBr6,1.4473,3.8306,absorber,ml_plus_family_prior
+K2InInBr6 (cubic),0.6186,3.8369,absorber,ml_plus_family_prior
+K2InInBr6 (orthorhombic),1.4473,3.8306,absorber,ml_plus_family_prior
+K2InInCl6,2.1947,3.8465,absorber,ml_plus_family_prior
+K2InInCl6 (cubic),1.3588,3.8751,absorber,ml_plus_family_prior
+K2InInCl6 (orthorhombic),2.1947,3.8465,absorber,ml_plus_family_prior
+K2InInI6,0.6951,3.8343,absorber,ml_plus_family_prior
+K2InInI6 (orthorhombic),0.6951,3.8343,absorber,ml_plus_family_prior
+K2InSbBr6,1.1537,3.7665,absorber,ml_plus_family_prior
+K2InSbBr6 (cubic),0.0877,3.8351,absorber,ml_plus_family_prior
+K2InSbBr6 (orthorhombic),1.1537,3.7665,absorber,ml_plus_family_prior
+K2InSbCl6,1.6865,3.8401,absorber,ml_plus_family_prior
+K2InSbCl6 (cubic),0.3352,3.8809,absorber,ml_plus_family_prior
+K2InSbCl6 (orthorhombic),1.6865,3.8401,absorber,ml_plus_family_prior
+K2InSbI6,0.7056,3.8146,absorber,ml_plus_family_prior
+K2InSbI6 (cubic),0.2273,3.8108,absorber,ml_plus_family_prior
+K2InSbI6 (orthorhombic),0.7056,3.8146,absorber,ml_plus_family_prior
+K2TiI6,1.61,4.0,absorber,literature_SCAPS
+K2TlAlBr6,2.7996,3.6428,absorber,ml_plus_family_prior
+K2TlAlBr6 (cubic),2.5609,3.5877,absorber,ml_plus_family_prior
+K2TlAlBr6 (orthorhombic),2.7996,3.6428,absorber,ml_plus_family_prior
+K2TlAlCl6,3.7537,3.4621,absorber,ml_plus_family_prior
+K2TlAlCl6 (cubic),3.5545,3.4622,absorber,ml_plus_family_prior
+K2TlAlCl6 (orthorhombic),3.7537,3.4621,absorber,ml_plus_family_prior
+K2TlAlI6,1.6961,3.6775,absorber,ml_plus_family_prior
+K2TlAlI6 (cubic),1.3485,3.6809,absorber,ml_plus_family_prior
+K2TlAlI6 (orthorhombic),1.6961,3.6775,absorber,ml_plus_family_prior
+K2TlAsBr6,1.6343,3.8897,absorber,ml_plus_family_prior
+K2TlAsBr6 (cubic),0.6552,3.9328,absorber,ml_plus_family_prior
+K2TlAsBr6 (orthorhombic),1.6343,3.8897,absorber,ml_plus_family_prior
+K2TlAsCl6,2.1296,3.8657,absorber,ml_plus_family_prior
+K2TlAsCl6 (cubic),1.0733,3.9195,absorber,ml_plus_family_prior
+K2TlAsCl6 (orthorhombic),2.1296,3.8657,absorber,ml_plus_family_prior
+K2TlAsI6,1.173,3.8598,absorber,ml_plus_family_prior
+K2TlAsI6 (cubic),0.3625,3.9089,absorber,ml_plus_family_prior
+K2TlAsI6 (orthorhombic),1.173,3.8598,absorber,ml_plus_family_prior
+K2TlBiBr6,1.5858,3.8936,absorber,ml_plus_family_prior
+K2TlBiBr6 (cubic),0.5501,3.942,absorber,ml_plus_family_prior
+K2TlBiBr6 (orthorhombic),1.5858,3.8936,absorber,ml_plus_family_prior
+K2TlBiCl6,2.0945,3.8592,absorber,ml_plus_family_prior
+K2TlBiCl6 (cubic),0.9927,3.9073,absorber,ml_plus_family_prior
+K2TlBiCl6 (orthorhombic),2.0945,3.8592,absorber,ml_plus_family_prior
+K2TlBiI6,1.088,3.8652,absorber,ml_plus_family_prior
+K2TlBiI6 (cubic),0.2017,3.9205,absorber,ml_plus_family_prior
+K2TlBiI6 (orthorhombic),1.088,3.8652,absorber,ml_plus_family_prior
+K2TlGaBr6,1.8405,3.8063,absorber,ml_plus_family_prior
+K2TlGaBr6 (cubic),1.334,3.8555,absorber,ml_plus_family_prior
+K2TlGaBr6 (orthorhombic),1.8405,3.8063,absorber,ml_plus_family_prior
+K2TlGaCl6,2.7794,3.6839,absorber,ml_plus_family_prior
+K2TlGaCl6 (cubic),2.2592,3.7864,absorber,ml_plus_family_prior
+K2TlGaCl6 (orthorhombic),2.7794,3.6839,absorber,ml_plus_family_prior
+K2TlGaI6,0.8671,3.8618,absorber,ml_plus_family_prior
+K2TlGaI6 (cubic),0.4112,3.8775,absorber,ml_plus_family_prior
+K2TlGaI6 (orthorhombic),0.8671,3.8618,absorber,ml_plus_family_prior
+K2TlInBr6,2.0957,3.7904,absorber,ml_plus_family_prior
+K2TlInBr6 (cubic),1.5368,3.8305,absorber,ml_plus_family_prior
+K2TlInBr6 (orthorhombic),2.0957,3.7904,absorber,ml_plus_family_prior
+K2TlInCl6,2.919,3.5805,absorber,ml_plus_family_prior
+K2TlInCl6 (cubic),2.3298,3.8341,absorber,ml_plus_family_prior
+K2TlInCl6 (orthorhombic),2.919,3.5805,absorber,ml_plus_family_prior
+K2TlInI6,1.2492,3.7883,absorber,ml_plus_family_prior
+K2TlInI6 (cubic),0.7302,3.8314,absorber,ml_plus_family_prior
+K2TlInI6 (orthorhombic),1.2492,3.7883,absorber,ml_plus_family_prior
+K2TlSbBr6,1.6611,3.8475,absorber,ml_plus_family_prior
+K2TlSbBr6 (cubic),0.5557,3.9103,absorber,ml_plus_family_prior
+K2TlSbBr6 (orthorhombic),1.6611,3.8475,absorber,ml_plus_family_prior
+K2TlSbCl6,2.1407,3.8157,absorber,ml_plus_family_prior
+K2TlSbCl6 (cubic),0.9869,3.8741,absorber,ml_plus_family_prior
+K2TlSbCl6 (orthorhombic),2.1407,3.8157,absorber,ml_plus_family_prior
+K2TlSbI6,1.2075,3.8243,absorber,ml_plus_family_prior
+K2TlSbI6 (cubic),0.26,3.8881,absorber,ml_plus_family_prior
+K2TlSbI6 (orthorhombic),1.2075,3.8243,absorber,ml_plus_family_prior
+KNbAgNbO6,3.062301209,3.6448,absorber,ml_plus_family_prior
+KNbBaSnO6,4.749720638,3.5958,absorber,ml_plus_family_prior
+KNbBaTiO6,3.817776997,3.5936,absorber,ml_plus_family_prior
+KNbCaGeO6,4.509665846,3.5704,absorber,ml_plus_family_prior
+KNbCaSiO6,4.091124096,3.5546,absorber,ml_plus_family_prior
+KNbCaSnO6,4.597100149,3.5971,absorber,ml_plus_family_prior
+KNbCaTiO6,3.518675705,3.685,absorber,ml_plus_family_prior
+KNbGaNbO6,1.461851147,3.8481,absorber,ml_plus_family_prior
+KNbKSbO6,3.900486075,3.596,absorber,ml_plus_family_prior
+KNbLaAlO6,4.47746793,3.543,absorber,ml_plus_family_prior
+KNbLaGaO6,4.812455616,3.5646,absorber,ml_plus_family_prior
+KNbLaInO6,4.894367785,3.5574,absorber,ml_plus_family_prior
+KNbLiNbO6,3.190324442,3.6544,absorber,ml_plus_family_prior
+KNbMgTiO6,4.020037277,3.5347,absorber,ml_plus_family_prior
+KNbMgZrO6,4.95899481,3.5429,absorber,ml_plus_family_prior
+KNbNaNbO6,3.160753757,3.6515,absorber,ml_plus_family_prior
+KNbNaSbO6,4.204154377,3.5737,absorber,ml_plus_family_prior
+KNbPbTiO6,3.505501913,3.6893,absorber,ml_plus_family_prior
+KNbRbNbO6,3.346984265,3.7066,absorber,ml_plus_family_prior
+KNbSnTiO6,2.80800255,3.8528,absorber,ml_plus_family_prior
+KNbSrGeO6,4.449250085,3.571,absorber,ml_plus_family_prior
+KNbSrSiO6,3.980946504,3.5531,absorber,ml_plus_family_prior
+KNbSrSnO6,4.96090882,3.5901,absorber,ml_plus_family_prior
+KNbSrTiO6,3.452977088,3.6847,absorber,ml_plus_family_prior
+KNbTlNbO6,1.839635631,3.854,absorber,ml_plus_family_prior
+KNbYAlO6,4.7281547,3.5434,absorber,ml_plus_family_prior
+KSbAgNbO6,3.905838936,3.596,absorber,ml_plus_family_prior
+KSbBaTiO6,3.721262439,3.5932,absorber,ml_plus_family_prior
+KSbCaGeO6,1.882994929,3.8177,absorber,ml_plus_family_prior
+KSbCaSiO6,2.732953318,3.807,absorber,ml_plus_family_prior
+KSbCaSnO6,2.713900428,3.834,absorber,ml_plus_family_prior
+KSbCaTiO6,4.271677539,3.5703,absorber,ml_plus_family_prior
+KSbGaNbO6,1.968260223,3.7606,absorber,ml_plus_family_prior
+KSbLaAlO6,4.319046481,3.5508,absorber,ml_plus_family_prior
+KSbLaGaO6,2.751327197,3.6973,absorber,ml_plus_family_prior
+KSbLaInO6,3.368820572,3.7062,absorber,ml_plus_family_prior
+KSbLiNbO6,4.305385483,3.5779,absorber,ml_plus_family_prior
+KSbLiVO6,1.895420667,3.7924,absorber,ml_plus_family_prior
+KSbMgTiO6,4.604765276,3.5476,absorber,ml_plus_family_prior
+KSbMgZrO6,5.774517555,3.5172,absorber,ml_plus_family_prior
+KSbNaNbO6,4.209344679,3.5737,absorber,ml_plus_family_prior
+KSbNaVO6,1.877171235,3.7965,absorber,ml_plus_family_prior
+KSbPbTiO6,3.967764744,3.5723,absorber,ml_plus_family_prior
+KSbRbNbO6,3.689934172,3.5943,absorber,ml_plus_family_prior
+KSbSnHfO6,4.021699995,3.5894,absorber,ml_plus_family_prior
+KSbSnTiO6,3.131082711,3.6676,absorber,ml_plus_family_prior
+KSbSrSiO6,2.212024856,3.792,absorber,ml_plus_family_prior
+KSbSrSnO6,1.629370353,3.8751,absorber,ml_plus_family_prior
+KSbSrTiO6,4.049643271,3.5554,absorber,ml_plus_family_prior
+KSbTlNbO6,1.75729976,3.8335,absorber,ml_plus_family_prior
+KSbYAlO6,4.558409892,3.5421,absorber,ml_plus_family_prior
+KTaAgNbO6,3.433225646,3.6895,absorber,ml_plus_family_prior
+KTaAgTaO6,3.966798043,3.5725,absorber,ml_plus_family_prior
+KTaBaSnO6,5.196457856,3.5914,absorber,ml_plus_family_prior
+KTaBaTiO6,3.753540391,3.5931,absorber,ml_plus_family_prior
+KTaCaGeO6,5.429801846,3.569,absorber,ml_plus_family_prior
+KTaCaHfO6,5.46520753,3.5652,absorber,ml_plus_family_prior
+KTaCaSiO6,5.106337532,3.5685,absorber,ml_plus_family_prior
+KTaCaSnO6,5.221454507,3.5912,absorber,ml_plus_family_prior
+KTaCaTiO6,4.251020823,3.5703,absorber,ml_plus_family_prior
+KTaCaZrO6,5.396139557,3.5693,absorber,ml_plus_family_prior
+KTaCsNbO6,3.294911002,3.7061,absorber,ml_plus_family_prior
+KTaCsVO6,2.274588477,3.8186,absorber,ml_plus_family_prior
+KTaGaNbO6,1.72329943,3.8449,absorber,ml_plus_family_prior
+KTaGaTaO6,2.210934079,3.7457,absorber,ml_plus_family_prior
+KTaKNbO6,3.448861519,3.6861,absorber,ml_plus_family_prior
+KTaKSbO6,4.372567795,3.5779,absorber,ml_plus_family_prior
+KTaLaAlO6,5.379821007,3.5375,absorber,ml_plus_family_prior
+KTaLaGaO6,5.70532802,3.5249,absorber,ml_plus_family_prior
+KTaLaInO6,5.816215972,3.5338,absorber,ml_plus_family_prior
+KTaLaScO6,5.649467495,3.5244,absorber,ml_plus_family_prior
+KTaLiNbO6,3.572560671,3.5966,absorber,ml_plus_family_prior
+KTaLiTaO6,4.13821904,3.5768,absorber,ml_plus_family_prior
+KTaLiVO6,2.301864217,3.8134,absorber,ml_plus_family_prior
+KTaMgTiO6,5.203062127,3.5384,absorber,ml_plus_family_prior
+KTaMgZrO6,5.499681919,3.5467,absorber,ml_plus_family_prior
+KTaNaNbO6,3.540818105,3.6472,absorber,ml_plus_family_prior
+KTaNaSbO6,4.710700726,3.5677,absorber,ml_plus_family_prior
+KTaNaTaO6,4.105232239,3.5768,absorber,ml_plus_family_prior
+KTaNaVO6,1.977986049,3.841,absorber,ml_plus_family_prior
+KTaPbHfO6,5.212113424,3.5659,absorber,ml_plus_family_prior
+KTaPbTiO6,3.929727131,3.5729,absorber,ml_plus_family_prior
+KTaPbZrO6,5.116273478,3.5787,absorber,ml_plus_family_prior
+KTaRbNbO6,3.385510444,3.704,absorber,ml_plus_family_prior
+KTaRbTaO6,3.939485875,3.5724,absorber,ml_plus_family_prior
+KTaSnHfO6,4.123323475,3.6054,absorber,ml_plus_family_prior
+KTaSnTiO6,3.196291471,3.6747,absorber,ml_plus_family_prior
+KTaSnZrO6,4.092547044,3.5919,absorber,ml_plus_family_prior
+KTaSrGeO6,5.134653758,3.5756,absorber,ml_plus_family_prior
+KTaSrHfO6,5.157179336,3.5629,absorber,ml_plus_family_prior
+KTaSrSiO6,5.004405535,3.5564,absorber,ml_plus_family_prior
+KTaSrSnO6,5.550200753,3.5576,absorber,ml_plus_family_prior
+KTaSrTiO6,3.877403015,3.5936,absorber,ml_plus_family_prior
+KTaSrZrO6,5.061804247,3.576,absorber,ml_plus_family_prior
+KTaTlNbO6,1.760505571,3.8806,absorber,ml_plus_family_prior
+KTaTlTaO6,2.244292146,3.8339,absorber,ml_plus_family_prior
+KTaYAlO6,5.733834897,3.5066,absorber,ml_plus_family_prior
+LaAlLaGaO6,6.766541856,3.5079,absorber,ml_plus_family_prior
+LaAlLaInO6,6.523672765,3.5195,absorber,ml_plus_family_prior
+LaAlMgTiO6,5.189103214,3.5187,absorber,ml_plus_family_prior
+LaAlSnTiO6,3.452664382,3.6433,absorber,ml_plus_family_prior
+LaAlYAlO6,7.493232168,3.4637,absorber,ml_plus_family_prior
+LaGaLaInO6,5.0911409,3.5646,absorber,ml_plus_family_prior
+LaGaMgTiO6,5.244393485,3.5345,absorber,ml_plus_family_prior
+LaGaSnTiO6,4.003966794,3.5859,absorber,ml_plus_family_prior
+LaGaYAlO6,6.95217569,3.4637,absorber,ml_plus_family_prior
+LaInMgTiO6,5.177625765,3.5374,absorber,ml_plus_family_prior
+LaInSnTiO6,3.324618535,3.7142,absorber,ml_plus_family_prior
+LaInYAlO6,6.125274178,3.5195,absorber,ml_plus_family_prior
+LaScAgNbO6,4.33272259,3.5779,absorber,ml_plus_family_prior
+LaScAgTaO6,5.009320756,3.561,absorber,ml_plus_family_prior
+LaScBaSnO6,6.787878886,3.5477,absorber,ml_plus_family_prior
+LaScBaTiO6,5.052614065,3.5702,absorber,ml_plus_family_prior
+LaScCaGeO6,7.230272945,3.4792,absorber,ml_plus_family_prior
+LaScCaSiO6,7.136365745,3.4729,absorber,ml_plus_family_prior
+LaScCaSnO6,6.652121121,3.5642,absorber,ml_plus_family_prior
+LaScCaTiO6,5.360804586,3.5614,absorber,ml_plus_family_prior
+LaScCsNbO6,4.414961176,3.5784,absorber,ml_plus_family_prior
+LaScCsVO6,2.104586049,3.8011,absorber,ml_plus_family_prior
+LaScGaNbO6,2.439044072,3.6835,absorber,ml_plus_family_prior
+LaScInNbO6,1.623070352,3.8232,absorber,ml_plus_family_prior
+LaScKNbO6,4.819276462,3.5691,absorber,ml_plus_family_prior
+LaScKSbO6,5.827808786,3.5338,absorber,ml_plus_family_prior
+LaScLaAlO6,6.066795195,3.5201,absorber,ml_plus_family_prior
+LaScLaGaO6,6.065509156,3.5389,absorber,ml_plus_family_prior
+LaScLaInO6,6.687201247,3.5364,absorber,ml_plus_family_prior
+LaScLiNbO6,4.815912181,3.5691,absorber,ml_plus_family_prior
+LaScLiTaO6,5.566786019,3.5323,absorber,ml_plus_family_prior
+LaScLiVO6,2.829679604,3.7435,absorber,ml_plus_family_prior
+LaScMgTiO6,5.328311049,3.5397,absorber,ml_plus_family_prior
+LaScMgZrO6,7.318121814,3.4516,absorber,ml_plus_family_prior
+LaScNaNbO6,4.961520789,3.5605,absorber,ml_plus_family_prior
+LaScNaSbO6,6.025996426,3.5386,absorber,ml_plus_family_prior
+LaScNaVO6,2.340322481,3.8057,absorber,ml_plus_family_prior
+LaScPbHfO6,5.582233225,3.5358,absorber,ml_plus_family_prior
+LaScPbTiO6,5.02202552,3.5614,absorber,ml_plus_family_prior
+LaScPbZrO6,5.69255743,3.5343,absorber,ml_plus_family_prior
+LaScRbNbO6,4.729214611,3.5677,absorber,ml_plus_family_prior
+LaScSnHfO6,5.144975193,3.6013,absorber,ml_plus_family_prior
+LaScSnTiO6,3.53219192,3.6637,absorber,ml_plus_family_prior
+LaScSnZrO6,5.033477645,3.605,absorber,ml_plus_family_prior
+LaScSrGeO6,7.046287532,3.4773,absorber,ml_plus_family_prior
+LaScSrHfO6,7.331300549,3.4723,absorber,ml_plus_family_prior
+LaScSrSiO6,7.056130171,3.4711,absorber,ml_plus_family_prior
+LaScSrSnO6,6.589774789,3.5628,absorber,ml_plus_family_prior
+LaScSrTiO6,5.102706272,3.5694,absorber,ml_plus_family_prior
+LaScSrZrO6,7.093181861,3.4784,absorber,ml_plus_family_prior
+LaScTlNbO6,2.938221938,3.6484,absorber,ml_plus_family_prior
+LaScTlTaO6,3.672398617,3.595,absorber,ml_plus_family_prior
+LaScYAlO6,7.503217509,3.4637,absorber,ml_plus_family_prior
+LBSO,3.12,4.4,etl,literature_SCAPS
+LiNbAgNbO6,3.196015637,3.6584,absorber,ml_plus_family_prior
+LiNbCaGeO6,4.659391641,3.5726,absorber,ml_plus_family_prior
+LiNbCaSiO6,4.303741955,3.5735,absorber,ml_plus_family_prior
+LiNbCaSnO6,4.816024988,3.5973,absorber,ml_plus_family_prior
+LiNbCaTiO6,3.647495276,3.5919,absorber,ml_plus_family_prior
+LiNbLaAlO6,4.578444546,3.543,absorber,ml_plus_family_prior
+LiNbLaGaO6,4.680252029,3.5637,absorber,ml_plus_family_prior
+LiNbLaInO6,4.789109121,3.5668,absorber,ml_plus_family_prior
+LiNbMgTiO6,5.184540584,3.5384,absorber,ml_plus_family_prior
+LiNbSnTiO6,2.791704414,3.8546,absorber,ml_plus_family_prior
+LiNbSrGeO6,4.595673331,3.5735,absorber,ml_plus_family_prior
+LiNbSrSnO6,5.081040725,3.6026,absorber,ml_plus_family_prior
+LiNbYAlO6,5.004391786,3.5357,absorber,ml_plus_family_prior
+LiTaAgNbO6,3.554134478,3.5966,absorber,ml_plus_family_prior
+LiTaAgTaO6,4.076533852,3.5575,absorber,ml_plus_family_prior
+LiTaBaSnO6,5.588445276,3.5576,absorber,ml_plus_family_prior
+LiTaBaTiO6,3.879725309,3.5936,absorber,ml_plus_family_prior
+LiTaCaGeO6,5.709269761,3.5308,absorber,ml_plus_family_prior
+LiTaCaHfO6,5.736424391,3.5257,absorber,ml_plus_family_prior
+LiTaCaSiO6,5.329736032,3.5598,absorber,ml_plus_family_prior
+LiTaCaSnO6,5.380446883,3.5935,absorber,ml_plus_family_prior
+LiTaCaTiO6,4.095229431,3.5554,absorber,ml_plus_family_prior
+LiTaCsNbO6,3.395525567,3.7003,absorber,ml_plus_family_prior
+LiTaCsVO6,2.599914523,3.7855,absorber,ml_plus_family_prior
+LiTaGaNbO6,1.730549506,3.8416,absorber,ml_plus_family_prior
+LiTaGaTaO6,2.22363242,3.7457,absorber,ml_plus_family_prior
+LiTaKNbO6,3.572092108,3.5966,absorber,ml_plus_family_prior
+LiTaKSbO6,4.815169799,3.5691,absorber,ml_plus_family_prior
+LiTaLaAlO6,5.475204549,3.5375,absorber,ml_plus_family_prior
+LiTaLaGaO6,5.800399131,3.5346,absorber,ml_plus_family_prior
+LiTaLaInO6,5.462839196,3.5629,absorber,ml_plus_family_prior
+LiTaLiNbO6,3.784446853,3.5967,absorber,ml_plus_family_prior
+LiTaLiVO6,2.046245105,3.825,absorber,ml_plus_family_prior
+LiTaMgTiO6,5.556495063,3.5095,absorber,ml_plus_family_prior
+LiTaMgZrO6,6.196617848,3.5207,absorber,ml_plus_family_prior
+LiTaNaNbO6,3.680948662,3.595,absorber,ml_plus_family_prior
+LiTaNaSbO6,5.200533194,3.5619,absorber,ml_plus_family_prior
+LiTaNaTaO6,4.252210484,3.5737,absorber,ml_plus_family_prior
+LiTaNaVO6,2.545787213,3.7801,absorber,ml_plus_family_prior
+LiTaPbHfO6,5.216893252,3.5659,absorber,ml_plus_family_prior
+LiTaPbTiO6,4.072581019,3.5578,absorber,ml_plus_family_prior
+LiTaPbZrO6,5.087064944,3.5801,absorber,ml_plus_family_prior
+LiTaRbNbO6,3.510160202,3.6894,absorber,ml_plus_family_prior
+LiTaSnHfO6,4.033662859,3.5894,absorber,ml_plus_family_prior
+LiTaSnTiO6,3.193104076,3.6706,absorber,ml_plus_family_prior
+LiTaSnZrO6,4.001917779,3.5928,absorber,ml_plus_family_prior
+LiTaSrGeO6,5.630547119,3.5295,absorber,ml_plus_family_prior
+LiTaSrHfO6,5.270828814,3.5623,absorber,ml_plus_family_prior
+LiTaSrSiO6,5.238077372,3.5566,absorber,ml_plus_family_prior
+LiTaSrSnO6,5.96871878,3.5617,absorber,ml_plus_family_prior
+LiTaSrTiO6,4.014617303,3.5554,absorber,ml_plus_family_prior
+LiTaTlNbO6,1.757873497,3.8806,absorber,ml_plus_family_prior
+LiTaTlTaO6,2.248528162,3.8339,absorber,ml_plus_family_prior
+LiTaYAlO6,6.007036608,3.52,absorber,ml_plus_family_prior
+LiVAgNbO6,2.152959222,3.8158,absorber,ml_plus_family_prior
+LiVCaGeO6,2.638234338,3.8317,absorber,ml_plus_family_prior
+LiVCaSiO6,1.748630683,3.8731,absorber,ml_plus_family_prior
+LiVCaSnO6,2.241717159,3.8376,absorber,ml_plus_family_prior
+LiVCaTiO6,3.037879554,3.6333,absorber,ml_plus_family_prior
+LiVCsNbO6,2.733391795,3.826,absorber,ml_plus_family_prior
+LiVKNbO6,2.205816478,3.8176,absorber,ml_plus_family_prior
+LiVLaAlO6,2.385917639,3.6502,absorber,ml_plus_family_prior
+LiVLaGaO6,2.399066466,3.7064,absorber,ml_plus_family_prior
+LiVLaInO6,2.757312288,3.807,absorber,ml_plus_family_prior
+LiVLiNbO6,2.293919511,3.8153,absorber,ml_plus_family_prior
+LiVMgTiO6,3.316236372,3.6938,absorber,ml_plus_family_prior
+LiVRbNbO6,2.267615615,3.8181,absorber,ml_plus_family_prior
+LiVSnTiO6,0.814423789,3.9494,absorber,ml_plus_family_prior
+LiVSrSnO6,2.206413884,3.838,absorber,ml_plus_family_prior
+LiVTlNbO6,0.371308878,3.9209,absorber,ml_plus_family_prior
+LiVYAlO6,2.263499247,3.6581,absorber,ml_plus_family_prior
+MEH-PPV,2.1,2.8,htl,literature_SCAPS
+MgTiSnTiO6,2.321158509,3.8498,absorber,ml_plus_family_prior
+MgTiYAlO6,5.332891749,3.5193,absorber,ml_plus_family_prior
+MgZrAgNbO6,4.547511185,3.5489,absorber,ml_plus_family_prior
+MgZrAgTaO6,4.931917058,3.5418,absorber,ml_plus_family_prior
+MgZrCaGeO6,6.476064938,3.5279,absorber,ml_plus_family_prior
+MgZrCaSiO6,7.780486817,3.4539,absorber,ml_plus_family_prior
+MgZrCaSnO6,6.514943947,3.5464,absorber,ml_plus_family_prior
+MgZrCaTiO6,5.92861799,3.5192,absorber,ml_plus_family_prior
+MgZrInTaO6,2.058860702,3.7624,absorber,ml_plus_family_prior
+MgZrLaAlO6,7.244306501,3.449,absorber,ml_plus_family_prior
+MgZrLaGaO6,6.972198503,3.4528,absorber,ml_plus_family_prior
+MgZrLaInO6,6.202966753,3.519,absorber,ml_plus_family_prior
+MgZrLiNbO6,5.014033707,3.543,absorber,ml_plus_family_prior
+MgZrLiVO6,3.388074816,3.6912,absorber,ml_plus_family_prior
+MgZrMgTiO6,5.855148192,3.5171,absorber,ml_plus_family_prior
+MgZrNaNbO6,5.722109937,3.5073,absorber,ml_plus_family_prior
+MgZrNaSbO6,5.816665475,3.5172,absorber,ml_plus_family_prior
+MgZrNaVO6,3.175799158,3.6405,absorber,ml_plus_family_prior
+MgZrPbHfO6,5.131563185,3.5565,absorber,ml_plus_family_prior
+MgZrPbTiO6,4.57721179,3.5496,absorber,ml_plus_family_prior
+MgZrPbZrO6,5.703907938,3.5107,absorber,ml_plus_family_prior
+MgZrRbNbO6,5.208754396,3.5452,absorber,ml_plus_family_prior
+MgZrSnHfO6,4.845414529,3.581,absorber,ml_plus_family_prior
+MgZrSnTiO6,3.285225476,3.7055,absorber,ml_plus_family_prior
+MgZrSnZrO6,4.79223757,3.5787,absorber,ml_plus_family_prior
+MgZrSrGeO6,5.950811102,3.5247,absorber,ml_plus_family_prior
+MgZrSrSiO6,7.353328806,3.4514,absorber,ml_plus_family_prior
+MgZrSrSnO6,6.360185946,3.5443,absorber,ml_plus_family_prior
+MgZrSrTiO6,5.734546456,3.5055,absorber,ml_plus_family_prior
+MgZrTlNbO6,3.544579097,3.6334,absorber,ml_plus_family_prior
+MgZrTlTaO6,4.248901231,3.5557,absorber,ml_plus_family_prior
+MgZrYAlO6,7.555574901,3.449,absorber,ml_plus_family_prior
+MoO3,3.0,2.3,htl,literature_SCAPS
+MoS2,1.29,4.2,htl,literature_SCAPS
+MWCNTs,1.55,3.64,htl,literature_SCAPS
+N_b,6.01,2.67,monolayer,literature_HSE06_monolayer
+NaNbAgNbO6,3.139328058,3.6527,absorber,ml_plus_family_prior
+NaNbCaGeO6,4.62174398,3.5738,absorber,ml_plus_family_prior
+NaNbCaSiO6,4.24087257,3.5695,absorber,ml_plus_family_prior
+NaNbCaSnO6,4.925651545,3.5882,absorber,ml_plus_family_prior
+NaNbCaTiO6,4.451940278,3.563,absorber,ml_plus_family_prior
+NaNbLaAlO6,4.557970413,3.543,absorber,ml_plus_family_prior
+NaNbLaGaO6,4.913052241,3.5539,absorber,ml_plus_family_prior
+NaNbLaInO6,5.013442147,3.5597,absorber,ml_plus_family_prior
+NaNbLiNbO6,3.659244615,3.5968,absorber,ml_plus_family_prior
+NaNbLiVO6,2.760541559,3.8248,absorber,ml_plus_family_prior
+NaNbMgTiO6,5.159811711,3.5384,absorber,ml_plus_family_prior
+NaNbNaSbO6,4.537857987,3.5655,absorber,ml_plus_family_prior
+NaNbNaVO6,2.744136121,3.826,absorber,ml_plus_family_prior
+NaNbSnTiO6,2.796893306,3.8546,absorber,ml_plus_family_prior
+NaNbSrGeO6,4.563114357,3.5701,absorber,ml_plus_family_prior
+NaNbSrSiO6,4.111084921,3.5716,absorber,ml_plus_family_prior
+NaNbSrSnO6,5.055755556,3.6026,absorber,ml_plus_family_prior
+NaNbSrTiO6,3.546993655,3.644,absorber,ml_plus_family_prior
+NaNbYAlO6,4.904866831,3.5333,absorber,ml_plus_family_prior
+NaSbAgNbO6,4.154201606,3.5768,absorber,ml_plus_family_prior
+NaSbCaGeO6,2.826551875,3.7387,absorber,ml_plus_family_prior
+NaSbCaSiO6,3.831576869,3.59,absorber,ml_plus_family_prior
+NaSbCaSnO6,3.14998536,3.6706,absorber,ml_plus_family_prior
+NaSbCaTiO6,4.569549916,3.563,absorber,ml_plus_family_prior
+NaSbLaAlO6,4.720018949,3.5425,absorber,ml_plus_family_prior
+NaSbLaGaO6,3.114709108,3.621,absorber,ml_plus_family_prior
+NaSbLaInO6,3.909197233,3.5923,absorber,ml_plus_family_prior
+NaSbLiNbO6,4.652893468,3.5677,absorber,ml_plus_family_prior
+NaSbLiVO6,2.521096508,3.75,absorber,ml_plus_family_prior
+NaSbMgTiO6,4.316566414,3.5536,absorber,ml_plus_family_prior
+NaSbNaVO6,1.933565235,3.7997,absorber,ml_plus_family_prior
+NaSbSnTiO6,3.277038807,3.7043,absorber,ml_plus_family_prior
+NaSbSrGeO6,2.10329495,3.78,absorber,ml_plus_family_prior
+NaSbSrSiO6,2.87021297,3.6487,absorber,ml_plus_family_prior
+NaSbSrSnO6,2.010337533,3.8294,absorber,ml_plus_family_prior
+NaSbSrTiO6,4.337563243,3.5748,absorber,ml_plus_family_prior
+NaSbYAlO6,5.345071995,3.5366,absorber,ml_plus_family_prior
+NaTaAgNbO6,3.523243739,3.6894,absorber,ml_plus_family_prior
+NaTaAgTaO6,4.048614558,3.5585,absorber,ml_plus_family_prior
+NaTaBaSnO6,5.488531427,3.5932,absorber,ml_plus_family_prior
+NaTaBaTiO6,3.851203471,3.5936,absorber,ml_plus_family_prior
+NaTaCaGeO6,5.672504696,3.5305,absorber,ml_plus_family_prior
+NaTaCaSiO6,5.285961533,3.5598,absorber,ml_plus_family_prior
+NaTaCaSnO6,5.618239319,3.5501,absorber,ml_plus_family_prior
+NaTaCaTiO6,4.063019945,3.5539,absorber,ml_plus_family_prior
+NaTaCsNbO6,3.37538625,3.702,absorber,ml_plus_family_prior
+NaTaCsVO6,2.363009793,3.8091,absorber,ml_plus_family_prior
+NaTaGaNbO6,1.730621385,3.8416,absorber,ml_plus_family_prior
+NaTaGaTaO6,2.222919423,3.7457,absorber,ml_plus_family_prior
+NaTaKNbO6,3.540237672,3.6472,absorber,ml_plus_family_prior
+NaTaKSbO6,4.704438422,3.5677,absorber,ml_plus_family_prior
+NaTaLaAlO6,5.463483714,3.5375,absorber,ml_plus_family_prior
+NaTaLaGaO6,5.783047389,3.5346,absorber,ml_plus_family_prior
+NaTaLaInO6,5.796447733,3.5338,absorber,ml_plus_family_prior
+NaTaLaScO6,5.81349461,3.5344,absorber,ml_plus_family_prior
+NaTaLiNbO6,3.680629719,3.595,absorber,ml_plus_family_prior
+NaTaLiVO6,2.329410389,3.8057,absorber,ml_plus_family_prior
+NaTaMgTiO6,5.507143417,3.5399,absorber,ml_plus_family_prior
+NaTaMgZrO6,6.569568849,3.5207,absorber,ml_plus_family_prior
+NaTaNaNbO6,3.647117014,3.5952,absorber,ml_plus_family_prior
+NaTaNaSbO6,5.074337872,3.573,absorber,ml_plus_family_prior
+NaTaNaVO6,2.169068677,3.8158,absorber,ml_plus_family_prior
+NaTaPbHfO6,5.305299178,3.568,absorber,ml_plus_family_prior
+NaTaPbTiO6,4.039463554,3.5588,absorber,ml_plus_family_prior
+NaTaPbZrO6,5.216403865,3.57,absorber,ml_plus_family_prior
+NaTaRbNbO6,3.480014569,3.692,absorber,ml_plus_family_prior
+NaTaSnHfO6,3.914535872,3.6275,absorber,ml_plus_family_prior
+NaTaSnTiO6,3.195873205,3.6747,absorber,ml_plus_family_prior
+NaTaSnZrO6,3.898925658,3.6291,absorber,ml_plus_family_prior
+NaTaSrGeO6,5.506571885,3.5688,absorber,ml_plus_family_prior
+NaTaSrHfO6,5.245269065,3.5623,absorber,ml_plus_family_prior
+NaTaSrSiO6,5.199998746,3.5572,absorber,ml_plus_family_prior
+NaTaSrSnO6,5.861567096,3.561,absorber,ml_plus_family_prior
+NaTaSrTiO6,3.984039403,3.5551,absorber,ml_plus_family_prior
+NaTaSrZrO6,5.150326621,3.567,absorber,ml_plus_family_prior
+NaTaTlNbO6,1.759992136,3.8806,absorber,ml_plus_family_prior
+NaTaTlTaO6,2.248121897,3.8339,absorber,ml_plus_family_prior
+NaTaYAlO6,5.979767534,3.5194,absorber,ml_plus_family_prior
+NaVAgNbO6,2.024041846,3.8362,absorber,ml_plus_family_prior
+NaVCaGeO6,2.040410527,3.8427,absorber,ml_plus_family_prior
+NaVCaSiO6,1.556374115,3.8783,absorber,ml_plus_family_prior
+NaVCaSnO6,2.198835873,3.8372,absorber,ml_plus_family_prior
+NaVCaTiO6,2.748175665,3.8326,absorber,ml_plus_family_prior
+NaVKNbO6,2.30764797,3.8134,absorber,ml_plus_family_prior
+NaVLaAlO6,2.104043702,3.6227,absorber,ml_plus_family_prior
+NaVLaGaO6,2.327056312,3.7121,absorber,ml_plus_family_prior
+NaVLaInO6,2.544322997,3.7642,absorber,ml_plus_family_prior
+NaVLiNbO6,2.81010926,3.8159,absorber,ml_plus_family_prior
+NaVLiVO6,1.782964202,3.8659,absorber,ml_plus_family_prior
+NaVMgTiO6,2.975484912,3.6339,absorber,ml_plus_family_prior
+NaVRbNbO6,2.345476269,3.8057,absorber,ml_plus_family_prior
+NaVSnTiO6,0.833213251,3.9433,absorber,ml_plus_family_prior
+NaVSrGeO6,1.851035372,3.8484,absorber,ml_plus_family_prior
+NaVSrSiO6,1.548547901,3.8783,absorber,ml_plus_family_prior
+NaVSrSnO6,2.194622653,3.838,absorber,ml_plus_family_prior
+NaVSrTiO6,2.053965934,3.8324,absorber,ml_plus_family_prior
+NaVTlNbO6,0.48533037,3.9221,absorber,ml_plus_family_prior
+NaVYAlO6,2.225434488,3.6583,absorber,ml_plus_family_prior
+Nb2O5,3.46,4.33,etl,literature_SCAPS
+NiCo2O4,2.3,3.48,htl,literature_SCAPS
+NiO,3.6,1.8,htl,literature_SCAPS
+nPB,2.4,3.0,htl,literature_SCAPS
+P_b,2.73,3.81,monolayer,literature_HSE06_monolayer
+P_w,1.53,3.9799999999999995,monolayer,literature_HSE06_monolayer
+PbHfAgNbO6,4.224152118,3.5781,absorber,ml_plus_family_prior
+PbHfBaSnO6,5.867489513,3.5635,absorber,ml_plus_family_prior
+PbHfBaTiO6,4.715173396,3.5694,absorber,ml_plus_family_prior
+PbHfCaGeO6,5.438871864,3.5721,absorber,ml_plus_family_prior
+PbHfCaSiO6,6.23205056,3.5424,absorber,ml_plus_family_prior
+PbHfCaSnO6,6.036393612,3.5667,absorber,ml_plus_family_prior
+PbHfCaTiO6,4.381883728,3.5787,absorber,ml_plus_family_prior
+PbHfCsVO6,1.830093634,3.8572,absorber,ml_plus_family_prior
+PbHfGaNbO6,2.729158284,3.7314,absorber,ml_plus_family_prior
+PbHfGaTaO6,3.513598295,3.6701,absorber,ml_plus_family_prior
+PbHfInNbO6,1.491118527,3.84,absorber,ml_plus_family_prior
+PbHfKNbO6,4.347420461,3.5823,absorber,ml_plus_family_prior
+PbHfKSbO6,5.483723223,3.5684,absorber,ml_plus_family_prior
+PbHfLaAlO6,6.240145632,3.5226,absorber,ml_plus_family_prior
+PbHfLaGaO6,6.330118621,3.5415,absorber,ml_plus_family_prior
+PbHfLaInO6,5.39337693,3.5673,absorber,ml_plus_family_prior
+PbHfLiNbO6,4.317254424,3.5823,absorber,ml_plus_family_prior
+PbHfLiVO6,1.971901666,3.8548,absorber,ml_plus_family_prior
+PbHfMgTiO6,4.089321614,3.5396,absorber,ml_plus_family_prior
+PbHfNaNbO6,4.135896987,3.5812,absorber,ml_plus_family_prior
+PbHfNaSbO6,5.76696615,3.5268,absorber,ml_plus_family_prior
+PbHfNaVO6,1.9634335,3.8548,absorber,ml_plus_family_prior
+PbHfPbTiO6,4.510073988,3.5672,absorber,ml_plus_family_prior
+PbHfPbZrO6,5.083910042,3.5804,absorber,ml_plus_family_prior
+PbHfRbNbO6,4.294597438,3.5781,absorber,ml_plus_family_prior
+PbHfSnHfO6,4.399268884,3.6095,absorber,ml_plus_family_prior
+PbHfSnTiO6,3.97386115,3.6043,absorber,ml_plus_family_prior
+PbHfSnZrO6,4.38249106,3.612,absorber,ml_plus_family_prior
+PbHfSrGeO6,6.239783015,3.5458,absorber,ml_plus_family_prior
+PbHfSrSiO6,6.223094959,3.5409,absorber,ml_plus_family_prior
+PbHfSrSnO6,5.969245121,3.5643,absorber,ml_plus_family_prior
+PbHfSrTiO6,4.511809568,3.5672,absorber,ml_plus_family_prior
+PbHfTlNbO6,2.759636618,3.8533,absorber,ml_plus_family_prior
+PbHfTlTaO6,3.520176139,3.6953,absorber,ml_plus_family_prior
+PbHfYAlO6,5.658814835,3.5088,absorber,ml_plus_family_prior
+PbTiAgNbO6,3.374084532,3.7119,absorber,ml_plus_family_prior
+PbTiBaSnO6,4.748196307,3.5959,absorber,ml_plus_family_prior
+PbTiBaTiO6,3.64716967,3.5957,absorber,ml_plus_family_prior
+PbTiCaGeO6,4.326039143,3.581,absorber,ml_plus_family_prior
+PbTiCaSiO6,3.616892582,3.5912,absorber,ml_plus_family_prior
+PbTiCaSnO6,3.866511669,3.6253,absorber,ml_plus_family_prior
+PbTiCaTiO6,3.759636442,3.5963,absorber,ml_plus_family_prior
+PbTiLaAlO6,4.438175554,3.5517,absorber,ml_plus_family_prior
+PbTiLaGaO6,4.949207085,3.5548,absorber,ml_plus_family_prior
+PbTiLaInO6,4.37995343,3.5769,absorber,ml_plus_family_prior
+PbTiLiNbO6,3.632440439,3.5966,absorber,ml_plus_family_prior
+PbTiLiVO6,1.564150221,3.8813,absorber,ml_plus_family_prior
+PbTiMgTiO6,3.54079145,3.634,absorber,ml_plus_family_prior
+PbTiNaNbO6,3.603454802,3.5966,absorber,ml_plus_family_prior
+PbTiNaSbO6,4.20100595,3.5739,absorber,ml_plus_family_prior
+PbTiNaVO6,2.078686619,3.8175,absorber,ml_plus_family_prior
+PbTiSnTiO6,2.740887039,3.8699,absorber,ml_plus_family_prior
+PbTiSrGeO6,4.214439804,3.5772,absorber,ml_plus_family_prior
+PbTiSrSiO6,3.639510723,3.5893,absorber,ml_plus_family_prior
+PbTiSrSnO6,4.982430469,3.5901,absorber,ml_plus_family_prior
+PbTiSrTiO6,3.754054864,3.5966,absorber,ml_plus_family_prior
+PbTiTlNbO6,2.253986807,3.8475,absorber,ml_plus_family_prior
+PbTiYAlO6,3.887638405,3.5659,absorber,ml_plus_family_prior
+PbZrAgNbO6,4.166115284,3.5838,absorber,ml_plus_family_prior
+PbZrBaSnO6,5.796148247,3.5666,absorber,ml_plus_family_prior
+PbZrBaTiO6,4.688502615,3.5714,absorber,ml_plus_family_prior
+PbZrCaGeO6,6.26137224,3.5534,absorber,ml_plus_family_prior
+PbZrCaSiO6,6.062284869,3.5467,absorber,ml_plus_family_prior
+PbZrCaSnO6,5.978942608,3.5713,absorber,ml_plus_family_prior
+PbZrCaTiO6,4.347411697,3.5814,absorber,ml_plus_family_prior
+PbZrCsVO6,2.327454613,3.7702,absorber,ml_plus_family_prior
+PbZrGaNbO6,2.728501752,3.704,absorber,ml_plus_family_prior
+PbZrInNbO6,1.502295363,3.7954,absorber,ml_plus_family_prior
+PbZrKNbO6,4.301584994,3.5849,absorber,ml_plus_family_prior
+PbZrKSbO6,5.411015669,3.5725,absorber,ml_plus_family_prior
+PbZrLaAlO6,6.123085031,3.5276,absorber,ml_plus_family_prior
+PbZrLaGaO6,5.792527133,3.5433,absorber,ml_plus_family_prior
+PbZrLaInO6,5.413060914,3.5703,absorber,ml_plus_family_prior
+PbZrLiNbO6,4.322954385,3.5849,absorber,ml_plus_family_prior
+PbZrLiVO6,1.984307728,3.7952,absorber,ml_plus_family_prior
+PbZrMgTiO6,4.199383995,3.5569,absorber,ml_plus_family_prior
+PbZrNaNbO6,4.26853485,3.5807,absorber,ml_plus_family_prior
+PbZrNaSbO6,5.661587712,3.534,absorber,ml_plus_family_prior
+PbZrNaVO6,1.975980895,3.7952,absorber,ml_plus_family_prior
+PbZrPbTiO6,4.486692552,3.5692,absorber,ml_plus_family_prior
+PbZrRbNbO6,4.42595383,3.5849,absorber,ml_plus_family_prior
+PbZrSnHfO6,4.382511212,3.612,absorber,ml_plus_family_prior
+PbZrSnTiO6,3.967840494,3.6059,absorber,ml_plus_family_prior
+PbZrSnZrO6,4.372622984,3.611,absorber,ml_plus_family_prior
+PbZrSrGeO6,6.143619812,3.552,absorber,ml_plus_family_prior
+PbZrSrSiO6,6.047798161,3.5453,absorber,ml_plus_family_prior
+PbZrSrSnO6,5.909817046,3.5691,absorber,ml_plus_family_prior
+PbZrSrTiO6,4.782362473,3.5716,absorber,ml_plus_family_prior
+PbZrTlNbO6,2.769123763,3.8118,absorber,ml_plus_family_prior
+PbZrYAlO6,5.580683524,3.5207,absorber,ml_plus_family_prior
+PC60BM,1.8,4.2,etl,literature_SCAPS
+PCBM,2.0,3.9,etl,literature_SCAPS
+PTAA,2.96,2.3,htl,literature_SCAPS
+Rb2AgAlBr6,1.4842,3.7062,absorber,ml_plus_family_prior
+Rb2AgAlBr6 (cubic),1.045,3.6931,absorber,ml_plus_family_prior
+Rb2AgAlBr6 (orthorhombic),1.4842,3.7062,absorber,ml_plus_family_prior
+Rb2AgAlCl6,2.2615,3.7006,absorber,ml_plus_family_prior
+Rb2AgAlCl6 (cubic),2.1691,3.6827,absorber,ml_plus_family_prior
+Rb2AgAlCl6 (orthorhombic),2.2615,3.7006,absorber,ml_plus_family_prior
+Rb2AgAlI6,0.8823,3.7335,absorber,ml_plus_family_prior
+Rb2AgAlI6 (orthorhombic),0.8823,3.7335,absorber,ml_plus_family_prior
+Rb2AgAsBr6,1.025,3.8603,absorber,ml_plus_family_prior
+Rb2AgAsBr6 (cubic),0.7293,3.9446,absorber,ml_plus_family_prior
+Rb2AgAsBr6 (orthorhombic),1.025,3.8603,absorber,ml_plus_family_prior
+Rb2AgAsCl6,1.3779,3.9359,absorber,ml_plus_family_prior
+Rb2AgAsCl6 (cubic),1.2166,3.9244,absorber,ml_plus_family_prior
+Rb2AgAsCl6 (orthorhombic),1.3779,3.9359,absorber,ml_plus_family_prior
+Rb2AgAsI6,0.6606,3.9083,absorber,ml_plus_family_prior
+Rb2AgAsI6 (cubic),0.2286,3.9136,absorber,ml_plus_family_prior
+Rb2AgAsI6 (orthorhombic),0.6606,3.9083,absorber,ml_plus_family_prior
+Rb2AgBiBr6,1.3147,3.8986,absorber,ml_plus_family_prior
+Rb2AgBiBr6 (cubic),1.1156,3.8818,absorber,ml_plus_family_prior
+Rb2AgBiBr6 (orthorhombic),1.3147,3.8986,absorber,ml_plus_family_prior
+Rb2AgBiCl6,1.6589,3.9349,absorber,ml_plus_family_prior
+Rb2AgBiCl6 (cubic),1.5347,3.9369,absorber,ml_plus_family_prior
+Rb2AgBiCl6 (orthorhombic),1.6589,3.9349,absorber,ml_plus_family_prior
+Rb2AgBiI6,0.9444,3.909,absorber,ml_plus_family_prior
+Rb2AgBiI6 (cubic),0.6313,3.9107,absorber,ml_plus_family_prior
+Rb2AgBiI6 (orthorhombic),0.9444,3.909,absorber,ml_plus_family_prior
+Rb2AgGaBr6,0.5988,3.8937,absorber,ml_plus_family_prior
+Rb2AgGaBr6 (orthorhombic),0.5988,3.8937,absorber,ml_plus_family_prior
+Rb2AgGaCl6,1.0358,3.869,absorber,ml_plus_family_prior
+Rb2AgGaCl6 (cubic),0.8637,3.9325,absorber,ml_plus_family_prior
+Rb2AgGaCl6 (orthorhombic),1.0358,3.869,absorber,ml_plus_family_prior
+Rb2AgGaI6,0.5923,3.8692,absorber,ml_plus_family_prior
+Rb2AgGaI6 (orthorhombic),0.5923,3.8692,absorber,ml_plus_family_prior
+Rb2AgInBr6,0.813,3.8376,absorber,ml_plus_family_prior
+Rb2AgInBr6 (cubic),0.1505,3.8496,absorber,ml_plus_family_prior
+Rb2AgInBr6 (orthorhombic),0.813,3.8376,absorber,ml_plus_family_prior
+Rb2AgInCl6,1.3193,3.8741,absorber,ml_plus_family_prior
+Rb2AgInCl6 (cubic),0.9585,3.8185,absorber,ml_plus_family_prior
+Rb2AgInCl6 (orthorhombic),1.3193,3.8741,absorber,ml_plus_family_prior
+Rb2AgInI6,0.5097,3.8225,absorber,ml_plus_family_prior
+Rb2AgInI6 (orthorhombic),0.5097,3.8225,absorber,ml_plus_family_prior
+Rb2AgSbBr6,1.1724,3.8497,absorber,ml_plus_family_prior
+Rb2AgSbBr6 (cubic),0.8142,3.8994,absorber,ml_plus_family_prior
+Rb2AgSbBr6 (orthorhombic),1.1724,3.8497,absorber,ml_plus_family_prior
+Rb2AgSbCl6,1.549,3.8933,absorber,ml_plus_family_prior
+Rb2AgSbCl6 (cubic),1.303,3.8984,absorber,ml_plus_family_prior
+Rb2AgSbCl6 (orthorhombic),1.549,3.8933,absorber,ml_plus_family_prior
+Rb2AgSbI6,0.8157,3.874,absorber,ml_plus_family_prior
+Rb2AgSbI6 (cubic),0.3161,3.8855,absorber,ml_plus_family_prior
+Rb2AgSbI6 (orthorhombic),0.8157,3.874,absorber,ml_plus_family_prior
+Rb2AuAlBr6,2.9416,3.567,absorber,ml_plus_family_prior
+Rb2AuAlBr6 (orthorhombic),2.9416,3.567,absorber,ml_plus_family_prior
+Rb2AuAlCl6,2.7104,3.6818,absorber,ml_plus_family_prior
+Rb2AuAlCl6 (cubic),0.3514,3.8178,absorber,ml_plus_family_prior
+Rb2AuAlCl6 (orthorhombic),2.7104,3.6818,absorber,ml_plus_family_prior
+Rb2AuAlI6,1.7762,3.6717,absorber,ml_plus_family_prior
+Rb2AuAlI6 (orthorhombic),1.7762,3.6717,absorber,ml_plus_family_prior
+Rb2AuAsCl6,2.1674,3.8764,absorber,ml_plus_family_prior
+Rb2AuAsCl6 (orthorhombic),2.1674,3.8764,absorber,ml_plus_family_prior
+Rb2AuBiBr6,2.0059,3.8638,absorber,ml_plus_family_prior
+Rb2AuBiBr6 (cubic),0.105,3.9454,absorber,ml_plus_family_prior
+Rb2AuBiBr6 (orthorhombic),2.0059,3.8638,absorber,ml_plus_family_prior
+Rb2AuBiCl6,2.253,3.8779,absorber,ml_plus_family_prior
+Rb2AuBiCl6 (cubic),0.4081,3.9871,absorber,ml_plus_family_prior
+Rb2AuBiCl6 (orthorhombic),2.253,3.8779,absorber,ml_plus_family_prior
+Rb2AuBiI6,1.6172,3.8739,absorber,ml_plus_family_prior
+Rb2AuBiI6 (orthorhombic),1.6172,3.8739,absorber,ml_plus_family_prior
+Rb2AuGaBr6,1.515,3.857,absorber,ml_plus_family_prior
+Rb2AuGaBr6 (orthorhombic),1.515,3.857,absorber,ml_plus_family_prior
+Rb2AuGaCl6,2.0708,3.8027,absorber,ml_plus_family_prior
+Rb2AuGaCl6 (orthorhombic),2.0708,3.8027,absorber,ml_plus_family_prior
+Rb2AuGaI6,0.7292,3.8875,absorber,ml_plus_family_prior
+Rb2AuGaI6 (orthorhombic),0.7292,3.8875,absorber,ml_plus_family_prior
+Rb2AuInBr6,1.314,3.8293,absorber,ml_plus_family_prior
+Rb2AuInBr6 (orthorhombic),1.314,3.8293,absorber,ml_plus_family_prior
+Rb2AuInCl6,1.7497,3.8704,absorber,ml_plus_family_prior
+Rb2AuInCl6 (orthorhombic),1.7497,3.8704,absorber,ml_plus_family_prior
+Rb2AuInI6,0.8177,3.8136,absorber,ml_plus_family_prior
+Rb2AuInI6 (orthorhombic),0.8177,3.8136,absorber,ml_plus_family_prior
+Rb2AuSbBr6,1.8822,3.8162,absorber,ml_plus_family_prior
+Rb2AuSbBr6 (orthorhombic),1.8822,3.8162,absorber,ml_plus_family_prior
+Rb2AuSbCl6,2.1466,3.818,absorber,ml_plus_family_prior
+Rb2AuSbCl6 (cubic),0.1257,3.9581,absorber,ml_plus_family_prior
+Rb2AuSbCl6 (orthorhombic),2.1466,3.818,absorber,ml_plus_family_prior
+Rb2AuSbI6,1.6525,3.8319,absorber,ml_plus_family_prior
+Rb2AuSbI6 (orthorhombic),1.6525,3.8319,absorber,ml_plus_family_prior
+Rb2CuAlBr6,1.2881,3.7008,absorber,ml_plus_family_prior
+Rb2CuAlBr6 (orthorhombic),1.2881,3.7008,absorber,ml_plus_family_prior
+Rb2CuAlCl6,1.4505,3.7416,absorber,ml_plus_family_prior
+Rb2CuAlCl6 (cubic),0.6565,3.8106,absorber,ml_plus_family_prior
+Rb2CuAlCl6 (orthorhombic),1.4505,3.7416,absorber,ml_plus_family_prior
+Rb2CuAlI6,1.3409,3.673,absorber,ml_plus_family_prior
+Rb2CuAlI6 (orthorhombic),1.3409,3.673,absorber,ml_plus_family_prior
+Rb2CuAsBr6,0.2772,3.9204,absorber,ml_plus_family_prior
+Rb2CuAsBr6 (cubic),0.195,3.9226,absorber,ml_plus_family_prior
+Rb2CuAsBr6 (orthorhombic),0.2772,3.9204,absorber,ml_plus_family_prior
+Rb2CuAsCl6,0.5129,3.9663,absorber,ml_plus_family_prior
+Rb2CuAsCl6 (cubic),0.5151,3.9663,absorber,ml_plus_family_prior
+Rb2CuAsCl6 (orthorhombic),0.5129,3.9663,absorber,ml_plus_family_prior
+Rb2CuAsI6,0.3489,3.8927,absorber,ml_plus_family_prior
+Rb2CuAsI6 (orthorhombic),0.3489,3.8927,absorber,ml_plus_family_prior
+Rb2CuBiBr6,0.6378,3.92,absorber,ml_plus_family_prior
+Rb2CuBiBr6 (cubic),0.5582,3.9268,absorber,ml_plus_family_prior
+Rb2CuBiBr6 (orthorhombic),0.6378,3.92,absorber,ml_plus_family_prior
+Rb2CuBiCl6,1.3267,3.92,absorber,ml_plus_family_prior
+Rb2CuBiCl6 (cubic),0.7525,3.9793,absorber,ml_plus_family_prior
+Rb2CuBiCl6 (orthorhombic),1.3267,3.92,absorber,ml_plus_family_prior
+Rb2CuBiI6,0.4945,3.9009,absorber,ml_plus_family_prior
+Rb2CuBiI6 (cubic),0.2673,3.9038,absorber,ml_plus_family_prior
+Rb2CuBiI6 (orthorhombic),0.4945,3.9009,absorber,ml_plus_family_prior
+Rb2CuGaBr6,0.7361,3.8973,absorber,ml_plus_family_prior
+Rb2CuGaBr6 (orthorhombic),0.7361,3.8973,absorber,ml_plus_family_prior
+Rb2CuGaCl6,0.7079,3.9448,absorber,ml_plus_family_prior
+Rb2CuGaCl6 (orthorhombic),0.7079,3.9448,absorber,ml_plus_family_prior
+Rb2CuGaI6,0.4852,3.8613,absorber,ml_plus_family_prior
+Rb2CuGaI6 (orthorhombic),0.4852,3.8613,absorber,ml_plus_family_prior
+Rb2CuInBr6,0.4627,3.8314,absorber,ml_plus_family_prior
+Rb2CuInBr6 (orthorhombic),0.4627,3.8314,absorber,ml_plus_family_prior
+Rb2CuInCl6,0.1536,3.8828,absorber,ml_plus_family_prior
+Rb2CuInCl6 (orthorhombic),0.1536,3.8828,absorber,ml_plus_family_prior
+Rb2CuInI6,0.5673,3.8059,absorber,ml_plus_family_prior
+Rb2CuInI6 (orthorhombic),0.5673,3.8059,absorber,ml_plus_family_prior
+Rb2CuSbBr6,0.4518,3.8955,absorber,ml_plus_family_prior
+Rb2CuSbBr6 (cubic),0.3028,3.896,absorber,ml_plus_family_prior
+Rb2CuSbBr6 (orthorhombic),0.4518,3.8955,absorber,ml_plus_family_prior
+Rb2CuSbCl6,0.655,3.9371,absorber,ml_plus_family_prior
+Rb2CuSbCl6 (cubic),0.6353,3.9338,absorber,ml_plus_family_prior
+Rb2CuSbCl6 (orthorhombic),0.655,3.9371,absorber,ml_plus_family_prior
+Rb2CuSbI6,0.4434,3.8689,absorber,ml_plus_family_prior
+Rb2CuSbI6 (orthorhombic),0.4434,3.8689,absorber,ml_plus_family_prior
+Rb2InAlBr6,2.26,3.6518,absorber,ml_plus_family_prior
+Rb2InAlBr6 (cubic),1.8871,3.6402,absorber,ml_plus_family_prior
+Rb2InAlBr6 (orthorhombic),2.26,3.6518,absorber,ml_plus_family_prior
+Rb2InAlCl6,3.1603,3.5298,absorber,ml_plus_family_prior
+Rb2InAlCl6 (cubic),2.8237,3.6089,absorber,ml_plus_family_prior
+Rb2InAlCl6 (orthorhombic),3.1603,3.5298,absorber,ml_plus_family_prior
+Rb2InAlI6,1.2484,3.6266,absorber,ml_plus_family_prior
+Rb2InAlI6 (cubic),0.8605,3.6706,absorber,ml_plus_family_prior
+Rb2InAlI6 (orthorhombic),1.2484,3.6266,absorber,ml_plus_family_prior
+Rb2InAsBr6,0.6572,3.8356,absorber,ml_plus_family_prior
+Rb2InAsBr6 (orthorhombic),0.6572,3.8356,absorber,ml_plus_family_prior
+Rb2InAsCl6,1.2101,3.8414,absorber,ml_plus_family_prior
+Rb2InAsCl6 (cubic),0.4084,3.8879,absorber,ml_plus_family_prior
+Rb2InAsCl6 (orthorhombic),1.2101,3.8414,absorber,ml_plus_family_prior
+Rb2InAsI6,0.368,3.8122,absorber,ml_plus_family_prior
+Rb2InAsI6 (cubic),0.1418,3.8163,absorber,ml_plus_family_prior
+Rb2InAsI6 (orthorhombic),0.368,3.8122,absorber,ml_plus_family_prior
+Rb2InBiBr6,0.8686,3.8314,absorber,ml_plus_family_prior
+Rb2InBiBr6 (cubic),0.1087,3.8496,absorber,ml_plus_family_prior
+Rb2InBiBr6 (orthorhombic),0.8686,3.8314,absorber,ml_plus_family_prior
+Rb2InBiCl6,1.3492,3.8744,absorber,ml_plus_family_prior
+Rb2InBiCl6 (cubic),0.3094,3.896,absorber,ml_plus_family_prior
+Rb2InBiCl6 (orthorhombic),1.3492,3.8744,absorber,ml_plus_family_prior
+Rb2InBiI6,0.4701,3.8224,absorber,ml_plus_family_prior
+Rb2InBiI6 (cubic),0.3498,3.8212,absorber,ml_plus_family_prior
+Rb2InBiI6 (orthorhombic),0.4701,3.8224,absorber,ml_plus_family_prior
+Rb2InGaBr6,0.9411,3.8126,absorber,ml_plus_family_prior
+Rb2InGaBr6 (cubic),0.8699,3.8077,absorber,ml_plus_family_prior
+Rb2InGaBr6 (orthorhombic),0.9411,3.8126,absorber,ml_plus_family_prior
+Rb2InGaCl6,1.8549,3.819,absorber,ml_plus_family_prior
+Rb2InGaCl6 (cubic),1.6341,3.8462,absorber,ml_plus_family_prior
+Rb2InGaCl6 (orthorhombic),1.8549,3.819,absorber,ml_plus_family_prior
+Rb2InGaI6,0.6304,3.7939,absorber,ml_plus_family_prior
+Rb2InGaI6 (cubic),0.1844,3.8033,absorber,ml_plus_family_prior
+Rb2InGaI6 (orthorhombic),0.6304,3.7939,absorber,ml_plus_family_prior
+Rb2InInBr6,1.282,3.8301,absorber,ml_plus_family_prior
+Rb2InInBr6 (cubic),0.6885,3.8584,absorber,ml_plus_family_prior
+Rb2InInBr6 (orthorhombic),1.282,3.8301,absorber,ml_plus_family_prior
+Rb2InInCl6,2.0694,3.8422,absorber,ml_plus_family_prior
+Rb2InInCl6 (cubic),1.4427,3.8749,absorber,ml_plus_family_prior
+Rb2InInCl6 (orthorhombic),2.0694,3.8422,absorber,ml_plus_family_prior
+Rb2InInI6,0.5564,3.8224,absorber,ml_plus_family_prior
+Rb2InInI6 (orthorhombic),0.5564,3.8224,absorber,ml_plus_family_prior
+Rb2InSbBr6,0.9469,3.7677,absorber,ml_plus_family_prior
+Rb2InSbBr6 (orthorhombic),0.9469,3.7677,absorber,ml_plus_family_prior
+Rb2InSbCl6,1.4543,3.8515,absorber,ml_plus_family_prior
+Rb2InSbCl6 (cubic),0.4219,3.881,absorber,ml_plus_family_prior
+Rb2InSbCl6 (orthorhombic),1.4543,3.8515,absorber,ml_plus_family_prior
+Rb2InSbI6,0.5575,3.808,absorber,ml_plus_family_prior
+Rb2InSbI6 (cubic),0.2129,3.811,absorber,ml_plus_family_prior
+Rb2InSbI6 (orthorhombic),0.5575,3.808,absorber,ml_plus_family_prior
+Rb2TlAlBr6,2.6972,3.6354,absorber,ml_plus_family_prior
+Rb2TlAlBr6 (cubic),2.5847,3.5968,absorber,ml_plus_family_prior
+Rb2TlAlBr6 (orthorhombic),2.6972,3.6354,absorber,ml_plus_family_prior
+Rb2TlAlCl6,3.6754,3.4595,absorber,ml_plus_family_prior
+Rb2TlAlCl6 (cubic),3.6123,3.4618,absorber,ml_plus_family_prior
+Rb2TlAlCl6 (orthorhombic),3.6754,3.4595,absorber,ml_plus_family_prior
+Rb2TlAlI6,1.5921,3.6767,absorber,ml_plus_family_prior
+Rb2TlAlI6 (cubic),1.3442,3.6815,absorber,ml_plus_family_prior
+Rb2TlAlI6 (orthorhombic),1.5921,3.6767,absorber,ml_plus_family_prior
+Rb2TlAsBr6,1.4508,3.8924,absorber,ml_plus_family_prior
+Rb2TlAsBr6 (cubic),0.7202,3.9446,absorber,ml_plus_family_prior
+Rb2TlAsBr6 (orthorhombic),1.4508,3.8924,absorber,ml_plus_family_prior
+Rb2TlAsCl6,1.9166,3.9041,absorber,ml_plus_family_prior
+Rb2TlAsCl6 (cubic),1.1449,3.9129,absorber,ml_plus_family_prior
+Rb2TlAsCl6 (orthorhombic),1.9166,3.9041,absorber,ml_plus_family_prior
+Rb2TlAsI6,1.0584,3.8536,absorber,ml_plus_family_prior
+Rb2TlAsI6 (cubic),0.4124,3.9103,absorber,ml_plus_family_prior
+Rb2TlAsI6 (orthorhombic),1.0584,3.8536,absorber,ml_plus_family_prior
+Rb2TlBiBr6,1.4715,3.8988,absorber,ml_plus_family_prior
+Rb2TlBiBr6 (cubic),0.59,3.9333,absorber,ml_plus_family_prior
+Rb2TlBiBr6 (orthorhombic),1.4715,3.8988,absorber,ml_plus_family_prior
+Rb2TlBiCl6,1.9577,3.9054,absorber,ml_plus_family_prior
+Rb2TlBiCl6 (cubic),1.0286,3.9098,absorber,ml_plus_family_prior
+Rb2TlBiCl6 (orthorhombic),1.9577,3.9054,absorber,ml_plus_family_prior
+Rb2TlBiI6,1.0077,3.8453,absorber,ml_plus_family_prior
+Rb2TlBiI6 (cubic),0.2375,3.9207,absorber,ml_plus_family_prior
+Rb2TlBiI6 (orthorhombic),1.0077,3.8453,absorber,ml_plus_family_prior
+Rb2TlGaBr6,1.719,3.8521,absorber,ml_plus_family_prior
+Rb2TlGaBr6 (cubic),1.3803,3.8567,absorber,ml_plus_family_prior
+Rb2TlGaBr6 (orthorhombic),1.719,3.8521,absorber,ml_plus_family_prior
+Rb2TlGaCl6,2.6567,3.6812,absorber,ml_plus_family_prior
+Rb2TlGaCl6 (cubic),2.3181,3.7781,absorber,ml_plus_family_prior
+Rb2TlGaCl6 (orthorhombic),2.6567,3.6812,absorber,ml_plus_family_prior
+Rb2TlGaI6,0.7727,3.8829,absorber,ml_plus_family_prior
+Rb2TlGaI6 (cubic),0.449,3.8777,absorber,ml_plus_family_prior
+Rb2TlGaI6 (orthorhombic),0.7727,3.8829,absorber,ml_plus_family_prior
+Rb2TlInBr6,2.0361,3.8146,absorber,ml_plus_family_prior
+Rb2TlInBr6 (cubic),1.5726,3.8285,absorber,ml_plus_family_prior
+Rb2TlInBr6 (orthorhombic),2.0361,3.8146,absorber,ml_plus_family_prior
+Rb2TlInCl6,2.8388,3.6923,absorber,ml_plus_family_prior
+Rb2TlInCl6 (cubic),2.3762,3.8352,absorber,ml_plus_family_prior
+Rb2TlInCl6 (orthorhombic),2.8388,3.6923,absorber,ml_plus_family_prior
+Rb2TlInI6,1.1472,3.7661,absorber,ml_plus_family_prior
+Rb2TlInI6 (cubic),0.7552,3.8292,absorber,ml_plus_family_prior
+Rb2TlInI6 (orthorhombic),1.1472,3.7661,absorber,ml_plus_family_prior
+Rb2TlSbBr6,1.5107,3.8586,absorber,ml_plus_family_prior
+Rb2TlSbBr6 (cubic),0.6199,3.901,absorber,ml_plus_family_prior
+Rb2TlSbBr6 (orthorhombic),1.5107,3.8586,absorber,ml_plus_family_prior
+Rb2TlSbCl6,1.9664,3.8607,absorber,ml_plus_family_prior
+Rb2TlSbCl6 (cubic),1.0419,3.8728,absorber,ml_plus_family_prior
+Rb2TlSbCl6 (orthorhombic),1.9664,3.8607,absorber,ml_plus_family_prior
+Rb2TlSbI6,1.0951,3.8221,absorber,ml_plus_family_prior
+Rb2TlSbI6 (cubic),0.3028,3.8855,absorber,ml_plus_family_prior
+Rb2TlSbI6 (orthorhombic),1.0951,3.8221,absorber,ml_plus_family_prior
+RbNbAgNbO6,3.000554212,3.6404,absorber,ml_plus_family_prior
+RbNbBaSnO6,4.582478857,3.5935,absorber,ml_plus_family_prior
+RbNbBaTiO6,3.825994961,3.594,absorber,ml_plus_family_prior
+RbNbCaGeO6,4.444933002,3.5704,absorber,ml_plus_family_prior
+RbNbCaSiO6,3.961833599,3.5686,absorber,ml_plus_family_prior
+RbNbCaSnO6,4.978006733,3.5903,absorber,ml_plus_family_prior
+RbNbCaTiO6,3.464606286,3.6839,absorber,ml_plus_family_prior
+RbNbGaNbO6,1.501461081,3.8481,absorber,ml_plus_family_prior
+RbNbLaAlO6,4.45268281,3.543,absorber,ml_plus_family_prior
+RbNbLaGaO6,4.739790941,3.5639,absorber,ml_plus_family_prior
+RbNbLaInO6,4.788646563,3.5668,absorber,ml_plus_family_prior
+RbNbLiNbO6,3.132605798,3.6532,absorber,ml_plus_family_prior
+RbNbMgTiO6,3.912256022,3.5751,absorber,ml_plus_family_prior
+RbNbNaNbO6,3.104351528,3.648,absorber,ml_plus_family_prior
+RbNbNaSbO6,4.001396256,3.5583,absorber,ml_plus_family_prior
+RbNbPbTiO6,3.927842162,3.5729,absorber,ml_plus_family_prior
+RbNbSnTiO6,2.827129685,3.7779,absorber,ml_plus_family_prior
+RbNbSnZrO6,3.402918374,3.7115,absorber,ml_plus_family_prior
+RbNbSrGeO6,4.380221184,3.5825,absorber,ml_plus_family_prior
+RbNbSrSiO6,3.912411102,3.5904,absorber,ml_plus_family_prior
+RbNbSrSnO6,4.866665774,3.588,absorber,ml_plus_family_prior
+RbNbSrTiO6,3.404490411,3.6969,absorber,ml_plus_family_prior
+RbNbTlNbO6,1.926609234,3.8571,absorber,ml_plus_family_prior
+RbNbTlTaO6,1.755772218,3.8806,absorber,ml_plus_family_prior
+RbNbYAlO6,4.581560313,3.543,absorber,ml_plus_family_prior
+RbPbI3,2.1,3.7692,absorber,ml_plus_family_prior
+RbTaAgNbO6,3.372259,3.7118,absorber,ml_plus_family_prior
+RbTaAgTaO6,3.912786912,3.5967,absorber,ml_plus_family_prior
+RbTaBaSnO6,5.005447926,3.5906,absorber,ml_plus_family_prior
+RbTaBaTiO6,3.725461181,3.5938,absorber,ml_plus_family_prior
+RbTaCaGeO6,5.172654926,3.567,absorber,ml_plus_family_prior
+RbTaCaHfO6,5.344751259,3.5652,absorber,ml_plus_family_prior
+RbTaCaSiO6,5.009983702,3.5574,absorber,ml_plus_family_prior
+RbTaCaSnO6,5.542419882,3.5587,absorber,ml_plus_family_prior
+RbTaCaTiO6,4.15025041,3.5732,absorber,ml_plus_family_prior
+RbTaCaZrO6,5.289425231,3.5689,absorber,ml_plus_family_prior
+RbTaCsNbO6,3.244169484,3.665,absorber,ml_plus_family_prior
+RbTaCsVO6,2.256230932,3.8187,absorber,ml_plus_family_prior
+RbTaGaNbO6,1.714926982,3.8457,absorber,ml_plus_family_prior
+RbTaGaTaO6,2.197091366,3.7457,absorber,ml_plus_family_prior
+RbTaKNbO6,3.385357147,3.704,absorber,ml_plus_family_prior
+RbTaKSbO6,4.138193241,3.5768,absorber,ml_plus_family_prior
+RbTaLaAlO6,5.350370897,3.5375,absorber,ml_plus_family_prior
+RbTaLaGaO6,5.68309794,3.5246,absorber,ml_plus_family_prior
+RbTaLaInO6,5.659890797,3.5238,absorber,ml_plus_family_prior
+RbTaLaScO6,5.569235185,3.5323,absorber,ml_plus_family_prior
+RbTaLiNbO6,3.503887171,3.6894,absorber,ml_plus_family_prior
+RbTaLiTaO6,4.063775902,3.5575,absorber,ml_plus_family_prior
+RbTaLiVO6,2.256156773,3.8181,absorber,ml_plus_family_prior
+RbTaMgTiO6,5.087929236,3.5502,absorber,ml_plus_family_prior
+RbTaMgZrO6,6.155481471,3.5207,absorber,ml_plus_family_prior
+RbTaNaNbO6,3.480365291,3.692,absorber,ml_plus_family_prior
+RbTaNaSbO6,4.486824192,3.5655,absorber,ml_plus_family_prior
+RbTaNaTaO6,4.032147769,3.5585,absorber,ml_plus_family_prior
+RbTaNaVO6,1.992431484,3.841,absorber,ml_plus_family_prior
+RbTaPbHfO6,5.152195244,3.5663,absorber,ml_plus_family_prior
+RbTaPbTiO6,3.863966354,3.5971,absorber,ml_plus_family_prior
+RbTaPbZrO6,5.061727768,3.5794,absorber,ml_plus_family_prior
+RbTaRbNbO6,3.324907538,3.7069,absorber,ml_plus_family_prior
+RbTaSnHfO6,4.788507051,3.5968,absorber,ml_plus_family_prior
+RbTaSnTiO6,3.187687673,3.6706,absorber,ml_plus_family_prior
+RbTaSnZrO6,4.738259487,3.5983,absorber,ml_plus_family_prior
+RbTaSrGeO6,4.886605861,3.563,absorber,ml_plus_family_prior
+RbTaSrHfO6,5.101717351,3.5732,absorber,ml_plus_family_prior
+RbTaSrSiO6,4.925639137,3.5538,absorber,ml_plus_family_prior
+RbTaSrSnO6,5.339337693,3.5929,absorber,ml_plus_family_prior
+RbTaSrTiO6,3.820417026,3.594,absorber,ml_plus_family_prior
+RbTaSrZrO6,5.004836343,3.564,absorber,ml_plus_family_prior
+RbTaTlNbO6,1.755690239,3.8806,absorber,ml_plus_family_prior
+RbTaTlTaO6,2.236308333,3.8339,absorber,ml_plus_family_prior
+RbTaYAlO6,5.611690741,3.5063,absorber,ml_plus_family_prior
+Sb_b,1.22,3.2600000000000007,monolayer,literature_HSE06_monolayer
+SiC,3.27,2.19,monolayer,literature_HSE06_monolayer
+SiGe_b,0.55,4.25,monolayer,literature_HSE06_monolayer
+SiSn_b,0.59,4.0600000000000005,monolayer,literature_HSE06_monolayer
+SnC,1.85,2.9999999999999996,monolayer,literature_HSE06_monolayer
+SnHfAgNbO6,3.209983605,3.6866,absorber,ml_plus_family_prior
+SnHfBaSnO6,5.174115888,3.5924,absorber,ml_plus_family_prior
+SnHfBaTiO6,4.117569876,3.6025,absorber,ml_plus_family_prior
+SnHfCaGeO6,4.190195999,3.6072,absorber,ml_plus_family_prior
+SnHfCaSiO6,4.879451562,3.5854,absorber,ml_plus_family_prior
+SnHfCaSnO6,3.946579171,3.6036,absorber,ml_plus_family_prior
+SnHfCaTiO6,3.352056245,3.7198,absorber,ml_plus_family_prior
+SnHfCsVO6,1.553908766,3.9055,absorber,ml_plus_family_prior
+SnHfGaNbO6,2.680932059,3.7505,absorber,ml_plus_family_prior
+SnHfGaTaO6,3.434604475,3.6858,absorber,ml_plus_family_prior
+SnHfInNbO6,1.463743255,3.8685,absorber,ml_plus_family_prior
+SnHfKNbO6,4.033855052,3.5894,absorber,ml_plus_family_prior
+SnHfLaAlO6,4.926783336,3.5598,absorber,ml_plus_family_prior
+SnHfLaGaO6,4.783226641,3.595,absorber,ml_plus_family_prior
+SnHfLaInO6,4.45984096,3.5945,absorber,ml_plus_family_prior
+SnHfLiNbO6,3.257029919,3.6934,absorber,ml_plus_family_prior
+SnHfLiVO6,0.650198371,3.9271,absorber,ml_plus_family_prior
+SnHfMgTiO6,3.126042499,3.6676,absorber,ml_plus_family_prior
+SnHfNaNbO6,3.140093285,3.6779,absorber,ml_plus_family_prior
+SnHfNaSbO6,4.99990274,3.5916,absorber,ml_plus_family_prior
+SnHfNaVO6,1.483239949,3.9113,absorber,ml_plus_family_prior
+SnHfPbTiO6,3.974059783,3.6043,absorber,ml_plus_family_prior
+SnHfRbNbO6,4.012968027,3.5894,absorber,ml_plus_family_prior
+SnHfSnTiO6,3.527115883,3.7009,absorber,ml_plus_family_prior
+SnHfSnZrO6,3.970705007,3.607,absorber,ml_plus_family_prior
+SnHfSrGeO6,5.080946049,3.6083,absorber,ml_plus_family_prior
+SnHfSrSiO6,4.896460123,3.5844,absorber,ml_plus_family_prior
+SnHfSrSnO6,5.171032937,3.5924,absorber,ml_plus_family_prior
+SnHfSrTiO6,4.144891869,3.6025,absorber,ml_plus_family_prior
+SnHfTlNbO6,2.709728065,3.8718,absorber,ml_plus_family_prior
+SnHfYAlO6,4.336146837,3.5757,absorber,ml_plus_family_prior
+SnO2,3.6,3.9,etl,literature_SCAPS
+SnS2,1.85,4.26,etl,literature_SCAPS
+SnTiYAlO6,2.700036899,3.7519,absorber,ml_plus_family_prior
+SnZrAgNbO6,3.229537258,3.6829,absorber,ml_plus_family_prior
+SnZrBaSnO6,5.135553587,3.6028,absorber,ml_plus_family_prior
+SnZrBaTiO6,4.111540315,3.6045,absorber,ml_plus_family_prior
+SnZrCaGeO6,4.991572731,3.5981,absorber,ml_plus_family_prior
+SnZrCaSiO6,4.77896532,3.593,absorber,ml_plus_family_prior
+SnZrCaSnO6,5.126303777,3.603,absorber,ml_plus_family_prior
+SnZrCaTiO6,3.430578699,3.6963,absorber,ml_plus_family_prior
+SnZrCaZrO6,4.884594323,3.5907,absorber,ml_plus_family_prior
+SnZrCsVO6,1.579963591,3.8415,absorber,ml_plus_family_prior
+SnZrGaNbO6,2.679548904,3.7227,absorber,ml_plus_family_prior
+SnZrGaTaO6,3.407617962,3.6957,absorber,ml_plus_family_prior
+SnZrInNbO6,1.473774385,3.8298,absorber,ml_plus_family_prior
+SnZrKNbO6,4.021001601,3.5914,absorber,ml_plus_family_prior
+SnZrKSbO6,4.839100803,3.5995,absorber,ml_plus_family_prior
+SnZrLaAlO6,4.858929864,3.5721,absorber,ml_plus_family_prior
+SnZrLaGaO6,4.692095969,3.5963,absorber,ml_plus_family_prior
+SnZrLaInO6,4.423128282,3.606,absorber,ml_plus_family_prior
+SnZrLiNbO6,3.330009183,3.7199,absorber,ml_plus_family_prior
+SnZrLiVO6,1.496601007,3.8491,absorber,ml_plus_family_prior
+SnZrMgTiO6,3.24826497,3.6766,absorber,ml_plus_family_prior
+SnZrNaNbO6,3.218716099,3.6829,absorber,ml_plus_family_prior
+SnZrNaSbO6,4.940578625,3.5905,absorber,ml_plus_family_prior
+SnZrNaVO6,1.507160671,3.849,absorber,ml_plus_family_prior
+SnZrPbTiO6,3.968205092,3.6059,absorber,ml_plus_family_prior
+SnZrSnTiO6,3.745150863,3.6278,absorber,ml_plus_family_prior
+SnZrSrGeO6,5.012190275,3.5976,absorber,ml_plus_family_prior
+SnZrSrSiO6,4.792990418,3.592,absorber,ml_plus_family_prior
+SnZrSrSnO6,5.135155814,3.6028,absorber,ml_plus_family_prior
+SnZrSrTiO6,4.137110462,3.6045,absorber,ml_plus_family_prior
+SnZrTlNbO6,3.199119137,3.6774,absorber,ml_plus_family_prior
+SnZrTlTaO6,3.711956415,3.6303,absorber,ml_plus_family_prior
+SnZrYAlO6,4.252384233,3.5752,absorber,ml_plus_family_prior
+SrGeAgNbO6,4.17527143,3.5784,absorber,ml_plus_family_prior
+SrGeCaGeO6,2.594730579,3.804,absorber,ml_plus_family_prior
+SrGeCaSiO6,3.610404089,3.5959,absorber,ml_plus_family_prior
+SrGeCaSnO6,3.176619834,3.683,absorber,ml_plus_family_prior
+SrGeCaTiO6,4.854383494,3.5712,absorber,ml_plus_family_prior
+SrGeLaAlO6,5.326796507,3.5421,absorber,ml_plus_family_prior
+SrGeLaGaO6,3.461904133,3.6724,absorber,ml_plus_family_prior
+SrGeLaInO6,3.979319695,3.5623,absorber,ml_plus_family_prior
+SrGeLiVO6,2.036765745,3.8435,absorber,ml_plus_family_prior
+SrGeMgTiO6,5.057554717,3.5542,absorber,ml_plus_family_prior
+SrGeSnTiO6,3.278589306,3.714,absorber,ml_plus_family_prior
+SrGeYAlO6,5.805413062,3.5213,absorber,ml_plus_family_prior
+SrHfAgNbO6,4.176895192,3.5747,absorber,ml_plus_family_prior
+SrHfAgTaO6,4.200189633,3.5746,absorber,ml_plus_family_prior
+SrHfBaSnO6,6.263415327,3.5628,absorber,ml_plus_family_prior
+SrHfBaTiO6,4.710168434,3.5659,absorber,ml_plus_family_prior
+SrHfCaGeO6,6.746283956,3.5435,absorber,ml_plus_family_prior
+SrHfCaSiO6,7.294961255,3.4729,absorber,ml_plus_family_prior
+SrHfCaSnO6,6.436087606,3.5642,absorber,ml_plus_family_prior
+SrHfCaTiO6,5.06131937,3.5714,absorber,ml_plus_family_prior
+SrHfCsNbO6,4.252232394,3.5746,absorber,ml_plus_family_prior
+SrHfCsVO6,1.925412534,3.8538,absorber,ml_plus_family_prior
+SrHfGaNbO6,2.752638628,3.7272,absorber,ml_plus_family_prior
+SrHfGaTaO6,3.492686975,3.6707,absorber,ml_plus_family_prior
+SrHfInNbO6,1.472787671,3.8394,absorber,ml_plus_family_prior
+SrHfInTaO6,2.142406138,3.8052,absorber,ml_plus_family_prior
+SrHfKNbO6,4.334239422,3.5789,absorber,ml_plus_family_prior
+SrHfKSbO6,5.652959022,3.5244,absorber,ml_plus_family_prior
+SrHfLaAlO6,7.008201642,3.4637,absorber,ml_plus_family_prior
+SrHfLaGaO6,7.241445283,3.4721,absorber,ml_plus_family_prior
+SrHfLaInO6,6.550766008,3.5381,absorber,ml_plus_family_prior
+SrHfLiNbO6,4.705854233,3.5687,absorber,ml_plus_family_prior
+SrHfLiVO6,1.971766171,3.8533,absorber,ml_plus_family_prior
+SrHfMgTiO6,5.499077752,3.5409,absorber,ml_plus_family_prior
+SrHfMgZrO6,7.474759963,3.4516,absorber,ml_plus_family_prior
+SrHfNaNbO6,4.417036691,3.5794,absorber,ml_plus_family_prior
+SrHfNaSbO6,5.945060913,3.5376,absorber,ml_plus_family_prior
+SrHfNaVO6,1.95911547,3.8533,absorber,ml_plus_family_prior
+SrHfPbHfO6,5.913216316,3.5403,absorber,ml_plus_family_prior
+SrHfPbTiO6,4.806805346,3.5707,absorber,ml_plus_family_prior
+SrHfPbZrO6,5.85190613,3.5465,absorber,ml_plus_family_prior
+SrHfRbNbO6,4.283633554,3.5746,absorber,ml_plus_family_prior
+SrHfSnHfO6,5.167009671,3.5924,absorber,ml_plus_family_prior
+SrHfSnTiO6,3.490516735,3.7036,absorber,ml_plus_family_prior
+SrHfSnZrO6,5.142678923,3.6037,absorber,ml_plus_family_prior
+SrHfSrGeO6,6.492423051,3.5438,absorber,ml_plus_family_prior
+SrHfSrSiO6,7.274729675,3.4711,absorber,ml_plus_family_prior
+SrHfSrSnO6,6.398151683,3.5628,absorber,ml_plus_family_prior
+SrHfSrTiO6,4.808535196,3.5673,absorber,ml_plus_family_prior
+SrHfSrZrO6,6.587499549,3.5448,absorber,ml_plus_family_prior
+SrHfTlNbO6,2.789967739,3.8396,absorber,ml_plus_family_prior
+SrHfTlTaO6,3.537462784,3.6495,absorber,ml_plus_family_prior
+SrHfYAlO6,7.85475225,3.4637,absorber,ml_plus_family_prior
+SrSiAgNbO6,3.735156221,3.5905,absorber,ml_plus_family_prior
+SrSiCaGeO6,3.591819082,3.5959,absorber,ml_plus_family_prior
+SrSiCaSiO6,5.791606342,3.5346,absorber,ml_plus_family_prior
+SrSiCaSnO6,3.879590944,3.6203,absorber,ml_plus_family_prior
+SrSiCaTiO6,4.490676552,3.5591,absorber,ml_plus_family_prior
+SrSiLaAlO6,7.781253229,3.4634,absorber,ml_plus_family_prior
+SrSiLaGaO6,5.025059286,3.5622,absorber,ml_plus_family_prior
+SrSiLaInO6,5.1817765,3.5561,absorber,ml_plus_family_prior
+SrSiLiNbO6,4.200926152,3.569,absorber,ml_plus_family_prior
+SrSiLiVO6,1.55928847,3.8783,absorber,ml_plus_family_prior
+SrSiMgTiO6,5.003049204,3.5368,absorber,ml_plus_family_prior
+SrSiSnTiO6,2.61479547,3.864,absorber,ml_plus_family_prior
+SrSiSrGeO6,3.06110138,3.6449,absorber,ml_plus_family_prior
+SrSiSrSnO6,3.529644563,3.6933,absorber,ml_plus_family_prior
+SrSiSrTiO6,4.387038008,3.5706,absorber,ml_plus_family_prior
+SrSiYAlO6,8.103995713,3.4634,absorber,ml_plus_family_prior
+SrSnAgNbO6,4.236154672,3.6012,absorber,ml_plus_family_prior
+SrSnCaGeO6,2.579727765,3.8298,absorber,ml_plus_family_prior
+SrSnCaSiO6,3.848751305,3.6203,absorber,ml_plus_family_prior
+SrSnCaSnO6,3.697927802,3.6261,absorber,ml_plus_family_prior
+SrSnCaTiO6,4.770072455,3.5936,absorber,ml_plus_family_prior
+SrSnLaAlO6,5.552495553,3.5367,absorber,ml_plus_family_prior
+SrSnLaGaO6,4.088655265,3.5871,absorber,ml_plus_family_prior
+SrSnLaInO6,4.176892582,3.6,absorber,ml_plus_family_prior
+SrSnMgTiO6,5.151680803,3.5677,absorber,ml_plus_family_prior
+SrSnSnTiO6,4.288963447,3.5984,absorber,ml_plus_family_prior
+SrSnSrGeO6,2.299718075,3.8677,absorber,ml_plus_family_prior
+SrSnSrTiO6,5.121862654,3.5977,absorber,ml_plus_family_prior
+SrSnYAlO6,5.559431157,3.5367,absorber,ml_plus_family_prior
+SrTiAgNbO6,3.339764295,3.7063,absorber,ml_plus_family_prior
+SrTiCaGeO6,4.897520596,3.5605,absorber,ml_plus_family_prior
+SrTiCaSiO6,4.487936065,3.5591,absorber,ml_plus_family_prior
+SrTiCaSnO6,4.770601938,3.5936,absorber,ml_plus_family_prior
+SrTiCaTiO6,3.931832825,3.5689,absorber,ml_plus_family_prior
+SrTiLaAlO6,4.975239684,3.5324,absorber,ml_plus_family_prior
+SrTiLaGaO6,5.29666036,3.556,absorber,ml_plus_family_prior
+SrTiLaInO6,5.292661823,3.5597,absorber,ml_plus_family_prior
+SrTiLiNbO6,3.574708867,3.5935,absorber,ml_plus_family_prior
+SrTiLiVO6,2.701019829,3.8323,absorber,ml_plus_family_prior
+SrTiMgTiO6,4.740281538,3.5466,absorber,ml_plus_family_prior
+SrTiSnTiO6,2.822797487,3.7779,absorber,ml_plus_family_prior
+SrTiSrGeO6,4.676873549,3.5696,absorber,ml_plus_family_prior
+SrTiYAlO6,5.292063377,3.5345,absorber,ml_plus_family_prior
+SrZrAgNbO6,4.138226816,3.5804,absorber,ml_plus_family_prior
+SrZrAgTaO6,4.170672569,3.5804,absorber,ml_plus_family_prior
+SrZrBaSnO6,6.427321329,3.5683,absorber,ml_plus_family_prior
+SrZrBaTiO6,4.674153802,3.568,absorber,ml_plus_family_prior
+SrZrCaGeO6,6.200940699,3.5513,absorber,ml_plus_family_prior
+SrZrCaSiO6,6.823548556,3.4773,absorber,ml_plus_family_prior
+SrZrCaSnO6,6.727992178,3.5681,absorber,ml_plus_family_prior
+SrZrCaTiO6,5.064483253,3.5735,absorber,ml_plus_family_prior
+SrZrCsNbO6,4.204970633,3.5772,absorber,ml_plus_family_prior
+SrZrCsVO6,2.301070665,3.7723,absorber,ml_plus_family_prior
+SrZrGaNbO6,2.75034975,3.6991,absorber,ml_plus_family_prior
+SrZrGaTaO6,3.445174563,3.6674,absorber,ml_plus_family_prior
+SrZrInNbO6,1.480554007,3.7944,absorber,ml_plus_family_prior
+SrZrInTaO6,2.104380205,3.7548,absorber,ml_plus_family_prior
+SrZrKNbO6,4.283561279,3.5772,absorber,ml_plus_family_prior
+SrZrKSbO6,5.578868143,3.5385,absorber,ml_plus_family_prior
+SrZrLaAlO6,6.741766285,3.5237,absorber,ml_plus_family_prior
+SrZrLaGaO6,6.999519732,3.4782,absorber,ml_plus_family_prior
+SrZrLaInO6,6.771740807,3.5264,absorber,ml_plus_family_prior
+SrZrLiNbO6,4.959242475,3.5625,absorber,ml_plus_family_prior
+SrZrLiTaO6,5.176051827,3.567,absorber,ml_plus_family_prior
+SrZrLiVO6,1.987131612,3.7932,absorber,ml_plus_family_prior
+SrZrMgTiO6,5.717352915,3.5055,absorber,ml_plus_family_prior
+SrZrMgZrO6,6.943180739,3.4516,absorber,ml_plus_family_prior
+SrZrNaNbO6,4.375144271,3.5814,absorber,ml_plus_family_prior
+SrZrNaSbO6,5.864816808,3.543,absorber,ml_plus_family_prior
+SrZrNaVO6,1.97424218,3.7932,absorber,ml_plus_family_prior
+SrZrPbHfO6,5.851968532,3.5465,absorber,ml_plus_family_prior
+SrZrPbTiO6,4.786374901,3.5716,absorber,ml_plus_family_prior
+SrZrPbZrO6,5.795287748,3.544,absorber,ml_plus_family_prior
+SrZrRbNbO6,4.240433077,3.5772,absorber,ml_plus_family_prior
+SrZrSnHfO6,5.142562912,3.6037,absorber,ml_plus_family_prior
+SrZrSnTiO6,4.132405402,3.6045,absorber,ml_plus_family_prior
+SrZrSnZrO6,5.126089659,3.6028,absorber,ml_plus_family_prior
+SrZrSrGeO6,6.415338434,3.5499,absorber,ml_plus_family_prior
+SrZrSrSiO6,6.767726491,3.5252,absorber,ml_plus_family_prior
+SrZrSrSnO6,6.667386491,3.5683,absorber,ml_plus_family_prior
+SrZrSrTiO6,4.765770048,3.5681,absorber,ml_plus_family_prior
+SrZrTlNbO6,2.796095934,3.7979,absorber,ml_plus_family_prior
+SrZrTlTaO6,3.494338204,3.6922,absorber,ml_plus_family_prior
+SrZrYAlO6,7.46492109,3.4687,absorber,ml_plus_family_prior
+TiO2,3.4,4.0,etl,literature_SCAPS
+TiO2:N,3.0,2.2,htl,literature_SCAPS
+TiS3,1.04,3.29,monolayer,literature_HSE06_monolayer
+TlNbAgNbO6,1.863303536,3.852,absorber,ml_plus_family_prior
+TlNbBaSnO6,2.988799268,3.6702,absorber,ml_plus_family_prior
+TlNbBaTiO6,2.22130272,3.8439,absorber,ml_plus_family_prior
+TlNbCaGeO6,2.121469287,3.8293,absorber,ml_plus_family_prior
+TlNbCaSiO6,1.359093402,3.9012,absorber,ml_plus_family_prior
+TlNbCaSnO6,3.248956849,3.6913,absorber,ml_plus_family_prior
+TlNbCaTiO6,1.844661254,3.8642,absorber,ml_plus_family_prior
+TlNbGaNbO6,1.151941955,3.8251,absorber,ml_plus_family_prior
+TlNbLaAlO6,2.155799154,3.644,absorber,ml_plus_family_prior
+TlNbLaGaO6,2.713028066,3.7131,absorber,ml_plus_family_prior
+TlNbLaInO6,3.075158113,3.6431,absorber,ml_plus_family_prior
+TlNbLiNbO6,1.438117049,3.8908,absorber,ml_plus_family_prior
+TlNbMgTiO6,1.737647718,3.8849,absorber,ml_plus_family_prior
+TlNbNaNbO6,1.442237178,3.8908,absorber,ml_plus_family_prior
+TlNbNaSbO6,1.927205191,3.8129,absorber,ml_plus_family_prior
+TlNbSnTiO6,2.310134428,3.8603,absorber,ml_plus_family_prior
+TlNbSrGeO6,2.080620924,3.8296,absorber,ml_plus_family_prior
+TlNbSrSiO6,1.42267454,3.901,absorber,ml_plus_family_prior
+TlNbSrSnO6,3.155717175,3.6743,absorber,ml_plus_family_prior
+TlNbSrTiO6,1.525019204,3.8989,absorber,ml_plus_family_prior
+TlNbTlTaO6,1.496019087,3.8891,absorber,ml_plus_family_prior
+TlNbYAlO6,2.005687868,3.6678,absorber,ml_plus_family_prior
+TlTaAgNbO6,1.792626623,3.879,absorber,ml_plus_family_prior
+TlTaAgTaO6,2.28245774,3.8319,absorber,ml_plus_family_prior
+TlTaBaSnO6,3.305403,3.7205,absorber,ml_plus_family_prior
+TlTaCaGeO6,2.612967569,3.8441,absorber,ml_plus_family_prior
+TlTaCaSiO6,2.222111758,3.8388,absorber,ml_plus_family_prior
+TlTaCaSnO6,3.614900816,3.6273,absorber,ml_plus_family_prior
+TlTaCaTiO6,1.862690557,3.8626,absorber,ml_plus_family_prior
+TlTaCsNbO6,2.310062164,3.8298,absorber,ml_plus_family_prior
+TlTaGaNbO6,1.474210517,3.8481,absorber,ml_plus_family_prior
+TlTaKNbO6,1.760951658,3.8806,absorber,ml_plus_family_prior
+TlTaKSbO6,2.0733894,3.7828,absorber,ml_plus_family_prior
+TlTaLaAlO6,2.937475473,3.5906,absorber,ml_plus_family_prior
+TlTaLaGaO6,3.420622789,3.675,absorber,ml_plus_family_prior
+TlTaLaInO6,3.687048868,3.5912,absorber,ml_plus_family_prior
+TlTaLiNbO6,1.758171378,3.8806,absorber,ml_plus_family_prior
+TlTaMgTiO6,2.451618012,3.7323,absorber,ml_plus_family_prior
+TlTaNaNbO6,1.760295096,3.8806,absorber,ml_plus_family_prior
+TlTaNaSbO6,2.276086568,3.7873,absorber,ml_plus_family_prior
+TlTaPbTiO6,1.898800066,3.8627,absorber,ml_plus_family_prior
+TlTaPbZrO6,3.507812622,3.6931,absorber,ml_plus_family_prior
+TlTaSnHfO6,3.505613063,3.7038,absorber,ml_plus_family_prior
+TlTaSnTiO6,1.850789899,3.8808,absorber,ml_plus_family_prior
+TlTaSrGeO6,2.425121676,3.8042,absorber,ml_plus_family_prior
+TlTaSrSiO6,2.29747616,3.8359,absorber,ml_plus_family_prior
+TlTaSrSnO6,3.507231154,3.7014,absorber,ml_plus_family_prior
+TlTaSrTiO6,1.87716885,3.865,absorber,ml_plus_family_prior
+TlTaYAlO6,2.819711084,3.7044,absorber,ml_plus_family_prior
+V2O5,2.2,3.4,htl,literature_SCAPS
+WS2,1.8,3.95,etl,literature_SCAPS
+Zn3P2,1.5,4.2,htl,literature_SCAPS
+ZnSe,2.81,4.09,etl,literature_SCAPS
+ZnTe,2.25,3.73,htl,literature_SCAPS
+ZrS3,1.89,2.5700000000000003,monolayer,literature_HSE06_monolayer
+ZrSe3,0.95,3.26,monolayer,literature_HSE06_monolayer

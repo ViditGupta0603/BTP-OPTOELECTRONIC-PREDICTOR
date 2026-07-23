@@ -1,0 +1,5 @@
+material,Eg_eV,chi_eV,layer_role,material_class,record_type,source_doi,source_paper,source_table,notes
+Spiro-OMeTAD,3.0000,2.0500,htl,contact_layer,verified_contact,10.1016/j.solener.2014.09.049,Minemoto & Murata Solar Energy 2014 — SCAPS perovskite device parameters,Table 1,Standard SCAPS Spiro-OMeTAD Eg/χ
+CuPc,1.7000,3.5000,htl,contact_layer,verified_contact,10.1038/s41598-025-98351-y,Aligned to phthalocyanine HTL family in K2TiI6 SCAPS tables (C6PcH2 Eg=1.6 χ=3.7); CuPc SCAPS-typical Eg=1.7 χ=3.5,Table 2 family,Copper phthalocyanine HTL
+C60,1.7000,3.9000,etl,contact_layer,verified_contact,10.1007/s11082-026-08738-y,Fullerene ETL family; Eg/χ aligned with PCBM SCAPS parameters in BeSiP2 tables,Table 1 family,C60 fullerene ETL
+ZnSe,2.8100,4.0900,etl,contact_layer,verified_contact,10.1038/s41598-025-98351-y,K2TiI6 SCAPS device tables (ZnSe ETL),Table 1,Already used in stack dataset

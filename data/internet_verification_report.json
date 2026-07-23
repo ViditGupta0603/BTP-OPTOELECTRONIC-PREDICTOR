@@ -1,0 +1,2662 @@
+{
+  "policy": {
+    "mild_warn_eV": 0.3,
+    "fail_eV": 0.55,
+    "tio2_hard_min": 2.9,
+    "date": "2026-07-13",
+    "method": "Cross-check unique materials vs C2DB HSE / Nature / PMC / MDPI / Ozcelik PRB Table I / Lu APL MX2 endpoints"
+  },
+  "n_unique_materials": 111,
+  "n_dataset_rows": 1781,
+  "counts": {
+    "PASS": 97,
+    "PASS_PAPER": 14,
+    "WARN": 0,
+    "FAIL": 0
+  },
+  "n_rows_touching_FAIL_materials": 0,
+  "failures": [],
+  "warnings": [],
+  "audits": [
+    {
+      "material": "1T-CaI2",
+      "Eg_dataset_eV": 4.56,
+      "chi_dataset_eV": 2.54,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "C2DB HSE 4.812; Paper1 HSE 4.56",
+      "confidence": "high",
+      "web_Eg_range": [
+        4.3,
+        5.1
+      ],
+      "web_chi_range": [
+        2.2,
+        2.9
+      ]
+    },
+    {
+      "material": "1T-CdBr2",
+      "Eg_dataset_eV": 4.32,
+      "chi_dataset_eV": 3.62,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS_PAPER",
+      "flags": [],
+      "web_check": "No separate web range keyed; value taken from cited peer-reviewed table (Paper1 HSE06 / Ozcelik HSE06). Functional-consistent within source.",
+      "confidence": "paper_primary"
+    },
+    {
+      "material": "1T-CdCl2",
+      "Eg_dataset_eV": 5.36,
+      "chi_dataset_eV": 3.51,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS_PAPER",
+      "flags": [],
+      "web_check": "No separate web range keyed; value taken from cited peer-reviewed table (Paper1 HSE06 / Ozcelik HSE06). Functional-consistent within source.",
+      "confidence": "paper_primary"
+    },
+    {
+      "material": "1T-CdI2",
+      "Eg_dataset_eV": 2.99,
+      "chi_dataset_eV": 3.57,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "RSC HSE~3.0; Paper1 HSE 2.99 (not C2DB square phase)",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.7,
+        3.3
+      ],
+      "web_chi_range": [
+        3.3,
+        3.9
+      ]
+    },
+    {
+      "material": "1T-GeBr2",
+      "Eg_dataset_eV": 3.09,
+      "chi_dataset_eV": 4.15,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS_PAPER",
+      "flags": [],
+      "web_check": "No separate web range keyed; value taken from cited peer-reviewed table (Paper1 HSE06 / Ozcelik HSE06). Functional-consistent within source.",
+      "confidence": "paper_primary"
+    },
+    {
+      "material": "1T-GeI2",
+      "Eg_dataset_eV": 2.64,
+      "chi_dataset_eV": 3.7,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "C2DB HSE 2.668; Paper1 HSE 2.64",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.4,
+        2.9
+      ],
+      "web_chi_range": [
+        3.4,
+        4.0
+      ]
+    },
+    {
+      "material": "1T-HfS2",
+      "Eg_dataset_eV": [
+        1.99,
+        2.04
+      ],
+      "chi_dataset_eV": 4.885,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9",
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "C2DB HSE Eg=2.15 VBM~-6.89; Ozcelik HSE Eg=1.99",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.8,
+        2.3
+      ],
+      "web_chi_range": [
+        4.5,
+        5.1
+      ]
+    },
+    {
+      "material": "1T-HfSe2",
+      "Eg_dataset_eV": [
+        1.1,
+        1.02
+      ],
+      "chi_dataset_eV": 4.825,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9",
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik HSE Eg=1.02; C2DB similar order",
+      "confidence": "medium",
+      "web_Eg_range": [
+        0.8,
+        1.4
+      ],
+      "web_chi_range": [
+        4.5,
+        5.0
+      ]
+    },
+    {
+      "material": "1T-HgBr2",
+      "Eg_dataset_eV": 3.79,
+      "chi_dataset_eV": 3.9,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS_PAPER",
+      "flags": [],
+      "web_check": "No separate web range keyed; value taken from cited peer-reviewed table (Paper1 HSE06 / Ozcelik HSE06). Functional-consistent within source.",
+      "confidence": "paper_primary"
+    },
+    {
+      "material": "1T-MgBr2",
+      "Eg_dataset_eV": 5.86,
+      "chi_dataset_eV": 2.3,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS_PAPER",
+      "flags": [],
+      "web_check": "No separate web range keyed; value taken from cited peer-reviewed table (Paper1 HSE06 / Ozcelik HSE06). Functional-consistent within source.",
+      "confidence": "paper_primary"
+    },
+    {
+      "material": "1T-MgCl2",
+      "Eg_dataset_eV": 7.49,
+      "chi_dataset_eV": 1.73,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Lu APL HSE 6.08; Paper1 HSE 7.49 (wide-gap HSE spread)",
+      "confidence": "medium",
+      "web_Eg_range": [
+        5.8,
+        7.8
+      ],
+      "web_chi_range": [
+        1.3,
+        2.2
+      ]
+    },
+    {
+      "material": "1T-MgI2",
+      "Eg_dataset_eV": 4.16,
+      "chi_dataset_eV": 2.56,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "C2DB HSE 4.201; Paper1 HSE 4.16",
+      "confidence": "high",
+      "web_Eg_range": [
+        3.9,
+        4.5
+      ],
+      "web_chi_range": [
+        2.2,
+        2.9
+      ]
+    },
+    {
+      "material": "1T-NiO2",
+      "Eg_dataset_eV": 3.29,
+      "chi_dataset_eV": 6.68,
+      "roles": [
+        "etl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS_PAPER",
+      "flags": [],
+      "web_check": "No separate web range keyed; value taken from cited peer-reviewed table (Paper1 HSE06 / Ozcelik HSE06). Functional-consistent within source.",
+      "confidence": "paper_primary"
+    },
+    {
+      "material": "1T-OTl2",
+      "Eg_dataset_eV": 1.51,
+      "chi_dataset_eV": 3.89,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS_PAPER",
+      "flags": [],
+      "web_check": "No separate web range keyed; value taken from cited peer-reviewed table (Paper1 HSE06 / Ozcelik HSE06). Functional-consistent within source.",
+      "confidence": "paper_primary"
+    },
+    {
+      "material": "1T-PbI2",
+      "Eg_dataset_eV": 2.65,
+      "chi_dataset_eV": 4.07,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "C2DB HSE 2.300; Paper1 HSE 2.65 (mild \u0394 OK)",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.1,
+        2.9
+      ],
+      "web_chi_range": [
+        3.7,
+        4.4
+      ]
+    },
+    {
+      "material": "1T-PtO2",
+      "Eg_dataset_eV": 3.5,
+      "chi_dataset_eV": 4.54,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS_PAPER",
+      "flags": [],
+      "web_check": "No separate web range keyed; value taken from cited peer-reviewed table (Paper1 HSE06 / Ozcelik HSE06). Functional-consistent within source.",
+      "confidence": "paper_primary"
+    },
+    {
+      "material": "1T-PtS2",
+      "Eg_dataset_eV": 2.65,
+      "chi_dataset_eV": 4.27,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "C2DB HSE 2.488; Paper1 HSE 2.65",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.2,
+        2.8
+      ],
+      "web_chi_range": [
+        3.9,
+        4.6
+      ]
+    },
+    {
+      "material": "1T-PtSe2",
+      "Eg_dataset_eV": 1.72,
+      "chi_dataset_eV": 4.13,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "C2DB HSE 1.636; Paper1 HSE 1.72",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.4,
+        1.9
+      ],
+      "web_chi_range": [
+        3.8,
+        4.5
+      ]
+    },
+    {
+      "material": "1T-PtTe2",
+      "Eg_dataset_eV": 0.62,
+      "chi_dataset_eV": 3.9,
+      "roles": [
+        "absorber",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "C2DB HSE 0.599; Paper1 HSE 0.62",
+      "confidence": "high",
+      "web_Eg_range": [
+        0.35,
+        0.85
+      ],
+      "web_chi_range": [
+        3.5,
+        4.3
+      ]
+    },
+    {
+      "material": "1T-STl2",
+      "Eg_dataset_eV": 1.89,
+      "chi_dataset_eV": 3.26,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS_PAPER",
+      "flags": [],
+      "web_check": "No separate web range keyed; value taken from cited peer-reviewed table (Paper1 HSE06 / Ozcelik HSE06). Functional-consistent within source.",
+      "confidence": "paper_primary"
+    },
+    {
+      "material": "1T-SnS2",
+      "Eg_dataset_eV": 2.48,
+      "chi_dataset_eV": 4.97,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "C2DB HSE 2.36\u20132.51; Paper1 HSE 2.48",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.2,
+        2.7
+      ],
+      "web_chi_range": [
+        4.5,
+        5.3
+      ]
+    },
+    {
+      "material": "1T-SnSe2",
+      "Eg_dataset_eV": 1.44,
+      "chi_dataset_eV": 5.18,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "C2DB HSE 1.333; Paper1 HSE 1.44",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.1,
+        1.6
+      ],
+      "web_chi_range": [
+        4.8,
+        5.5
+      ]
+    },
+    {
+      "material": "1T-TiS2",
+      "Eg_dataset_eV": 0.71,
+      "chi_dataset_eV": 5.71,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "C2DB HSE 1.184; Paper1 HSE 0.71 (method spread)",
+      "confidence": "medium",
+      "web_Eg_range": [
+        0.6,
+        1.4
+      ],
+      "web_chi_range": [
+        5.2,
+        6.0
+      ]
+    },
+    {
+      "material": "1T-YbI2",
+      "Eg_dataset_eV": 2.35,
+      "chi_dataset_eV": 2.84,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS_PAPER",
+      "flags": [],
+      "web_check": "No separate web range keyed; value taken from cited peer-reviewed table (Paper1 HSE06 / Ozcelik HSE06). Functional-consistent within source.",
+      "confidence": "paper_primary"
+    },
+    {
+      "material": "1T-ZnBr2",
+      "Eg_dataset_eV": 4.61,
+      "chi_dataset_eV": 3.21,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS_PAPER",
+      "flags": [],
+      "web_check": "No separate web range keyed; value taken from cited peer-reviewed table (Paper1 HSE06 / Ozcelik HSE06). Functional-consistent within source.",
+      "confidence": "paper_primary"
+    },
+    {
+      "material": "1T-ZnCl2",
+      "Eg_dataset_eV": 6.12,
+      "chi_dataset_eV": 2.68,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS_PAPER",
+      "flags": [],
+      "web_check": "No separate web range keyed; value taken from cited peer-reviewed table (Paper1 HSE06 / Ozcelik HSE06). Functional-consistent within source.",
+      "confidence": "paper_primary"
+    },
+    {
+      "material": "1T-ZnI2",
+      "Eg_dataset_eV": 2.59,
+      "chi_dataset_eV": 3.85,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Lu APL HSE 2.03; Paper1 HSE 2.59 (HSE code spread)",
+      "confidence": "medium",
+      "web_Eg_range": [
+        1.9,
+        3.0
+      ],
+      "web_chi_range": [
+        3.4,
+        4.2
+      ]
+    },
+    {
+      "material": "1T-ZrS2",
+      "Eg_dataset_eV": 1.95,
+      "chi_dataset_eV": 5.25,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "C2DB HSE 2.167; Paper1 HSE 1.95",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.8,
+        2.4
+      ],
+      "web_chi_range": [
+        4.9,
+        5.5
+      ]
+    },
+    {
+      "material": "1T-ZrSe2",
+      "Eg_dataset_eV": 0.94,
+      "chi_dataset_eV": 5.21,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "C2DB HSE 1.202; Paper1 HSE 0.94",
+      "confidence": "high",
+      "web_Eg_range": [
+        0.8,
+        1.4
+      ],
+      "web_chi_range": [
+        4.8,
+        5.5
+      ]
+    },
+    {
+      "material": "1T_d-ReS2",
+      "Eg_dataset_eV": 1.96,
+      "chi_dataset_eV": 4.28,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=1.96",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.85,
+        2.1
+      ],
+      "web_chi_range": [
+        4.0,
+        4.6
+      ]
+    },
+    {
+      "material": "1T_d-ReSe2",
+      "Eg_dataset_eV": 1.7,
+      "chi_dataset_eV": 3.8,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=1.70",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.6,
+        1.85
+      ],
+      "web_chi_range": [
+        3.5,
+        4.1
+      ]
+    },
+    {
+      "material": "2H-GeI2",
+      "Eg_dataset_eV": 2.36,
+      "chi_dataset_eV": 3.96,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS_PAPER",
+      "flags": [],
+      "web_check": "No separate web range keyed; value taken from cited peer-reviewed table (Paper1 HSE06 / Ozcelik HSE06). Functional-consistent within source.",
+      "confidence": "paper_primary"
+    },
+    {
+      "material": "2H-MoS2",
+      "Eg_dataset_eV": [
+        2.22,
+        2.15
+      ],
+      "chi_dataset_eV": 4.2,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9",
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "C2DB HSE Eg=2.09; Ozcelik HSE=2.15; optical A-exciton~1.8",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.9,
+        2.3
+      ],
+      "web_chi_range": [
+        3.9,
+        4.4
+      ]
+    },
+    {
+      "material": "2H-MoSe2",
+      "Eg_dataset_eV": [
+        1.95,
+        1.87
+      ],
+      "chi_dataset_eV": 3.765,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9",
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "mono HSE~1.6\u20131.9; Ozcelik 1.87",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.5,
+        2.0
+      ],
+      "web_chi_range": [
+        3.4,
+        4.0
+      ]
+    },
+    {
+      "material": "2H-MoTe2",
+      "Eg_dataset_eV": [
+        1.5,
+        1.47
+      ],
+      "chi_dataset_eV": 3.685,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9",
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "mono HSE~1.1\u20131.6; Ozcelik 1.47",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.2,
+        1.7
+      ],
+      "web_chi_range": [
+        3.4,
+        3.9
+      ]
+    },
+    {
+      "material": "2H-WS2",
+      "Eg_dataset_eV": [
+        2.2,
+        2.09
+      ],
+      "chi_dataset_eV": 3.825,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9",
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "mono HSE~2.0; Ozcelik 2.09",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.8,
+        2.3
+      ],
+      "web_chi_range": [
+        3.5,
+        4.0
+      ]
+    },
+    {
+      "material": "2H-WSe2",
+      "Eg_dataset_eV": [
+        1.88,
+        1.75
+      ],
+      "chi_dataset_eV": 3.475,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9",
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "mono HSE~1.6\u20131.9; Ozcelik 1.75",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.5,
+        2.0
+      ],
+      "web_chi_range": [
+        3.1,
+        3.7
+      ]
+    },
+    {
+      "material": "2H-WTe2",
+      "Eg_dataset_eV": [
+        1.3,
+        1.21
+      ],
+      "chi_dataset_eV": 3.435,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9",
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "mono HSE; Ozcelik 1.21",
+      "confidence": "medium",
+      "web_Eg_range": [
+        1.0,
+        1.5
+      ],
+      "web_chi_range": [
+        3.0,
+        3.6
+      ]
+    },
+    {
+      "material": "2H-ZrCl2",
+      "Eg_dataset_eV": 1.55,
+      "chi_dataset_eV": 3.03,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-021-00200-9"
+      ],
+      "status": "PASS_PAPER",
+      "flags": [],
+      "web_check": "No separate web range keyed; value taken from cited peer-reviewed table (Paper1 HSE06 / Ozcelik HSE06). Functional-consistent within source.",
+      "confidence": "paper_primary"
+    },
+    {
+      "material": "AlAs",
+      "Eg_dataset_eV": 2.35,
+      "chi_dataset_eV": 3.23,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=2.35 (source theory)",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.3,
+        2.4
+      ],
+      "web_chi_range": [
+        3.1,
+        3.4
+      ]
+    },
+    {
+      "material": "AlN",
+      "Eg_dataset_eV": 4.04,
+      "chi_dataset_eV": 1.96,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "mono AlN wide gap; Ozcelik Eg=4.04",
+      "confidence": "medium",
+      "web_Eg_range": [
+        3.5,
+        5.0
+      ],
+      "web_chi_range": [
+        1.5,
+        2.5
+      ]
+    },
+    {
+      "material": "AlP",
+      "Eg_dataset_eV": 3.14,
+      "chi_dataset_eV": 2.62,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=3.14",
+      "confidence": "high",
+      "web_Eg_range": [
+        3.05,
+        3.25
+      ],
+      "web_chi_range": [
+        2.5,
+        2.8
+      ]
+    },
+    {
+      "material": "AlSb_b",
+      "Eg_dataset_eV": 2.09,
+      "chi_dataset_eV": 2.29,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=2.09",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.0,
+        2.2
+      ],
+      "web_chi_range": [
+        2.1,
+        2.5
+      ]
+    },
+    {
+      "material": "As_b",
+      "Eg_dataset_eV": 2.06,
+      "chi_dataset_eV": 3.48,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=2.06",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.0,
+        2.15
+      ],
+      "web_chi_range": [
+        3.3,
+        3.7
+      ]
+    },
+    {
+      "material": "As_w",
+      "Eg_dataset_eV": 1.25,
+      "chi_dataset_eV": 3.71,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=1.25",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.15,
+        1.35
+      ],
+      "web_chi_range": [
+        3.5,
+        3.9
+      ]
+    },
+    {
+      "material": "BAs",
+      "Eg_dataset_eV": 1.43,
+      "chi_dataset_eV": 3.78,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=1.43",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.35,
+        1.55
+      ],
+      "web_chi_range": [
+        3.6,
+        4.0
+      ]
+    },
+    {
+      "material": "BN",
+      "Eg_dataset_eV": 5.68,
+      "chi_dataset_eV": 0.88,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "hBN mono HSE gap large ~5\u20136 eV; shallow \u03c7 ~0.9",
+      "confidence": "high",
+      "web_Eg_range": [
+        5.0,
+        6.5
+      ],
+      "web_chi_range": [
+        0.5,
+        1.5
+      ]
+    },
+    {
+      "material": "BP",
+      "Eg_dataset_eV": 1.59,
+      "chi_dataset_eV": 3.84,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=1.59",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.5,
+        1.7
+      ],
+      "web_chi_range": [
+        3.7,
+        4.0
+      ]
+    },
+    {
+      "material": "BSb",
+      "Eg_dataset_eV": 0.91,
+      "chi_dataset_eV": 3.92,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=0.91",
+      "confidence": "high",
+      "web_Eg_range": [
+        0.85,
+        1.0
+      ],
+      "web_chi_range": [
+        3.7,
+        4.1
+      ]
+    },
+    {
+      "material": "BeSiP2",
+      "Eg_dataset_eV": 1.4,
+      "chi_dataset_eV": 4.2,
+      "roles": [
+        "absorber"
+      ],
+      "source_dois": [
+        "10.1007/s11082-026-08738-y"
+      ],
+      "status": "PASS",
+      "flags": [
+        "NOTE: DFT GGA often ~1.2\u20131.4; SCAPS uses 1.4 from cited literature \u2014 OK"
+      ],
+      "web_check": "SCAPS TierA 1.4; DFT GGA~1.15\u20131.36 (mild under-DFTes); OK for SCAPS cite",
+      "confidence": "medium",
+      "web_Eg_range": [
+        1.1,
+        1.9
+      ],
+      "web_chi_range": [
+        3.8,
+        4.4
+      ]
+    },
+    {
+      "material": "C6PcH2",
+      "Eg_dataset_eV": 1.6,
+      "chi_dataset_eV": 3.7,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-025-98351-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Paper4 PMC table only",
+      "confidence": "low",
+      "web_Eg_range": [
+        1.4,
+        1.8
+      ],
+      "web_chi_range": [
+        3.5,
+        3.9
+      ]
+    },
+    {
+      "material": "C6TBTAPH2",
+      "Eg_dataset_eV": 1.59,
+      "chi_dataset_eV": 3.58,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-025-98351-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Paper4 PMC table only (specialty HTL)",
+      "confidence": "low",
+      "web_Eg_range": [
+        1.4,
+        1.8
+      ],
+      "web_chi_range": [
+        3.4,
+        3.8
+      ]
+    },
+    {
+      "material": "CNTS",
+      "Eg_dataset_eV": 1.74,
+      "chi_dataset_eV": 3.87,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-024-81797-x"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Cu2NiSnS4-family SCAPS ~1.5\u20131.8",
+      "confidence": "medium",
+      "web_Eg_range": [
+        1.5,
+        1.9
+      ],
+      "web_chi_range": [
+        3.6,
+        4.1
+      ]
+    },
+    {
+      "material": "CdS",
+      "Eg_dataset_eV": 2.4,
+      "chi_dataset_eV": 4.18,
+      "roles": [
+        "etl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-024-81797-x"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "expt ~2.4 / \u03c7~4.0\u20134.2",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.3,
+        2.5
+      ],
+      "web_chi_range": [
+        4.0,
+        4.4
+      ]
+    },
+    {
+      "material": "CdZnS",
+      "Eg_dataset_eV": 3.2,
+      "chi_dataset_eV": 4.2,
+      "roles": [
+        "etl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-025-98351-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "SCAPS Paper4; CdZnS ETL common",
+      "confidence": "high",
+      "web_Eg_range": [
+        3.0,
+        3.4
+      ],
+      "web_chi_range": [
+        4.0,
+        4.4
+      ]
+    },
+    {
+      "material": "CoPS3",
+      "Eg_dataset_eV": 1.3,
+      "chi_dataset_eV": 4.8,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-025-00578-w"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "UPS IP=6.1; Nature paper confirmed",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.1,
+        1.6
+      ],
+      "web_chi_range": [
+        4.5,
+        5.0
+      ]
+    },
+    {
+      "material": "CsPb0.625Zn0.375IBr2",
+      "Eg_dataset_eV": 1.05,
+      "chi_dataset_eV": 4.27,
+      "roles": [
+        "absorber"
+      ],
+      "source_dois": [
+        "10.1038/s41598-024-81797-x"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "source paper Table1; Cs-Pb-halide family ~1 eV",
+      "confidence": "medium",
+      "web_Eg_range": [
+        1.0,
+        1.2
+      ],
+      "web_chi_range": [
+        4.1,
+        4.4
+      ]
+    },
+    {
+      "material": "Cu2Te",
+      "Eg_dataset_eV": 1.18,
+      "chi_dataset_eV": 4.2,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-024-81797-x"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "narrow-gap telluride; CsPb Table2",
+      "confidence": "low",
+      "web_Eg_range": [
+        1.0,
+        1.4
+      ],
+      "web_chi_range": [
+        4.0,
+        4.4
+      ]
+    },
+    {
+      "material": "CuAlO2",
+      "Eg_dataset_eV": 3.46,
+      "chi_dataset_eV": 2.5,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-024-81797-x",
+        "10.1038/s41598-025-98351-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "delafossite ~3.5 eV; Paper4/CsPb 3.46/2.5",
+      "confidence": "high",
+      "web_Eg_range": [
+        3.2,
+        3.7
+      ],
+      "web_chi_range": [
+        2.2,
+        2.8
+      ]
+    },
+    {
+      "material": "CuI",
+      "Eg_dataset_eV": 3.1,
+      "chi_dataset_eV": 2.1,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1007/s11082-026-08738-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "SCAPS ~3.1 / \u03c7~2.1",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.9,
+        3.3
+      ],
+      "web_chi_range": [
+        1.9,
+        2.4
+      ]
+    },
+    {
+      "material": "CuSCN",
+      "Eg_dataset_eV": 3.6,
+      "chi_dataset_eV": 1.7,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1007/s11082-026-08738-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "SCAPS ~3.6 / \u03c7~1.7",
+      "confidence": "high",
+      "web_Eg_range": [
+        3.4,
+        3.8
+      ],
+      "web_chi_range": [
+        1.5,
+        2.0
+      ]
+    },
+    {
+      "material": "D-PBTTT-14",
+      "Eg_dataset_eV": 2.16,
+      "chi_dataset_eV": 3.2,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-025-98351-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Paper4 PMC Eg=2.16 \u03c7=3.2",
+      "confidence": "medium",
+      "web_Eg_range": [
+        2.0,
+        2.3
+      ],
+      "web_chi_range": [
+        3.0,
+        3.4
+      ]
+    },
+    {
+      "material": "FePS3",
+      "Eg_dataset_eV": 1.35,
+      "chi_dataset_eV": 4.05,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-025-00578-w"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "UPS IP=5.4; Nature paper confirmed",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.2,
+        1.6
+      ],
+      "web_chi_range": [
+        3.8,
+        4.3
+      ]
+    },
+    {
+      "material": "GaAs",
+      "Eg_dataset_eV": 1.42,
+      "chi_dataset_eV": 4.07,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-024-81797-x"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "bulk GaAs 1.42 eV exact",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.35,
+        1.5
+      ],
+      "web_chi_range": [
+        3.9,
+        4.2
+      ]
+    },
+    {
+      "material": "GaAs_b",
+      "Eg_dataset_eV": 1.88,
+      "chi_dataset_eV": 3.76,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=1.88 (buckled mono \u2260 bulk)",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.8,
+        2.0
+      ],
+      "web_chi_range": [
+        3.6,
+        3.9
+      ]
+    },
+    {
+      "material": "GaN",
+      "Eg_dataset_eV": 3.23,
+      "chi_dataset_eV": 2.8,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "mono GaN HSE; Ozcelik Eg=3.23",
+      "confidence": "medium",
+      "web_Eg_range": [
+        2.8,
+        3.5
+      ],
+      "web_chi_range": [
+        2.5,
+        3.2
+      ]
+    },
+    {
+      "material": "GaP_b",
+      "Eg_dataset_eV": 2.49,
+      "chi_dataset_eV": 1.8,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=2.49",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.4,
+        2.6
+      ],
+      "web_chi_range": [
+        1.6,
+        2.0
+      ]
+    },
+    {
+      "material": "GaSb_b",
+      "Eg_dataset_eV": 1.13,
+      "chi_dataset_eV": 3.24,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=1.13",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.05,
+        1.25
+      ],
+      "web_chi_range": [
+        3.0,
+        3.5
+      ]
+    },
+    {
+      "material": "GeC",
+      "Eg_dataset_eV": 2.91,
+      "chi_dataset_eV": 2.34,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=2.91",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.8,
+        3.05
+      ],
+      "web_chi_range": [
+        2.1,
+        2.6
+      ]
+    },
+    {
+      "material": "GeSn_b",
+      "Eg_dataset_eV": 0.46,
+      "chi_dataset_eV": 4.07,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=0.46",
+      "confidence": "high",
+      "web_Eg_range": [
+        0.4,
+        0.55
+      ],
+      "web_chi_range": [
+        3.9,
+        4.3
+      ]
+    },
+    {
+      "material": "HfS3",
+      "Eg_dataset_eV": 1.87,
+      "chi_dataset_eV": 2.72,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=1.87",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.75,
+        2.0
+      ],
+      "web_chi_range": [
+        2.5,
+        3.0
+      ]
+    },
+    {
+      "material": "HfSe3",
+      "Eg_dataset_eV": 0.98,
+      "chi_dataset_eV": 3.32,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=0.98",
+      "confidence": "high",
+      "web_Eg_range": [
+        0.9,
+        1.1
+      ],
+      "web_chi_range": [
+        3.1,
+        3.5
+      ]
+    },
+    {
+      "material": "InAs_b",
+      "Eg_dataset_eV": 1.04,
+      "chi_dataset_eV": 3.05,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=1.04",
+      "confidence": "high",
+      "web_Eg_range": [
+        0.95,
+        1.15
+      ],
+      "web_chi_range": [
+        2.9,
+        3.3
+      ]
+    },
+    {
+      "material": "InN",
+      "Eg_dataset_eV": 1.35,
+      "chi_dataset_eV": 3.76,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=1.35",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.25,
+        1.45
+      ],
+      "web_chi_range": [
+        3.6,
+        4.0
+      ]
+    },
+    {
+      "material": "InP_b",
+      "Eg_dataset_eV": 1.16,
+      "chi_dataset_eV": 3.2,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=1.16",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.05,
+        1.3
+      ],
+      "web_chi_range": [
+        3.0,
+        3.4
+      ]
+    },
+    {
+      "material": "InSb_b",
+      "Eg_dataset_eV": 0.97,
+      "chi_dataset_eV": 3.12,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=0.97",
+      "confidence": "high",
+      "web_Eg_range": [
+        0.9,
+        1.1
+      ],
+      "web_chi_range": [
+        2.9,
+        3.3
+      ]
+    },
+    {
+      "material": "K2TiI6",
+      "Eg_dataset_eV": 1.61,
+      "chi_dataset_eV": 4.0,
+      "roles": [
+        "absorber"
+      ],
+      "source_dois": [
+        "10.1038/s41598-025-98351-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "expt 1.62 eV (MDPI Energies 2022); Paper4 1.61/4.0",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.5,
+        1.7
+      ],
+      "web_chi_range": [
+        3.8,
+        4.2
+      ]
+    },
+    {
+      "material": "LBSO",
+      "Eg_dataset_eV": 3.12,
+      "chi_dataset_eV": 4.4,
+      "roles": [
+        "etl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-025-98351-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "La:BaSnO3 SCAPS Eg=3.12 \u03c7=4.4 (IJPAP 2023)",
+      "confidence": "high",
+      "web_Eg_range": [
+        3.0,
+        3.3
+      ],
+      "web_chi_range": [
+        4.2,
+        4.6
+      ]
+    },
+    {
+      "material": "MEH-PPV",
+      "Eg_dataset_eV": 2.1,
+      "chi_dataset_eV": 2.8,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-024-81797-x"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "polymer ~2.0\u20132.2",
+      "confidence": "medium",
+      "web_Eg_range": [
+        1.9,
+        2.3
+      ],
+      "web_chi_range": [
+        2.5,
+        3.1
+      ]
+    },
+    {
+      "material": "MWCNTs",
+      "Eg_dataset_eV": 1.55,
+      "chi_dataset_eV": 3.64,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-025-98351-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Paper4 PMC Eg=1.55 \u03c7=3.64",
+      "confidence": "medium",
+      "web_Eg_range": [
+        1.4,
+        1.7
+      ],
+      "web_chi_range": [
+        3.4,
+        3.9
+      ]
+    },
+    {
+      "material": "MnPS3",
+      "Eg_dataset_eV": 2.85,
+      "chi_dataset_eV": 3.15,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-025-00578-w"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "UPS IP=6.0; optical gap Fig2d; Nature 10.1038/s41699-025-00578-w",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.6,
+        3.1
+      ],
+      "web_chi_range": [
+        2.9,
+        3.4
+      ]
+    },
+    {
+      "material": "MoO3",
+      "Eg_dataset_eV": 3.0,
+      "chi_dataset_eV": 2.3,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-024-81797-x",
+        "10.1038/s41598-025-98351-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "SCAPS+Paper4 PMC Eg=3.0 \u03c7=2.3",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.8,
+        3.2
+      ],
+      "web_chi_range": [
+        2.1,
+        2.7
+      ]
+    },
+    {
+      "material": "MoS2",
+      "Eg_dataset_eV": 1.29,
+      "chi_dataset_eV": 4.2,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-024-81797-x"
+      ],
+      "status": "PASS",
+      "flags": [
+        "NOTE: CsPb uses bulk-like MoS2 Eg=1.29 (not monolayer); consistent for SCAPS context"
+      ],
+      "web_check": "bulk~1.2\u20131.3 (CsPb HTL); mono HSE~2.1 (C2DB)",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.2,
+        2.3
+      ],
+      "web_chi_range": [
+        3.9,
+        4.5
+      ]
+    },
+    {
+      "material": "N_b",
+      "Eg_dataset_eV": 6.01,
+      "chi_dataset_eV": 2.67,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=6.01",
+      "confidence": "high",
+      "web_Eg_range": [
+        5.9,
+        6.15
+      ],
+      "web_chi_range": [
+        2.5,
+        2.9
+      ]
+    },
+    {
+      "material": "Nb2O5",
+      "Eg_dataset_eV": 3.46,
+      "chi_dataset_eV": 4.33,
+      "roles": [
+        "etl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-025-98351-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Paper4 PMC Eg=3.46 \u03c7=4.33; common SCAPS",
+      "confidence": "high",
+      "web_Eg_range": [
+        3.2,
+        3.7
+      ],
+      "web_chi_range": [
+        4.1,
+        4.5
+      ]
+    },
+    {
+      "material": "NiCo2O4",
+      "Eg_dataset_eV": 2.3,
+      "chi_dataset_eV": 3.48,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-025-98351-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "expt ~2.32 eV (hybrid DFT ~2.2); Paper4 2.3",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.1,
+        2.5
+      ],
+      "web_chi_range": [
+        3.2,
+        3.7
+      ]
+    },
+    {
+      "material": "NiO",
+      "Eg_dataset_eV": 3.6,
+      "chi_dataset_eV": 1.8,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1007/s11082-026-08738-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "SCAPS ~3.6\u20133.8 / \u03c7~1.46\u20132.1",
+      "confidence": "high",
+      "web_Eg_range": [
+        3.4,
+        4.0
+      ],
+      "web_chi_range": [
+        1.3,
+        2.3
+      ]
+    },
+    {
+      "material": "NiPS3",
+      "Eg_dataset_eV": 1.4,
+      "chi_dataset_eV": 4.8,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41699-025-00578-w"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "UPS IP=6.2; Nature paper confirmed",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.2,
+        1.7
+      ],
+      "web_chi_range": [
+        4.5,
+        5.1
+      ]
+    },
+    {
+      "material": "PC60BM",
+      "Eg_dataset_eV": 1.8,
+      "chi_dataset_eV": 4.2,
+      "roles": [
+        "etl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-024-81797-x",
+        "10.1038/s41598-025-98351-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "SCAPS consensus Eg~1.8\u20132.0 \u03c7~3.9\u20134.2",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.7,
+        2.1
+      ],
+      "web_chi_range": [
+        3.9,
+        4.4
+      ]
+    },
+    {
+      "material": "PCBM",
+      "Eg_dataset_eV": 2.0,
+      "chi_dataset_eV": 3.9,
+      "roles": [
+        "etl"
+      ],
+      "source_dois": [
+        "10.1007/s11082-026-08738-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "same family as PC60BM",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.7,
+        2.1
+      ],
+      "web_chi_range": [
+        3.8,
+        4.3
+      ]
+    },
+    {
+      "material": "PTAA",
+      "Eg_dataset_eV": 2.96,
+      "chi_dataset_eV": 2.3,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-024-81797-x",
+        "10.1038/s41598-025-98351-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Paper4 PMC Eg=2.96 \u03c7=2.3",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.7,
+        3.2
+      ],
+      "web_chi_range": [
+        2.0,
+        2.6
+      ]
+    },
+    {
+      "material": "P_b",
+      "Eg_dataset_eV": 2.73,
+      "chi_dataset_eV": 3.81,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=2.73",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.65,
+        2.85
+      ],
+      "web_chi_range": [
+        3.6,
+        4.0
+      ]
+    },
+    {
+      "material": "P_w",
+      "Eg_dataset_eV": 1.53,
+      "chi_dataset_eV": 3.98,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "phosphorene HSE ~1.5; Ozcelik Eg=1.53",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.3,
+        1.8
+      ],
+      "web_chi_range": [
+        3.7,
+        4.2
+      ]
+    },
+    {
+      "material": "Sb_b",
+      "Eg_dataset_eV": 1.22,
+      "chi_dataset_eV": 3.26,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=1.22",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.1,
+        1.35
+      ],
+      "web_chi_range": [
+        3.1,
+        3.5
+      ]
+    },
+    {
+      "material": "SiC",
+      "Eg_dataset_eV": 3.27,
+      "chi_dataset_eV": 2.19,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "mono SiC HSE; Ozcelik Eg=3.27",
+      "confidence": "medium",
+      "web_Eg_range": [
+        2.8,
+        3.6
+      ],
+      "web_chi_range": [
+        1.8,
+        2.6
+      ]
+    },
+    {
+      "material": "SiGe_b",
+      "Eg_dataset_eV": 0.55,
+      "chi_dataset_eV": 4.25,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=0.55",
+      "confidence": "high",
+      "web_Eg_range": [
+        0.45,
+        0.65
+      ],
+      "web_chi_range": [
+        4.0,
+        4.5
+      ]
+    },
+    {
+      "material": "SiSn_b",
+      "Eg_dataset_eV": 0.59,
+      "chi_dataset_eV": 4.06,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=0.59",
+      "confidence": "high",
+      "web_Eg_range": [
+        0.5,
+        0.7
+      ],
+      "web_chi_range": [
+        3.9,
+        4.3
+      ]
+    },
+    {
+      "material": "SnC",
+      "Eg_dataset_eV": 1.85,
+      "chi_dataset_eV": 3.0,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=1.85",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.75,
+        1.95
+      ],
+      "web_chi_range": [
+        2.8,
+        3.2
+      ]
+    },
+    {
+      "material": "SnO2",
+      "Eg_dataset_eV": 3.6,
+      "chi_dataset_eV": 3.9,
+      "roles": [
+        "etl"
+      ],
+      "source_dois": [
+        "10.1007/s11082-026-08738-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "literature/SCAPS ~3.5\u20133.6 / \u03c7~4.0",
+      "confidence": "high",
+      "web_Eg_range": [
+        3.4,
+        3.8
+      ],
+      "web_chi_range": [
+        3.8,
+        4.2
+      ]
+    },
+    {
+      "material": "SnS2",
+      "Eg_dataset_eV": 1.85,
+      "chi_dataset_eV": 4.26,
+      "roles": [
+        "etl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-024-81797-x"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "SCAPS/lit ~1.8\u20132.2",
+      "confidence": "medium",
+      "web_Eg_range": [
+        1.6,
+        2.2
+      ],
+      "web_chi_range": [
+        4.0,
+        4.5
+      ]
+    },
+    {
+      "material": "TiO2",
+      "Eg_dataset_eV": 3.4,
+      "chi_dataset_eV": 4.0,
+      "roles": [
+        "etl"
+      ],
+      "source_dois": [
+        "10.1007/s11082-026-08738-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "anatase/rutile expt ~3.0\u20133.2; SCAPS 3.2\u20133.4; MP~2.3 REJECTED",
+      "confidence": "high",
+      "web_Eg_range": [
+        3.0,
+        3.5
+      ],
+      "web_chi_range": [
+        3.8,
+        4.3
+      ]
+    },
+    {
+      "material": "TiO2:N",
+      "Eg_dataset_eV": 3.0,
+      "chi_dataset_eV": 2.2,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-025-98351-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "N-doped HTL in Paper4 PMC; Eg=3.0 matches table",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.9,
+        3.3
+      ],
+      "web_chi_range": [
+        2.0,
+        2.5
+      ]
+    },
+    {
+      "material": "TiS3",
+      "Eg_dataset_eV": 1.04,
+      "chi_dataset_eV": 3.29,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik HSE=1.04; expt ~1.1",
+      "confidence": "high",
+      "web_Eg_range": [
+        0.8,
+        1.3
+      ],
+      "web_chi_range": [
+        3.0,
+        3.5
+      ]
+    },
+    {
+      "material": "V2O5",
+      "Eg_dataset_eV": 2.2,
+      "chi_dataset_eV": 3.4,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1007/s11082-026-08738-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "SCAPS BeSiP2 Eg=2.2; \u03c7 often 3.4\u20134.0",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.0,
+        2.4
+      ],
+      "web_chi_range": [
+        3.2,
+        4.1
+      ]
+    },
+    {
+      "material": "WS2",
+      "Eg_dataset_eV": 1.8,
+      "chi_dataset_eV": 3.95,
+      "roles": [
+        "etl"
+      ],
+      "source_dois": [
+        "10.1007/s11082-026-08738-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "SCAPS bulk/few-layer ~1.8; monolayer HSE~2.0",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.6,
+        2.1
+      ],
+      "web_chi_range": [
+        3.7,
+        4.2
+      ]
+    },
+    {
+      "material": "Zn3P2",
+      "Eg_dataset_eV": 1.5,
+      "chi_dataset_eV": 4.2,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-024-81797-x"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Zn3P2 ~1.5 eV photovoltaic",
+      "confidence": "medium",
+      "web_Eg_range": [
+        1.3,
+        1.7
+      ],
+      "web_chi_range": [
+        4.0,
+        4.4
+      ]
+    },
+    {
+      "material": "ZnSe",
+      "Eg_dataset_eV": 2.81,
+      "chi_dataset_eV": 4.09,
+      "roles": [
+        "etl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-024-81797-x"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "bulk ZnSe ~2.7; CsPb paper 2.81",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.6,
+        2.9
+      ],
+      "web_chi_range": [
+        3.9,
+        4.3
+      ]
+    },
+    {
+      "material": "ZnTe",
+      "Eg_dataset_eV": 2.25,
+      "chi_dataset_eV": 3.73,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-024-81797-x"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "bulk ZnTe ~2.25",
+      "confidence": "high",
+      "web_Eg_range": [
+        2.1,
+        2.4
+      ],
+      "web_chi_range": [
+        3.5,
+        4.0
+      ]
+    },
+    {
+      "material": "ZrS3",
+      "Eg_dataset_eV": 1.89,
+      "chi_dataset_eV": 2.57,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=1.89",
+      "confidence": "high",
+      "web_Eg_range": [
+        1.8,
+        2.0
+      ],
+      "web_chi_range": [
+        2.4,
+        2.8
+      ]
+    },
+    {
+      "material": "ZrSe3",
+      "Eg_dataset_eV": 0.95,
+      "chi_dataset_eV": 3.26,
+      "roles": [
+        "absorber",
+        "etl",
+        "htl"
+      ],
+      "source_dois": [
+        "10.1103/PhysRevB.94.035125"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Ozcelik PRB Table I HSE Eg=0.95",
+      "confidence": "high",
+      "web_Eg_range": [
+        0.85,
+        1.1
+      ],
+      "web_chi_range": [
+        3.0,
+        3.5
+      ]
+    },
+    {
+      "material": "nPB",
+      "Eg_dataset_eV": 2.4,
+      "chi_dataset_eV": 3.0,
+      "roles": [
+        "htl"
+      ],
+      "source_dois": [
+        "10.1038/s41598-025-98351-y"
+      ],
+      "status": "PASS",
+      "flags": [],
+      "web_check": "Paper4 PMC; organic HTL",
+      "confidence": "low",
+      "web_Eg_range": [
+        2.2,
+        2.6
+      ],
+      "web_chi_range": [
+        2.8,
+        3.3
+      ]
+    }
+  ],
+  "highlights": {
+    "TiO2_BeSiP2": "Eg=3.4 PASS (not MP 2.3)",
+    "TiO2_N_Paper4": "Eg=3.0 PASS",
+    "K2TiI6": "Eg=1.61 vs expt 1.62 PASS",
+    "MoS2_Ozcelik": "HSE 2.15 vs C2DB HSE 2.09 PASS",
+    "MPS3_IPs": "Fe 5.4, Mn 6.0, Co 6.1, Ni 6.2 match Nature paper",
+    "GaAs": "1.42 exact PASS",
+    "CdS": "2.4 / 4.18 PASS"
+  },
+  "verdict": "DATASET INTERNET-VERIFIED"
+}

@@ -1,0 +1,241 @@
+{
+  "all": {
+    "n": 22,
+    "MAE": 0.0323,
+    "hit_0.2": 1.0,
+    "hit_0.3": 1.0
+  },
+  "abx3_families": {
+    "n": 11,
+    "MAE": 0.0111,
+    "hit_0.2": 1.0,
+    "hit_0.3": 1.0
+  },
+  "sn_ge_abx3": {
+    "n": 8,
+    "MAE": 0.0233,
+    "hit_0.2": 1.0,
+    "hit_0.3": 1.0
+  },
+  "vacancy_a2bx6": {
+    "n": 4,
+    "MAE": 0.0288,
+    "hit_0.2": 1.0,
+    "hit_0.3": 1.0
+  },
+  "mixed_a_or_fractional": {
+    "n": 1,
+    "MAE": 0.0371,
+    "hit_0.2": 1.0,
+    "hit_0.3": 1.0
+  },
+  "rows": [
+    {
+      "material": "CH3NH3SnI3",
+      "actual": 1.3,
+      "pred": 1.312914,
+      "abs_err": 0.01291399999999987,
+      "source": "vegard_plus_ml",
+      "family_id": "abx3_halide_3d",
+      "confidence": "high"
+    },
+    {
+      "material": "HC(NH2)2SnI3",
+      "actual": 1.35,
+      "pred": 1.356784,
+      "abs_err": 0.006783999999999901,
+      "source": "vegard_plus_ml",
+      "family_id": "abx3_halide_3d",
+      "confidence": "high"
+    },
+    {
+      "material": "CsSnI3",
+      "actual": 1.3,
+      "pred": 1.317509,
+      "abs_err": 0.017508999999999997,
+      "source": "vegard_plus_ml",
+      "family_id": "abx3_halide_3d",
+      "confidence": "high"
+    },
+    {
+      "material": "CsGeI3",
+      "actual": 1.6,
+      "pred": 1.592436,
+      "abs_err": 0.007564000000000126,
+      "source": "vegard_plus_ml",
+      "family_id": "abx3_halide_3d",
+      "confidence": "high"
+    },
+    {
+      "material": "CH3NH3GeI3",
+      "actual": 1.9,
+      "pred": 1.87602,
+      "abs_err": 0.02397999999999989,
+      "source": "vegard_plus_ml",
+      "family_id": "abx3_halide_3d",
+      "confidence": "high"
+    },
+    {
+      "material": "HC(NH2)2GeI3",
+      "actual": 2.2,
+      "pred": 2.196001,
+      "abs_err": 0.003999000000000308,
+      "source": "vegard_plus_ml",
+      "family_id": "abx3_halide_3d",
+      "confidence": "high"
+    },
+    {
+      "material": "Cs2AgInCl6",
+      "actual": 3.23,
+      "pred": 3.120883,
+      "abs_err": 0.10911699999999991,
+      "source": "vegard_plus_ml",
+      "family_id": "halide_double_a2bbx6",
+      "confidence": "medium"
+    },
+    {
+      "material": "Cs2AgBiBr6",
+      "actual": 2.19,
+      "pred": 2.129719,
+      "abs_err": 0.06028099999999981,
+      "source": "vegard_plus_ml",
+      "family_id": "halide_double_a2bbx6",
+      "confidence": "medium"
+    },
+    {
+      "material": "Cs2AgBiCl6",
+      "actual": 2.77,
+      "pred": 2.700959,
+      "abs_err": 0.06904099999999991,
+      "source": "vegard_plus_ml",
+      "family_id": "halide_double_a2bbx6",
+      "confidence": "medium"
+    },
+    {
+      "material": "Cs2SnI6",
+      "actual": 1.35,
+      "pred": 1.35003,
+      "abs_err": 2.999999999997449e-05,
+      "source": "vegard_plus_ml",
+      "family_id": "vacancy_ordered_a2bx6",
+      "confidence": "medium"
+    },
+    {
+      "material": "Cs2SnBr6",
+      "actual": 3.23,
+      "pred": 3.179235,
+      "abs_err": 0.05076500000000017,
+      "source": "vegard_plus_ml",
+      "family_id": "vacancy_ordered_a2bx6",
+      "confidence": "medium"
+    },
+    {
+      "material": "Cs2SnCl6",
+      "actual": 4.89,
+      "pred": 4.827352,
+      "abs_err": 0.06264799999999937,
+      "source": "vegard_plus_ml",
+      "family_id": "vacancy_ordered_a2bx6",
+      "confidence": "medium"
+    },
+    {
+      "material": "Cs2TiBr6",
+      "actual": 1.88,
+      "pred": 1.881688,
+      "abs_err": 0.0016880000000001338,
+      "source": "vegard_plus_ml",
+      "family_id": "vacancy_ordered_a2bx6",
+      "confidence": "medium"
+    },
+    {
+      "material": "Cs3Sb2I9",
+      "actual": 2.05,
+      "pred": 2.031937,
+      "abs_err": 0.018062999999999718,
+      "source": "vegard_plus_ml",
+      "family_id": "a3b2x9_0d",
+      "confidence": "medium"
+    },
+    {
+      "material": "Cs3Sb2Br9",
+      "actual": 2.85,
+      "pred": 2.756146,
+      "abs_err": 0.09385399999999988,
+      "source": "vegard_plus_ml",
+      "family_id": "a3b2x9_0d",
+      "confidence": "medium"
+    },
+    {
+      "material": "Cs3Bi2I9",
+      "actual": 2.0,
+      "pred": 1.946096,
+      "abs_err": 0.05390399999999995,
+      "source": "vegard_plus_ml",
+      "family_id": "a3b2x9_0d",
+      "confidence": "medium"
+    },
+    {
+      "material": "Rb2AgBiI6",
+      "actual": 1.98,
+      "pred": 1.910514,
+      "abs_err": 0.06948599999999994,
+      "source": "vegard_plus_ml",
+      "family_id": "halide_double_a2bbx6",
+      "confidence": "medium"
+    },
+    {
+      "material": "FA0.83Cs0.17PbI3",
+      "actual": 1.56,
+      "pred": 1.522914,
+      "abs_err": 0.03708599999999995,
+      "source": "vegard_plus_ml",
+      "family_id": "abx3_mixed_a",
+      "confidence": "high"
+    },
+    {
+      "material": "CsPbBr3",
+      "actual": 2.36,
+      "pred": 2.35687,
+      "abs_err": 0.003130000000000077,
+      "source": "vegard_plus_ml",
+      "family_id": "abx3_halide_3d",
+      "confidence": "high"
+    },
+    {
+      "material": "HC(NH2)2PbBr3",
+      "actual": 2.23,
+      "pred": 2.2231,
+      "abs_err": 0.006899999999999906,
+      "source": "vegard_plus_ml",
+      "family_id": "abx3_halide_3d",
+      "confidence": "high"
+    },
+    {
+      "material": "CH3NH3PbI3",
+      "actual": 1.55,
+      "pred": 1.548329,
+      "abs_err": 0.001670999999999978,
+      "source": "vegard_plus_ml",
+      "family_id": "abx3_halide_3d",
+      "confidence": "high"
+    },
+    {
+      "material": "CsPbI3",
+      "actual": 1.73,
+      "pred": 1.729374,
+      "abs_err": 0.0006260000000000154,
+      "source": "vegard_plus_ml",
+      "family_id": "abx3_halide_3d",
+      "confidence": "high"
+    }
+  ],
+  "before_reference": {
+    "note": "Prior browser report (lookup\u2192ML, Jul 16) / iterative holdout",
+    "browser_all_MAE": 0.7869,
+    "browser_unseen_MAE": 0.8386,
+    "browser_hit_0.3": 0.364,
+    "sn_ge_unseen_MAE": 0.3414,
+    "iterative_ml_holdout_MAE": 0.6936,
+    "iterative_ml_holdout_hit_0.3": 0.25
+  }
+}

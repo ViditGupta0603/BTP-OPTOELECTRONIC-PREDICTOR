@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
-scripts/catboost_info/
-*.tfevents
 .DS_Store
 .env
+data/models/*.joblib
+data/llm_predictions/
+data/llm_proposals/
