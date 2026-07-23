@@ -1,0 +1,104 @@
+{
+  "review_response": "Addresses heterogeneous-data concerns before LightGBM training",
+  "recommendations": [
+    "Use gap_method / functional / gap_type / material_class columns to filter homogeneous subsets",
+    "Do NOT train on full CSV mixing SCAPS device params + HSE monolayers + experimental MPS3 without encoding",
+    "For HSE-only ML use data/opto_literature_dataset_hse06_only.csv (1675 rows)",
+    "For device-stack ML use data/opto_literature_dataset_scaps_only.csv (96 rows)",
+    "MoTe2: HSE fundamental ~1.47 eV is NOT the same as ARPES optical gap ~0.92 eV at K \u2014 documented, not swapped"
+  ],
+  "rows_by_material_class": {
+    "bulk_thin_film_device": 96,
+    "2D_monolayer_vdW": 1675,
+    "2D_exfoliated_MPS3": 10
+  },
+  "cross_class_name_collisions": [
+    {
+      "names": [
+        "MoS2",
+        "2H-MoS2"
+      ],
+      "issue": "bulk-like SCAPS MoS2 (Eg=1.29, CsPb) vs HSE monolayer 2H-MoS2 (Eg~2.15\u20132.22)",
+      "action": "Different material_class \u2014 do not merge; filter by material_class for ML"
+    },
+    {
+      "names": [
+        "WS2",
+        "2H-WS2"
+      ],
+      "issue": "BeSiP2 SCAPS WS2 (Eg=1.8) vs HSE monolayer 2H-WS2 (Eg~2.09\u20132.2)",
+      "action": "Different material_class \u2014 keep separate"
+    },
+    {
+      "names": [
+        "GaAs",
+        "GaAs_b"
+      ],
+      "issue": "bulk GaAs HTL (1.42 eV) vs buckled monolayer GaAs_b (1.88 eV)",
+      "action": "Already distinct names; GaAs_b is 2D buckled phase not bulk"
+    }
+  ],
+  "paper1_ozcelik_hse_overlap": [
+    {
+      "material": "1T-HfS2",
+      "ozcelik_HSE_eV": 1.99,
+      "paper1_HSE_eV": 2.04,
+      "delta_eV": 0.05,
+      "note": "Same functional (HSE06) but different DFT papers \u2014 rows stay source-separated"
+    },
+    {
+      "material": "1T-HfSe2",
+      "ozcelik_HSE_eV": 1.02,
+      "paper1_HSE_eV": 1.1,
+      "delta_eV": 0.08,
+      "note": "Same functional (HSE06) but different DFT papers \u2014 rows stay source-separated"
+    },
+    {
+      "material": "2H-MoS2",
+      "ozcelik_HSE_eV": 2.15,
+      "paper1_HSE_eV": 2.22,
+      "delta_eV": 0.07,
+      "note": "Same functional (HSE06) but different DFT papers \u2014 rows stay source-separated"
+    },
+    {
+      "material": "2H-MoSe2",
+      "ozcelik_HSE_eV": 1.87,
+      "paper1_HSE_eV": 1.95,
+      "delta_eV": 0.08,
+      "note": "Same functional (HSE06) but different DFT papers \u2014 rows stay source-separated"
+    },
+    {
+      "material": "2H-MoTe2",
+      "ozcelik_HSE_eV": 1.47,
+      "paper1_HSE_eV": 1.5,
+      "delta_eV": 0.03,
+      "note": "Same functional (HSE06) but different DFT papers \u2014 rows stay source-separated"
+    },
+    {
+      "material": "2H-WS2",
+      "ozcelik_HSE_eV": 2.09,
+      "paper1_HSE_eV": 2.2,
+      "delta_eV": 0.11,
+      "note": "Same functional (HSE06) but different DFT papers \u2014 rows stay source-separated"
+    },
+    {
+      "material": "2H-WSe2",
+      "ozcelik_HSE_eV": 1.75,
+      "paper1_HSE_eV": 1.88,
+      "delta_eV": 0.13,
+      "note": "Same functional (HSE06) but different DFT papers \u2014 rows stay source-separated"
+    },
+    {
+      "material": "2H-WTe2",
+      "ozcelik_HSE_eV": 1.21,
+      "paper1_HSE_eV": 1.3,
+      "delta_eV": 0.09,
+      "note": "Same functional (HSE06) but different DFT papers \u2014 rows stay source-separated"
+    }
+  ],
+  "gap_type_mixing": {
+    "device_simulation_parameter": 96,
+    "fundamental_quasiparticle": 1675,
+    "optical_absorption_edge": 10
+  }
+}

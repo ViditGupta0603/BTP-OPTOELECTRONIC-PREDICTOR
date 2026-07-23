@@ -1,0 +1,10 @@
+layer_role,material,Eg_eV,chi_eV,source_table,source_doi
+absorber,BeSiP2,1.4,4.2,Table 2,10.1007/s11082-026-08738-y
+etl,WS2,1.8,3.95,Table 1,10.1007/s11082-026-08738-y
+etl,TiO2,3.4,4.0,Table 1,10.1007/s11082-026-08738-y
+etl,SnO2,3.6,3.9,Table 1,10.1007/s11082-026-08738-y
+etl,PCBM,2.0,3.90,Table 1,10.1007/s11082-026-08738-y
+htl,CuI,3.1,2.1,Table 2,10.1007/s11082-026-08738-y
+htl,CuSCN,3.6,1.7,Table 2,10.1007/s11082-026-08738-y
+htl,NiO,3.6,1.8,Table 2,10.1007/s11082-026-08738-y
+htl,V2O5,2.2,3.4,Table 2,10.1007/s11082-026-08738-y

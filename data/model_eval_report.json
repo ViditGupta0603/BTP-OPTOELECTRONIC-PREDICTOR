@@ -1,0 +1,184 @@
+{
+  "eg_regressor": {
+    "model": "RandomForestRegressor",
+    "features": "bag-of-elements from formula",
+    "dataset": "perovskite_absorber_library.csv",
+    "n_total": 1748,
+    "holdout_20pct": {
+      "n_train": 1398,
+      "n_test": 350,
+      "MAE_eV": 0.33064534677479956,
+      "RMSE_eV": 0.44585161887416647,
+      "R2": 0.949291027591133,
+      "median_AE_eV": 0.25500563649059144
+    },
+    "cv_5fold": {
+      "folds": 5,
+      "MAE_mean_eV": 0.7425858951344315,
+      "MAE_std_eV": 0.5283305155148811,
+      "R2_mean": -0.4354608566432675,
+      "R2_std": 2.4576380543489935
+    }
+  },
+  "type_etl_classifier": {
+    "model": "GradientBoosting + OneHot(names)+Eg",
+    "target": "absorber_etl_type",
+    "n_samples": 822,
+    "class_counts": {
+      "Type I": 480,
+      "Type III": 342
+    },
+    "majority_baseline": {
+      "majority_class": "Type I",
+      "majority_frac": 0.583941605839416
+    },
+    "holdout_20pct": {
+      "n_train": 657,
+      "n_test": 165,
+      "accuracy": 1.0,
+      "f1_macro": 1.0,
+      "f1_weighted": 1.0,
+      "precision_macro": 1.0,
+      "recall_macro": 1.0,
+      "per_class": {
+        "Type I": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 96.0
+        },
+        "Type III": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 69.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 165.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 165.0
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "Type I",
+          "Type III"
+        ],
+        "matrix": [
+          [
+            96,
+            0
+          ],
+          [
+            0,
+            69
+          ]
+        ]
+      }
+    },
+    "cv_stratified_5fold": {
+      "folds": 5,
+      "accuracy_mean": 1.0,
+      "accuracy_std": 0.0,
+      "f1_macro_mean": 1.0,
+      "f1_macro_std": 0.0
+    },
+    "cv_leave_absorber_group": {
+      "folds": 3,
+      "split": "GroupKFold by absorber (harder / more realistic)",
+      "accuracy_mean": 0.5550057727197757,
+      "accuracy_std": 0.18537875030896825,
+      "f1_macro_mean": 0.5268017584777126,
+      "f1_macro_std": 0.1490250331731793
+    }
+  },
+  "type_htl_classifier": {
+    "model": "GradientBoosting + OneHot(names)+Eg",
+    "target": "absorber_htl_type",
+    "n_samples": 822,
+    "class_counts": {
+      "Type I": 522,
+      "Type III": 300
+    },
+    "majority_baseline": {
+      "majority_class": "Type I",
+      "majority_frac": 0.635036496350365
+    },
+    "holdout_20pct": {
+      "n_train": 657,
+      "n_test": 165,
+      "accuracy": 1.0,
+      "f1_macro": 1.0,
+      "f1_weighted": 1.0,
+      "precision_macro": 1.0,
+      "recall_macro": 1.0,
+      "per_class": {
+        "Type I": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 105.0
+        },
+        "Type III": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 60.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 165.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 165.0
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "Type I",
+          "Type III"
+        ],
+        "matrix": [
+          [
+            105,
+            0
+          ],
+          [
+            0,
+            60
+          ]
+        ]
+      }
+    },
+    "cv_stratified_5fold": {
+      "folds": 5,
+      "accuracy_mean": 1.0,
+      "accuracy_std": 0.0,
+      "f1_macro_mean": 1.0,
+      "f1_macro_std": 0.0
+    },
+    "cv_leave_absorber_group": {
+      "folds": 3,
+      "split": "GroupKFold by absorber (harder / more realistic)",
+      "accuracy_mean": 0.8403705536313155,
+      "accuracy_std": 0.10029983622984076,
+      "f1_macro_mean": 0.8189200931554655,
+      "f1_macro_std": 0.09125994571057534
+    }
+  },
+  "note": "Random/stratified Type scores near 1.0 can overstate performance (material name memorization). Prefer GroupKFold-by-absorber metrics for new-material realism."
+}

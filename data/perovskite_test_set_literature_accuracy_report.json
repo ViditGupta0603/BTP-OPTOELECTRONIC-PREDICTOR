@@ -1,0 +1,105 @@
+{
+  "date": "2026-07-23",
+  "dataset": "data\\perovskite_test_set_literature.csv",
+  "method": "predict_stack(..., use_llm=False); formula/ML fallback",
+  "n_raw_rows": 30,
+  "n_skipped": 0,
+  "n_scored_rows": 30,
+  "n_unique_materials": 18,
+  "n_predicted": 30,
+  "pct_predicted_of_scored": 100.0,
+  "pct_scored_of_raw": 100.0,
+  "n_in_lookup": 24,
+  "n_unseen": 6,
+  "n_blocked": 0,
+  "type_accuracy": null,
+  "type_accuracy_note": "No ground-truth Type-I/II/III labels in perovskite_test_set_literature.csv",
+  "suitability_accuracy": null,
+  "suitability_accuracy_note": "No ground-truth suitability labels in this dataset",
+  "skipped": [],
+  "metrics": {
+    "tool_vs_literature_all_rows": {
+      "n": 30,
+      "MAE": 0.1404,
+      "RMSE": 0.2104,
+      "R2": 0.6777
+    },
+    "tool_lookup_subset": {
+      "n": 24,
+      "MAE": 0.1169,
+      "RMSE": 0.1909,
+      "R2": 0.7667
+    },
+    "tool_unseen_subset": {
+      "n": 6,
+      "MAE": 0.2346,
+      "RMSE": 0.2749,
+      "R2": -1.3638
+    },
+    "ml_predict_eg_all_rows": {
+      "n": 30,
+      "MAE": 0.1743,
+      "RMSE": 0.2578,
+      "R2": 0.5163
+    },
+    "ml_predict_eg_unseen": {
+      "n": 6,
+      "MAE": 0.3475,
+      "RMSE": 0.417,
+      "R2": -4.4423
+    },
+    "ml_predict_eg_lookup_materials": {
+      "n": 24,
+      "MAE": 0.131,
+      "RMSE": 0.1989,
+      "R2": 0.7467
+    },
+    "tool_unique_materials": {
+      "n": 18,
+      "MAE": 0.1686,
+      "RMSE": 0.2399,
+      "R2": 0.5256
+    },
+    "ml_unique_materials": {
+      "n": 18,
+      "MAE": 0.2006,
+      "RMSE": 0.2821,
+      "R2": 0.3439
+    },
+    "tool_unique_lookup": {
+      "n": 13,
+      "MAE": 0.152,
+      "RMSE": 0.2326,
+      "R2": 0.6426
+    },
+    "tool_unique_unseen": {
+      "n": 5,
+      "MAE": 0.2118,
+      "RMSE": 0.2577,
+      "R2": -1.2033
+    },
+    "tool_frac_within_0.2eV_rows": 0.7333,
+    "tool_frac_within_0.3eV_rows": 0.7667,
+    "tool_frac_within_0.5eV_rows": 0.9667,
+    "tool_frac_within_0.2eV_unique": 0.6667,
+    "tool_frac_within_0.3eV_unique": 0.7222,
+    "lookup_self_consistency_MAE": 0.0,
+    "lookup_vs_literature_MAE": 0.1169
+  },
+  "train_meta_summary": {
+    "layers": 1699,
+    "eg_holdout_mae_eV": 0.2926443150057161,
+    "eg_cv_mae_eV": 0.6742113526057629,
+    "eg_n": 1898,
+    "type_etl_holdout_acc": 1.0,
+    "type_htl_holdout_acc": 1.0,
+    "formula_eg_holdout_mae_eV": 0.3309
+  },
+  "model_eval_summary": {
+    "eg_holdout_MAE_eV": 0.33064534677479956,
+    "eg_holdout_RMSE_eV": 0.44585161887416647,
+    "eg_holdout_R2": 0.949291027591133,
+    "type_etl_holdout_acc": 1.0,
+    "type_htl_holdout_acc": 1.0
+  }
+}

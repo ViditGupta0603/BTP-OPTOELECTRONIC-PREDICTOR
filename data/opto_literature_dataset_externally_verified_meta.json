@@ -1,0 +1,37 @@
+{
+  "output": "C:\\Users\\vidit\\Desktop\\btp\\data\\opto_literature_dataset_externally_verified.csv",
+  "source": "C:\\Users\\vidit\\Desktop\\btp\\data\\opto_literature_dataset.csv",
+  "policy": "Keep rows where absorber, ETL, and HTL all have status PASS in internet_verification_report (externally keyed literature/C2DB range). Exclude any row touching PASS_PAPER materials.",
+  "n_source_rows": 1781,
+  "n_kept_rows": 1404,
+  "n_dropped_rows": 377,
+  "n_verified_materials": 97,
+  "n_excluded_materials": 14,
+  "excluded_materials": [
+    "1T-CdBr2",
+    "1T-CdCl2",
+    "1T-GeBr2",
+    "1T-HgBr2",
+    "1T-MgBr2",
+    "1T-NiO2",
+    "1T-OTl2",
+    "1T-PtO2",
+    "1T-STl2",
+    "1T-YbI2",
+    "1T-ZnBr2",
+    "1T-ZnCl2",
+    "2H-GeI2",
+    "2H-ZrCl2"
+  ],
+  "by_source_kept": {
+    "K2TiI6 SCAPS Tables 1-2": 40,
+    "CsPbZnIBr2 SCAPS Tables 1-2": 40,
+    "BeSiP2 SCAPS Tables 1-2 (Tier A)": 16,
+    "Paper1 vdW heterobilayer (Supp Table 3 + Table 2 HSE06)": 236,
+    "Paper2 MPS3 experimental UPS/XPS (Fig 2d)": 10,
+    "Ozcelik PRB 2016 HSE06 monolayers (Table I)": 1062
+  },
+  "by_source_dropped": {
+    "Paper1 vdW heterobilayer (Supp Table 3 + Table 2 HSE06)": 377
+  }
+}

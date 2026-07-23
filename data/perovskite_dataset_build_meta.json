@@ -1,0 +1,65 @@
+{
+  "note": "NEW perovskite-only dataset; does not modify opto_literature_dataset.csv",
+  "stack_dataset": "C:\\Users\\vidit\\Desktop\\btp\\data\\perovskite_stack_dataset.csv",
+  "absorber_library": "C:\\Users\\vidit\\Desktop\\btp\\data\\perovskite_absorber_library.csv",
+  "pilania_raw_cache": "C:\\Users\\vidit\\Desktop\\btp\\data\\raw\\pilania_double_perovskites_gap.csv",
+  "n_stacks": 726,
+  "n_absorbers": 1757,
+  "n_paper5_absorbers": 441,
+  "n_pilania_absorbers": 1306,
+  "n_k2gei6_absorbers": 1,
+  "stack_internal_verify_failures": 0,
+  "stack_all_rows_verified": true,
+  "stack_expansion": {
+    "mode": "pooled_etl_htl",
+    "note": "Each perovskite absorber crossed with all ETL\u00d7HTL that have Eg+\u03c7. \u03c7 used only to label Type; ML can then predict Type from names+Eg."
+  },
+  "sources": [
+    {
+      "name": "K2TiI6 \u00d7 pooled contacts",
+      "doi": "10.1038/s41598-025-98351-y",
+      "type": "full_stack_expanded"
+    },
+    {
+      "name": "CsPbZnIBr2 \u00d7 pooled contacts",
+      "doi": "10.1038/s41598-024-81797-x",
+      "type": "full_stack_expanded"
+    },
+    {
+      "name": "Cs3Sb2Br9 \u00d7 pooled contacts",
+      "doi": "10.1016/j.nxmate.2026.102491",
+      "type": "full_stack_expanded"
+    },
+    {
+      "name": "Paper5 halide double perovskites",
+      "doi": "10.1038/s41524-019-0177-0",
+      "rows": 441,
+      "type": "absorber_only"
+    },
+    {
+      "name": "Pilania oxide double perovskites",
+      "doi": "10.1038/srep19375",
+      "rows": 1306,
+      "type": "absorber_only"
+    },
+    {
+      "name": "K2GeI6 DFT (Raj/kaushiki)",
+      "doi": "10.1007/s44291-026-00245-4",
+      "rows": 1,
+      "type": "absorber_only"
+    }
+  ],
+  "excluded_from_old_master": [
+    "BeSiP2 SCAPS (not perovskite)",
+    "Paper1/Ozcelik 2D monolayers (not perovskite)",
+    "Paper2 MPS3 (not perovskite)"
+  ],
+  "excluded_research_paper_folder": [
+    "tilt ppr.pdf Ca3NI3 (FAIL: CdS Eg=1.64; Ca3NI3 Eg=2.20 vs lit)",
+    "DSSC.pdf (not perovskite)",
+    "GaInP solar cells.pdf (not perovskite)",
+    "pratyush.pdf CdTe (not perovskite)"
+  ],
+  "n_verified_lead_halide_absorbers": 9,
+  "n_absorbers_after_merge": 1579
+}
