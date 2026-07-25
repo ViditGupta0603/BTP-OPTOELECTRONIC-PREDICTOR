@@ -51,6 +51,8 @@ MATERIAL_ALIASES: dict[str, str] = {
     "spiro": "Spiro-OMeTAD",
     "spiroometad": "Spiro-OMeTAD",
     "spiro-ometad": "Spiro-OMeTAD",
+    "spiro-meotad": "Spiro-OMeTAD",
+    "spiromeotad": "Spiro-OMeTAD",
 }
 
 

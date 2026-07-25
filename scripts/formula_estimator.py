@@ -46,6 +46,20 @@ HALIDE_EG_SHIFT = {"F": 0.45, "Cl": 0.30, "Br": 0.10, "I": 0.0, "O": 0.55}
 ROLE_CHI_PRIOR = {"absorber": 3.95, "etl": 4.00, "htl": 2.40}
 ROLE_EG_PRIOR = {"absorber": 1.60, "etl": 3.20, "htl": 2.80}
 
+# Named organic / polymer HTLs — ROLE_EG_PRIOR=2.80 is for generic oxides; do not use for these.
+ORGANIC_HTL_PRIORS: dict[str, tuple[float, float]] = {
+    "P3HT": (1.90, 3.10),
+    "MEH-PPV": (2.10, 2.80),
+    "PTAA": (2.96, 2.30),
+    "PEDOT:PSS": (1.60, 3.30),
+    "PEDOT": (1.60, 3.30),
+    "Spiro-OMeTAD": (3.00, 2.05),
+    "CuPc": (1.70, 3.50),
+    "C6PcH2": (1.60, 3.70),
+    "nPB": (2.40, 3.00),
+    "NPB": (2.40, 3.00),
+}
+
 _ABSORBER_FAMILY_PREFIXES = (
     "abx3",
     "halide_double",
@@ -207,6 +221,10 @@ def _load_training_rows() -> list[dict]:
 
 def heuristic_eg_chi(formula: str, role: str) -> tuple[float, float]:
     """Pure fixed-rule fallback if models missing — family prior first."""
+    bn = base_name(formula)
+    if role == "htl" and bn in ORGANIC_HTL_PRIORS:
+        return ORGANIC_HTL_PRIORS[bn]
+
     prior = family_prior_eg_chi(formula, role)
     if prior.get("eligible") or prior["family_id"].startswith("abx3") or prior[
         "family_id"
@@ -290,6 +308,25 @@ def estimate_eg_chi(formula: str, role: str = "absorber") -> dict:
     same numbers). Contact roles keep role-specific priors when not perovskite.
     """
     role = role if role in ("absorber", "etl", "htl") else "absorber"
+    bn = base_name(formula)
+
+    # Named organic HTL priors beat generic ROLE_EG_PRIOR=2.80 (P3HT optical ~1.9 eV)
+    if role == "htl" and bn in ORGANIC_HTL_PRIORS:
+        eg, chi = ORGANIC_HTL_PRIORS[bn]
+        return {
+            "Eg_eV": round(eg, 6),
+            "chi_eV": round(chi, 6),
+            "source": "organic_htl_literature_prior",
+            "predicted": True,
+            "family_id": "contact_htl",
+            "confidence": "high",
+            "caution": False,
+            "prior_Eg_eV": round(eg, 6),
+            "ml_Eg_eV": round(eg, 6),
+            "blend_weight_prior": 1.0,
+            "prior_method": "organic_htl_named",
+        }
+
     fam = classify_family(formula)
     prior_role = "absorber" if _is_perovskite_family(fam.family_id) else role
     prior = family_prior_eg_chi(formula, prior_role)

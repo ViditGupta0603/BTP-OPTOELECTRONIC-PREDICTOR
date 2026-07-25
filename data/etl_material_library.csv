@@ -5,9 +5,9 @@ LBSO,3.1200,4.4000,literature_SCAPS,etl,contact_layer,etl_library,10.1038/s41598
 Nb2O5,3.4600,4.3300,literature_SCAPS,etl,contact_layer,etl_library,10.1038/s41598-025-98351-y,K2TiI6 SCAPS device tables,Table 1
 PC60BM,1.8000,4.2000,literature_SCAPS,etl,contact_layer,etl_library,10.1038/s41598-025-98351-y,K2TiI6 SCAPS device tables,Table 1
 PCBM,2.0000,3.9000,literature_SCAPS,etl,contact_layer,etl_library,10.1007/s11082-026-08738-y,BeSiP2 SCAPS device tables,Table 1
-SnO2,3.6000,3.9000,literature_SCAPS,etl,contact_layer,etl_library,10.1007/s11082-026-08738-y,BeSiP2 SCAPS device tables,Table 1
+SnO2,3.6000,4.0000,literature_SCAPS,etl,contact_layer,etl_library,10.1007/s11082-026-08738-y,BeSiP2 SCAPS Eg=3.6; χ aligned to PSC-typical 4.0 eV (BeSiP2 table had 3.9),Table 1
 SnS2,1.8500,4.2600,literature_SCAPS,etl,contact_layer,etl_library,10.1038/s41598-024-81797-x,CsPbZnIBr2 SCAPS device tables,Table 1
-TiO2,3.4000,4.0000,literature_SCAPS,etl,contact_layer,etl_library,10.1007/s11082-026-08738-y,BeSiP2 SCAPS device tables,Table 1
+TiO2,3.2000,4.0000,literature_SCAPS,etl,contact_layer,etl_library,10.1016/j.nxmate.2026.102491,Compact anatase TiO2 Eg≈3.2 eV (Cs3Sb2Br9 SCAPS / device consensus); BeSiP2 table used 3.4 eV alternate,Table 1
 WS2,1.8000,3.9500,literature_SCAPS,etl,contact_layer,etl_library,10.1007/s11082-026-08738-y,BeSiP2 SCAPS device tables,Table 1
 ZnO,3.3000,4.0000,literature_SCAPS,etl,contact_layer,etl_library,10.1038/s41598-024-81797-x,CsPbZnIBr2 SCAPS device tables,Table 1
 BaSnO3,3.1200,4.4000,literature_SCAPS,etl,contact_layer,etl_library,10.1038/s41598-025-98351-y,K2TiI6 SCAPS device tables,Table 1

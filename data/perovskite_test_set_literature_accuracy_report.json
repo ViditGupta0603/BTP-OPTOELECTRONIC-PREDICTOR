@@ -1,5 +1,5 @@
 {
-  "date": "2026-07-23",
+  "date": "2026-07-25",
   "dataset": "data\\perovskite_test_set_literature.csv",
   "method": "predict_stack(..., use_llm=False); formula/ML fallback",
   "n_raw_rows": 30,

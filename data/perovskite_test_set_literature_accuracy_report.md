@@ -1,6 +1,6 @@
 # Literature perovskite test set — OptoStack accuracy
 
-**Date:** 2026-07-23  
+**Date:** 2026-07-25  
 **Dataset:** `data/perovskite_test_set_literature.csv`  
 **Method:** `predict_stack(..., use_llm=False)` + family/Vegard+ML formula estimator  
 **Ground truth:** literature-extracted absorber Eg from `perovskite_test_set_literature.csv` (DOI / paper quotes).  

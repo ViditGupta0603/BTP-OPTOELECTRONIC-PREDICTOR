@@ -76,6 +76,19 @@ NON_PEROVSKITE_ABSORBER_CLASSES = {
 # Extended in perovskite_rules.NON_PEROVSKITE_ABSORBERS; keep local union for fast path
 DENYLIST_ABSORBERS = {"BeSiP2", "GaAs", "CdTe", "CdSe", "Si", "Ge", "CIGS", "CZTS", "InP"}
 
+# Known indirect-gap absorbers — flag in notes; do not claim YES without caveat
+INDIRECT_GAP_MATERIALS = {
+    "Cs2AgBiBr6",
+    "Cs2AgBiCl6",
+    "Cs2AgBiI6",
+    "Cs2TiBr6",
+    "Cs3Bi2I9",
+}
+
+# Compact anatase TiO2 preferred for perovskite device tables (vs BeSiP2 SCAPS 3.4 eV)
+TIO2_DEVICE_EG_EV = 3.2
+TIO2_DEVICE_CHI_EV = 4.0
+
 # Common contact-layer misplacements (absorber field) — also loaded from ETL/HTL libraries.
 KNOWN_ETL_ABSORBERS = {
     "ZnO",
@@ -331,6 +344,16 @@ def load_layer_lookup() -> dict[str, dict[str, float]]:
     _load_verified_experimental(layers)
     _load_verified_contacts(layers)
 
+    # Prefer compact-anatase TiO2 Eg≈3.2 eV for perovskite device screening.
+    # BeSiP2 SCAPS tables used 3.4 eV (alternate phase/table) — keep that in raw CSV.
+    for key in ("TiO2",):
+        if key in layers:
+            layers[key] = {
+                **layers[key],
+                "Eg_eV": TIO2_DEVICE_EG_EV,
+                "chi_eV": float(layers[key].get("chi_eV", TIO2_DEVICE_CHI_EV)),
+            }
+
     # Alias FA/MA for verified lead-halides already in library
     for full, short in (
         ("HC(NH2)2PbI3", "FAPbI3"),
@@ -488,6 +511,23 @@ def load_material_registry() -> dict[str, dict]:
                 roles = entry.setdefault("roles", set())
                 roles.add(role)
                 entry[f"is_{role}_contact"] = True
+
+    verified_abs = RAW / "verified_experimental_absorbers.csv"
+    if verified_abs.exists():
+        with verified_abs.open(encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                name = normalize_material_name(row.get("material") or "")
+                if not name:
+                    continue
+                entry = _touch(name)
+                entry["is_perovskite_absorber"] = True
+                entry["in_perovskite_library"] = True
+                entry["material_class"] = row.get("material_class") or entry.get("material_class")
+                entry["perovskite_family"] = row.get("perovskite_family") or entry.get(
+                    "perovskite_family"
+                )
+                if row.get("gap_type"):
+                    entry["gap_type"] = row["gap_type"]
 
     _MATERIAL_REGISTRY = reg
     return reg
@@ -661,12 +701,20 @@ def check_absorber_perovskite(absorber: str) -> dict:
 
         fam = classify_family(bn)
         if fam.family_id == "non_perovskite" or bn in DENYLIST_ABSORBERS:
+            thin_film = bn in {"CZTS", "CIGS", "CdTe", "GaAs", "Si", "Ge", "InP", "BeSiP2"}
+            extra = (
+                " Non-perovskite thin-film / III-V / chalcogenide absorbers (e.g. CZTS, CIGS, CdTe) "
+                "are intentionally blocked -- this tool screens perovskite absorbers only."
+                if thin_film
+                else ""
+            )
             return {
                 "eligible": False,
                 "not_perovskite": True,
                 "family_id": fam.family_id,
                 "message": (
-                    f"{bn} is not a perovskite absorber — screening is for perovskite stacks only"
+                    f"{bn} is not a perovskite absorber -- screening is for perovskite stacks only."
+                    f"{extra}"
                 ),
             }
         if fam.family_id == "rp_dj_2d" or _MONOLAYER_PREFIX.match(bn):
@@ -699,11 +747,19 @@ def check_absorber_perovskite(absorber: str) -> dict:
             }
     except Exception:
         if bn in DENYLIST_ABSORBERS:
+            thin_film = bn in {"CZTS", "CIGS", "CdTe", "GaAs", "Si", "Ge", "InP", "BeSiP2"}
+            extra = (
+                " Non-perovskite thin-film / III-V / chalcogenide absorbers (e.g. CZTS, CIGS, CdTe) "
+                "are intentionally blocked -- this tool screens perovskite absorbers only."
+                if thin_film
+                else ""
+            )
             return {
                 "eligible": False,
                 "not_perovskite": True,
                 "message": (
-                    f"{bn} is not a perovskite absorber — screening is for perovskite stacks only"
+                    f"{bn} is not a perovskite absorber -- screening is for perovskite stacks only."
+                    f"{extra}"
                 ),
             }
         if _MONOLAYER_PREFIX.match(bn):
@@ -1155,6 +1211,20 @@ def _result_from_literature_row(
     opto = optoelectronic_suitability(etl_type, htl_type)
     opto["label"] = "lookup"
 
+    notes: list[str] = []
+    abs_bn = base_name(absorber)
+    if abs_bn in INDIRECT_GAP_MATERIALS:
+        notes.append(
+            f"gap_type: indirect — {abs_bn} is a known indirect-gap absorber; "
+            "suitability YES should be read with an optical-absorption caveat."
+        )
+        opto["gap_type"] = "indirect"
+        if opto.get("verdict") == "YES":
+            opto["reason"] = (
+                opto.get("reason", "")
+                + f" Caveat: {abs_bn} is an indirect-gap absorber — optical absorption may be weaker than a direct-gap YES."
+            )
+
     result: dict = {
         "material_absorber": absorber,
         "material_etl": etl,
@@ -1172,7 +1242,7 @@ def _result_from_literature_row(
         "method": "literature_stack_row",
         "sources": sources,
         "field_labels": field_labels,
-        "notes": [],
+        "notes": notes,
         "optoelectronic": opto,
         "literature_reference": {
             "source_doi": lit_row.get("source_doi"),
@@ -1259,6 +1329,13 @@ def predict_stack(
     notes: list[str] = []
     if perovskite_check.get("warning"):
         notes.append(perovskite_check["warning"])
+
+    abs_bn = base_name(absorber)
+    if abs_bn in INDIRECT_GAP_MATERIALS:
+        notes.append(
+            f"gap_type: indirect — {abs_bn} is a known indirect-gap absorber; "
+            "suitability YES should be read with an optical-absorption caveat."
+        )
 
     sources: dict = {}
     use_llm_flag = use_llm is True
@@ -1399,6 +1476,18 @@ def predict_stack(
         field_labels["absorber_htl_type"] = type_label
         opto = optoelectronic_suitability(row["absorber_etl_type"], row["absorber_htl_type"])
         opto["label"] = type_label
+        if abs_bn in INDIRECT_GAP_MATERIALS:
+            opto["gap_type"] = "indirect"
+            if opto.get("verdict") == "YES":
+                opto["reason"] = (
+                    opto.get("reason", "")
+                    + f" Caveat: {abs_bn} is an indirect-gap absorber — optical absorption may be weaker than a direct-gap YES."
+                )
+            else:
+                opto["reason"] = (
+                    opto.get("reason", "")
+                    + f" Note: {abs_bn} has an indirect gap."
+                )
         result["optoelectronic"] = opto
         field_labels["optoelectronic"] = type_label
         result["field_labels"] = field_labels
@@ -1422,6 +1511,13 @@ def predict_stack(
             result["predicted_absorber_htl_proba"] = htl_pred["proba"]
     opto = optoelectronic_suitability(etl_type, htl_type)
     opto["label"] = "predicted"
+    if abs_bn in INDIRECT_GAP_MATERIALS:
+        opto["gap_type"] = "indirect"
+        if opto.get("verdict") == "YES":
+            opto["reason"] = (
+                opto.get("reason", "")
+                + f" Caveat: {abs_bn} is an indirect-gap absorber — optical absorption may be weaker than a direct-gap YES."
+            )
     result["optoelectronic"] = opto
     field_labels["optoelectronic"] = "predicted"
     result["field_labels"] = field_labels

@@ -1904,7 +1904,7 @@ SnHfSrSnO6,5.171032937,3.5924,absorber,ml_plus_family_prior
 SnHfSrTiO6,4.144891869,3.6025,absorber,ml_plus_family_prior
 SnHfTlNbO6,2.709728065,3.8718,absorber,ml_plus_family_prior
 SnHfYAlO6,4.336146837,3.5757,absorber,ml_plus_family_prior
-SnO2,3.6,3.9,etl,literature_SCAPS
+SnO2,3.6,4.0,etl,literature_SCAPS
 SnS2,1.85,4.26,etl,literature_SCAPS
 SnTiYAlO6,2.700036899,3.7519,absorber,ml_plus_family_prior
 SnZrAgNbO6,3.229537258,3.6829,absorber,ml_plus_family_prior
@@ -2076,7 +2076,7 @@ SrZrSrTiO6,4.765770048,3.5681,absorber,ml_plus_family_prior
 SrZrTlNbO6,2.796095934,3.7979,absorber,ml_plus_family_prior
 SrZrTlTaO6,3.494338204,3.6922,absorber,ml_plus_family_prior
 SrZrYAlO6,7.46492109,3.4687,absorber,ml_plus_family_prior
-TiO2,3.4,4.0,etl,literature_SCAPS
+TiO2,3.2,4.0,etl,literature_SCAPS
 TiO2:N,3.0,2.2,htl,literature_SCAPS
 TiS3,1.04,3.29,monolayer,literature_HSE06_monolayer
 TlNbAgNbO6,1.863303536,3.852,absorber,ml_plus_family_prior
