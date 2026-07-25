@@ -3,3 +3,6 @@ Spiro-OMeTAD,3.0000,2.0500,htl,contact_layer,verified_contact,10.1016/j.solener.
 CuPc,1.7000,3.5000,htl,contact_layer,verified_contact,10.1038/s41598-025-98351-y,Aligned to phthalocyanine HTL family in K2TiI6 SCAPS tables (C6PcH2 Eg=1.6 χ=3.7); CuPc SCAPS-typical Eg=1.7 χ=3.5,Table 2 family,Copper phthalocyanine HTL
 C60,1.7000,3.9000,etl,contact_layer,verified_contact,10.1007/s11082-026-08738-y,Fullerene ETL family; Eg/χ aligned with PCBM SCAPS parameters in BeSiP2 tables,Table 1 family,C60 fullerene ETL
 ZnSe,2.8100,4.0900,etl,contact_layer,verified_contact,10.1038/s41598-025-98351-y,K2TiI6 SCAPS device tables (ZnSe ETL),Table 1,Already used in stack dataset
+P3HT,1.9000,3.1000,htl,contact_layer,verified_contact,10.1039/C5TA05898H,P3HT optical Eg≈1.9 eV; χ≈3.1 eV (IP≈5.0 eV − Eg) for PSC device tables,organic HTL,poly(3-hexylthiophene) HTL
+TiO2,3.2000,4.0000,etl,contact_layer,verified_contact,10.1016/j.nxmate.2026.102491,Compact anatase TiO2 Eg≈3.2 eV preferred for perovskite device tables (Cs3Sb2Br9 SCAPS); BeSiP2 used 3.4 eV,Table 1,Prefer 3.2 over BeSiP2 3.4
+SnO2,3.6000,4.0000,etl,contact_layer,verified_contact,10.1007/s11082-026-08738-y,SnO2 Eg=3.6 from BeSiP2; χ=4.0 PSC-typical (avoids Type-III cliff vs A2TiI6 χ=4.0; BeSiP2 table had 3.9),Table 1,PSC-aligned χ

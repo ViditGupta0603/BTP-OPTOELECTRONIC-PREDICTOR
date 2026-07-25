@@ -1,0 +1,11 @@
+case_id,absorber,etl,htl,expected_focus,literature_Eg_eV,notes
+1,Rb2TiI6,SnO2,CuSCN,junction_types_A2TiI6,1.72,Xiao A2TiI6 family; expect lookup Eg+χ=4.0; Types should not be estimator-fragile
+2,Cs2TiI6,SnO2,CuSCN,junction_types_A2TiI6,1.80,Xiao A2TiI6 sibling; χ=4.0 like K2TiI6
+3,K2TiI6,TiO2,MoO3,known_SCAPS_stack,1.61,Baseline vacancy-ordered; TiO2 Eg should be ~3.2
+4,CsPbBr3,TiO2,Spiro-OMeTAD,baseline_ABX3,2.36,Common PSC stack; Spiro-MeOTAD alias OK
+5,Cs2SnI6,TiO2,P3HT,P3HT_Eg_and_TiO2,1.35,P3HT optical Eg≈1.9 (not ~2.8); TiO2≈3.2
+6,Cs2AgBiBr6,TiO2,NiO,indirect_gap_caveat,2.19,Known indirect; notes must flag gap_type:indirect
+7,CH3NH3PbI3,TiO2,Spiro-OMeTAD,baseline_MAPbI3,1.55,Standard lead halide control
+8,CZTS,TiO2,NiO,scope_block_non_perovskite,,Must BLOCK — non-perovskite thin-film; UI says perovskite-only
+9,CIGS,TiO2,NiO,scope_block_non_perovskite,,Must BLOCK — same scope rule as CZTS
+10,Cs2AgBiBr6,TiO2,Spiro-OMeTAD,indirect_gap_yes_caveat,2.19,If verdict YES include indirect optical-absorption caveat

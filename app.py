@@ -218,7 +218,8 @@ PAGE = r"""
 <body>
 <main>
   <h1>OptoStack</h1>
-  <p class="sub">Enter any absorber + ETL + HTL. Get junction Type (I / II / III) and optoelectronic suitability.
+  <p class="sub">Enter a <strong>perovskite absorber</strong> + ETL + HTL. Get junction Type (I / II / III) and optoelectronic suitability.
+     Screening is perovskite-only: non-perovskite absorbers (CZTS, CIGS, CdTe, GaAs, Si, …) are blocked.
      Known materials use library values; unknowns use a deterministic <strong>ML/formula estimator</strong> (LLM off by default).</p>
 
   <form method="post">
@@ -247,7 +248,7 @@ PAGE = r"""
         </datalist>
       </div>
     </div>
-    <p class="hint">Type any formula. Suggestions from libraries. Predicted values are tagged when ML/estimate is used.</p>
+    <p class="hint">Perovskite formulas only (ABX₃, A₂BB′X₆, A₂BX₆, A₃B₂X₉, …). Non-perovskites are rejected. Predicted values are tagged when ML/estimate is used.</p>
 
     <button type="submit">Predict Type &amp; suitability</button>
   </form>

@@ -23,3 +23,4 @@ Zn3P2,1.5000,4.2000,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s4159
 ZnTe,2.2500,3.7300,literature_SCAPS,htl,contact_layer,htl_library,10.1038/s41598-024-81797-x,CsPbZnIBr2 SCAPS device tables,Table 2
 Spiro-OMeTAD,3.0000,2.0500,literature_SCAPS,htl,contact_layer,verified_contact,10.1016/j.solener.2014.09.049,Minemoto & Murata Solar Energy 2014 — SCAPS perovskite device parameters,Table 1
 CuPc,1.7000,3.5000,literature_SCAPS,htl,contact_layer,verified_contact,10.1038/s41598-025-98351-y,Aligned to phthalocyanine HTL family in K2TiI6 SCAPS tables (C6PcH2 Eg=1.6 χ=3.7); CuPc SCAPS-typical Eg=1.7 χ=3.5,Table 2 family
+P3HT,1.9000,3.1000,literature_optical,htl,contact_layer,verified_contact,10.1039/C5TA05898H,P3HT optical Eg≈1.9 eV (poly(3-hexylthiophene)); χ≈3.1 eV from typical IP≈5.0 eV (χ=IP−Eg) used in PSC SCAPS stacks,organic HTL

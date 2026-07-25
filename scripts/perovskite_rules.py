@@ -229,10 +229,11 @@ A2BX6_ENDMEMBER_EG: dict[tuple[str, str, str], float] = {
     ("Cs", "Sn", "Br"): 3.23,
     ("Cs", "Sn", "Cl"): 4.89,
     ("Cs", "Ti", "Br"): 1.88,
-    ("Cs", "Ti", "I"): 1.60,
+    ("Cs", "Ti", "I"): 1.80,
     ("Cs", "Ge", "I"): 1.55,
     ("K", "Ge", "I"): 1.62,
-    ("K", "Ti", "I"): 1.68,
+    ("K", "Ti", "I"): 1.61,
+    ("Rb", "Ti", "I"): 1.72,
     ("Rb", "Sn", "I"): 1.40,
     ("Rb", "Sn", "Br"): 3.00,
 }
@@ -653,6 +654,27 @@ def family_prior_eg_chi(formula: str, role: str = "absorber") -> dict[str, Any]:
             "eligible": False,
         }
     if role == "htl" and fam.family_id in ("contact_htl", "unknown"):
+        # Named organics / polymers — optical Eg often ~1.6–2.2, not ROLE_EG_PRIOR 2.80
+        named = {
+            "P3HT": (1.90, 3.10),
+            "MEH-PPV": (2.10, 2.80),
+            "PTAA": (2.96, 2.30),
+            "PEDOT:PSS": (1.60, 3.30),
+            "PEDOT": (1.60, 3.30),
+            "Spiro-OMeTAD": (3.00, 2.05),
+            "CuPc": (1.70, 3.50),
+        }
+        if clean in named:
+            eg, chi = named[clean]
+            return {
+                "family_id": fam.family_id,
+                "Eg_eV": eg,
+                "chi_eV": chi,
+                "prior_blend_weight": 0.95,
+                "vegard": False,
+                "method": "organic_htl_named",
+                "eligible": False,
+            }
         eg = 2.80
         chi = 2.40
         return {
