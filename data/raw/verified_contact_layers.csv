@@ -6,3 +6,5 @@ ZnSe,2.8100,4.0900,etl,contact_layer,verified_contact,10.1038/s41598-025-98351-y
 P3HT,1.9000,3.1000,htl,contact_layer,verified_contact,10.1039/C5TA05898H,P3HT optical Eg≈1.9 eV; χ≈3.1 eV (IP≈5.0 eV − Eg) for PSC device tables,organic HTL,poly(3-hexylthiophene) HTL
 TiO2,3.2000,4.0000,etl,contact_layer,verified_contact,10.1016/j.nxmate.2026.102491,Compact anatase TiO2 Eg≈3.2 eV preferred for perovskite device tables (Cs3Sb2Br9 SCAPS); BeSiP2 used 3.4 eV,Table 1,Prefer 3.2 over BeSiP2 3.4
 SnO2,3.6000,4.0000,etl,contact_layer,verified_contact,10.1007/s11082-026-08738-y,SnO2 Eg=3.6 from BeSiP2; χ=4.0 PSC-typical (avoids Type-III cliff vs A2TiI6 χ=4.0; BeSiP2 table had 3.9),Table 1,PSC-aligned χ
+PEDOT:PSS,1.6000,3.3000,htl,contact_layer,verified_contact,10.1039/C4EE00688G,PEDOT:PSS optical Eg≈1.6 eV / χ≈3.3 eV used in SCAPS organics; degenerate metallic polymer — Eg-based Type unreliable,organic HTL,Degenerate HTL caveat required
+Cu2O,2.1700,3.2000,htl,contact_layer,verified_contact,10.1016/j.solmat.2013.08.016,Cu2O Eg≈2.17 eV; χ≈3.2 eV (IP≈5.4 − Eg) PSC HTL tables,inorganic HTL,Cuprous oxide HTL

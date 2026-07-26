@@ -1,21 +1,21 @@
 {
-  "layers": 1699,
+  "layers": 1726,
   "formula": {
-    "eg_holdout_mae_eV": 0.3309,
-    "chi_holdout_mae_eV": 0.0116,
-    "n_eg": 1622,
-    "n_chi": 1622,
+    "eg_holdout_mae_eV": 0.3164,
+    "chi_holdout_mae_eV": 0.0141,
+    "n_eg": 1641,
+    "n_chi": 1629,
     "path": "C:\\Users\\vidit\\Desktop\\btp\\data\\models\\formula_eg_chi_estimator.joblib"
   },
   "eg": {
-    "holdout_mae_eV": 0.2926443150057161,
-    "cv_mae_eV": 0.6742113526057629,
-    "n": 1898,
+    "holdout_mae_eV": 0.2752786438587248,
+    "cv_mae_eV": 0.8363329810642683,
+    "n": 2078,
     "path": "C:\\Users\\vidit\\Desktop\\btp\\data\\models\\perovskite_eg_regressor.joblib"
   },
   "type": {
-    "etl_holdout_acc": 1.0,
-    "htl_holdout_acc": 1.0,
+    "etl_holdout_acc": 0.9090909090909091,
+    "htl_holdout_acc": 0.9212121212121213,
     "n_etl": 822,
     "n_htl": 822,
     "path": "C:\\Users\\vidit\\Desktop\\btp\\data\\models\\stack_type_classifier.joblib"

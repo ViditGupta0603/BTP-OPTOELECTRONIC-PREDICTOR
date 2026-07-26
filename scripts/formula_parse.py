@@ -10,6 +10,11 @@ import re
 _ELEMENT = re.compile(r"([A-Z][a-z]?)(\d*\.?\d*)")
 _GROUP = re.compile(r"\(([A-Za-z0-9.]+)\)(\d*\.?\d*)")
 _DASHES = str.maketrans("−–—", "---")
+# Unicode sub/superscript digits → ASCII (FAPbBr₃, MAPbI₃, …)
+_UNICODE_DIGITS = str.maketrans(
+    "₀₁₂₃₄₅₆₇₈₉⁰¹²³⁴⁵⁶⁷⁸⁹",
+    "01234567890123456789",
+)
 
 # Stoichiometric atom counts for common organic A-site cations
 ORGANIC_CATIONS: dict[str, dict[str, float]] = {
@@ -61,12 +66,16 @@ def base_name(name: str) -> str:
 
 
 def canonicalize_material_alias(name: str) -> str:
-    """Map FAPbI3 / MAPbI3 / Spiro shorthand to canonical library names."""
-    s = base_name(name).translate(_DASHES).strip()
+    """Map FAPbI3 / MAPbI3 / Spiro shorthand to canonical library names.
+
+    Matching is exact (after unicode-digit fold) and halide-sensitive:
+    FAPbBr3 must never resolve via an FAPbI3 / FAPb prefix.
+    """
+    s = base_name(name).translate(_DASHES).translate(_UNICODE_DIGITS).strip()
     key = s.lower().replace(" ", "")
     if key in MATERIAL_ALIASES:
         return MATERIAL_ALIASES[key]
-    # FA/MA prefix on halide perovskites: FA0.83Cs0.17PbI3 stays as-is for parsing
+    # FA/MA mixed-A formulas (FA0.83Cs0.17PbI3) stay as-is for parsing
     return s
 
 

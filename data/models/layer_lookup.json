@@ -6786,7 +6786,8 @@
     "Eg_eV": 1.35
   },
   "CsSnI3": {
-    "Eg_eV": 1.3
+    "Eg_eV": 1.3,
+    "chi_eV": 3.62
   },
   "CsGeI3": {
     "Eg_eV": 1.6
@@ -6859,6 +6860,14 @@
   "Rb2TiI6": {
     "Eg_eV": 1.72,
     "chi_eV": 4.0
+  },
+  "PEDOT:PSS": {
+    "Eg_eV": 1.6,
+    "chi_eV": 3.3
+  },
+  "Cu2O": {
+    "Eg_eV": 2.17,
+    "chi_eV": 3.2
   },
   "FAPbI3": {
     "Eg_eV": 1.48,
