@@ -81,7 +81,9 @@ INDIRECT_GAP_MATERIALS = {
     "Cs2AgBiBr6",
     "Cs2AgBiCl6",
     "Cs2AgBiI6",
+    "Cs2TiI6",
     "Cs2TiBr6",
+    "Cs2TiCl6",
     "Cs3Bi2I9",
 }
 
@@ -237,11 +239,13 @@ def _load_verified_experimental(layers: dict[str, dict[str, float]]) -> None:
             aliases = {
                 "HC(NH2)2PbI3": "FAPbI3",
                 "HC(NH2)2PbBr3": "FAPbBr3",
-                "HC(NH2)2SnI3": "FASnI3",
+                "HC(NH2)2PbCl3": "FAPbCl3",
                 "CH3NH3PbI3": "MAPbI3",
                 "CH3NH3PbBr3": "MAPbBr3",
+                "CH3NH3PbCl3": "MAPbCl3",
                 "CH3NH3SnI3": "MASnI3",
                 "CH3NH3GeI3": "MAGeI3",
+                "HC(NH2)2SnI3": "FASnI3",
             }
             if name in aliases:
                 _put_layer(
@@ -263,6 +267,28 @@ def _load_verified_contacts(layers: dict[str, dict[str, float]]) -> None:
                 continue
             chi = float(row["chi_eV"]) if row.get("chi_eV") else None
             _put_layer(layers, name, float(row["Eg_eV"]), chi, prefer_literature=True)
+
+
+def _load_verified_lead_halides(layers: dict[str, dict[str, float]]) -> None:
+    """DOI-backed ABX₃ lead-halide Eg (incl. FAPbCl₃) — exact formula keys only."""
+    path = RAW / "verified_lead_halide_perovskites.csv"
+    if not path.exists():
+        return
+    holdout = _holdout_ml_materials()
+    with path.open(encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            name = normalize_material_name(row.get("material") or "")
+            if not name or not row.get("absorber_band_gap_eV"):
+                continue
+            if name in holdout or base_name(name) in holdout:
+                continue
+            _put_layer(
+                layers,
+                name,
+                float(row["absorber_band_gap_eV"]),
+                None,
+                prefer_literature=True,
+            )
 
 
 def load_layer_lookup() -> dict[str, dict[str, float]]:
@@ -351,6 +377,7 @@ def load_layer_lookup() -> dict[str, dict[str, float]]:
     _load_monolayer_tables(layers)
     _load_opto_literature_layers(layers)
     # Experimental optical gaps overwrite DFT library values last
+    _load_verified_lead_halides(layers)
     _load_verified_experimental(layers)
     _load_verified_contacts(layers)
 
@@ -937,7 +964,8 @@ def resolve_layer(
 ) -> dict[str, float] | None:
     """Exact name, normalized name, base-name, then case-insensitive exact match.
 
-    Never prefix-matches (FAPb must not resolve to FAPbI3 when querying FAPbBr3).
+    Never prefix-matches (FAPb must not resolve to FAPbI3 when querying FAPbBr3;
+    Cs2Ti must not resolve to Cs2TiBr6 when querying Cs2TiI6).
     """
     name = normalize_material_name(name)
     if name in layers:
@@ -949,6 +977,7 @@ def resolve_layer(
     bn_low = bn.lower()
     for k, v in layers.items():
         kl = k.lower()
+        # Exact equality only — never startswith / prefix on Cs2Ti-, FAPb-, etc.
         if kl == low or base_name(k).lower() == bn_low:
             return v
     return None

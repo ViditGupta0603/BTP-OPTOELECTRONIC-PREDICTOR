@@ -196,7 +196,7 @@ ABX3_ENDMEMBER_EG: dict[tuple[str, str, str], float] = {
     ("MA", "Pb", "Cl"): 2.88,
     ("FA", "Pb", "I"): 1.48,
     ("FA", "Pb", "Br"): 2.23,
-    ("FA", "Pb", "Cl"): 2.80,
+    ("FA", "Pb", "Cl"): 2.90,
     ("Rb", "Pb", "I"): 2.10,
     ("Rb", "Pb", "Br"): 2.50,
     ("K", "Pb", "I"): 2.20,
@@ -224,18 +224,37 @@ ABX3_ENDMEMBER_EG: dict[tuple[str, str, str], float] = {
 }
 
 # Vacancy-ordered A₂BX₆ end-members (optical gaps)
+# Halide identity is strict: I < Br < Cl within each (A,B) series.
 A2BX6_ENDMEMBER_EG: dict[tuple[str, str, str], float] = {
     ("Cs", "Sn", "I"): 1.35,
     ("Cs", "Sn", "Br"): 3.23,
     ("Cs", "Sn", "Cl"): 4.89,
+    # Xiao / Ju Ti vacancy-ordered family — Cs2TiI6 ≈1.56–1.65 (not Br≈1.8)
+    ("Cs", "Ti", "I"): 1.58,
     ("Cs", "Ti", "Br"): 1.88,
-    ("Cs", "Ti", "I"): 1.80,
-    ("Cs", "Ge", "I"): 1.55,
-    ("K", "Ge", "I"): 1.62,
+    ("Cs", "Ti", "Cl"): 2.90,
     ("K", "Ti", "I"): 1.61,
-    ("Rb", "Ti", "I"): 1.72,
+    ("K", "Ti", "Br"): 1.85,
+    ("K", "Ti", "Cl"): 2.85,
+    ("Rb", "Ti", "I"): 1.60,
+    ("Rb", "Ti", "Br"): 1.86,
+    ("Rb", "Ti", "Cl"): 2.88,
+    ("Cs", "Ge", "I"): 1.55,
+    ("Cs", "Ge", "Br"): 2.30,
+    ("Cs", "Ge", "Cl"): 3.10,
+    ("K", "Ge", "I"): 1.62,
+    ("K", "Ge", "Br"): 2.35,
+    ("K", "Ge", "Cl"): 3.15,
     ("Rb", "Sn", "I"): 1.40,
     ("Rb", "Sn", "Br"): 3.00,
+    ("Rb", "Sn", "Cl"): 4.60,
+    # Pd / Pt vacancy-ordered analogues (literature optical / HSE priors)
+    ("Cs", "Pd", "I"): 1.20,
+    ("Cs", "Pd", "Br"): 1.67,
+    ("Cs", "Pd", "Cl"): 2.40,
+    ("Cs", "Pt", "I"): 1.40,
+    ("Cs", "Pt", "Br"): 1.95,
+    ("Cs", "Pt", "Cl"): 2.70,
 }
 
 # Halide double A₂B′B″X₆ priors (optical)
