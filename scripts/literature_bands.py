@@ -32,14 +32,27 @@ class Layer:
 
 
 def junction_type(a: Layer, b: Layer) -> str:
+    """Anderson heterostructure Type from vacuum-referenced band edges.
+
+    Edges use the project convention ``CBM = -χ``, ``VBM = -(χ + Eg)``.
+
+    - **Type I** (straddling): one material's gap contains the other
+    - **Type II** (staggered): band edges offset in the same direction
+    - **Type III** (broken gap): VBM of one lies at or above CBM of the other
+    """
     cb_a, vb_a = a.cbm, a.vbm
     cb_b, vb_b = b.cbm, b.vbm
-    if cb_a < cb_b and vb_a > vb_b:
+
+    # Broken gap — valence band of one overlaps/exceeds conduction band of the other
+    if vb_a >= cb_b or vb_b >= cb_a:
         return "Type III"
-    if cb_a > cb_b and vb_a < vb_b:
-        return "Type III"
-    if (cb_a <= cb_b and vb_a <= vb_b) or (cb_a >= cb_b and vb_a >= vb_b):
+
+    # Straddling — A inside B or B inside A (electron energy: higher = less negative)
+    a_inside_b = vb_b <= vb_a and cb_a <= cb_b
+    b_inside_a = vb_a <= vb_b and cb_b <= cb_a
+    if a_inside_b or b_inside_a:
         return "Type I"
+
     return "Type II"
 
 

@@ -85,6 +85,13 @@ INDIRECT_GAP_MATERIALS = {
     "Cs3Bi2I9",
 }
 
+# Degenerate / metallic polymer HTLs — Eg-based Anderson Type is unreliable
+DEGENERATE_HTL_MATERIALS = {
+    "PEDOT:PSS",
+    "PEDOT",
+    "PEDOTPSS",
+}
+
 # Compact anatase TiO2 preferred for perovskite device tables (vs BeSiP2 SCAPS 3.4 eV)
 TIO2_DEVICE_EG_EV = 3.2
 TIO2_DEVICE_CHI_EV = 4.0
@@ -115,9 +122,12 @@ KNOWN_HTL_ABSORBERS = {
     "CuSCN",
     "PTAA",
     "Spiro-OMeTAD",
+    "PEDOT:PSS",
+    "PEDOT",
     "V2O5",
     "CuAlO2",
     "TiO2:N",
+    "Cu2O",
 }
 MATERIAL_ROLE_ALIASES = {
     "cupc": "CuPc",
@@ -354,15 +364,19 @@ def load_layer_lookup() -> dict[str, dict[str, float]]:
                 "chi_eV": float(layers[key].get("chi_eV", TIO2_DEVICE_CHI_EV)),
             }
 
-    # Alias FA/MA for verified lead-halides already in library
+    # Alias FA/MA for verified lead-halides — always overwrite short keys from
+    # canonical formulas so a stale FAPbBr3≠FAPbI3 (halide) collision cannot stick.
     for full, short in (
         ("HC(NH2)2PbI3", "FAPbI3"),
         ("HC(NH2)2PbBr3", "FAPbBr3"),
+        ("HC(NH2)2PbCl3", "FAPbCl3"),
         ("CH3NH3PbI3", "MAPbI3"),
         ("CH3NH3PbBr3", "MAPbBr3"),
         ("CH3NH3PbCl3", "MAPbCl3"),
+        ("HC(NH2)2SnI3", "FASnI3"),
+        ("CH3NH3SnI3", "MASnI3"),
     ):
-        if full in layers and short not in layers:
+        if full in layers:
             layers[short] = dict(layers[full])
 
     LAYER_CACHE.write_text(json.dumps(layers, indent=2), encoding="utf-8")
@@ -921,7 +935,10 @@ def lookup_literature_stack(absorber: str, etl: str, htl: str) -> dict[str, str]
 def resolve_layer(
     layers: dict[str, dict[str, float]], name: str
 ) -> dict[str, float] | None:
-    """Exact name, normalized name, base-name, then case-insensitive match."""
+    """Exact name, normalized name, base-name, then case-insensitive exact match.
+
+    Never prefix-matches (FAPb must not resolve to FAPbI3 when querying FAPbBr3).
+    """
     name = normalize_material_name(name)
     if name in layers:
         return layers[name]
@@ -929,11 +946,53 @@ def resolve_layer(
     if bn in layers:
         return layers[bn]
     low = name.lower()
+    bn_low = bn.lower()
     for k, v in layers.items():
-        if k.lower() == low or base_name(k).lower() == bn.lower():
+        kl = k.lower()
+        if kl == low or base_name(k).lower() == bn_low:
             return v
     return None
 
+
+def _is_degenerate_htl(name: str) -> bool:
+    key = base_name(normalize_material_name(name)).upper().replace(" ", "").replace("-", "")
+    canon = {m.upper().replace(" ", "").replace("-", "").replace(":", "") for m in DEGENERATE_HTL_MATERIALS}
+    key_nocolon = key.replace(":", "")
+    if key_nocolon in canon or key in canon:
+        return True
+    return "PEDOT" in key
+
+
+def _apply_degenerate_htl_caveat(result: dict, htl: str) -> None:
+    """Annotate stacks whose HTL is a degenerate/metallic polymer (PEDOT:PSS)."""
+    if not _is_degenerate_htl(htl):
+        return
+    note = (
+        f"gap_type: degenerate/metallic HTL — {base_name(normalize_material_name(htl))} "
+        "is a highly doped polymer; Eg-based Anderson Type is unreliable for this contact."
+    )
+    notes = list(result.get("notes") or [])
+    if note not in notes:
+        notes.append(note)
+    result["notes"] = notes
+    opto = result.get("optoelectronic") or {}
+    opto["gap_type"] = opto.get("gap_type") or "degenerate_htl"
+    opto["htl_caveat"] = "degenerate_metallic"
+    reason = opto.get("reason") or ""
+    caveat = (
+        f" Caveat: {base_name(normalize_material_name(htl))} is a degenerate/metallic HTL — "
+        "Eg-based junction Type and YES/MARGINAL suitability should be treated with low confidence."
+    )
+    if "degenerate/metallic HTL" not in reason:
+        opto["reason"] = reason + caveat
+    # Soften Type-ML confidence markers when present
+    if "predicted_absorber_htl_proba" in result:
+        result["predicted_absorber_htl_proba_note"] = (
+            "Type-ML confidence suppressed for degenerate HTL (PEDOT family)."
+        )
+        result.pop("predicted_absorber_htl_proba", None)
+    result["optoelectronic"] = opto
+    result["caution"] = True
 
 def formula_features(formula: str) -> dict[str, float]:
     return formula_feature_dict(formula)
@@ -1208,6 +1267,16 @@ def _result_from_literature_row(
 
     etl_type = str(lit_row["absorber_etl_type"])
     htl_type = str(lit_row["absorber_htl_type"])
+    # Recompute Anderson Types from Eg+χ when affinities are available (fixes
+    # legacy straddling/staggered label swap in older curated rows).
+    if abs_chi is not None and etl_chi is not None and htl_chi is not None:
+        from literature_bands import junction_type as _jtype
+
+        a = Layer(absorber, float(lit_row["absorber_band_gap_eV"]), float(abs_chi))
+        e = Layer(etl, float(lit_row["etl_band_gap_eV"]), float(etl_chi))
+        h = Layer(htl, float(lit_row["htl_band_gap_eV"]), float(htl_chi))
+        etl_type = _jtype(a, e)
+        htl_type = _jtype(a, h)
     opto = optoelectronic_suitability(etl_type, htl_type)
     opto["label"] = "lookup"
 
@@ -1266,6 +1335,7 @@ def _result_from_literature_row(
             ),
             "label": "lookup",
         }
+    _apply_degenerate_htl_caveat(result, htl)
     return result
 
 
@@ -1491,6 +1561,7 @@ def predict_stack(
         result["optoelectronic"] = opto
         field_labels["optoelectronic"] = type_label
         result["field_labels"] = field_labels
+        _apply_degenerate_htl_caveat(result, htl)
         return result
 
     result["method"] = "ml_type_from_names_and_Eg"
@@ -1500,14 +1571,14 @@ def predict_stack(
         etl_type = etl_pred["type"]
         result["predicted_absorber_etl_type"] = etl_type
         field_labels["absorber_etl_type"] = "predicted"
-        if "proba" in etl_pred:
+        if "proba" in etl_pred and not _is_degenerate_htl(htl):
             result["predicted_absorber_etl_proba"] = etl_pred["proba"]
     if htl_eg is not None:
         htl_pred = ml_type(absorber, htl, abs_eg, float(htl_eg), "htl")
         htl_type = htl_pred["type"]
         result["predicted_absorber_htl_type"] = htl_type
         field_labels["absorber_htl_type"] = "predicted"
-        if "proba" in htl_pred:
+        if "proba" in htl_pred and not _is_degenerate_htl(htl):
             result["predicted_absorber_htl_proba"] = htl_pred["proba"]
     opto = optoelectronic_suitability(etl_type, htl_type)
     opto["label"] = "predicted"
@@ -1521,6 +1592,7 @@ def predict_stack(
     result["optoelectronic"] = opto
     field_labels["optoelectronic"] = "predicted"
     result["field_labels"] = field_labels
+    _apply_degenerate_htl_caveat(result, htl)
     return result
 
 
