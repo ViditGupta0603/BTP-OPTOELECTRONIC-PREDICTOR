@@ -6799,8 +6799,15 @@
     "Eg_eV": 1.35,
     "chi_eV": 4.8
   },
+  "Cs2SnBr6": {
+    "Eg_eV": 3.23
+  },
+  "Cs2SnCl6": {
+    "Eg_eV": 4.89
+  },
   "Cs2TiBr6": {
-    "Eg_eV": 1.88
+    "Eg_eV": 1.88,
+    "chi_eV": 4.0
   },
   "Cs3Sb2I9": {
     "Eg_eV": 2.05
@@ -6844,6 +6851,9 @@
   "FePS3": {
     "Eg_eV": 1.35
   },
+  "HC(NH2)2PbCl3": {
+    "Eg_eV": 2.9
+  },
   "MASnI3": {
     "Eg_eV": 1.3
   },
@@ -6853,12 +6863,50 @@
   "MAGeI3": {
     "Eg_eV": 1.9
   },
+  "Cs2TiCl6": {
+    "Eg_eV": 2.9,
+    "chi_eV": 4.05
+  },
+  "K2TiBr6": {
+    "Eg_eV": 1.85,
+    "chi_eV": 4.0
+  },
+  "K2TiCl6": {
+    "Eg_eV": 2.85,
+    "chi_eV": 4.05
+  },
+  "Rb2TiBr6": {
+    "Eg_eV": 1.86,
+    "chi_eV": 4.0
+  },
+  "Rb2TiCl6": {
+    "Eg_eV": 2.88,
+    "chi_eV": 4.05
+  },
+  "Cs2PdBr6": {
+    "Eg_eV": 1.67
+  },
+  "Cs2PdI6": {
+    "Eg_eV": 1.2
+  },
+  "Cs2PdCl6": {
+    "Eg_eV": 2.4
+  },
+  "Cs2PtI6": {
+    "Eg_eV": 1.4
+  },
+  "Cs2PtBr6": {
+    "Eg_eV": 1.95
+  },
+  "Cs2PtCl6": {
+    "Eg_eV": 2.7
+  },
   "Cs2TiI6": {
-    "Eg_eV": 1.8,
+    "Eg_eV": 1.58,
     "chi_eV": 4.0
   },
   "Rb2TiI6": {
-    "Eg_eV": 1.72,
+    "Eg_eV": 1.6,
     "chi_eV": 4.0
   },
   "PEDOT:PSS": {
@@ -6876,6 +6924,9 @@
   "FAPbBr3": {
     "Eg_eV": 2.23,
     "chi_eV": 3.7725
+  },
+  "FAPbCl3": {
+    "Eg_eV": 2.9
   },
   "MAPbI3": {
     "Eg_eV": 1.55,
