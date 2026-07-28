@@ -248,6 +248,7 @@ PAGE = r"""
         </datalist>
       </div>
     </div>
+    <p class="hint">OptoStack does not validate whether a material is conventionally ETL or HTL, and the person is responsible for correct role assignment.</p>
     <p class="hint">Perovskite formulas only (ABX₃, A₂BB′X₆, A₂BX₆, A₃B₂X₉, …). Non-perovskites are rejected. Predicted values are tagged when ML/estimate is used.</p>
 
     <button type="submit">Predict Type &amp; suitability</button>
