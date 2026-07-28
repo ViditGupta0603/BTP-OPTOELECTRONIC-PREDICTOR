@@ -21,8 +21,11 @@ btp/
 ├── requirements.txt
 ├── .env.example           # optional LLM keys (do not commit .env)
 ├── docs/
-│   ├── DATASETS.md        # dataset catalog & provenance
-│   └── WORKFLOW.md        # train / predict walkthrough
+│   ├── TOOL_WORKFLOW.md           # operator: how to use end-to-end
+│   ├── TECHNICAL_WORKFLOW.md      # engineering: pipeline & deploy
+│   ├── PROJECT_DEVELOPMENT_LOG.md # chronological build history
+│   ├── DATASETS.md                # dataset catalog & provenance
+│   └── WORKFLOW.md                # short index → above docs
 ├── scripts/               # pipeline, eval, dataset builders
 │   ├── predict_stack.py   # main train + predict
 │   ├── perovskite_rules.py
@@ -72,7 +75,7 @@ python scripts/predict_stack.py --train
 
 Produces `data/models/perovskite_eg_regressor.joblib`, `stack_type_classifier.joblib`, `layer_lookup.json`.
 
-Detail: [docs/WORKFLOW.md](docs/WORKFLOW.md).
+Detail: [docs/TOOL_WORKFLOW.md](docs/TOOL_WORKFLOW.md) · [docs/TECHNICAL_WORKFLOW.md](docs/TECHNICAL_WORKFLOW.md).
 
 ## Suitability rules
 
@@ -115,7 +118,7 @@ python scripts/verify_perovskite_dataset.py
 python app.py
 ```
 
-Open **http://127.0.0.1:7860**. First run trains models if missing. Enter any formulas → **Predict Type & suitability**.
+Serves on **`0.0.0.0:$PORT`** (default **7860**). Open **http://127.0.0.1:7860**. First run trains models if missing. Enter any formulas → **Predict Type & suitability**.
 
 ### CLI
 
@@ -156,10 +159,10 @@ python scripts/iterative_accuracy_loop.py
 
 ## Deployment
 
-Local default binds `127.0.0.1:7860`. For a server:
+`python app.py` binds **`0.0.0.0`** on **`PORT`** (default **7860**). Local URL: http://127.0.0.1:7860.
 
 ```bash
-# Example: gunicorn (bind all interfaces)
+# Example: gunicorn
 pip install gunicorn
 gunicorn -b 0.0.0.0:7860 "app:app"
 # Or: gunicorn -b 0.0.0.0:$PORT "app:app"  after export PORT=7860
@@ -201,8 +204,11 @@ Use OptoStack to **rank and reject** stacks quickly; confirm promising YES cases
 
 ## Docs
 
+- [docs/TOOL_WORKFLOW.md](docs/TOOL_WORKFLOW.md) — **operator** end-to-end use (inputs, outputs, suitability, disclaimers)  
+- [docs/TECHNICAL_WORKFLOW.md](docs/TECHNICAL_WORKFLOW.md) — **engineering** pipeline, modules, Types, artifacts, deploy  
+- [docs/PROJECT_DEVELOPMENT_LOG.md](docs/PROJECT_DEVELOPMENT_LOG.md) — chronological build / fix history  
 - [docs/DATASETS.md](docs/DATASETS.md) — datasets & verification  
-- [docs/WORKFLOW.md](docs/WORKFLOW.md) — step-by-step train & test  
+- [docs/WORKFLOW.md](docs/WORKFLOW.md) — short index of the workflow docs  
 - [scripts/README.md](scripts/README.md) — script index  
 
 ## License / citation

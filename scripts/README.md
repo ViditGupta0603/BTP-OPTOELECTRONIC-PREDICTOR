@@ -20,4 +20,4 @@ Project overview: [README.md](../README.md)
 | `verify_perovskite_dataset.py` | Verify perovskite datasets |
 | `build_literature_dataset.py` | Full opto literature master (optional) |
 
-See [docs/WORKFLOW.md](../docs/WORKFLOW.md) for test commands.
+See [docs/TOOL_WORKFLOW.md](../docs/TOOL_WORKFLOW.md) (operators) and [docs/TECHNICAL_WORKFLOW.md](../docs/TECHNICAL_WORKFLOW.md) (engineering). Index: [docs/WORKFLOW.md](../docs/WORKFLOW.md).

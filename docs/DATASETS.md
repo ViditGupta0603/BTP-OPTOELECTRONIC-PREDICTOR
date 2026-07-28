@@ -2,7 +2,7 @@
 
 Goal: screen **absorber + ETL + HTL** stacks for **optoelectronic band-alignment suitability** (Type I / II / III), **not** PCE prediction. All stacked values come from peer-reviewed tables (not MP/JARVIS as ground truth).
 
-Project overview: [README.md](../README.md) · workflow: [WORKFLOW.md](WORKFLOW.md)
+Project overview: [README.md](../README.md) · [TOOL_WORKFLOW.md](TOOL_WORKFLOW.md) · [TECHNICAL_WORKFLOW.md](TECHNICAL_WORKFLOW.md) · [PROJECT_DEVELOPMENT_LOG.md](PROJECT_DEVELOPMENT_LOG.md)
 
 ---
 
