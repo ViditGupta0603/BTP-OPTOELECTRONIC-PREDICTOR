@@ -297,6 +297,16 @@ NON_PEROVSKITE_ABSORBERS = {
     "SiC",
     "ZnTe",
     "Zn3P2",
+    # Metal-halide precursors (not ABX₃) — historically mis-tagged as ABX3 without A-site
+    "PbI2",
+    "PbBr2",
+    "PbCl2",
+    "SnI2",
+    "SnBr2",
+    "SnCl2",
+    "GeI2",
+    "GeBr2",
+    "GeCl2",
 }
 
 CONTACT_ETL = {
@@ -445,7 +455,12 @@ def parse_sites(formula: str) -> SiteParse:
             stoich = "A2BBX6"
         else:
             stoich = "A2BX6"
-    elif b_primary in ("Pb", "Sn", "Ge") and halogens >= 2 and o_count == 0:
+    elif (
+        b_primary in ("Pb", "Sn", "Ge")
+        and halogens >= 2.5  # ABX₃ (~X3), not BX₂ precursors (PbI2, SnBr2, …)
+        and o_count == 0
+        and bool(a_fracs)  # require A-site (Cs/Rb/K/MA/FA/…); bare BX₂ ≠ perovskite
+    ):
         stoich = "ABX3"
 
     return SiteParse(

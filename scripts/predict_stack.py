@@ -74,7 +74,26 @@ NON_PEROVSKITE_ABSORBER_CLASSES = {
     "2d_exfoliated_mps3",
 }
 # Extended in perovskite_rules.NON_PEROVSKITE_ABSORBERS; keep local union for fast path
-DENYLIST_ABSORBERS = {"BeSiP2", "GaAs", "CdTe", "CdSe", "Si", "Ge", "CIGS", "CZTS", "InP"}
+DENYLIST_ABSORBERS = {
+    "BeSiP2",
+    "GaAs",
+    "CdTe",
+    "CdSe",
+    "Si",
+    "Ge",
+    "CIGS",
+    "CZTS",
+    "InP",
+    "PbI2",
+    "PbBr2",
+    "PbCl2",
+    "SnI2",
+    "SnBr2",
+    "SnCl2",
+    "GeI2",
+    "GeBr2",
+    "GeCl2",
+}
 
 # Known indirect-gap absorbers — flag in notes; do not claim YES without caveat
 INDIRECT_GAP_MATERIALS = {
