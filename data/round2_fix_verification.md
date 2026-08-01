@@ -17,13 +17,13 @@ Branch: `fix/round2-type-halide-pedot`
 |---|---:|---|---|---|---|
 | MAPbI3/TiO2/Spiro-OMeTAD | 1.55 | Type II | Type II | YES | — |
 | Cs2SnI6/TiO2/P3HT | 1.35 | Type I | Type II | YES | — |
-| K2TiI6/PC60BM/MoO3 | 1.61 | Type II | Type II | YES | — |
+| K2TiI6/PC60BM/MoO3 | 1.61 | Type II | Type III | MARGINAL | broken_gap_by_design: MoO3 is a deep-electron-affinity oxide (χ ≈ 5–6.7 eV), so its conduction band lies below the absorber valence band. Type III here is the intended hole-extraction mechanism, not a mismatched interface. |
 | K2TiI6/WS2/NiO | 1.61 | Type I | Type II | YES | — |
 | CsSnI3/TiO2/PEDOT:PSS | 1.3 | Type II | Type II | YES | PEDOT caveat; gap_type: degenerate/metallic HTL — PEDOT:PSS is a highly doped polymer; Eg-based Anderson Type is unreliable for this contact. |
 | CsPbBr3/ZnO/NiO | 2.36 | Type II | Type II | YES | — |
 | FAPbBr3/TiO2/Spiro-OMeTAD | 2.23 | Type II | Type II | YES | — |
 
-Types observed: `['Type I', 'Type II']` — **PASS** (must not be only Type I).
+Types observed: `['Type I', 'Type II', 'Type III']` — **PASS** (must not be only Type I).
 
 ## Anderson sanity (direct `junction_type`)
 
@@ -54,7 +54,8 @@ Types observed: `['Type I', 'Type II']` — **PASS** (must not be only Type I).
   "types_vary": true,
   "types_seen": [
     "Type I",
-    "Type II"
+    "Type II",
+    "Type III"
   ],
   "pedot_caveat": true
 }

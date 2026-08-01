@@ -106,6 +106,11 @@ INDIRECT_GAP_MATERIALS = {
     "Cs3Bi2I9",
 }
 
+# Deep-electron-affinity oxides (χ ≈ 5–6.7 eV). Their conduction band sits below
+# the absorber valence band, so a Type III result at these contacts is the
+# intended hole-extraction mechanism rather than a badly matched stack.
+DEEP_AFFINITY_CONTACTS = {"MoO3", "V2O5", "WO3"}
+
 # Degenerate / metallic polymer HTLs — Eg-based Anderson Type is unreliable
 DEGENERATE_HTL_MATERIALS = {
     "PEDOT:PSS",
@@ -1047,6 +1052,33 @@ def _apply_degenerate_htl_caveat(result: dict, htl: str) -> None:
     result["optoelectronic"] = opto
     result["caution"] = True
 
+def _annotate_broken_gap_contacts(result: dict) -> None:
+    """Explain Type III at a deep-affinity oxide, where broken gap is by design."""
+    flagged = [
+        base_name(normalize_material_name(result.get(f"material_{role}") or ""))
+        for role, type_key in (("etl", "absorber_etl_type"), ("htl", "absorber_htl_type"))
+        if str(result.get(type_key) or "") == "Type III"
+        and base_name(normalize_material_name(result.get(f"material_{role}") or ""))
+        in DEEP_AFFINITY_CONTACTS
+    ]
+    if not flagged:
+        return
+    names = " and ".join(flagged)
+    note = (
+        f"broken_gap_by_design: {names} is a deep-electron-affinity oxide "
+        "(χ ≈ 5–6.7 eV), so its conduction band lies below the absorber valence "
+        "band. Type III here is the intended hole-extraction mechanism, not a "
+        "mismatched interface."
+    )
+    notes = list(result.get("notes") or [])
+    if note not in notes:
+        notes.append(note)
+    result["notes"] = notes
+    opto = result.get("optoelectronic") or {}
+    opto["broken_gap_by_design"] = flagged
+    result["optoelectronic"] = opto
+
+
 def formula_features(formula: str) -> dict[str, float]:
     return formula_feature_dict(formula)
 
@@ -1388,6 +1420,7 @@ def _result_from_literature_row(
             ),
             "label": "lookup",
         }
+    _annotate_broken_gap_contacts(result)
     _apply_degenerate_htl_caveat(result, htl)
     return result
 
@@ -1614,6 +1647,7 @@ def predict_stack(
         result["optoelectronic"] = opto
         field_labels["optoelectronic"] = type_label
         result["field_labels"] = field_labels
+        _annotate_broken_gap_contacts(result)
         _apply_degenerate_htl_caveat(result, htl)
         return result
 
