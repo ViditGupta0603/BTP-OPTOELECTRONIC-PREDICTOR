@@ -22,6 +22,7 @@ from flask import Flask, render_template_string, request
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from formula_estimator import EG_CHI_MODEL, train_estimators  # noqa: E402
 from formula_parse import normalize_formula_text  # noqa: E402
 from predict_stack import EG_MODEL, TYPE_MODEL, load_layer_lookup, predict_stack, train_eg_model, train_type_models  # noqa: E402
 
@@ -431,10 +432,7 @@ def index():
         etl = normalize_formula_text(request.form.get("etl"))
         htl = normalize_formula_text(request.form.get("htl"))
         try:
-            if not EG_MODEL.exists() or not TYPE_MODEL.exists():
-                load_layer_lookup()
-                train_eg_model()
-                train_type_models()
+            ensure_models()
             # Default: library values + ML formula estimator (no LLM)
             result = predict_stack(absorber, etl, htl, use_llm=False)
         except Exception as exc:
@@ -456,12 +454,32 @@ def index():
     )
 
 
-def main() -> None:
-    if not EG_MODEL.exists() or not TYPE_MODEL.exists():
+def ensure_models(verbose: bool = False) -> None:
+    """Train whatever model artifacts are missing.
+
+    The .joblib files are gitignored, so a fresh deployment starts with none of
+    them. The formula estimator has to be included: without it estimate_eg_chi
+    silently answers from its coarse heuristic instead of the ML blend, so an
+    unknown layer would come back with a different Eg than it does locally.
+    """
+    if EG_MODEL.exists() and TYPE_MODEL.exists() and EG_CHI_MODEL.exists():
+        return
+    if verbose:
         print("Training models (first run)...")
-        load_layer_lookup()
-        print(train_eg_model())
-        print(train_type_models())
+    load_layer_lookup()
+    for exists, train in (
+        (EG_CHI_MODEL.exists(), train_estimators),
+        (EG_MODEL.exists(), train_eg_model),
+        (TYPE_MODEL.exists(), train_type_models),
+    ):
+        if not exists:
+            out = train()
+            if verbose:
+                print(out)
+
+
+def main() -> None:
+    ensure_models(verbose=True)
     port = int(os.environ.get("PORT", 7860))
     host = "0.0.0.0"
     print(f"Serving on http://{host}:{port} (local: http://127.0.0.1:{port})")
