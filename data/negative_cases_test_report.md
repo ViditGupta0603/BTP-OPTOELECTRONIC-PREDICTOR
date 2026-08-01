@@ -27,7 +27,7 @@
 | 17 | `block_garbage_123` | should_block | 123 / TiO2 / NiO | BLOCKED | BLOCKED | — | — | **PASS** |
 | 18 | `block_garbage_H2O` | should_block | H2O / TiO2 / NiO | BLOCKED | BLOCKED | — | — | **PASS** |
 | 19 | `block_garbage_NaCl` | should_block | NaCl / TiO2 / NiO | BLOCKED | BLOCKED | — | — | **PASS** |
-| 20 | `role_misuse_K2TiI6_MoO3_as_ETL_TiO2_as_HTL` | edge | K2TiI6 / MoO3 / TiO2 | not in ['BLOCKED', 'CRASH'] | YES; types=Type II/Type I; Eg=1.610 | Type II/Type I | 1.610 | **PASS** |
+| 20 | `role_misuse_K2TiI6_MoO3_as_ETL_TiO2_as_HTL` | edge | K2TiI6 / MoO3 / TiO2 | not in ['BLOCKED', 'CRASH'] | MARGINAL; types=Type III/Type I; Eg=1.610 | Type III/Type I | 1.610 | **PASS** |
 | 21 | `role_misuse_CsPbBr3_PEDOT_as_ETL_TiO2_as_HTL` | edge | CsPbBr3 / PEDOT:PSS / TiO2 | not in ['BLOCKED', 'CRASH'] | YES; types=Type II/Type II; Eg=2.360 | Type II/Type II | 2.360 | **PASS** |
 | 22 | `pedot_as_htl_caveat` | edge | CsPbBr3 / TiO2 / PEDOT:PSS | not in ['BLOCKED', 'CRASH']; PEDOT caveat | YES; types=Type II/Type II; Eg=2.360 | Type II/Type II | 2.360 | **PASS** |
 | 23 | `halide_FAPbBr3_not_FAPbI3_Eg` | edge | FAPbBr3 / TiO2 / Spiro-OMeTAD | not in ['BLOCKED', 'CRASH']; Eg in (2.05, 2.4); Eg≠1.48 | YES; types=Type II/Type II; Eg=2.230 | Type II/Type II | 2.230 | **PASS** |

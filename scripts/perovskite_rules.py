@@ -308,6 +308,25 @@ NON_PEROVSKITE_ABSORBERS = {
     "GeCl2",
 }
 
+# Vacuum-referenced Eg/χ for named contacts whose real band edges lie outside the
+# generic ETL/HTL priors. Without these, every contact estimate lands in a narrow
+# ~2.4–3.6 eV / χ≈2.4–4.0 window and broken-gap (Type III) alignment — the whole
+# point of a deep-affinity hole-extraction oxide — is arithmetically unreachable.
+#   deep-χ oxides: Meyer et al. Adv. Mater. 24, 5408 (2012) 10.1002/adma.201201630
+#                  Kröger et al. Appl. Phys. Lett. 95, 123301 (2009) 10.1063/1.3231928
+#   wide-gap insulators: standard optical Eg + UPS/IPES electron affinity
+NAMED_CONTACT_BANDS: dict[str, tuple[float, float]] = {
+    # material: (Eg_eV, chi_eV)
+    "MoO3": (3.00, 6.70),
+    "V2O5": (2.80, 6.60),
+    "WO3": (3.10, 5.00),
+    "MgO": (7.80, 0.85),
+    "Al2O3": (8.80, 1.35),
+    "SiO2": (9.00, 0.90),
+    "HfO2": (5.70, 2.50),
+    "ZrO2": (5.80, 2.50),
+}
+
 CONTACT_ETL = {
     "ZnO",
     "TiO2",
@@ -670,6 +689,21 @@ def family_prior_eg_chi(formula: str, role: str = "absorber") -> dict[str, Any]:
     fam = classify_family(formula)
     sites = parse_sites(formula)
     clean = _clean(formula)
+
+    # Named contacts with measured band edges outside the generic contact window
+    if role in ("etl", "htl") and clean in NAMED_CONTACT_BANDS:
+        eg, chi = NAMED_CONTACT_BANDS[clean]
+        return {
+            "family_id": fam.family_id,
+            "Eg_eV": eg,
+            "chi_eV": chi,
+            "prior_blend_weight": 1.0,
+            "vegard": False,
+            "method": "named_contact_band_edges",
+            "eligible": False,
+            "eg_min": eg,
+            "eg_max": eg,
+        }
 
     # Contact role priors when estimating ETL/HTL unknowns
     if role == "etl" and fam.family_id in ("contact_etl", "unknown", "oxide_perovskite"):

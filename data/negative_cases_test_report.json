@@ -237,11 +237,11 @@
       "category": "edge",
       "stack": "K2TiI6 / MoO3 / TiO2",
       "expected": "not in ['BLOCKED', 'CRASH']",
-      "got": "YES; types=Type II/Type I; Eg=1.610",
-      "types": "Type II/Type I",
+      "got": "MARGINAL; types=Type III/Type I; Eg=1.610",
+      "types": "Type III/Type I",
       "eg": "1.610",
       "result": "PASS",
-      "detail": "Absorber–ETL is Type II and absorber–HTL is Type I. Both are Type I/II — suitable for optoelectronic stack screening.",
+      "detail": "broken_gap_by_design: MoO3 is a deep-electron-affinity oxide (χ ≈ 5–6.7 eV), so its conduction band lies below the absorber valence band. Type III here is the intended hole-extract",
       "crash": null
     },
     {

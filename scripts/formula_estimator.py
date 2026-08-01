@@ -45,6 +45,14 @@ ABS_PATH = DATA / "perovskite_absorber_library.csv"
 ETL_PATH = DATA / "etl_material_library.csv"
 HTL_PATH = DATA / "htl_material_library.csv"
 
+# Physical envelope for electron affinity across real photovoltaic materials:
+# alkaline-earth oxides sit near 0.85 eV (MgO) and deep-affinity hole-extraction
+# oxides near 6.7 eV (MoO3). The former [1.3, 4.9] window was narrower than the
+# absorber χ+Eg of a typical perovskite (~5.2-5.6 eV), which made the broken-gap
+# condition χ_contact >= χ_absorber + Eg_absorber impossible to satisfy.
+CHI_PHYSICAL_RANGE = (0.30, 7.20)
+EG_PHYSICAL_RANGE = (0.20, 9.50)
+
 HALIDE_EG_SHIFT = {"F": 0.45, "Cl": 0.30, "Br": 0.10, "I": 0.0, "O": 0.55}
 ROLE_CHI_PRIOR = {"absorber": 3.95, "etl": 4.00, "htl": 2.40}
 ROLE_EG_PRIOR = {"absorber": 1.60, "etl": 3.20, "htl": 2.80}
@@ -225,9 +233,13 @@ def heuristic_eg_chi(formula: str, role: str) -> tuple[float, float]:
         return ORGANIC_HTL_PRIORS[bn]
 
     prior = family_prior_eg_chi(formula, role)
-    if prior.get("eligible") or prior["family_id"].startswith("abx3") or prior[
-        "family_id"
-    ] in ("halide_double_a2bbx6", "vacancy_ordered_a2bx6", "a3b2x9_0d"):
+    if prior.get("method") == "named_contact_band_edges" or prior.get(
+        "eligible"
+    ) or prior["family_id"].startswith("abx3") or prior["family_id"] in (
+        "halide_double_a2bbx6",
+        "vacancy_ordered_a2bx6",
+        "a3b2x9_0d",
+    ):
         return float(prior["Eg_eV"]), float(prior["chi_eV"])
 
     feats = composition_vector(formula, role)
@@ -239,8 +251,8 @@ def heuristic_eg_chi(formula: str, role: str) -> tuple[float, float]:
     chi = ROLE_CHI_PRIOR.get(role, 3.5)
     if role == "htl":
         chi = 2.4 - 0.3 * feats.get("has_I", 0)
-    eg = float(np.clip(eg, 0.2, 6.0))
-    chi = float(np.clip(chi, 1.4, 4.8))
+    eg = float(np.clip(eg, *EG_PHYSICAL_RANGE))
+    chi = float(np.clip(chi, *CHI_PHYSICAL_RANGE))
     return eg, chi
 
 
@@ -365,7 +377,10 @@ def estimate_eg_chi(formula: str, role: str = "absorber") -> dict:
     eg = w * float(prior["Eg_eV"]) + (1.0 - w) * ml_eg
     chi = w * float(prior["chi_eV"]) + (1.0 - w) * ml_chi
 
-    if not _is_perovskite_family(fam.family_id):
+    # Measured band edges must survive verbatim; pulling MoO3 (χ=6.7) halfway to
+    # the generic HTL prior of 2.40 is what hid every broken-gap junction.
+    named_contact = prior.get("method") == "named_contact_band_edges"
+    if not _is_perovskite_family(fam.family_id) and not named_contact:
         if role == "etl":
             chi = 0.5 * chi + 0.5 * ROLE_CHI_PRIOR["etl"]
         elif role == "htl":
@@ -374,7 +389,7 @@ def estimate_eg_chi(formula: str, role: str = "absorber") -> dict:
     eg_min = float(prior.get("eg_min", 0.15))
     eg_max = float(prior.get("eg_max", 6.5))
     eg = float(np.clip(eg, eg_min, eg_max))
-    chi = float(np.clip(chi, 1.3, 4.9))
+    chi = float(np.clip(chi, *CHI_PHYSICAL_RANGE))
     eg = round(eg, 6)
     chi = round(chi, 6)
 

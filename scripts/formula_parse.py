@@ -23,6 +23,31 @@ _TEXT_FOLD: dict[int, str | None] = {ord(c): "-" for c in _DASH_VARIANTS}
 _TEXT_FOLD.update({ord(c): "." for c in _INTERPUNCT_VARIANTS})
 _TEXT_FOLD.update({ord(c): None for c in _INVISIBLE})
 
+# _ELEMENT only matches capitalised symbols, so "nio2" would parse to zero
+# elements and the estimator would answer with its training mean instead of a
+# number for NiO2. The full table below lets the fold re-case such input.
+_ELEMENT_SYMBOLS: frozenset[str] = frozenset(
+    """
+    H He Li Be B C N O F Ne Na Mg Al Si P S Cl Ar K Ca Sc Ti V Cr Mn Fe Co Ni Cu
+    Zn Ga Ge As Se Br Kr Rb Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe Cs
+    Ba La Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu Hf Ta W Re Os Ir Pt Au Hg Tl
+    Pb Bi Po At Rn Fr Ra Ac Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr Rf Db Sg Bh
+    Hs Mt Ds Rg Cn Nh Fl Mc Lv Ts Og
+    """.split()
+)
+
+_BARE_FORMULA = re.compile(r"^[A-Za-z0-9().]+$")
+
+# Symbols the re-caser must never produce: no photovoltaic absorber or contact
+# contains them, while their spellings collide with common text (Nh in NH3, Cf
+# in CFTS, Ts in CNTS), which would turn good input into exotic chemistry.
+_RECASE_SYMBOLS: frozenset[str] = _ELEMENT_SYMBOLS - frozenset(
+    """
+    Tc Pm Po At Rn Fr Ra Ac Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr Rf Db Sg Bh
+    Hs Mt Ds Rg Cn Nh Fl Mc Lv Ts Og
+    """.split()
+)
+
 # Stoichiometric atom counts for common organic A-site cations
 ORGANIC_CATIONS: dict[str, dict[str, float]] = {
     "FA": {"C": 1.0, "H": 5.0, "N": 2.0},  # formamidinium CH5N2+
@@ -32,6 +57,18 @@ ORGANIC_CATIONS: dict[str, dict[str, float]] = {
     "PEA": {"C": 8.0, "H": 12.0, "N": 1.0},  # phenethylammonium (approx)
     "BA": {"C": 4.0, "H": 12.0, "N": 1.0},  # butylammonium
 }
+
+# Cations that can be read case-insensitively: "Fa", "Ma", "Ea" and "Pea" are not
+# element symbols, so FaSnI3 can only mean formamidinium. BA and GA are excluded
+# because "Ba" and "Ga" are barium and gallium — BaSnO3 and GaAs keep their
+# elements. Longest first so PEA is tried before EA.
+_CASE_SAFE_CATIONS: tuple[str, ...] = tuple(
+    sorted(
+        (c for c in ORGANIC_CATIONS if c.capitalize() not in _ELEMENT_SYMBOLS),
+        key=len,
+        reverse=True,
+    )
+)
 
 # Named organics / polymers — not element-parseable; flag features only
 NAMED_ORGANICS = {
@@ -82,7 +119,128 @@ def normalize_formula_text(name: str) -> str:
     if not name:
         return ""
     s = unicodedata.normalize("NFKC", str(name)).translate(_TEXT_FOLD)
-    return re.sub(r"\s+", " ", s).strip()
+    return _recase_formula(re.sub(r"\s+", " ", s).strip())
+
+
+def _recase_formula(s: str) -> str:
+    """Rewrite a bare formula onto real element symbols (nio2 / Nio2 → NiO2).
+
+    Anything with a space, dash or colon is a trade name (Spiro-OMeTAD,
+    PEDOT:PSS) rather than a formula and is left alone. If any fragment is not a
+    real element or organic cation the input is returned untouched, so the tool
+    never invents chemistry for a typo; correctly written formulas re-tokenise
+    onto themselves.
+    """
+    letters = [c for c in s if c.isalpha()]
+    if not letters or not _BARE_FORMULA.match(s):
+        return s
+
+    # Case is meaningful in mixed-case text: Ba/Ga are barium/gallium while
+    # BA/GA are butylammonium/guanidinium. If such a string already tokenises
+    # as written, it is correct and must be left exactly as the user typed it.
+    # A lowercase prefix on a capital is nomenclature (nPB, tBP), not a formula.
+    if re.match(r"^[a-z][A-Z]", s):
+        return s
+
+    single_case = all(c.islower() for c in letters) or all(c.isupper() for c in letters)
+    if not single_case:
+        # "Fa"/"Ma" satisfy the [A-Z][a-z] element pattern without being elements,
+        # so the orphan check below would accept FaSnI3 and the parser would then
+        # invent an element "Fa". Normalise those cations before the check.
+        s = _upcase_case_safe_cations(s)
+        if _tokenises_as_written(s) or not _has_orphan_letters(s):
+            return s
+
+    cations = sorted(ORGANIC_CATIONS, key=len, reverse=True)
+    out: list[str] = []
+    i = 0
+    while i < len(s):
+        if not s[i].isalpha():
+            out.append(s[i])
+            i += 1
+            continue
+        two, one = s[i : i + 2].capitalize(), s[i].upper()
+        # Elements win over cations so basno3 reads as BaSnO3, not BA+SnO3;
+        # mapbi3 still reaches MA because "Ma" is not an element.
+        if two in _RECASE_SYMBOLS:
+            out.append(two)
+            i += 2
+            continue
+        cat = next((c for c in cations if s[i:].upper().startswith(c.upper())), None)
+        if cat is not None:
+            out.append(cat)
+            i += len(cat)
+        elif one in _RECASE_SYMBOLS:
+            out.append(one)
+            i += 1
+        else:
+            return s
+    recased = "".join(out)
+    # Long all-caps strings that do not end in an oxide/halide/chalcogenide are
+    # trade abbreviations (C6TBTAPH2), not formulas — keep the original spelling.
+    if (
+        all(c.isupper() for c in letters)
+        and len(letters) > 6
+        and not re.search(r"(?:O|F|Cl|Br|I|S|Se|Te)\d*\.?\d*$", recased)
+    ):
+        return s
+    return recased
+
+
+def _upcase_case_safe_cations(s: str) -> str:
+    """Rewrite FaSnI3 / MaPbI3 onto FASnI3 / MAPbI3, leaving BaSnO3 and GaAs alone.
+
+    The trailing lookahead must stay case-sensitive (a following lowercase letter
+    would mean the capitals belong to an element), so the cation itself is spelled
+    as explicit character classes rather than with a global IGNORECASE flag.
+    """
+    for cat in _CASE_SAFE_CATIONS:
+        body = "".join(f"[{c.upper()}{c.lower()}]" for c in cat)
+        s = re.sub(rf"(?<![A-Za-z]){body}(?![a-z])", cat, s)
+    return s
+
+
+def _has_orphan_letters(s: str) -> bool:
+    """True if _ELEMENT skips letters outright, as in Nio2 where "o" is dropped.
+
+    Abbreviations such as CuPc are consumed whole (Cu + Pc) even though Pc is
+    not an element, so they are left alone; only genuinely dropped characters
+    justify rewriting what the user typed.
+    """
+    covered = bytearray(len(s))
+    for m in _ELEMENT.finditer(s):
+        for k in range(m.start(), m.end()):
+            covered[k] = 1
+    return any(c.isalpha() and not covered[k] for k, c in enumerate(s))
+
+
+def _tokenises_as_written(s: str) -> bool:
+    """True if s splits cleanly into cations/elements using the case as typed."""
+    cations = sorted(ORGANIC_CATIONS, key=len, reverse=True)
+    i = 0
+    while i < len(s):
+        if not s[i].isalpha():
+            i += 1
+            continue
+        # A trailing lowercase letter means the capitals belong to two elements
+        # (BAs is B+As, never butylammonium), matching the organic-cation split.
+        cat = next(
+            (
+                c
+                for c in cations
+                if s.startswith(c, i) and not s[i + len(c) : i + len(c) + 1].islower()
+            ),
+            None,
+        )
+        if cat is not None:
+            i += len(cat)
+        elif s[i : i + 2] in _ELEMENT_SYMBOLS:
+            i += 2
+        elif s[i] in _ELEMENT_SYMBOLS:
+            i += 1
+        else:
+            return False
+    return True
 
 
 def base_name(name: str) -> str:
