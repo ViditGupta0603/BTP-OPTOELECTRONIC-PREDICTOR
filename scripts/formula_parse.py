@@ -6,15 +6,22 @@ and parenthesized groups like HC(NH2)2.
 from __future__ import annotations
 
 import re
+import unicodedata
 
 _ELEMENT = re.compile(r"([A-Z][a-z]?)(\d*\.?\d*)")
 _GROUP = re.compile(r"\(([A-Za-z0-9.]+)\)(\d*\.?\d*)")
-_DASHES = str.maketrans("−–—", "---")
-# Unicode sub/superscript digits → ASCII (FAPbBr₃, MAPbI₃, …)
-_UNICODE_DIGITS = str.maketrans(
-    "₀₁₂₃₄₅₆₇₈₉⁰¹²³⁴⁵⁶⁷⁸⁹",
-    "01234567890123456789",
-)
+
+# Unicode spellings folded before any parsing, lookup or eligibility check.
+# NFKC already covers sub/superscript digits (CH₃NH₃PbI₃, Cs²), full-width forms
+# (ＣＨ３…) and no-break spaces; the characters below have no compatibility
+# decomposition and must be mapped explicitly.
+_DASH_VARIANTS = "\u2212\u2013\u2014\u2012\u2010\u2011\u2015"  # − – — ‒ ‐ ‑ ―
+_INTERPUNCT_VARIANTS = "\u00b7\u2022\u2027\u2219\u22c5\u30fb\uff65"  # · • ‧ ∙ ⋅ ・ ･
+_INVISIBLE = "\u200b\u200c\u200d\u2060\ufeff\u00ad"
+
+_TEXT_FOLD: dict[int, str | None] = {ord(c): "-" for c in _DASH_VARIANTS}
+_TEXT_FOLD.update({ord(c): "." for c in _INTERPUNCT_VARIANTS})
+_TEXT_FOLD.update({ord(c): None for c in _INVISIBLE})
 
 # Stoichiometric atom counts for common organic A-site cations
 ORGANIC_CATIONS: dict[str, dict[str, float]] = {
@@ -61,17 +68,30 @@ MATERIAL_ALIASES: dict[str, str] = {
 }
 
 
+def normalize_formula_text(name: str) -> str:
+    """Fold every unicode spelling of a formula onto one ASCII canonical form.
+
+    This is the single fold used by the eligibility gate, the parser, alias
+    lookup and the estimator, so CH₃NH₃PbI₃, ＣＨ３ＮＨ３ＰｂＩ３ and CH3NH3PbI3
+    can never be treated as different materials.
+    """
+    if not name:
+        return ""
+    s = unicodedata.normalize("NFKC", str(name)).translate(_TEXT_FOLD)
+    return re.sub(r"\s+", " ", s).strip()
+
+
 def base_name(name: str) -> str:
-    return re.sub(r"\s*\(.*\)\s*$", "", (name or "").strip())
+    return re.sub(r"\s*\(.*\)\s*$", "", normalize_formula_text(name))
 
 
 def canonicalize_material_alias(name: str) -> str:
     """Map FAPbI3 / MAPbI3 / Spiro shorthand to canonical library names.
 
-    Matching is exact (after unicode-digit fold) and halide-sensitive:
+    Matching is exact (after the unicode fold) and halide-sensitive:
     FAPbBr3 must never resolve via an FAPbI3 / FAPb prefix.
     """
-    s = base_name(name).translate(_DASHES).translate(_UNICODE_DIGITS).strip()
+    s = base_name(name)
     key = s.lower().replace(" ", "")
     if key in MATERIAL_ALIASES:
         return MATERIAL_ALIASES[key]
@@ -142,7 +162,7 @@ def _expand_organic_tokens(formula: str) -> tuple[str, dict[str, float]]:
 
 def parse_formula_counts(formula: str) -> dict[str, float]:
     """Parse a chemical formula into element → count (supports FA/MA + parentheses)."""
-    clean = base_name(formula).replace(" ", "").translate(_DASHES)
+    clean = base_name(formula).replace(" ", "")
     if not clean:
         return {}
 

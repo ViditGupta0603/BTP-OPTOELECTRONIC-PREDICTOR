@@ -41,7 +41,7 @@ Related: [TOOL_WORKFLOW.md](TOOL_WORKFLOW.md) (operators) · [PROJECT_DEVELOPMEN
 | **`literature_bands.py`** | `Layer` (Eg, χ), `junction_type` (Anderson I/II/III), CBO/VBO, `optoelectronic_suitability`, `stack_row` |
 | **`formula_estimator.py`** | Deterministic unknown-formula Eg/χ: family/Vegard prior × ML blend; organic HTL priors (P3HT, Spiro, …) |
 | **`perovskite_rules.py`** | Taxonomy, eligibility, family Eg/χ priors, Vegard end-members, non-perovskite / contact denylists, 2D RP/DJ block |
-| **`formula_parse.py`** | FA/MA/organic cations, parenthesis groups, unicode digits, **halide-sensitive** aliases (`FAPbBr3` ≠ `FAPbI3` prefix) |
+| **`formula_parse.py`** | `normalize_formula_text` (the one unicode fold), FA/MA/organic cations, parenthesis groups, **halide-sensitive** aliases (`FAPbBr3` ≠ `FAPbI3` prefix) |
 | **`enrich_chi_dataset.py`** | Enrich absorber χ (`chi_source`), write ETL/HTL libs, unify `layer_properties.csv` |
 | **`llm_literature_assist.py`** | Optional CLI LLM Eg/χ (domain-context prompts; no web); unused by UI |
 
@@ -54,6 +54,9 @@ Supporting: `build_perovskite_dataset.py`, `verify_*`, `eval_*`, `benchmark_pred
 ```
 absorber, etl, htl (raw strings)
         │
+        ▼
+normalize_formula_text  ← unicode fold: ₀-₉ / ⁰-⁹ / full-width / dashes /
+        │                 no-break + zero-width space / interpunct → ASCII
         ▼
 normalize_material_name  ← formula_parse.canonicalize_material_alias
         │

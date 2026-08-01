@@ -1,5 +1,5 @@
 {
-  "date": "2026-07-25",
+  "date": "2026-08-01",
   "dataset": "data\\perovskite_test_set_literature.csv",
   "method": "predict_stack(..., use_llm=False); formula/ML fallback",
   "n_raw_rows": 30,
@@ -21,8 +21,8 @@
     "tool_vs_literature_all_rows": {
       "n": 30,
       "MAE": 0.1404,
-      "RMSE": 0.2104,
-      "R2": 0.6777
+      "RMSE": 0.2103,
+      "R2": 0.6782
     },
     "tool_lookup_subset": {
       "n": 24,
@@ -32,39 +32,39 @@
     },
     "tool_unseen_subset": {
       "n": 6,
-      "MAE": 0.2346,
-      "RMSE": 0.2749,
-      "R2": -1.3638
+      "MAE": 0.2341,
+      "RMSE": 0.2743,
+      "R2": -1.3545
     },
     "ml_predict_eg_all_rows": {
       "n": 30,
-      "MAE": 0.1743,
-      "RMSE": 0.2578,
-      "R2": 0.5163
+      "MAE": 0.1736,
+      "RMSE": 0.2588,
+      "R2": 0.5125
     },
     "ml_predict_eg_unseen": {
       "n": 6,
-      "MAE": 0.3475,
-      "RMSE": 0.417,
-      "R2": -4.4423
+      "MAE": 0.3333,
+      "RMSE": 0.4133,
+      "R2": -4.3438
     },
     "ml_predict_eg_lookup_materials": {
       "n": 24,
-      "MAE": 0.131,
-      "RMSE": 0.1989,
-      "R2": 0.7467
+      "MAE": 0.1336,
+      "RMSE": 0.2025,
+      "R2": 0.7375
     },
     "tool_unique_materials": {
       "n": 18,
       "MAE": 0.1686,
-      "RMSE": 0.2399,
-      "R2": 0.5256
+      "RMSE": 0.2398,
+      "R2": 0.526
     },
     "ml_unique_materials": {
       "n": 18,
-      "MAE": 0.2006,
-      "RMSE": 0.2821,
-      "R2": 0.3439
+      "MAE": 0.1991,
+      "RMSE": 0.283,
+      "R2": 0.3396
     },
     "tool_unique_lookup": {
       "n": 13,
@@ -74,9 +74,9 @@
     },
     "tool_unique_unseen": {
       "n": 5,
-      "MAE": 0.2118,
-      "RMSE": 0.2577,
-      "R2": -1.2033
+      "MAE": 0.2116,
+      "RMSE": 0.2574,
+      "R2": -1.1983
     },
     "tool_frac_within_0.2eV_rows": 0.7333,
     "tool_frac_within_0.3eV_rows": 0.7667,
@@ -87,13 +87,13 @@
     "lookup_vs_literature_MAE": 0.1169
   },
   "train_meta_summary": {
-    "layers": 1699,
-    "eg_holdout_mae_eV": 0.2926443150057161,
-    "eg_cv_mae_eV": 0.6742113526057629,
-    "eg_n": 1898,
-    "type_etl_holdout_acc": 1.0,
-    "type_htl_holdout_acc": 1.0,
-    "formula_eg_holdout_mae_eV": 0.3309
+    "layers": 1726,
+    "eg_holdout_mae_eV": 0.2752786438587248,
+    "eg_cv_mae_eV": 0.8363329810642683,
+    "eg_n": 2078,
+    "type_etl_holdout_acc": 0.9090909090909091,
+    "type_htl_holdout_acc": 0.9212121212121213,
+    "formula_eg_holdout_mae_eV": 0.3164
   },
   "model_eval_summary": {
     "eg_holdout_MAE_eV": 0.33064534677479956,

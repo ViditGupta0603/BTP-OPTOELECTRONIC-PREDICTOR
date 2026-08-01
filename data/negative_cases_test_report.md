@@ -50,43 +50,24 @@
 
 ## Failures detail
 
-None — all cases passed after the BX₂ precursor fix.
-
-## Bugs found & fixed
-
-### PbI₂ / SnI₂ / GeI₂ false ABX₃ (critical)
-
-**Before:** Bare metal-halide precursors (`PbI2`, `SnI2`, `GeI2`, `PbBr2`, …) matched the ABX₃ stoichiometry heuristic (`B ∈ {Pb,Sn,Ge}` + `X ≥ 2`) with **no A-site**, so `predict_stack` returned **YES** with a predicted Eg instead of BLOCKED.
-
-**After (`test/negative-cases-fix`):**
-1. ABX₃ stoich requires an **A-site** and `halogens ≥ 2.5` (true X₃, not BX₂).
-2. Explicit denylist / `NON_PEROVSKITE_ABSORBERS` entries for common BX₂ precursors.
-
-### Cs2SnI6 / TiO2 / P3HT (not a regression)
-
-Older `post_eval_fix_test_report.md` expected Type III / MARGINAL. Round 3 junction physics correctly classifies absorber–ETL as **Type I** and P3HT as **Type II** → **YES**. The true “not blind YES” edge is **Cs2SnI6 / TiO2 / CFTS** → **MARGINAL** (Type III HTL).
-
-### PEDOT as ETL
-
-Degenerate/metallic caveat is **HTL-only** by design. PEDOT:PSS as ETL still runs (role misuse allowed) but does **not** attach the caveat. PEDOT as HTL does.
-
+None — all cases passed.
 ## Category notes
 
 ### Should BLOCK
-Contact oxides, thin-film PV, graphene, 2D RP/DJ/monolayers, BeSiP2, BX₂ precursors, and garbage absorbers must return `blocked=True` / verdict BLOCKED with no Type/suitability claim.
+Contact oxides, thin-film PV, graphene, 2D RP/DJ/monolayers, BeSiP2, and garbage absorbers must return `blocked=True` / verdict BLOCKED with no Type/suitability claim.
 
 ### Role misuse
 Tool does not enforce ETL/HTL conventions; stacks must still run. PEDOT:PSS as **HTL** must attach degenerate/metallic caveat. PEDOT as **ETL** currently has no dedicated caveat (HTL-only path).
 
 ### Halide traps
-FAPbBr3 must resolve ~2.23 eV (not FAPbI3 1.48). Cs2TiI6 must resolve ~1.58 eV (not Br ~1.8). Typo near-misses (`FAPbBr`, `Cs2TiI`, `MAPbI`) BLOCK.
+FAPbBr3 must resolve ~2.23 eV (not FAPbI3 1.48). Cs2TiI6 must resolve ~1.58 eV (not Br ~1.8).
 
 ### Edge stacks
-Cs2SnI6/TiO2/P3HT → YES (Type I/II, Round 3). Cs2SnI6/TiO2/CFTS → MARGINAL (Type III HTL). BaTiO3 runs with oxide-perovskite caution.
+Cs2SnI6/TiO2/P3HT should not be a blind YES without Type III somewhere.
 
 ### Stability
 Identical inputs must yield identical key fields; no crashes.
 
 ## Verdict
 
-**39/39 PASS.** Negative-case gate healthy after BX₂ precursor block.
+**39/39 PASS.** Negative-case gate looks healthy.

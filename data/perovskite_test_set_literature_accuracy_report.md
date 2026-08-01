@@ -1,6 +1,6 @@
 # Literature perovskite test set — OptoStack accuracy
 
-**Date:** 2026-07-25  
+**Date:** 2026-08-01  
 **Dataset:** `data/perovskite_test_set_literature.csv`  
 **Method:** `predict_stack(..., use_llm=False)` + family/Vegard+ML formula estimator  
 **Ground truth:** literature-extracted absorber Eg from `perovskite_test_set_literature.csv` (DOI / paper quotes).  
@@ -27,16 +27,16 @@ None.
 
 | Evaluation | n | MAE (eV) | RMSE (eV) | R² |
 |---|---:|---:|---:|---:|
-| Tool vs literature — all scored rows | 30 | 0.1404 | 0.2104 | 0.6777 |
+| Tool vs literature — all scored rows | 30 | 0.1404 | 0.2103 | 0.6782 |
 | Tool — in layer_lookup | 24 | 0.1169 | 0.1909 | 0.7667 |
-| Tool — unseen (not in lookup) | 6 | 0.2346 | 0.2749 | -1.3638 |
-| Tool — unique absorbers | 18 | 0.1686 | 0.2399 | 0.5256 |
+| Tool — unseen (not in lookup) | 6 | 0.2341 | 0.2743 | -1.3545 |
+| Tool — unique absorbers | 18 | 0.1686 | 0.2398 | 0.5260 |
 | Tool unique — lookup | 13 | 0.1520 | 0.2326 | 0.6426 |
-| Tool unique — unseen | 5 | 0.2118 | 0.2577 | -1.2033 |
-| ML `predict_eg` — all scored rows | 30 | 0.1743 | 0.2578 | 0.5163 |
-| ML `predict_eg` — unseen | 6 | 0.3475 | 0.4170 | -4.4423 |
-| ML `predict_eg` — lookup materials | 24 | 0.1310 | 0.1989 | 0.7467 |
-| ML — unique absorbers | 18 | 0.2006 | 0.2821 | 0.3439 |
+| Tool unique — unseen | 5 | 0.2116 | 0.2574 | -1.1983 |
+| ML `predict_eg` — all scored rows | 30 | 0.1736 | 0.2588 | 0.5125 |
+| ML `predict_eg` — unseen | 6 | 0.3333 | 0.4133 | -4.3438 |
+| ML `predict_eg` — lookup materials | 24 | 0.1336 | 0.2025 | 0.7375 |
+| ML — unique absorbers | 18 | 0.1991 | 0.2830 | 0.3396 |
 
 **Hit-rate tool |error| ≤ 0.2 / 0.3 / 0.5 eV (scored rows):** 73.3% / 76.7% / 96.7%
 
@@ -54,12 +54,12 @@ None.
 
 | Source | Metric | Value |
 |---|---|---:|
-| `train_meta.json` | layers in lookup | 1699 |
-| `train_meta.json` | Eg holdout MAE (eV) | 0.2926443150057161 |
-| `train_meta.json` | Eg CV MAE (eV) | 0.6742113526057629 |
-| `train_meta.json` | Eg n | 1898 |
-| `train_meta.json` | formula Eg holdout MAE | 0.3309 |
-| `train_meta.json` | Type ETL/HTL holdout acc | 1.0 / 1.0 |
+| `train_meta.json` | layers in lookup | 1726 |
+| `train_meta.json` | Eg holdout MAE (eV) | 0.2752786438587248 |
+| `train_meta.json` | Eg CV MAE (eV) | 0.8363329810642683 |
+| `train_meta.json` | Eg n | 2078 |
+| `train_meta.json` | formula Eg holdout MAE | 0.3164 |
+| `train_meta.json` | Type ETL/HTL holdout acc | 0.9090909090909091 / 0.9212121212121213 |
 | `model_eval_report.json` | Eg holdout MAE / RMSE / R² | 0.33064534677479956 / 0.44585161887416647 / 0.949291027591133 |
 | `model_eval_report.json` | Type ETL/HTL holdout acc | 1.0 / 1.0 |
 
@@ -73,7 +73,7 @@ None.
 | Cs3Bi2I9 | 2.420 | 2.000 | -0.420 | lookup | True |
 | KSnI3 | 1.840 | 1.426 | -0.414 | vegard_plus_ml | False |
 | CsSnI3 | 0.950 | 1.300 | +0.350 | lookup | True |
-| RbGeI3 | 1.310 | 1.658 | +0.348 | vegard_plus_ml | False |
+| RbGeI3 | 1.310 | 1.657 | +0.347 | vegard_plus_ml | False |
 
 ### Best 5
 
@@ -94,28 +94,28 @@ None.
 | 2 | CsPbI3 | 1.700 | 1.730 | 0.030 | lookup | 1.730 | True | TiO2 | Spiro-MeOTAD |
 | 3 | CsPbI3 | 1.700 | 1.730 | 0.030 | lookup | 1.730 | True | ZnO | NiO |
 | 4 | KSnI3 | 1.840 | 1.426 | 0.414 | vegard_plus_ml | 1.304 | False | CeO2 | CBTS |
-| 5 | RbGeI3 | 1.310 | 1.658 | 0.348 | vegard_plus_ml | 1.900 | False | TiO2 | Spiro-OMeTAD |
-| 6 | RbGeI3 | 1.310 | 1.658 | 0.348 | vegard_plus_ml | 1.900 | False | ZnSe | CuSCN |
-| 7 | (FAPbI3)0.85(MAPbBr3)0.15 | 1.550 | 1.629 | 0.079 | vegard_plus_ml | 1.495 | False | ZnO | Cu2O |
+| 5 | RbGeI3 | 1.310 | 1.657 | 0.347 | vegard_plus_ml | 1.906 | False | TiO2 | Spiro-OMeTAD |
+| 6 | RbGeI3 | 1.310 | 1.657 | 0.347 | vegard_plus_ml | 1.906 | False | ZnSe | CuSCN |
+| 7 | (FAPbI3)0.85(MAPbBr3)0.15 | 1.550 | 1.629 | 0.079 | vegard_plus_ml | 1.601 | False | ZnO | Cu2O |
 | 8 | CsPbI3 | 1.700 | 1.730 | 0.030 | lookup | 1.730 | True | TiO2 | CBTS |
 | 9 | CsPbI3 | 1.700 | 1.730 | 0.030 | lookup | 1.730 | True | ZnO | CBTS |
 | 10 | CsPbBr3 | 1.793 | 2.360 | 0.567 | lookup | 2.360 | True | TiO2 | Spiro-MeOTAD |
 | 11 | Cs3Bi2I9 | 2.420 | 2.000 | 0.420 | lookup | 2.000 | True | TiO2 | Spiro-MeOTAD |
 | 12 | CH3NH3SnI3 | 1.300 | 1.300 | 0.000 | lookup | 1.300 | True | TiO2 | Spiro-MeOTAD |
 | 13 | HC(NH2)2SnI3 | 1.410 | 1.350 | 0.060 | lookup | 1.350 | True | TiO2 | Spiro-MeOTAD |
-| 14 | Cs0.05FA0.85MA0.10PbI3 | 1.460 | 1.500 | 0.040 | vegard_plus_ml | 1.554 | False | SnO2 | Spiro-MeOTAD |
+| 14 | Cs0.05FA0.85MA0.10PbI3 | 1.460 | 1.500 | 0.040 | vegard_plus_ml | 1.555 | False | SnO2 | Spiro-MeOTAD |
 | 15 | CH3NH3PbI3 | 1.560 | 1.550 | 0.010 | lookup | 1.550 | True | TiO2 | Spiro-OMeTAD |
 | 16 | CsSnI3 | 1.300 | 1.300 | 0.000 | lookup | 1.300 | True | TiO2 | Spiro-MeOTAD |
 | 17 | CsSnI3 | 0.950 | 1.300 | 0.350 | lookup | 1.300 | True | TiO2 | Spiro-MeOTAD |
 | 18 | CsSnI3 | 1.130 | 1.300 | 0.170 | lookup | 1.300 | True | PCBM | NiOx |
-| 19 | Cs2AgBiI6 | 1.120 | 0.782 | 0.338 | lookup | 0.794 | True | TiO2 | Spiro-MeOTAD |
-| 20 | Cs2AgSbCl6 | 1.400 | 1.346 | 0.054 | lookup | 1.615 | True | TiO2 | Spiro-MeOTAD |
+| 19 | Cs2AgBiI6 | 1.120 | 0.782 | 0.338 | lookup | 0.780 | True | TiO2 | Spiro-MeOTAD |
+| 20 | Cs2AgSbCl6 | 1.400 | 1.346 | 0.054 | lookup | 1.669 | True | TiO2 | Spiro-MeOTAD |
 | 21 | CsGeI3 | 1.363 | 1.600 | 0.237 | lookup | 1.600 | True | TiO2 | Spiro-MeOTAD |
-| 22 | CsSnGeI3 | 1.500 | 1.322 | 0.178 | vegard_plus_ml | 1.280 | False | SnS2 | Cu2O |
+| 22 | CsSnGeI3 | 1.500 | 1.321 | 0.179 | vegard_plus_ml | 1.375 | False | SnS2 | Cu2O |
 | 23 | CsPbBr3 | 2.300 | 2.360 | 0.060 | lookup | 2.360 | True | TiO2 | Spiro-MeOTAD |
 | 24 | CH3NH3PbBr3 | 2.200 | 2.320 | 0.120 | lookup | 2.320 | True | TiO2 | Spiro-MeOTAD |
-| 25 | Cs3Sb2I9 | 2.010 | 2.050 | 0.040 | lookup | 2.051 | True | TiO2 | Spiro-MeOTAD |
-| 26 | Cs3Sb2I9 | 2.010 | 2.050 | 0.040 | lookup | 2.051 | True | ZnO0.25S0.75 | Spiro-MeOTAD |
+| 25 | Cs3Sb2I9 | 2.010 | 2.050 | 0.040 | lookup | 2.049 | True | TiO2 | Spiro-MeOTAD |
+| 26 | Cs3Sb2I9 | 2.010 | 2.050 | 0.040 | lookup | 2.049 | True | ZnO0.25S0.75 | Spiro-MeOTAD |
 | 27 | Cs2AgBiBr6 | 2.080 | 2.190 | 0.110 | lookup | 1.981 | True | TiO2 | Spiro-OMeTAD |
 | 28 | Cs2AgBiBr6 | 2.080 | 2.190 | 0.110 | lookup | 1.981 | True | TiO2 | Cu2O |
 | 29 | Cs2AgBiBr6 | 2.190 | 2.190 | 0.000 | lookup | 1.981 | True | TiO2 | Spiro-OMeTAD |

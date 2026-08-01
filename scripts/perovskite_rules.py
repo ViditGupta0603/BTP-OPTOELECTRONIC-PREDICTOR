@@ -24,7 +24,6 @@ from formula_parse import (
     parse_formula_counts,
 )
 
-_DASHES = str.maketrans("−–—", "---")
 _MONOLAYER_PREFIX = re.compile(r"^[12][TH]-", re.I)
 _RP_DJ_MARKERS = re.compile(
     r"(PEA|BA|OA|AVA|PDA|BDA|RP|DJ|Ruddlesden|Dion)", re.I
@@ -365,7 +364,7 @@ class SiteParse:
 
 
 def _clean(formula: str) -> str:
-    return base_name(canonicalize_material_alias(formula)).replace(" ", "").translate(_DASHES)
+    return base_name(canonicalize_material_alias(formula)).replace(" ", "")
 
 
 def parse_a_site_fractions(formula: str) -> dict[str, float]:
@@ -388,12 +387,12 @@ def parse_a_site_fractions(formula: str) -> dict[str, float]:
             mult = float(m.group(1)) if m.group(1) else 1.0
             fracs[cat] = fracs.get(cat, 0.0) + mult
 
-    # CH3NH3 / HC(NH2)2 spelled out → MA / FA
+    # CH3NH3 / HC(NH2)2 spelled out → MA / FA (unicode already folded by _clean)
     raw = _clean(formula)
-    if "CH3NH3" in raw.upper().replace(" ", "") or re.search(r"CH3NH3", raw, re.I):
+    if "CH3NH3" in raw.upper():
         if "MA" not in fracs:
             fracs["MA"] = fracs.get("MA", 0.0) + 1.0
-    if "HC(NH2)2" in raw or "HC(NH₂)₂" in formula:
+    if "HC(NH2)2" in raw:
         if "FA" not in fracs:
             fracs["FA"] = fracs.get("FA", 0.0) + 1.0
 

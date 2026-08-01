@@ -34,6 +34,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from formula_parse import (  # noqa: E402
+    base_name as _base_name,
     canonicalize_material_alias,
     formula_feature_dict,
     parse_formula_counts as _parse_formula_counts,
@@ -58,7 +59,6 @@ META_OUT = MODELS / "train_meta.json"
 
 _ELEMENT = re.compile(r"([A-Z][a-z]?)(\d*\.?\d*)")
 _MONOLAYER_PREFIX = re.compile(r"^[12][TH]-", re.I)
-_DASHES = str.maketrans("−–—", "---")
 
 PEROVSKITE_ABSORBER_CLASSES = {
     "bulk_thin_film_device",
@@ -167,13 +167,13 @@ _CONTACT_ROLE_INDEX: dict[str, set[str]] | None = None
 
 
 def base_name(name: str) -> str:
-    """Strip phase suffixes: 'Cs2AgBiBr6 (cubic)' → 'Cs2AgBiBr6'."""
-    return re.sub(r"\s*\(.*\)\s*$", "", (name or "").strip())
+    """Unicode-fold and strip phase suffixes: 'Cs2AgBiBr6 (cubic)' → 'Cs2AgBiBr6'."""
+    return _base_name(name)
 
 
 def normalize_material_name(name: str) -> str:
-    """Normalize user input: unicode dashes, FA/MA aliases, 1t- → 1T- monolayer prefix."""
-    s = canonicalize_material_alias(base_name((name or "").strip()).translate(_DASHES))
+    """Normalize user input: unicode fold, FA/MA aliases, 1t- → 1T- monolayer prefix."""
+    s = canonicalize_material_alias(base_name(name))
     m = re.match(r"^([12])([THth])-(.*)$", s)
     if m:
         rest = m.group(3)
@@ -992,12 +992,17 @@ def resolve_layer(
     bn = base_name(name)
     if bn in layers:
         return layers[bn]
-    low = name.lower()
-    bn_low = bn.lower()
+
+    def _key(s: str) -> str:
+        # Case- and whitespace-insensitive; a stray space in "CH3NH3 PbI3" (or a
+        # folded no-break space) must still hit the library entry.
+        return s.lower().replace(" ", "")
+
+    low = _key(name)
+    bn_low = _key(bn)
     for k, v in layers.items():
-        kl = k.lower()
         # Exact equality only — never startswith / prefix on Cs2Ti-, FAPb-, etc.
-        if kl == low or base_name(k).lower() == bn_low:
+        if _key(k) == low or _key(base_name(k)) == bn_low:
             return v
     return None
 

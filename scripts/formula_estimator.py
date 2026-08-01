@@ -14,7 +14,6 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import re
 from pathlib import Path
 
 import joblib
@@ -23,7 +22,11 @@ from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import train_test_split
 
-from formula_parse import formula_feature_dict, parse_formula_counts  # noqa: E402
+from formula_parse import (  # noqa: E402
+    base_name,
+    formula_feature_dict,
+    parse_formula_counts,
+)
 from perovskite_rules import (  # noqa: E402
     classify_family,
     confidence_for_estimate,
@@ -67,10 +70,6 @@ _ABSORBER_FAMILY_PREFIXES = (
     "a3b2x9",
     "oxide_perovskite",
 )
-
-
-def base_name(name: str) -> str:
-    return re.sub(r"\s*\(.*\)\s*$", "", (name or "").strip())
 
 
 def parse_formula(formula: str) -> dict[str, float]:

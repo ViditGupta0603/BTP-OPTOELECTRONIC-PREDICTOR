@@ -22,6 +22,7 @@ from flask import Flask, render_template_string, request
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from formula_parse import normalize_formula_text  # noqa: E402
 from predict_stack import EG_MODEL, TYPE_MODEL, load_layer_lookup, predict_stack, train_eg_model, train_type_models  # noqa: E402
 
 app = Flask(__name__)
@@ -364,7 +365,7 @@ def _contact_lists() -> tuple[list[str], list[str], list[str]]:
     if abs_lib.exists():
         with abs_lib.open(encoding="utf-8") as f:
             for row in csv.DictReader(f):
-                name = (row.get("material_absorber") or "").strip()
+                name = normalize_formula_text(row.get("material_absorber"))
                 if not name:
                     continue
                 # Prefer base formula without phase for UI suggestions
@@ -374,13 +375,15 @@ def _contact_lists() -> tuple[list[str], list[str], list[str]]:
     if etl_lib.exists():
         with etl_lib.open(encoding="utf-8") as f:
             for row in csv.DictReader(f):
-                if row.get("material"):
-                    etls.add(row["material"].strip())
+                name = normalize_formula_text(row.get("material"))
+                if name:
+                    etls.add(name)
     if htl_lib.exists():
         with htl_lib.open(encoding="utf-8") as f:
             for row in csv.DictReader(f):
-                if row.get("material"):
-                    htls.add(row["material"].strip())
+                name = normalize_formula_text(row.get("material"))
+                if name:
+                    htls.add(name)
 
     if not etls or not htls:
         raw = ROOT / "data" / "raw"
@@ -395,7 +398,8 @@ def _contact_lists() -> tuple[list[str], list[str], list[str]]:
                 continue
             with path.open(encoding="utf-8") as f:
                 for row in csv.DictReader(f):
-                    role, name = row.get("layer_role"), row.get("material")
+                    role = row.get("layer_role")
+                    name = normalize_formula_text(row.get("material"))
                     if not name:
                         continue
                     if role == "etl":
@@ -421,9 +425,11 @@ def index():
     error = None
 
     if request.method == "POST":
-        absorber = (request.form.get("absorber") or "").strip()
-        etl = (request.form.get("etl") or "").strip()
-        htl = (request.form.get("htl") or "").strip()
+        # Fold unicode spellings (CH₃NH₃PbI₃, ＣＨ３…, NBSP) before anything else,
+        # and echo the folded text back into the form.
+        absorber = normalize_formula_text(request.form.get("absorber"))
+        etl = normalize_formula_text(request.form.get("etl"))
+        htl = normalize_formula_text(request.form.get("htl"))
         try:
             if not EG_MODEL.exists() or not TYPE_MODEL.exists():
                 load_layer_lookup()
