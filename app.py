@@ -33,13 +33,23 @@ _CHI_NOTE_RE = re.compile(
 )
 _LOOKUP_WORD_RE = re.compile(r"\blookup\b", re.IGNORECASE)
 
+# Notes that expose how a value was produced (estimator/LLM plumbing). The
+# per-field "predicted" badge already carries that information for the user.
+_METHOD_NOTE_RE = re.compile(
+    r"(?i)(\bllm\b|\bml\b|\bestimator\b|^\s*estimated\s+\w+\s+Eg\s*=)"
+)
+# "OOD" is modelling jargon; keep the caveat, drop the acronym.
+_OOD_PHRASE_RE = re.compile(r"(?i)\bOOD\s*/\s*unusual\s+family\b")
+
 
 def _ui_notes(notes: list | None) -> list[str]:
-    """Filter/sanitize notes for user-facing display (no χ, no 'lookup')."""
+    """Filter/sanitize notes for user-facing display (no χ, no method internals)."""
     out: list[str] = []
     for raw in notes or []:
         text = str(raw).strip()
         if not text:
+            continue
+        if _METHOD_NOTE_RE.search(text):
             continue
         if _CHI_NOTE_RE.search(text):
             # Drop chi-only notes; strip chi clauses from mixed notes.
@@ -54,6 +64,7 @@ def _ui_notes(notes: list | None) -> list[str]:
             if not text or _CHI_NOTE_RE.search(text):
                 continue
         text = _LOOKUP_WORD_RE.sub("library", text)
+        text = _OOD_PHRASE_RE.sub("unusual material family", text)
         out.append(text)
     return out
 
@@ -192,6 +203,7 @@ PAGE = r"""
     .verdict p { margin: 0.4rem 0 0; color: var(--muted); font-size: 0.9rem; }
     .src { font-size: 0.72rem; font-weight: 600; margin-left: 0.35rem; }
     .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.75rem; }
+    .grid.first { margin-top: 0; }
     @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
     .stat {
       border: 1px solid var(--line);
@@ -220,7 +232,7 @@ PAGE = r"""
   <h1>OptoStack</h1>
   <p class="sub">Enter a <strong>perovskite absorber</strong> + ETL + HTL. Get junction Type (I / II / III) and optoelectronic suitability.
      Screening is perovskite-only: non-perovskite absorbers (CZTS, CIGS, CdTe, GaAs, Si, …) are blocked.
-     Known materials use library values; unknowns use a deterministic <strong>ML/formula estimator</strong> (LLM off by default).</p>
+     Values that are not measured for a given material are estimated and tagged <strong>predicted</strong>.</p>
 
   <form method="post">
     <label>Absorber</label>
@@ -249,7 +261,7 @@ PAGE = r"""
       </div>
     </div>
     <p class="hint">OptoStack does not validate whether a material is conventionally ETL or HTL, and the person is responsible for correct role assignment.</p>
-    <p class="hint">Perovskite formulas only (ABX₃, A₂BB′X₆, A₂BX₆, A₃B₂X₉, …). Non-perovskites are rejected. Predicted values are tagged when ML/estimate is used.</p>
+    <p class="hint">Perovskite formulas only (ABX₃, A₂BB′X₆, A₂BX₆, A₃B₂X₉, …). Non-perovskites are rejected. Estimated values are tagged <strong>predicted</strong>.</p>
 
     <button type="submit">Predict Type &amp; suitability</button>
   </form>
@@ -277,33 +289,7 @@ PAGE = r"""
     {% endif %}
 
     {% if not result.blocked %}
-    <div>
-      {% if result.method == 'compute_from_Eg_chi' %}
-      <span class="pill">physics</span>
-      {% elif result.method == 'literature_stack_row' %}
-      <span class="pill">known stack</span>
-      {% elif result.method == 'ml_type_from_names_and_Eg' %}
-      <span class="pill warn">ML Type</span>
-      {% elif result.method %}
-      <span class="pill">{{ result.method }}</span>
-      {% endif %}
-      {% if result.sources and result.sources.llm_used %}
-      <span class="pill warn">LLM</span>
-      {% else %}
-      <span class="pill">no LLM</span>
-      {% endif %}
-      {% if result.perovskite_family %}
-      <span class="pill">{{ result.perovskite_family }}</span>
-      {% endif %}
-      {% if result.confidence %}
-      <span class="pill {% if result.caution or result.confidence == 'low' %}warn{% endif %}">confidence {{ result.confidence }}</span>
-      {% endif %}
-      {% if result.caution %}
-      <span class="pill warn">OOD caution</span>
-      {% endif %}
-    </div>
-
-    <div class="grid">
+    <div class="grid first">
       <div class="stat">
         <span>Absorber–ETL</span>
         <b>{{ result.absorber_etl_type or result.predicted_absorber_etl_type or '—' }}
