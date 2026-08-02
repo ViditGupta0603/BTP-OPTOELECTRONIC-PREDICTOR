@@ -475,9 +475,20 @@ def parse_sites(formula: str) -> SiteParse:
             stoich = "A2BX6"
     elif (
         b_primary in ("Pb", "Sn", "Ge")
-        and halogens >= 2.5  # ABX₃ (~X3), not BX₂ precursors (PbI2, SnBr2, …)
         and o_count == 0
         and bool(a_fracs)  # require A-site (Cs/Rb/K/MA/FA/…); bare BX₂ ≠ perovskite
+        and (
+            # Standard ABX₃ with X≈3, or BX₂ precursors excluded (X≈2 without A already blocked).
+            halogens >= 2.5
+            # Common shorthand writes halide *fractions* that sum to 1
+            # (…PbBr0.17I0.83 ≡ …Pb(I0.83Br0.17)3). Accept when A≈1 and B≈1.
+            or (
+                0.85 <= halogens <= 1.15
+                and 0.85 <= sum(a_fracs.values()) <= 1.15
+                and 0.85 <= float(b_present.get(b_primary, 0)) <= 1.15
+                and len(x_fracs) >= 1
+            )
+        )
     ):
         stoich = "ABX3"
 
