@@ -1,18 +1,50 @@
 {
-  "note": "NEW perovskite-only dataset; does not modify opto_literature_dataset.csv",
+  "note": "Perovskite stack table ~1000 rows with Type I/II/III corner contacts; CdTe paper stacks are training-only (inference still blocks CdTe absorber). Does not modify opto_literature_dataset.csv",
   "stack_dataset": "C:\\Users\\vidit\\Desktop\\btp\\data\\perovskite_stack_dataset.csv",
   "absorber_library": "C:\\Users\\vidit\\Desktop\\btp\\data\\perovskite_absorber_library.csv",
   "pilania_raw_cache": "C:\\Users\\vidit\\Desktop\\btp\\data\\raw\\pilania_double_perovskites_gap.csv",
-  "n_stacks": 726,
-  "n_absorbers": 1757,
+  "n_stacks": 1030,
+  "n_absorbers": 1764,
   "n_paper5_absorbers": 441,
   "n_pilania_absorbers": 1306,
   "n_k2gei6_absorbers": 1,
+  "n_verified_lead_halide_absorbers": 16,
+  "n_absorbers_after_merge": 1764,
+  "n_cdte_training_stacks": 21,
+  "type_distribution": {
+    "absorber_etl_type": {
+      "Type II": 522,
+      "Type I": 508
+    },
+    "absorber_htl_type": {
+      "Type II": 560,
+      "Type III": 140,
+      "Type I": 330
+    }
+  },
+  "stack_family_counts": {
+    "vacancy_ordered_halide_perovskite": 299,
+    "halide_perovskite_alloy": 299,
+    "Cs3Sb2X9_perovskite_inspired": 299,
+    "ABX3_organic_inorganic_halide": 32,
+    "ABX3_lead_halide_perovskite": 16,
+    "ABX3_tin_halide": 32,
+    "A2BBX6_halide_double": 16,
+    "A2BX6_halide_double_perovskite": 16,
+    "CdTe_chalcogenide_training_only": 21
+  },
+  "stack_build_parts": {
+    "n_scaps_pooled": 897,
+    "n_expansion": 112,
+    "n_cdte_training": 21,
+    "n_stacks_deduped": 1030
+  },
   "stack_internal_verify_failures": 0,
   "stack_all_rows_verified": true,
   "stack_expansion": {
-    "mode": "pooled_etl_htl",
-    "note": "Each perovskite absorber crossed with all ETL\u00d7HTL that have Eg+\u03c7. \u03c7 used only to label Type; ML can then predict Type from names+Eg."
+    "mode": "pooled_etl_htl + curated_corner + cdte_training",
+    "note": "SCAPS perovskite absorbers \u00d7 pooled contacts (physical MoO3/V2O5 \u03c7; wide-gap MgO/Al2O3). Extra ABX3/A2BX6 absorbers \u00d7 curated grid. CdTe paper (10.1002/pssb.70269) stacks tagged training-only; \u03c7 used only to label Type; ML predicts Type from names+Eg.",
+    "cdte_policy": "Included in Type-training with perovskite_family=CdTe_chalcogenide_training_only / record_type=literature_corner_case_non_perovskite. Product absorber gate still rejects CdTe at inference."
   },
   "sources": [
     {
@@ -31,6 +63,18 @@
       "type": "full_stack_expanded"
     },
     {
+      "name": "Expansion absorbers \u00d7 curated corner ETL\u00d7HTL",
+      "doi": "multiple (see verified_expansion_absorbers.csv)",
+      "rows": 112,
+      "type": "full_stack_expansion"
+    },
+    {
+      "name": "CdTe paper training-only corner stacks",
+      "doi": "10.1002/pssb.70269",
+      "rows": 21,
+      "type": "literature_corner_case_non_perovskite"
+    },
+    {
       "name": "Paper5 halide double perovskites",
       "doi": "10.1038/s41524-019-0177-0",
       "rows": 441,
@@ -47,6 +91,12 @@
       "doi": "10.1007/s44291-026-00245-4",
       "rows": 1,
       "type": "absorber_only"
+    },
+    {
+      "name": "Verified lead-halide ABX3 perovskites",
+      "doi": "multiple (see verified_lead_halide_perovskites.csv)",
+      "rows": 16,
+      "type": "verified_external"
     }
   ],
   "excluded_from_old_master": [
@@ -57,9 +107,7 @@
   "excluded_research_paper_folder": [
     "tilt ppr.pdf Ca3NI3 (FAIL: CdS Eg=1.64; Ca3NI3 Eg=2.20 vs lit)",
     "DSSC.pdf (not perovskite)",
-    "GaInP solar cells.pdf (not perovskite)",
-    "pratyush.pdf CdTe (not perovskite)"
+    "GaInP solar cells.pdf (not perovskite)"
   ],
-  "n_verified_lead_halide_absorbers": 9,
-  "n_absorbers_after_merge": 1579
+  "cdte_paper_note": "pratyush.pdf (DOI 10.1002/pssb.70269) PDF was removed from research paper/ earlier; Eg/\u03c7 recovered from prior verification extract (CdTe Eg=1.547 \u03c7=3.9; SnO2/CdS/CdTe family) into data/raw/paper_cdte_scaps_materials.csv for Type-training only."
 }

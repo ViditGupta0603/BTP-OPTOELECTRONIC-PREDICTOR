@@ -14,6 +14,7 @@ import json
 import os
 import re
 import sys
+import threading
 import traceback
 from pathlib import Path
 
@@ -27,6 +28,13 @@ from formula_parse import normalize_formula_text  # noqa: E402
 from predict_stack import EG_MODEL, TYPE_MODEL, load_layer_lookup, predict_stack, train_eg_model, train_type_models  # noqa: E402
 
 app = Flask(__name__)
+
+_MODELS_LOCK = threading.Lock()
+_MODELS_READY = threading.Event()
+# How long a prediction request waits on a cold-start training run before it
+# gives up and asks the user to retry, instead of hanging past the host's
+# request timeout.
+_WARMUP_WAIT_S = 90.0
 
 # Notes that mention χ / electron affinity or "lookup" should not surface in the UI.
 _CHI_NOTE_RE = re.compile(
@@ -432,9 +440,14 @@ def index():
         etl = normalize_formula_text(request.form.get("etl"))
         htl = normalize_formula_text(request.form.get("htl"))
         try:
-            ensure_models()
-            # Default: library values + ML formula estimator (no LLM)
-            result = predict_stack(absorber, etl, htl, use_llm=False)
+            if not ensure_models(timeout=_WARMUP_WAIT_S):
+                error = (
+                    "The server is still warming up its models after a restart. "
+                    "Please try again in a minute."
+                )
+            else:
+                # Default: library values + ML formula estimator (no LLM)
+                result = predict_stack(absorber, etl, htl, use_llm=False)
         except Exception as exc:
             error = str(exc)
             traceback.print_exc()
@@ -454,35 +467,66 @@ def index():
     )
 
 
-def ensure_models(verbose: bool = False) -> None:
-    """Train whatever model artifacts are missing.
+@app.route("/healthz")
+def healthz():
+    """Liveness probe that answers immediately, even while models are training."""
+    return {"status": "ok", "models_ready": _MODELS_READY.is_set()}
+
+
+def ensure_models(verbose: bool = False, timeout: float | None = None) -> bool:
+    """Train whatever model artifacts are missing; report whether they are ready.
 
     The .joblib files are gitignored, so a fresh deployment starts with none of
     them. The formula estimator has to be included: without it estimate_eg_chi
     silently answers from its coarse heuristic instead of the ML blend, so an
     unknown layer would come back with a different Eg than it does locally.
+
+    A lock keeps the startup warm-up and a concurrent request from training the
+    same artifact twice. ``timeout`` caps how long a caller waits for a warm-up
+    that is already running (None waits indefinitely); False means training is
+    still in flight, not that it failed.
     """
-    if EG_MODEL.exists() and TYPE_MODEL.exists() and EG_CHI_MODEL.exists():
-        return
-    if verbose:
-        print("Training models (first run)...")
-    load_layer_lookup()
-    for exists, train in (
-        (EG_CHI_MODEL.exists(), train_estimators),
-        (EG_MODEL.exists(), train_eg_model),
-        (TYPE_MODEL.exists(), train_type_models),
-    ):
-        if not exists:
-            out = train()
-            if verbose:
-                print(out)
+    if _MODELS_READY.is_set():
+        return True
+    if not _MODELS_LOCK.acquire(timeout=-1 if timeout is None else timeout):
+        return False
+    try:
+        if EG_MODEL.exists() and TYPE_MODEL.exists() and EG_CHI_MODEL.exists():
+            _MODELS_READY.set()
+            return True
+        if verbose:
+            print("Training models (first run)...", flush=True)
+        load_layer_lookup()
+        for exists, train in (
+            (EG_CHI_MODEL.exists(), train_estimators),
+            (EG_MODEL.exists(), train_eg_model),
+            (TYPE_MODEL.exists(), train_type_models),
+        ):
+            if not exists:
+                out = train()
+                if verbose:
+                    print(out, flush=True)
+        _MODELS_READY.set()
+        if verbose:
+            print("Models ready.", flush=True)
+        return True
+    finally:
+        _MODELS_LOCK.release()
 
 
 def main() -> None:
-    ensure_models(verbose=True)
     port = int(os.environ.get("PORT", 7860))
     host = "0.0.0.0"
-    print(f"Serving on http://{host}:{port} (local: http://127.0.0.1:{port})")
+    # Train in the background so the socket is bound within seconds: hosts such
+    # as Render scan for an open port right after start and fail the deploy if
+    # a cold-start training run (minutes) holds up app.run().
+    threading.Thread(
+        target=ensure_models,
+        kwargs={"verbose": True},
+        name="model-warmup",
+        daemon=True,
+    ).start()
+    print(f"Serving on http://{host}:{port} (local: http://127.0.0.1:{port})", flush=True)
     app.run(host=host, port=port, debug=False)
 
 

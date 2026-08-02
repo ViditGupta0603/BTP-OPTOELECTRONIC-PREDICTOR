@@ -257,11 +257,11 @@ Pipeline may still return full χ in dicts for CLI/debug; UI presentation is int
 
 | Script / report | Focus |
 |-----------------|-------|
+| `docs/OPTOSTACK_FULL_REPORT.md` | Advisor-facing overview + CV scorecard |
+| `cross_validate_models.py` → `data/cross_validation_report.md` | Whole-tool GroupKFold (Eg + Type) |
 | `eval_literature_test_set.py` | Tool Eg vs literature test set |
-| `eval_browser_random_test.py` | Browser-sourced random perovskites |
-| `benchmark_predictions.py` | ML vs literature |
-| `iterative_accuracy_loop.py` | Operational Type + Eg loop |
+| `eval_browser_random_test.py` | Optional browser-sourced random perovskites |
+| `benchmark_predictions.py` / `iterative_accuracy_loop.py` | Optional older eval loops |
 | `verify_round2_fixes.py` / `verify_round3_fixes.py` | Regression gates for label/halide fixes |
-| `data/post_eval_fix_test_report.md` | P3HT/TiO₂/scope smoke |
 
-Caveat: high Type accuracy on the expanded stack table can reflect physics labeling / same-absorber combos; literature CSV may score **Eg only**.
+Caveat: Stratified/random Type accuracy can look near-perfect via name memorization; prefer GroupKFold leave-absorber-out. Literature CSV may score **Eg only**.

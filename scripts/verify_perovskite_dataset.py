@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from literature_bands import Layer, cbo_absorber_etl, junction_type, vbo_absorber_htl  # noqa: E402
+from perovskite_rules import NAMED_CONTACT_BANDS  # noqa: E402
 
 DATA = ROOT / "data"
 RAW = DATA / "raw"
@@ -43,7 +44,7 @@ WEB: dict[str, tuple[float, float, float | None, float | None, str, str]] = {
     "SnS2": (1.6, 2.2, 4.0, 4.5, "SCAPS/lit ~1.8–2.2", "medium"),
     "ZnSe": (2.6, 2.9, 3.9, 4.3, "bulk ZnSe ~2.7", "high"),
     "MWCNTs": (1.4, 1.7, 3.4, 3.9, "Paper4 Eg=1.55", "medium"),
-    "MoO3": (2.8, 3.2, 2.1, 2.7, "SCAPS Eg=3.0", "high"),
+    "MoO3": (2.8, 3.2, 6.3, 7.0, "UPS/IPES deep-affinity χ≈6.7 (Kröger APL 2009); SCAPS fitting χ~2.3 superseded for Type III", "high"),
     "PTAA": (2.7, 3.2, 2.0, 2.6, "Paper4 Eg=2.96", "high"),
     "TiO2:N": (2.9, 3.3, 2.0, 2.5, "Paper4 Eg=3.0", "high"),
     "NiCo2O4": (2.1, 2.5, 3.2, 3.7, "expt ~2.32; Paper4 2.3", "high"),
@@ -75,7 +76,17 @@ WEB: dict[str, tuple[float, float, float | None, float | None, str, str]] = {
     "CuI": (2.9, 3.3, 1.8, 2.4, "CuI HTL SCAPS", "medium"),
     "CuSCN": (3.4, 3.8, 1.5, 2.0, "CuSCN HTL SCAPS", "medium"),
     "NiO": (3.4, 3.8, 1.5, 2.1, "NiO HTL ~3.6", "high"),
-    "V2O5": (2.0, 2.4, 3.1, 3.7, "V2O5 HTL SCAPS", "medium"),
+    "V2O5": (2.6, 3.0, 6.2, 6.9, "UPS/IPES deep-affinity χ≈6.6 (Meyer Adv Mater 2012); SCAPS fitting χ~3.4 superseded", "high"),
+    "MgO": (7.5, 8.1, 0.6, 1.2, "wide-gap insulator optical Eg≈7.8 / χ≈0.85", "high"),
+    "Al2O3": (8.4, 9.2, 1.0, 1.7, "wide-gap insulator optical Eg≈8.8 / χ≈1.35 (Robertson)", "high"),
+    "Spiro-OMeTAD": (2.8, 3.2, 1.8, 2.3, "Minemoto SCAPS Spiro Eg=3.0 χ≈2.05", "high"),
+    "CdTe": (1.45, 1.60, 3.7, 4.2, "bulk CdTe ~1.5 eV; paper DFT 1.547 — training-only stacks", "high"),
+    "CH3NH3PbI3": (1.45, 1.65, 3.7, 4.1, "MAPbI3 optical ~1.55; χ≈3.9", "high"),
+    "HC(NH2)2PbI3": (1.40, 1.55, 3.7, 4.1, "FAPbI3 α-phase ~1.48", "high"),
+    "CsPbI3": (1.65, 1.80, 3.7, 4.1, "α-CsPbI3 ~1.73", "high"),
+    "HC(NH2)2SnI3": (1.25, 1.45, 3.6, 4.1, "FASnI3 optical ~1.35", "medium"),
+    "CsSnBr3": (1.60, 1.90, 3.6, 4.1, "CsSnBr3 optical/SCAPS ~1.75", "medium"),
+    "Cs2AgBiBr6": (2.0, 2.4, 3.6, 4.1, "McClure optical 2.19; χ≈3.86", "high"),
 }
 
 HALIDE_SPOT: dict[str, tuple[float, float, str, str]] = {
@@ -112,23 +123,48 @@ def score_eg(eg: float, lo: float, hi: float) -> tuple[str, float]:
 
 
 def load_scaps_layers() -> dict[str, Layer]:
+    """Layers for stack recompute — must match build_perovskite_dataset physics labels."""
     layers: dict[str, Layer] = {}
+
+    def _ingest(path: Path, *, overwrite: bool) -> None:
+        if not path.exists():
+            return
+        with path.open(encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                name = (row.get("material") or row.get("material_absorber") or "").strip()
+                if not name:
+                    continue
+                eg_s = row.get("Eg_eV") or row.get("absorber_band_gap_eV")
+                chi_s = row.get("chi_eV")
+                if not eg_s or not chi_s:
+                    continue
+                eg, chi = float(eg_s), float(chi_s)
+                if overwrite or name not in layers or (
+                    name.startswith("TiO2") and eg > layers[name].eg
+                ):
+                    layers[name] = Layer(name, eg, chi)
+
     for fname in (
         "paper4_scaps_materials.csv",
         "paper_cs_pb_scaps_materials.csv",
         "paper_cs3sb2br9_scaps_materials.csv",
         "paper_besip2_scaps_materials.csv",
     ):
-        with (RAW / fname).open(encoding="utf-8") as f:
-            for row in csv.DictReader(f):
-                if not row.get("chi_eV"):
-                    continue
-                # skip non-perovskite absorber BeSiP2 from being required,
-                # but keep its contacts for stack recompute
-                name = row["material"]
-                eg, chi = float(row["Eg_eV"]), float(row["chi_eV"])
-                if name not in layers or (name.startswith("TiO2") and eg > layers[name].eg):
-                    layers[name] = Layer(name, eg, chi)
+        _ingest(RAW / fname, overwrite=False)
+    # Expansion absorbers + CdTe paper contacts must win for their rows
+    _ingest(RAW / "verified_expansion_absorbers.csv", overwrite=True)
+    _ingest(RAW / "paper_cdte_scaps_materials.csv", overwrite=True)
+    # Physical deep-affinity / wide-gap overrides (same as dataset builder)
+    for name, (eg, chi) in NAMED_CONTACT_BANDS.items():
+        if name in ("MoO3", "V2O5", "MgO", "Al2O3"):
+            layers[name] = Layer(name, eg, chi)
+    if "Spiro-OMeTAD" not in layers:
+        layers["Spiro-OMeTAD"] = Layer("Spiro-OMeTAD", 3.00, 2.05)
+    # Match builder: PSC-aligned SnO2 / CdS χ
+    if "SnO2" in layers:
+        layers["SnO2"] = Layer("SnO2", layers["SnO2"].eg, 4.00)
+    if "CdS" in layers:
+        layers["CdS"] = Layer("CdS", layers["CdS"].eg, 4.18)
     return layers
 
 
@@ -198,7 +234,7 @@ def verify_stacks() -> dict:
 
         key = mat if mat in WEB else (base if base in WEB else None)
         if key is None:
-            if 0.3 <= eg_val <= 8.0:
+            if 0.3 <= eg_val <= 10.0:
                 item["status"] = "PASS_PAPER"
                 item["web_check"] = "No separate web range keyed; taken from cited SCAPS/paper table"
                 item["confidence"] = "paper_primary"
