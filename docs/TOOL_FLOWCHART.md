@@ -2,7 +2,7 @@
 
 End-to-end diagrams of **runtime prediction** and **offline training / data pipeline**.
 
-Related: [TOOL_WORKFLOW.md](TOOL_WORKFLOW.md) (operators) · [TECHNICAL_WORKFLOW.md](TECHNICAL_WORKFLOW.md) (engineering detail) · [DATASETS.md](DATASETS.md) · [cross-validation report](../data/cross_validation_report.md)
+Related: [TOOL_WORKFLOW.md](TOOL_WORKFLOW.md) (operators) · [TECHNICAL_WORKFLOW.md](TECHNICAL_WORKFLOW.md) (engineering detail) · [DATASETS.md](DATASETS.md) · [full advisor report](OPTOSTACK_FULL_REPORT.md) · [cross-validation report](../data/cross_validation_report.md)
 
 ---
 

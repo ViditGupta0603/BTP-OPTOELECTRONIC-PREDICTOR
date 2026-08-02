@@ -21,6 +21,10 @@ btp/
 ├── requirements.txt
 ├── .env.example           # optional LLM keys (do not commit .env)
 ├── docs/
+│   ├── OPTOSTACK_FULL_REPORT.md   # ★ advisor-ready full report
+│   ├── REPORT_README.txt          # how to present / zip the report
+│   ├── report_figures/            # CV figures for the full report
+│   ├── TOOL_FLOWCHART.md          # runtime + training Mermaid
 │   ├── TOOL_WORKFLOW.md           # operator: how to use end-to-end
 │   ├── TECHNICAL_WORKFLOW.md      # engineering: pipeline & deploy
 │   ├── PROJECT_DEVELOPMENT_LOG.md # chronological build history
@@ -28,15 +32,17 @@ btp/
 │   └── WORKFLOW.md                # short index → above docs
 ├── scripts/               # pipeline, eval, dataset builders
 │   ├── predict_stack.py   # main train + predict
+│   ├── cross_validate_models.py
 │   ├── perovskite_rules.py
 │   ├── formula_estimator.py / formula_parse.py
 │   ├── literature_bands.py
 │   └── …                  # see scripts/README.md
 ├── data/
-│   ├── perovskite_*.csv   # primary libraries & stacks
+│   ├── perovskite_*.csv   # primary libraries & stacks (~1030 stacks)
 │   ├── etl_material_library.csv / htl_material_library.csv
 │   ├── models/            # joblibs + layer_lookup.json
-│   ├── *accuracy*.md      # evaluation reports
+│   ├── cross_validation_report.md
+│   ├── figures/           # CV PNGs (also copied to docs/report_figures/)
 │   └── raw/               # curated SCAPS/DFT tables
 └── research paper/        # reference PDFs
 ```
@@ -45,8 +51,8 @@ btp/
 
 | File | Role |
 |------|------|
-| `data/perovskite_stack_dataset.csv` | ~726 stacks with Type labels (3 absorbers × pooled ETL×HTL) |
-| `data/perovskite_absorber_library.csv` | ~1763 absorber Eg (+ χ with `chi_source`) |
+| `data/perovskite_stack_dataset.csv` | ~1030 stacks with Type labels (SCAPS pool + expansion + CdTe training-only) |
+| `data/perovskite_absorber_library.csv` | ~1764 absorber Eg (+ χ with `chi_source`) |
 | `data/etl_material_library.csv` / `htl_material_library.csv` | Contact Eg+χ |
 | `data/layer_properties.csv` | Unified layer table (from enrich) |
 | `data/perovskite_test_set_literature.csv` | Literature Eg validation set |
@@ -137,25 +143,24 @@ python scripts/predict_stack.py --list-materials
 
 ## Evaluation / accuracy
 
+**Advisor-facing package:** [`docs/OPTOSTACK_FULL_REPORT.md`](docs/OPTOSTACK_FULL_REPORT.md) ([`docs/REPORT_README.txt`](docs/REPORT_README.txt) for presentation order).
+
 | Report | What it measures |
 |--------|------------------|
-| [`data/iterative_accuracy_report.md`](data/iterative_accuracy_report.md) | Operational Type + Eg targets (lookup vs browser practical set) |
+| [`docs/OPTOSTACK_FULL_REPORT.md`](docs/OPTOSTACK_FULL_REPORT.md) | Full overview + CV scorecard + workflows + examples |
+| [`data/cross_validation_report.md`](data/cross_validation_report.md) | Whole-tool GroupKFold CV (Eg + Type) |
 | [`data/perovskite_test_set_literature_accuracy_report.md`](data/perovskite_test_set_literature_accuracy_report.md) | Tool Eg vs literature test set |
-| [`data/browser_random_accuracy_report.md`](data/browser_random_accuracy_report.md) | Browser-sourced random perovskites |
-| [`data/perovskite_prediction_benchmark.md`](data/perovskite_prediction_benchmark.md) | ML vs literature benchmark |
 
 ```bash
+python scripts/cross_validate_models.py
 python scripts/eval_literature_test_set.py
-python scripts/eval_browser_random_test.py
-python scripts/benchmark_predictions.py
-python scripts/iterative_accuracy_loop.py
 ```
 
 **Caveats (read these):**
 
 - **Library vs predicted:** in-library materials can look near-perfect (self-consistent lookup); judge **unseen** / `predicted` rows for true generalization.
-- **Type vs Eg:** high Type accuracy on the expanded stack table often reflects physics labeling or same-absorber combos; literature test set may score **Eg only** (no Type GT).
-- GroupKFold leave-absorber-out Type-ML is harder than holdout on mixed stacks — treat screening metrics accordingly.
+- **Type vs Eg:** high Type accuracy on random splits can reflect name memorization; prefer GroupKFold leave-absorber-out in the CV report. Literature test set scores **Eg only** (no Type GT).
+- Suitability (YES/MARGINAL/NO) is a deterministic Type rule — not a supervised model.
 
 ## Deployment
 
@@ -204,6 +209,9 @@ Use OptoStack to **rank and reject** stacks quickly; confirm promising YES cases
 
 ## Docs
 
+- [docs/OPTOSTACK_FULL_REPORT.md](docs/OPTOSTACK_FULL_REPORT.md) — **full advisor report** (start here for demos)  
+- [docs/REPORT_README.txt](docs/REPORT_README.txt) — how to present / share the report  
+- [docs/TOOL_FLOWCHART.md](docs/TOOL_FLOWCHART.md) — runtime + training Mermaid flowcharts  
 - [docs/TOOL_WORKFLOW.md](docs/TOOL_WORKFLOW.md) — **operator** end-to-end use (inputs, outputs, suitability, disclaimers)  
 - [docs/TECHNICAL_WORKFLOW.md](docs/TECHNICAL_WORKFLOW.md) — **engineering** pipeline, modules, Types, artifacts, deploy  
 - [docs/PROJECT_DEVELOPMENT_LOG.md](docs/PROJECT_DEVELOPMENT_LOG.md) — chronological build / fix history  

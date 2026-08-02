@@ -70,7 +70,7 @@ Rebuild meta: `data/perovskite_dataset_build_meta.json`.
 
 **Verified external additions** (`record_type=verified_external`): literature-cited Eg for classic lead-halide perovskites missing from Paper5 — CsPbX₃, MAPbI₃/Br₃/Cl₃, FAPbI₃/Br₃, RbPbI₃, and mixed-halide CsPb(I/Br/Cl)₃ Vegard-series points (DOIs: 10.3390/physchem5010003, 10.1039/D3CP05956A, 10.1038/nature12340, 10.1038/ncomms7382, 10.1038/ncomms7228, 10.1021/acs.chemmater.5b02716, 10.1039/D5CC00735F). Rebuild with `python scripts/build_perovskite_dataset.py`.
 
-Supporting meta: `perovskite_dataset_build_meta.json`, `perovskite_verification_report.json`, `research_paper_verification_report.json`.
+Supporting meta: `perovskite_dataset_build_meta.json`, `perovskite_verification_report.json` (rebuild verification scripts under `scripts/verify_*.py` as needed).
 
 ---
 
@@ -87,7 +87,7 @@ Use for general Type / offset learning; **mostly 2D monolayers**, not perovskite
 | `opto_literature_dataset_experimental_only.csv` | 10 | MPS₃ experimental |
 | `paper5_absorber_library.csv` | 447 | Paper5 absorber dump (includes near-zero gaps; filtered copy is in perovskite library) |
 
-Verification: `dataset_verification_report.json`, `internet_verification_report.json`, `internet_verification_summary.csv`, `material_literature_audit.json`, `heterogeneous_data_audit.json`.
+Verification dumps for the broader opto tables are regenerable via `scripts/build_literature_dataset.py` and `scripts/internet_verify_dataset.py` (not required for perovskite product runtime).
 
 ---
 

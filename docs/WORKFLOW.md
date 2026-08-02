@@ -4,6 +4,9 @@ The full operator and engineering workflows now live in dedicated files:
 
 | Doc | Audience | Path |
 |-----|----------|------|
+| **Full advisor report** | Examiner / demo | [OPTOSTACK_FULL_REPORT.md](OPTOSTACK_FULL_REPORT.md) |
+| **How to present** | Sharing / zip | [REPORT_README.txt](REPORT_README.txt) |
+| **Tool flowchart** | Runtime + training Mermaid | [TOOL_FLOWCHART.md](TOOL_FLOWCHART.md) |
 | **Tool workflow** | Users / operators | [TOOL_WORKFLOW.md](TOOL_WORKFLOW.md) |
 | **Technical workflow** | Engineering | [TECHNICAL_WORKFLOW.md](TECHNICAL_WORKFLOW.md) |
 | **Development log** | History of what we built | [PROJECT_DEVELOPMENT_LOG.md](PROJECT_DEVELOPMENT_LOG.md) |
