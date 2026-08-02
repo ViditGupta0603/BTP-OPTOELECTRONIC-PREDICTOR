@@ -74,7 +74,7 @@ flowchart TD
 | `formula_eg_chi_estimator.joblib` (χ) | `GradientBoostingRegressor` | n_estimators=300, max_depth=4, learning_rate=0.05 |
 | `stack_type_classifier.joblib` | `GradientBoostingClassifier` ×2 | defaults (n_estimators=100, max_depth=3, lr=0.1) + OneHot+Eg pipeline |
 
-Cross-validation of these models: `python scripts/cross_validate_models.py` → [data/cross_validation_report.md](../data/cross_validation_report.md).
+Cross-validation of OptoStack user-facing ML fallbacks (Eg + junction Type; not affinity as a CV deliverable): `python scripts/cross_validate_models.py` → [data/cross_validation_report.md](../data/cross_validation_report.md).
 
 ---
 

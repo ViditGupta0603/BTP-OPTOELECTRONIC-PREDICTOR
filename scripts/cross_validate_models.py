@@ -1,9 +1,13 @@
-"""Cross-validate OptoStack production models and write report + figures.
+"""Cross-validate OptoStack as one tool and write a unified report + figures.
 
-Models match scripts/predict_stack.py and scripts/formula_estimator.py:
+Evaluates user-facing ML fallbacks that match scripts/predict_stack.py /
+scripts/formula_estimator.py:
   - Eg absorber: RandomForestRegressor (n_estimators=500, …)
-  - Formula Eg/χ: RF + GradientBoostingRegressor
+  - Formula Eg: RandomForestRegressor (composition features)
   - Type ETL/HTL: GradientBoostingClassifier pipelines
+
+Electron affinity is used internally for physics Type at runtime but is not a
+user-facing CV deliverable — this script does not report affinity metrics.
 
 Usage (Windows):
   set PYTHONIOENCODING=utf-8
@@ -33,7 +37,6 @@ import pandas as pd  # noqa: E402
 from sklearn.compose import ColumnTransformer  # noqa: E402
 from sklearn.ensemble import (  # noqa: E402
     GradientBoostingClassifier,
-    GradientBoostingRegressor,
     RandomForestRegressor,
 )
 from sklearn.metrics import (  # noqa: E402
@@ -97,13 +100,6 @@ FORMULA_EG_PARAMS = {
     "min_samples_leaf": 2,
     "random_state": RANDOM_STATE,
     "n_jobs": 1,
-}
-FORMULA_CHI_PARAMS = {
-    "class": "GradientBoostingRegressor",
-    "n_estimators": 300,
-    "max_depth": 4,
-    "learning_rate": 0.05,
-    "random_state": RANDOM_STATE,
 }
 TYPE_CLF_PARAMS = {
     "class": "GradientBoostingClassifier",
@@ -560,7 +556,8 @@ def cv_type_classifier(target: str, side: str) -> dict:
     }
 
 
-def cv_formula_estimators() -> dict:
+def cv_formula_eg() -> dict:
+    """Cross-validate the formula Eg ML head only (user-facing band-gap component)."""
     rows = _load_training_rows()
     feat_rows = [composition_vector(r["material"], r["role"]) for r in rows]
     keys, X = _matrix(feat_rows)
@@ -594,38 +591,6 @@ def cv_formula_estimators() -> dict:
         y_t.extend(y_eg[te].tolist())
         y_p.extend(pred.tolist())
 
-    # Chi CV
-    chi_rows = [r for r in rows if r.get("chi_eV") is not None]
-    feat_chi = [composition_vector(r["material"], r["role"]) for r in chi_rows]
-    _k, Xc = _matrix(feat_chi, keys)
-    eg_chi = np.array([r["Eg_eV"] for r in chi_rows], dtype=float).reshape(-1, 1)
-    Xc = np.hstack([Xc, eg_chi])
-    y_chi = np.array([float(r["chi_eV"]) for r in chi_rows], dtype=float)
-    g_chi = np.array([base_name(r["material"]) for r in chi_rows])
-    n_g_chi = len(set(g_chi.tolist()))
-    n_splits_chi = min(N_SPLITS, n_g_chi)
-    chi_folds: list[dict] = []
-    for fold_i, (tr, te) in enumerate(
-        GroupKFold(n_splits=n_splits_chi).split(Xc, y_chi, g_chi), start=1
-    ):
-        model = GradientBoostingRegressor(
-            n_estimators=FORMULA_CHI_PARAMS["n_estimators"],
-            max_depth=FORMULA_CHI_PARAMS["max_depth"],
-            learning_rate=FORMULA_CHI_PARAMS["learning_rate"],
-            random_state=RANDOM_STATE,
-        )
-        model.fit(Xc[tr], y_chi[tr])
-        pred = model.predict(Xc[te])
-        chi_folds.append(
-            {
-                "fold": fold_i,
-                "MAE_eV": float(mean_absolute_error(y_chi[te], pred)),
-                "RMSE_eV": float(np.sqrt(mean_squared_error(y_chi[te], pred))),
-                "R2": float(r2_score(y_chi[te], pred)),
-                "n_test": int(len(te)),
-            }
-        )
-
     yt, yp = np.asarray(y_t), np.asarray(y_p)
     fig, ax = plt.subplots(figsize=(6.5, 6))
     ax.scatter(yt, yp, alpha=0.35, s=18, c="#264653", edgecolors="none")
@@ -643,32 +608,20 @@ def cv_formula_estimators() -> dict:
 
     return {
         "eg_model": FORMULA_EG_PARAMS,
-        "chi_model": FORMULA_CHI_PARAMS,
         "n_eg": int(len(y_eg)),
-        "n_chi": int(len(y_chi)),
         "n_unique_materials_eg": int(n_groups),
+        "n_features": int(len(keys)),
         "protocol": {
             "splitter": "GroupKFold",
             "group_by": "material base_name",
-            "n_splits_eg": n_splits,
-            "n_splits_chi": n_splits_chi,
+            "n_splits": n_splits,
         },
-        "eg": {
-            "folds": eg_folds,
-            "summary": {
-                "MAE_eV": _mean_std([f["MAE_eV"] for f in eg_folds]),
-                "RMSE_eV": _mean_std([f["RMSE_eV"] for f in eg_folds]),
-                "R2": _mean_std([f["R2"] for f in eg_folds]),
-                "pooled_R2": pooled,
-            },
-        },
-        "chi": {
-            "folds": chi_folds,
-            "summary": {
-                "MAE_eV": _mean_std([f["MAE_eV"] for f in chi_folds]),
-                "RMSE_eV": _mean_std([f["RMSE_eV"] for f in chi_folds]),
-                "R2": _mean_std([f["R2"] for f in chi_folds]),
-            },
+        "folds": eg_folds,
+        "summary": {
+            "MAE_eV": _mean_std([f["MAE_eV"] for f in eg_folds]),
+            "RMSE_eV": _mean_std([f["RMSE_eV"] for f in eg_folds]),
+            "R2": _mean_std([f["R2"] for f in eg_folds]),
+            "pooled_R2": pooled,
         },
         "figures": {
             "eg_scatter": str(scatter_path.relative_to(ROOT)).replace("\\", "/"),
@@ -682,11 +635,42 @@ def _fmt_ms(d: dict | None, digits: int = 4) -> str:
     return f"{d['mean']:.{digits}f} ± {d['std']:.{digits}f}"
 
 
-def write_markdown(report: dict) -> None:
-    eg = report["eg_absorber_regressor"]
-    fe = report["formula_eg_chi"]
+def _scorecard(report: dict) -> dict:
+    """Primary headline metrics for the whole-tool executive summary."""
+    eg = report["eg_absorber"]
+    fe = report["formula_eg"]
     etl = report["type_etl"]
     htl = report["type_htl"]
+    return {
+        "absorber_Eg": {
+            "MAE_eV": eg["summary"]["MAE_eV"],
+            "R2": eg["summary"]["R2"],
+            "pooled_R2": eg["summary"]["pooled_R2"],
+        },
+        "formula_Eg": {
+            "MAE_eV": fe["summary"]["MAE_eV"],
+            "R2": fe["summary"]["R2"],
+            "pooled_R2": fe["summary"]["pooled_R2"],
+        },
+        "junction_Type_ETL_GroupKFold": {
+            "accuracy": etl["group_kfold"]["summary"]["accuracy"],
+            "f1_macro": etl["group_kfold"]["summary"]["f1_macro"],
+            "roc_auc_macro_ovr": etl["group_kfold"]["summary"]["roc_auc_macro_ovr"],
+        },
+        "junction_Type_HTL_GroupKFold": {
+            "accuracy": htl["group_kfold"]["summary"]["accuracy"],
+            "f1_macro": htl["group_kfold"]["summary"]["f1_macro"],
+            "roc_auc_macro_ovr": htl["group_kfold"]["summary"]["roc_auc_macro_ovr"],
+        },
+    }
+
+
+def write_markdown(report: dict) -> None:
+    eg = report["eg_absorber"]
+    fe = report["formula_eg"]
+    etl = report["type_etl"]
+    htl = report["type_htl"]
+    sc = report["scorecard"]
     meta = report.get("train_meta") or {}
     stack_n = report["dataset_sizes"]["stack_table_rows"]
 
@@ -695,36 +679,59 @@ def write_markdown(report: dict) -> None:
         "",
         f"**Date:** {report['date']}",
         "",
-        f"**Stack table size:** {stack_n} rows (`perovskite_stack_dataset.csv`"
+        "Single evaluation of the **OptoStack** stack-screening tool: band-gap (Eg) "
+        "estimation and junction Type classification that feed suitability screening "
+        "(YES / MARGINAL / NO). Metrics below are ML-fallback performance under "
+        "GroupKFold; runtime still prefers literature / stack-table lookup when available.",
+        "",
+        f"**Stack table:** {stack_n} rows (`perovskite_stack_dataset.csv`"
         + (f"; train_meta type n_etl={meta.get('type', {}).get('n_etl')}" if meta.get("type") else "")
         + ").",
         f"**Absorber library:** {report['dataset_sizes']['absorber_library_rows']} rows"
         f" (Eg training expands verified_external ×{VERIFIED_EG_OVERSAMPLE} → "
         f"{eg['n_rows_expanded']} samples).",
         "",
-        "## Models in use",
+        "## Executive summary — tool scorecard",
         "",
-        "| Role | sklearn class | Artifact |",
-        "|------|---------------|----------|",
+        "Primary numbers for the whole tool (preferred protocol: GroupKFold by material "
+        "`base_name` / absorber). Eg and junction-Type are components of the same pipeline.",
+        "",
+        "| Tool component | Headline metric | mean ± std |",
+        "|----------------|-----------------|------------|",
+        f"| Absorber Eg | R² | {_fmt_ms(sc['absorber_Eg']['R2'])} |",
+        f"| Absorber Eg | MAE (eV) | {_fmt_ms(sc['absorber_Eg']['MAE_eV'])} |",
+        f"| Formula Eg (fallback) | R² | {_fmt_ms(sc['formula_Eg']['R2'])} |",
+        f"| Formula Eg (fallback) | MAE (eV) | {_fmt_ms(sc['formula_Eg']['MAE_eV'])} |",
+        f"| Junction Type — ETL | Accuracy | {_fmt_ms(sc['junction_Type_ETL_GroupKFold']['accuracy'])} |",
+        f"| Junction Type — ETL | macro F1 | {_fmt_ms(sc['junction_Type_ETL_GroupKFold']['f1_macro'])} |",
+        f"| Junction Type — ETL | macro OvR ROC-AUC | {_fmt_ms(sc['junction_Type_ETL_GroupKFold']['roc_auc_macro_ovr'])} |",
+        f"| Junction Type — HTL | Accuracy | {_fmt_ms(sc['junction_Type_HTL_GroupKFold']['accuracy'])} |",
+        f"| Junction Type — HTL | macro F1 | {_fmt_ms(sc['junction_Type_HTL_GroupKFold']['f1_macro'])} |",
+        f"| Junction Type — HTL | macro OvR ROC-AUC | {_fmt_ms(sc['junction_Type_HTL_GroupKFold']['roc_auc_macro_ovr'])} |",
+        "",
+        f"Absorber Eg pooled OOF R² = **{sc['absorber_Eg']['pooled_R2']:.4f}**; "
+        f"formula Eg pooled OOF R² = **{sc['formula_Eg']['pooled_R2']:.4f}**.",
+        "",
+        "## Models in the tool",
+        "",
+        "| Component | sklearn class | Artifact |",
+        "|-----------|---------------|----------|",
         "| Absorber Eg | `RandomForestRegressor` | `data/models/perovskite_eg_regressor.joblib` |",
-        "| Formula Eg | `RandomForestRegressor` | `data/models/formula_eg_chi_estimator.joblib` |",
-        "| Formula χ | `GradientBoostingRegressor` | same joblib |",
-        "| Type ETL | `GradientBoostingClassifier` (Pipeline) | `data/models/stack_type_classifier.joblib` |",
-        "| Type HTL | `GradientBoostingClassifier` (Pipeline) | same joblib |",
+        "| Formula Eg | `RandomForestRegressor` | `data/models/formula_eg_chi_estimator.joblib` (Eg head) |",
+        "| Junction Type ETL | `GradientBoostingClassifier` (Pipeline) | `data/models/stack_type_classifier.joblib` |",
+        "| Junction Type HTL | `GradientBoostingClassifier` (Pipeline) | same joblib |",
         "",
-        "One-line summary: **Eg RF (500 trees) + formula RF/GBR + Type ETL/HTL GBC pipelines** "
-        "(all `random_state=42`).",
+        "One-line summary: **OptoStack ML fallbacks = Eg RF (500) + formula Eg RF + "
+        "Type ETL/HTL GBC pipelines** (all `random_state=42`).",
         "",
         "## Hyperparameters",
         "",
-        "| Model | Parameters |",
-        "|-------|------------|",
+        "| Component | Parameters |",
+        "|-----------|------------|",
         f"| Absorber Eg RF | n_estimators={EG_PARAMS['n_estimators']}, max_depth={EG_PARAMS['max_depth']}, "
         f"min_samples_leaf={EG_PARAMS['min_samples_leaf']}, random_state=42, n_jobs=-1 |",
         f"| Formula Eg RF | n_estimators={FORMULA_EG_PARAMS['n_estimators']}, max_depth={FORMULA_EG_PARAMS['max_depth']}, "
         f"min_samples_leaf={FORMULA_EG_PARAMS['min_samples_leaf']}, random_state=42 |",
-        f"| Formula χ GBR | n_estimators={FORMULA_CHI_PARAMS['n_estimators']}, max_depth={FORMULA_CHI_PARAMS['max_depth']}, "
-        f"learning_rate={FORMULA_CHI_PARAMS['learning_rate']}, random_state=42 |",
         f"| Type GBC | n_estimators={TYPE_CLF_PARAMS['n_estimators']}, learning_rate={TYPE_CLF_PARAMS['learning_rate']}, "
         f"max_depth={TYPE_CLF_PARAMS['max_depth']}, random_state=42; "
         f"features: OneHot(absorber,partner)+scaled Eg diffs / organic flags |",
@@ -733,21 +740,21 @@ def write_markdown(report: dict) -> None:
         "",
         "- **Eg (absorber + formula):** `GroupKFold` (k=5) grouped by material `base_name` — "
         "avoids leakage from verified-row oversampling and duplicate names.",
-        "- **Type ETL/HTL (primary):** `GroupKFold` by absorber name (realistic for new absorbers).",
+        "- **Junction Type ETL/HTL (primary):** `GroupKFold` by absorber name (realistic for new absorbers).",
         "- **Type (secondary):** `StratifiedKFold` (k=5, shuffle, seed=42) — typically optimistic "
         "because categorical material names can be memorized.",
         "- Metrics: Eg → MAE, RMSE, R² per fold + mean±std; Type → accuracy, macro F1, macro OvR ROC-AUC.",
         "",
-        "## Eg absorber regressor metrics",
+        "## Component detail — absorber Eg",
         "",
-        f"| Metric | mean ± std (GroupKFold) |",
-        f"|--------|-------------------------|",
+        "| Metric | mean ± std (GroupKFold) |",
+        "|--------|-------------------------|",
         f"| MAE (eV) | {_fmt_ms(eg['summary']['MAE_eV'])} |",
         f"| RMSE (eV) | {_fmt_ms(eg['summary']['RMSE_eV'])} |",
         f"| R² | {_fmt_ms(eg['summary']['R2'])} |",
         f"| Pooled OOF R² | {eg['summary']['pooled_R2']:.4f} |",
         "",
-        "### Per-fold Eg",
+        "### Per-fold",
         "",
         "| Fold | n_test | MAE | RMSE | R² |",
         "|------|--------|-----|------|----|",
@@ -759,16 +766,16 @@ def write_markdown(report: dict) -> None:
 
     lines += [
         "",
-        "## Formula Eg / χ metrics",
+        "## Component detail — formula Eg",
         "",
-        f"| Target | MAE | RMSE | R² |",
-        f"|--------|-----|------|----|",
-        f"| Formula Eg | {_fmt_ms(fe['eg']['summary']['MAE_eV'])} | "
-        f"{_fmt_ms(fe['eg']['summary']['RMSE_eV'])} | {_fmt_ms(fe['eg']['summary']['R2'])} |",
-        f"| Formula χ | {_fmt_ms(fe['chi']['summary']['MAE_eV'])} | "
-        f"{_fmt_ms(fe['chi']['summary']['RMSE_eV'])} | {_fmt_ms(fe['chi']['summary']['R2'])} |",
+        "| Metric | mean ± std (GroupKFold) |",
+        "|--------|-------------------------|",
+        f"| MAE (eV) | {_fmt_ms(fe['summary']['MAE_eV'])} |",
+        f"| RMSE (eV) | {_fmt_ms(fe['summary']['RMSE_eV'])} |",
+        f"| R² | {_fmt_ms(fe['summary']['R2'])} |",
+        f"| Pooled OOF R² | {fe['summary']['pooled_R2']:.4f} |",
         "",
-        "## Type classification metrics",
+        "## Component detail — junction Type",
         "",
         "### GroupKFold by absorber (preferred)",
         "",
@@ -807,15 +814,17 @@ def write_markdown(report: dict) -> None:
         "",
         "## Caveats",
         "",
-        "- **Lookup vs ML:** Runtime prefers literature / stack-table lookup and physics Type from Eg+χ. "
-        "ML is used when library values are missing; these CV scores describe the ML fallbacks, not the lookup path.",
-        "- **GroupKFold vs random:** Stratified/random Type accuracy can approach ~1.0 via name memorization; "
-        "GroupKFold-by-absorber is the realistic number for novel absorbers.",
-        "- **Suitability is not CV'd:** YES/MARGINAL/NO comes from deterministic Anderson rules on Types + offsets, "
-        "not a supervised model.",
-        "- **Formula estimator** blends family/Vegard priors with ML at inference; CV here evaluates the ML "
-        "regressor heads only.",
-        "- Holdout MAE in `train_meta.json` uses a single random split and may differ from GroupKFold means.",
+        "- **Lookup vs ML:** Runtime prefers literature / stack-table lookup and physics-based "
+        "Type when band parameters are complete. ML is used when library values are missing; "
+        "these CV scores describe the ML fallbacks, not the lookup path.",
+        "- **GroupKFold vs random:** Stratified/random Type accuracy can approach ~1.0 via name "
+        "memorization; GroupKFold-by-absorber is the realistic number for novel absorbers.",
+        "- **Suitability is not CV'd:** YES/MARGINAL/NO comes from deterministic Anderson rules "
+        "on Types + offsets, not a supervised model.",
+        "- **Formula Eg estimator** blends family/Vegard priors with ML at inference; CV here "
+        "evaluates the ML Eg regressor head only.",
+        "- Holdout MAE in `train_meta.json` uses a single random split and may differ from "
+        "GroupKFold means.",
         "",
         "## Artifact status at run time",
         "",
@@ -837,19 +846,23 @@ def main() -> None:
     train_meta = {}
     if META_OUT.exists():
         train_meta = json.loads(META_OUT.read_text(encoding="utf-8"))
+        # Drop affinity holdout fields from the CV artifact (not a user-facing deliverable).
+        formula_meta = train_meta.get("formula")
+        if isinstance(formula_meta, dict):
+            formula_meta.pop("chi_holdout_mae_eV", None)
+            formula_meta.pop("n_chi", None)
 
-    print("CV: absorber Eg regressor…")
+    print("CV: absorber Eg…")
     eg_report = cv_eg_regressor()
     print(
         f"  Eg R² mean={eg_report['summary']['R2']['mean']:.4f} "
         f"± {eg_report['summary']['R2']['std']:.4f}"
     )
 
-    print("CV: formula Eg/χ…")
-    formula_report = cv_formula_estimators()
+    print("CV: formula Eg…")
+    formula_report = cv_formula_eg()
     print(
-        f"  Formula Eg R² mean={formula_report['eg']['summary']['R2']['mean']:.4f}; "
-        f"χ MAE mean={formula_report['chi']['summary']['MAE_eV']['mean']:.4f}"
+        f"  Formula Eg R² mean={formula_report['summary']['R2']['mean']:.4f}"
     )
 
     print("CV: Type ETL…")
@@ -870,10 +883,15 @@ def main() -> None:
 
     report = {
         "date": str(date.today()),
+        "title": "OptoStack cross-validation report",
+        "scope": (
+            "Unified evaluation of OptoStack user-facing ML fallbacks: "
+            "absorber/formula Eg and junction Type (ETL/HTL). "
+            "Suitability screening is rule-based and not CV'd."
+        ),
         "models_summary": (
             "Absorber Eg: RandomForestRegressor(500); "
             "Formula Eg: RandomForestRegressor(400/depth20); "
-            "Formula χ: GradientBoostingRegressor(300/depth4/lr0.05); "
             "Type ETL/HTL: GradientBoostingClassifier Pipeline (defaults + random_state=42)"
         ),
         "artifact_status": artifact_status,
@@ -885,11 +903,10 @@ def main() -> None:
         "hyperparameters": {
             "eg_absorber": EG_PARAMS,
             "formula_eg": FORMULA_EG_PARAMS,
-            "formula_chi": FORMULA_CHI_PARAMS,
             "type_classifier": TYPE_CLF_PARAMS,
         },
-        "eg_absorber_regressor": eg_report,
-        "formula_eg_chi": formula_report,
+        "eg_absorber": eg_report,
+        "formula_eg": formula_report,
         "type_etl": etl_report,
         "type_htl": htl_report,
         "caveats": [
@@ -898,6 +915,7 @@ def main() -> None:
             "Suitability verdict not cross-validated.",
         ],
     }
+    report["scorecard"] = _scorecard(report)
 
     REPORT_JSON.write_text(json.dumps(report, indent=2), encoding="utf-8")
     write_markdown(report)
