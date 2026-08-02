@@ -40,7 +40,7 @@ btp/
 ├── data/
 │   ├── perovskite_*.csv   # primary libraries & stacks (~1030 stacks)
 │   ├── etl_material_library.csv / htl_material_library.csv
-│   ├── models/            # joblibs + layer_lookup.json
+│   ├── models/            # committed joblibs + layer_lookup.json (fast cloud cold start)
 │   ├── cross_validation_report.md
 │   ├── figures/           # CV PNGs (also copied to docs/report_figures/)
 │   └── raw/               # curated SCAPS/DFT tables

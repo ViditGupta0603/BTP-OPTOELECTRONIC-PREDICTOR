@@ -474,12 +474,11 @@ def healthz():
 
 
 def ensure_models(verbose: bool = False, timeout: float | None = None) -> bool:
-    """Train whatever model artifacts are missing; report whether they are ready.
+    """Load shipped model artifacts, or train only if they are missing.
 
-    The .joblib files are gitignored, so a fresh deployment starts with none of
-    them. The formula estimator has to be included: without it estimate_eg_chi
-    silently answers from its coarse heuristic instead of the ML blend, so an
-    unknown layer would come back with a different Eg than it does locally.
+    Production ``.joblib`` files are committed under ``data/models/`` so a
+    normal deploy / restart loads in seconds. Training runs only as a fallback
+    when an artifact is absent (e.g. a fresh clone before first local train).
 
     A lock keeps the startup warm-up and a concurrent request from training the
     same artifact twice. ``timeout`` caps how long a caller waits for a warm-up
