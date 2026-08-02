@@ -34,6 +34,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from formula_parse import (  # noqa: E402
+    _ELEMENT_SYMBOLS,
     base_name as _base_name,
     canonicalize_material_alias,
     formula_feature_dict,
@@ -1458,6 +1459,125 @@ def _blocked_absorber_result(
     return result
 
 
+def _contact_alias_key(name: str) -> str:
+    return base_name(name).lower().replace(" ", "").replace("-", "").replace(":", "")
+
+
+def _named_contact_keys() -> set[str]:
+    """Trade names / organics accepted as ETL or HTL without a formula parse."""
+    from formula_estimator import ORGANIC_HTL_PRIORS
+    from perovskite_rules import CONTACT_ETL, CONTACT_HTL
+
+    keys: set[str] = set()
+    for pool in (CONTACT_ETL, CONTACT_HTL, ORGANIC_HTL_PRIORS, MATERIAL_ROLE_ALIASES.values()):
+        for name in pool:
+            keys.add(_contact_alias_key(str(name)))
+    # Common shorthand already folded by canonicalize for some; keep extras here
+    keys.update(
+        {
+            "spiro",
+            "spiroometad",
+            "spiromeotad",
+            "pcbm",
+            "pc60bm",
+            "c60",
+            "pedot",
+            "pedotpss",
+            "p3ht",
+            "ptaa",
+            "niox",
+            "nio",
+            "cupc",
+            "mehppv",
+            "npb",
+            "ito",
+            "fto",
+            "azo",
+            "igzo",
+        }
+    )
+    return keys
+
+
+def validate_contact_material(
+    name: str,
+    role: str = "etl",
+    layers: dict[str, dict[str, float]] | None = None,
+) -> dict:
+    """Return eligibility for an ETL/HTL contact field (reject garbage / empty)."""
+    role_l = (role or "etl").strip().lower()
+    role_label = "ETL" if role_l == "etl" else "HTL"
+    raw = (name or "").strip()
+    if not raw:
+        return {
+            "eligible": False,
+            "invalid_contact": True,
+            "message": f"{role_label} is required — enter a contact material (e.g. TiO2, NiO, Spiro-OMeTAD).",
+            "hint": f"The {role_label} field cannot be empty.",
+        }
+
+    layers = layers if layers is not None else load_layer_lookup()
+    normalized = normalize_material_name(raw)
+    bn = base_name(normalized)
+
+    if resolve_layer(layers, normalized) is not None:
+        return {"eligible": True}
+
+    if _contact_alias_key(bn) in _named_contact_keys():
+        return {"eligible": True}
+
+    counts = parse_formula_counts(normalized)
+    real_els = {el for el in counts if el in _ELEMENT_SYMBOLS}
+    if real_els:
+        return {"eligible": True}
+
+    return {
+        "eligible": False,
+        "invalid_contact": True,
+        "message": (
+            f"{bn!r} is not a recognized {role_label} material — "
+            "use a library name, trade name (e.g. Spiro-OMeTAD, PCBM, PEDOT:PSS), "
+            "or a chemical formula with real elements (e.g. TiO2, BaSnO3, MoO3)."
+        ),
+        "hint": f"Garbage or non-chemistry text is blocked for {role_label}; try TiO2, SnO2, NiO, or Spiro-OMeTAD.",
+    }
+
+
+def _blocked_contact_result(
+    absorber: str,
+    etl: str,
+    htl: str,
+    contact_check: dict,
+    *,
+    role: str,
+) -> dict:
+    """Blocked response — invalid ETL/HTL; no invented Eg/Type predictions."""
+    message = contact_check["message"]
+    result: dict = {
+        "material_absorber": absorber,
+        "material_etl": etl,
+        "material_htl": htl,
+        "not_perovskite": False,
+        "invalid_contact": True,
+        "blocked": True,
+        "screening_blocked": True,
+        "invalid_role": role,
+        "message": message,
+        "method": "blocked_invalid_contact",
+        "notes": [message],
+        "optoelectronic": {
+            "verdict": "BLOCKED",
+            "suitable": False,
+            "reason": message,
+            "label": "blocked",
+        },
+    }
+    if contact_check.get("hint"):
+        result["hint"] = contact_check["hint"]
+        result["notes"].append(contact_check["hint"])
+    return result
+
+
 def predict_stack(
     absorber: str,
     etl: str,
@@ -1466,7 +1586,7 @@ def predict_stack(
     chi: float | None = None,
     use_llm: bool | None = None,
 ) -> dict:
-    """Predict Type. Order: perovskite check → literature stack → layer lookup → ML."""
+    """Predict Type. Order: perovskite check → contact check → literature → lookup → ML."""
     absorber = normalize_material_name(absorber)
     etl = normalize_material_name(etl)
     htl = normalize_material_name(htl)
@@ -1476,6 +1596,13 @@ def predict_stack(
 
     if not perovskite_check.get("eligible", True):
         return _blocked_absorber_result(absorber, etl, htl, perovskite_check)
+
+    for role, material in (("etl", etl), ("htl", htl)):
+        contact_check = validate_contact_material(material, role=role, layers=layers)
+        if not contact_check.get("eligible", True):
+            return _blocked_contact_result(
+                absorber, etl, htl, contact_check, role=role
+            )
 
     lit_row = lookup_literature_stack(absorber, etl, htl)
 

@@ -284,11 +284,15 @@ PAGE = r"""
   {% if result %}
   {% set L = result.field_labels or {} %}
   <div class="out">
-    {% if result.not_perovskite %}
+    {% if result.blocked %}
     <div class="verdict" style="margin-top:0;margin-bottom:1rem;border-color:#e0b4b4;background:#f8ecec">
-      <span>Perovskite screening</span>
+      <span>{% if result.not_perovskite %}Perovskite screening{% else %}Contact screening{% endif %}</span>
+      {% if result.not_perovskite %}
       <span class="pill blocked">not perovskite</span>
-      {% if result.blocked %}<span class="pill blocked">blocked</span>{% endif %}
+      {% elif result.invalid_contact %}
+      <span class="pill blocked">invalid contact</span>
+      {% endif %}
+      <span class="pill blocked">blocked</span>
       <p><strong>{{ result.message }}</strong></p>
       {% if result.hint %}
       <p class="hint">{{ result.hint }}</p>
