@@ -2,6 +2,7 @@ __pycache__/
 *.pyc
 .DS_Store
 .env
-data/models/*.joblib
+# Model .joblib files are committed so cloud deploys (Render) load instantly
+# instead of retraining for several minutes on every cold start / restart.
 data/llm_predictions/
 data/llm_proposals/
