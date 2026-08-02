@@ -1,0 +1,825 @@
+{
+  "date": "2026-08-02",
+  "models_summary": "Absorber Eg: RandomForestRegressor(500); Formula Eg: RandomForestRegressor(400/depth20); Formula \u03c7: GradientBoostingRegressor(300/depth4/lr0.05); Type ETL/HTL: GradientBoostingClassifier Pipeline (defaults + random_state=42)",
+  "artifact_status": {
+    "formula": "present",
+    "eg": "present",
+    "type": "present"
+  },
+  "dataset_sizes": {
+    "stack_table_rows": 1030,
+    "absorber_library_rows": 1764
+  },
+  "train_meta": {
+    "layers": 1747,
+    "formula": {
+      "eg_holdout_mae_eV": 0.3164,
+      "chi_holdout_mae_eV": 0.0141,
+      "n_eg": 1641,
+      "n_chi": 1629,
+      "path": "C:\\Users\\vidit\\Desktop\\btp\\data\\models\\formula_eg_chi_estimator.joblib"
+    },
+    "eg": {
+      "holdout_mae_eV": 0.2752786438587248,
+      "cv_mae_eV": 0.8363329810642683,
+      "n": 2078,
+      "path": "C:\\Users\\vidit\\Desktop\\btp\\data\\models\\perovskite_eg_regressor.joblib"
+    },
+    "type": {
+      "etl_holdout_acc": 0.9292035398230089,
+      "htl_holdout_acc": 0.9380530973451328,
+      "n_etl": 1126,
+      "n_htl": 1126,
+      "path": "C:\\Users\\vidit\\Desktop\\btp\\data\\models\\stack_type_classifier.joblib"
+    }
+  },
+  "hyperparameters": {
+    "eg_absorber": {
+      "class": "RandomForestRegressor",
+      "n_estimators": 500,
+      "max_depth": null,
+      "min_samples_leaf": 1,
+      "random_state": 42,
+      "n_jobs": -1
+    },
+    "formula_eg": {
+      "class": "RandomForestRegressor",
+      "n_estimators": 400,
+      "max_depth": 20,
+      "min_samples_leaf": 2,
+      "random_state": 42,
+      "n_jobs": 1
+    },
+    "formula_chi": {
+      "class": "GradientBoostingRegressor",
+      "n_estimators": 300,
+      "max_depth": 4,
+      "learning_rate": 0.05,
+      "random_state": 42
+    },
+    "type_classifier": {
+      "class": "GradientBoostingClassifier",
+      "n_estimators": 100,
+      "learning_rate": 0.1,
+      "max_depth": 3,
+      "random_state": 42,
+      "pipeline": "OneHotEncoder(absorber,partner) + StandardScaler(eg_*)"
+    }
+  },
+  "eg_absorber_regressor": {
+    "model": {
+      "class": "RandomForestRegressor",
+      "n_estimators": 500,
+      "max_depth": null,
+      "min_samples_leaf": 1,
+      "random_state": 42,
+      "n_jobs": -1
+    },
+    "dataset": "data\\perovskite_absorber_library.csv",
+    "n_rows_expanded": 1908,
+    "n_unique_absorbers": 1586,
+    "n_features": 56,
+    "protocol": {
+      "splitter": "GroupKFold",
+      "group_by": "absorber base_name",
+      "n_splits": 5,
+      "rationale": "Hold out entire material families by name so folds do not leak the same absorber via oversampling."
+    },
+    "folds": [
+      {
+        "fold": 1,
+        "n_train": 1526,
+        "n_test": 382,
+        "n_test_groups": 314,
+        "MAE_eV": 0.2976470877120516,
+        "RMSE_eV": 0.46962877600879516,
+        "R2": 0.9385176856787536
+      },
+      {
+        "fold": 2,
+        "n_train": 1526,
+        "n_test": 382,
+        "n_test_groups": 318,
+        "MAE_eV": 0.3030019802107903,
+        "RMSE_eV": 0.48318459789979595,
+        "R2": 0.933239274429382
+      },
+      {
+        "fold": 3,
+        "n_train": 1526,
+        "n_test": 382,
+        "n_test_groups": 318,
+        "MAE_eV": 0.3114125435905722,
+        "RMSE_eV": 0.4912587470102368,
+        "R2": 0.9230366553724482
+      },
+      {
+        "fold": 4,
+        "n_train": 1527,
+        "n_test": 381,
+        "n_test_groups": 318,
+        "MAE_eV": 0.2922215723236143,
+        "RMSE_eV": 0.4708317259963548,
+        "R2": 0.9288677167737691
+      },
+      {
+        "fold": 5,
+        "n_train": 1527,
+        "n_test": 381,
+        "n_test_groups": 318,
+        "MAE_eV": 0.3060535599876419,
+        "RMSE_eV": 0.4661469479754537,
+        "R2": 0.9400035155792607
+      }
+    ],
+    "summary": {
+      "MAE_eV": {
+        "mean": 0.3020673487649341,
+        "std": 0.006641898880423212,
+        "values": [
+          0.2976470877120516,
+          0.3030019802107903,
+          0.3114125435905722,
+          0.2922215723236143,
+          0.3060535599876419
+        ],
+        "n_defined": 5
+      },
+      "RMSE_eV": {
+        "mean": 0.4762101589781273,
+        "std": 0.009472203110628493,
+        "values": [
+          0.46962877600879516,
+          0.48318459789979595,
+          0.4912587470102368,
+          0.4708317259963548,
+          0.4661469479754537
+        ],
+        "n_defined": 5
+      },
+      "R2": {
+        "mean": 0.9327329695667228,
+        "std": 0.006253619952294817,
+        "values": [
+          0.9385176856787536,
+          0.933239274429382,
+          0.9230366553724482,
+          0.9288677167737691,
+          0.9400035155792607
+        ],
+        "n_defined": 5
+      },
+      "pooled_R2": 0.9331334395478794
+    },
+    "figures": {
+      "scatter": "data/figures/eg_r2_scatter.png",
+      "fold_r2_bars": "data/figures/eg_r2_fold_bars.png",
+      "residuals": "data/figures/eg_residuals.png"
+    }
+  },
+  "formula_eg_chi": {
+    "eg_model": {
+      "class": "RandomForestRegressor",
+      "n_estimators": 400,
+      "max_depth": 20,
+      "min_samples_leaf": 2,
+      "random_state": 42,
+      "n_jobs": 1
+    },
+    "chi_model": {
+      "class": "GradientBoostingRegressor",
+      "n_estimators": 300,
+      "max_depth": 4,
+      "learning_rate": 0.05,
+      "random_state": 42
+    },
+    "n_eg": 1629,
+    "n_chi": 43,
+    "n_unique_materials_eg": 1629,
+    "protocol": {
+      "splitter": "GroupKFold",
+      "group_by": "material base_name",
+      "n_splits_eg": 5,
+      "n_splits_chi": 5
+    },
+    "eg": {
+      "folds": [
+        {
+          "fold": 1,
+          "MAE_eV": 0.38003743599584183,
+          "RMSE_eV": 0.5830093279525148,
+          "R2": 0.8959603002300695,
+          "n_test": 326
+        },
+        {
+          "fold": 2,
+          "MAE_eV": 0.350005142952606,
+          "RMSE_eV": 0.5098861720180082,
+          "R2": 0.9243452971873567,
+          "n_test": 326
+        },
+        {
+          "fold": 3,
+          "MAE_eV": 0.32797056337064107,
+          "RMSE_eV": 0.5050534554199313,
+          "R2": 0.925252928466171,
+          "n_test": 326
+        },
+        {
+          "fold": 4,
+          "MAE_eV": 0.3432151445080595,
+          "RMSE_eV": 0.528119084346651,
+          "R2": 0.9113732300258491,
+          "n_test": 326
+        },
+        {
+          "fold": 5,
+          "MAE_eV": 0.37218392447242044,
+          "RMSE_eV": 0.5340661805845385,
+          "R2": 0.9266891688866334,
+          "n_test": 325
+        }
+      ],
+      "summary": {
+        "MAE_eV": {
+          "mean": 0.3546824422599138,
+          "std": 0.019058216639122535,
+          "values": [
+            0.38003743599584183,
+            0.350005142952606,
+            0.32797056337064107,
+            0.3432151445080595,
+            0.37218392447242044
+          ],
+          "n_defined": 5
+        },
+        "RMSE_eV": {
+          "mean": 0.5320268440643288,
+          "std": 0.02769987796538947,
+          "values": [
+            0.5830093279525148,
+            0.5098861720180082,
+            0.5050534554199313,
+            0.528119084346651,
+            0.5340661805845385
+          ],
+          "n_defined": 5
+        },
+        "R2": {
+          "mean": 0.9167241849592159,
+          "std": 0.01174643222275802,
+          "values": [
+            0.8959603002300695,
+            0.9243452971873567,
+            0.925252928466171,
+            0.9113732300258491,
+            0.9266891688866334
+          ],
+          "n_defined": 5
+        },
+        "pooled_R2": 0.9173146790185563
+      }
+    },
+    "chi": {
+      "folds": [
+        {
+          "fold": 1,
+          "MAE_eV": 0.24391520444187575,
+          "RMSE_eV": 0.29919514390817376,
+          "R2": 0.8237454370500776,
+          "n_test": 9
+        },
+        {
+          "fold": 2,
+          "MAE_eV": 0.27468082092064194,
+          "RMSE_eV": 0.29756038317244515,
+          "R2": 0.8154469336267126,
+          "n_test": 9
+        },
+        {
+          "fold": 3,
+          "MAE_eV": 0.47979083433400027,
+          "RMSE_eV": 0.6311652819211915,
+          "R2": 0.5330322475605964,
+          "n_test": 9
+        },
+        {
+          "fold": 4,
+          "MAE_eV": 0.3206959297867583,
+          "RMSE_eV": 0.4397469243700957,
+          "R2": -1.2301380087484186,
+          "n_test": 8
+        },
+        {
+          "fold": 5,
+          "MAE_eV": 0.23655512322162697,
+          "RMSE_eV": 0.25441405782109144,
+          "R2": 0.9172782822567502,
+          "n_test": 8
+        }
+      ],
+      "summary": {
+        "MAE_eV": {
+          "mean": 0.31112758254098066,
+          "std": 0.08938206494112207,
+          "values": [
+            0.24391520444187575,
+            0.27468082092064194,
+            0.47979083433400027,
+            0.3206959297867583,
+            0.23655512322162697
+          ],
+          "n_defined": 5
+        },
+        "RMSE_eV": {
+          "mean": 0.3844163582385995,
+          "std": 0.1383139304462412,
+          "values": [
+            0.29919514390817376,
+            0.29756038317244515,
+            0.6311652819211915,
+            0.4397469243700957,
+            0.25441405782109144
+          ],
+          "n_defined": 5
+        },
+        "R2": {
+          "mean": 0.3718729783491436,
+          "std": 0.8112736937800509,
+          "values": [
+            0.8237454370500776,
+            0.8154469336267126,
+            0.5330322475605964,
+            -1.2301380087484186,
+            0.9172782822567502
+          ],
+          "n_defined": 5
+        }
+      }
+    },
+    "figures": {
+      "eg_scatter": "data/figures/formula_eg_r2_scatter.png"
+    }
+  },
+  "type_etl": {
+    "model": {
+      "class": "GradientBoostingClassifier",
+      "n_estimators": 100,
+      "learning_rate": 0.1,
+      "max_depth": 3,
+      "random_state": 42,
+      "pipeline": "OneHotEncoder(absorber,partner) + StandardScaler(eg_*)"
+    },
+    "target": "absorber_etl_type",
+    "side": "etl",
+    "n_samples": 1126,
+    "class_counts": {
+      "Type II": 522,
+      "Type I": 548,
+      "Type III": 56
+    },
+    "labels": [
+      "Type I",
+      "Type II",
+      "Type III"
+    ],
+    "protocol_primary": {
+      "splitter": "GroupKFold",
+      "group_by": "absorber base_name",
+      "n_splits": 5,
+      "rationale": "More realistic generalization to unseen absorbers than random stratified splits."
+    },
+    "protocol_secondary": {
+      "splitter": "StratifiedKFold",
+      "n_splits": 5,
+      "shuffle": true,
+      "random_state": 42,
+      "note": "Optimistic vs GroupKFold \u2014 material-name features can memorize train absorbers."
+    },
+    "group_kfold": {
+      "folds": [
+        {
+          "fold": 1,
+          "n_train": 787,
+          "n_test": 339,
+          "accuracy": 0.6106194690265486,
+          "f1_macro": 0.5599826935179357,
+          "roc_auc_macro_ovr": 0.752808988764045
+        },
+        {
+          "fold": 2,
+          "n_train": 787,
+          "n_test": 339,
+          "accuracy": 0.3392330383480826,
+          "f1_macro": 0.23990355635925256,
+          "roc_auc_macro_ovr": 0.49512374812001764
+        },
+        {
+          "fold": 3,
+          "n_train": 827,
+          "n_test": 299,
+          "accuracy": 1.0,
+          "f1_macro": 1.0,
+          "roc_auc_macro_ovr": 1.0
+        },
+        {
+          "fold": 4,
+          "n_train": 1057,
+          "n_test": 69,
+          "accuracy": 0.8985507246376812,
+          "f1_macro": 0.8927857935627082,
+          "roc_auc_macro_ovr": 1.0
+        },
+        {
+          "fold": 5,
+          "n_train": 1046,
+          "n_test": 80,
+          "accuracy": 0.5,
+          "f1_macro": 0.33454545454545453,
+          "roc_auc_macro_ovr": 0.9340277777777778
+        }
+      ],
+      "summary": {
+        "accuracy": {
+          "mean": 0.6696806464024625,
+          "std": 0.24615757318349474,
+          "values": [
+            0.6106194690265486,
+            0.3392330383480826,
+            1.0,
+            0.8985507246376812,
+            0.5
+          ],
+          "n_defined": 5
+        },
+        "f1_macro": {
+          "mean": 0.6054434995970701,
+          "std": 0.2991027621791885,
+          "values": [
+            0.5599826935179357,
+            0.23990355635925256,
+            1.0,
+            0.8927857935627082,
+            0.33454545454545453
+          ],
+          "n_defined": 5
+        },
+        "roc_auc_macro_ovr": {
+          "mean": 0.8363921029323681,
+          "std": 0.19314141965860535,
+          "values": [
+            0.752808988764045,
+            0.49512374812001764,
+            1.0,
+            1.0,
+            0.9340277777777778
+          ],
+          "n_defined": 5
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "Type I",
+          "Type II",
+          "Type III"
+        ],
+        "matrix": [
+          [
+            232,
+            316,
+            0
+          ],
+          [
+            31,
+            491,
+            0
+          ],
+          [
+            12,
+            44,
+            0
+          ]
+        ]
+      }
+    },
+    "stratified_kfold": {
+      "folds": [
+        {
+          "fold": 1,
+          "n_train": 900,
+          "n_test": 226,
+          "accuracy": 0.911504424778761,
+          "f1_macro": 0.7161722069978951,
+          "roc_auc_macro_ovr": 0.9685025997070497
+        },
+        {
+          "fold": 2,
+          "n_train": 901,
+          "n_test": 225,
+          "accuracy": 0.9244444444444444,
+          "f1_macro": 0.6858285084091537,
+          "roc_auc_macro_ovr": 0.9753599103729859
+        },
+        {
+          "fold": 3,
+          "n_train": 901,
+          "n_test": 225,
+          "accuracy": 0.9333333333333333,
+          "f1_macro": 0.8092677152037883,
+          "roc_auc_macro_ovr": 0.9806590512783487
+        },
+        {
+          "fold": 4,
+          "n_train": 901,
+          "n_test": 225,
+          "accuracy": 0.9288888888888889,
+          "f1_macro": 0.8061547278475363,
+          "roc_auc_macro_ovr": 0.9750465096144052
+        },
+        {
+          "fold": 5,
+          "n_train": 901,
+          "n_test": 225,
+          "accuracy": 0.9466666666666667,
+          "f1_macro": 0.8474723874256584,
+          "roc_auc_macro_ovr": 0.983745935211895
+        }
+      ],
+      "summary": {
+        "accuracy": {
+          "mean": 0.928967551622419,
+          "std": 0.011469474345615384,
+          "values": [
+            0.911504424778761,
+            0.9244444444444444,
+            0.9333333333333333,
+            0.9288888888888889,
+            0.9466666666666667
+          ],
+          "n_defined": 5
+        },
+        "f1_macro": {
+          "mean": 0.7729791091768063,
+          "std": 0.06130087186191609,
+          "values": [
+            0.7161722069978951,
+            0.6858285084091537,
+            0.8092677152037883,
+            0.8061547278475363,
+            0.8474723874256584
+          ],
+          "n_defined": 5
+        },
+        "roc_auc_macro_ovr": {
+          "mean": 0.9766628012369368,
+          "std": 0.00523525765405099,
+          "values": [
+            0.9685025997070497,
+            0.9753599103729859,
+            0.9806590512783487,
+            0.9750465096144052,
+            0.983745935211895
+          ],
+          "n_defined": 5
+        }
+      }
+    },
+    "figures": {
+      "roc": "data/figures/type_etl_roc_ovr.png",
+      "confusion_heatmap": "data/figures/type_etl_confusion_heatmap.png"
+    }
+  },
+  "type_htl": {
+    "model": {
+      "class": "GradientBoostingClassifier",
+      "n_estimators": 100,
+      "learning_rate": 0.1,
+      "max_depth": 3,
+      "random_state": 42,
+      "pipeline": "OneHotEncoder(absorber,partner) + StandardScaler(eg_*)"
+    },
+    "target": "absorber_htl_type",
+    "side": "htl",
+    "n_samples": 1126,
+    "class_counts": {
+      "Type II": 560,
+      "Type III": 176,
+      "Type I": 390
+    },
+    "labels": [
+      "Type I",
+      "Type II",
+      "Type III"
+    ],
+    "protocol_primary": {
+      "splitter": "GroupKFold",
+      "group_by": "absorber base_name",
+      "n_splits": 5,
+      "rationale": "More realistic generalization to unseen absorbers than random stratified splits."
+    },
+    "protocol_secondary": {
+      "splitter": "StratifiedKFold",
+      "n_splits": 5,
+      "shuffle": true,
+      "random_state": 42,
+      "note": "Optimistic vs GroupKFold \u2014 material-name features can memorize train absorbers."
+    },
+    "group_kfold": {
+      "folds": [
+        {
+          "fold": 1,
+          "n_train": 787,
+          "n_test": 339,
+          "accuracy": 0.7669616519174042,
+          "f1_macro": 0.7576840698113583,
+          "roc_auc_macro_ovr": 0.8881151416145036
+        },
+        {
+          "fold": 2,
+          "n_train": 787,
+          "n_test": 339,
+          "accuracy": 0.7286135693215339,
+          "f1_macro": 0.7023284070263935,
+          "roc_auc_macro_ovr": 0.7563497647311818
+        },
+        {
+          "fold": 3,
+          "n_train": 827,
+          "n_test": 299,
+          "accuracy": 0.8695652173913043,
+          "f1_macro": 0.8885941644562334,
+          "roc_auc_macro_ovr": 0.969281045751634
+        },
+        {
+          "fold": 4,
+          "n_train": 1057,
+          "n_test": 69,
+          "accuracy": 1.0,
+          "f1_macro": 1.0,
+          "roc_auc_macro_ovr": 1.0
+        },
+        {
+          "fold": 5,
+          "n_train": 1046,
+          "n_test": 80,
+          "accuracy": 0.8,
+          "f1_macro": 0.7470588235294118,
+          "roc_auc_macro_ovr": 0.8561507936507936
+        }
+      ],
+      "summary": {
+        "accuracy": {
+          "mean": 0.8330280877260485,
+          "std": 0.09546999686345431,
+          "values": [
+            0.7669616519174042,
+            0.7286135693215339,
+            0.8695652173913043,
+            1.0,
+            0.8
+          ],
+          "n_defined": 5
+        },
+        "f1_macro": {
+          "mean": 0.8191330929646794,
+          "std": 0.10968290288968889,
+          "values": [
+            0.7576840698113583,
+            0.7023284070263935,
+            0.8885941644562334,
+            1.0,
+            0.7470588235294118
+          ],
+          "n_defined": 5
+        },
+        "roc_auc_macro_ovr": {
+          "mean": 0.8939793491496226,
+          "std": 0.0863921465947162,
+          "values": [
+            0.8881151416145036,
+            0.7563497647311818,
+            0.969281045751634,
+            1.0,
+            0.8561507936507936
+          ],
+          "n_defined": 5
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "Type I",
+          "Type II",
+          "Type III"
+        ],
+        "matrix": [
+          [
+            252,
+            126,
+            12
+          ],
+          [
+            52,
+            508,
+            0
+          ],
+          [
+            28,
+            8,
+            140
+          ]
+        ]
+      }
+    },
+    "stratified_kfold": {
+      "folds": [
+        {
+          "fold": 1,
+          "n_train": 900,
+          "n_test": 226,
+          "accuracy": 0.9247787610619469,
+          "f1_macro": 0.9000188398819366,
+          "roc_auc_macro_ovr": 0.9764905449115974
+        },
+        {
+          "fold": 2,
+          "n_train": 901,
+          "n_test": 225,
+          "accuracy": 0.9377777777777778,
+          "f1_macro": 0.9166536035531668,
+          "roc_auc_macro_ovr": 0.979993749264243
+        },
+        {
+          "fold": 3,
+          "n_train": 901,
+          "n_test": 225,
+          "accuracy": 0.9333333333333333,
+          "f1_macro": 0.9159742587161942,
+          "roc_auc_macro_ovr": 0.9821773616591969
+        },
+        {
+          "fold": 4,
+          "n_train": 901,
+          "n_test": 225,
+          "accuracy": 0.9022222222222223,
+          "f1_macro": 0.8810417925623244,
+          "roc_auc_macro_ovr": 0.9711926476807706
+        },
+        {
+          "fold": 5,
+          "n_train": 901,
+          "n_test": 225,
+          "accuracy": 0.9466666666666667,
+          "f1_macro": 0.9350272915490306,
+          "roc_auc_macro_ovr": 0.9843351746249477
+        }
+      ],
+      "summary": {
+        "accuracy": {
+          "mean": 0.9289557522123892,
+          "std": 0.015118179276351897,
+          "values": [
+            0.9247787610619469,
+            0.9377777777777778,
+            0.9333333333333333,
+            0.9022222222222223,
+            0.9466666666666667
+          ],
+          "n_defined": 5
+        },
+        "f1_macro": {
+          "mean": 0.9097431572525305,
+          "std": 0.018133940686194755,
+          "values": [
+            0.9000188398819366,
+            0.9166536035531668,
+            0.9159742587161942,
+            0.8810417925623244,
+            0.9350272915490306
+          ],
+          "n_defined": 5
+        },
+        "roc_auc_macro_ovr": {
+          "mean": 0.978837895628151,
+          "std": 0.00461883056482108,
+          "values": [
+            0.9764905449115974,
+            0.979993749264243,
+            0.9821773616591969,
+            0.9711926476807706,
+            0.9843351746249477
+          ],
+          "n_defined": 5
+        }
+      }
+    },
+    "figures": {
+      "roc": "data/figures/type_htl_roc_ovr.png",
+      "confusion_heatmap": "data/figures/type_htl_confusion_heatmap.png"
+    }
+  },
+  "caveats": [
+    "Lookup/physics path preferred at runtime; CV scores ML fallbacks.",
+    "GroupKFold preferred over stratified for Type realism.",
+    "Suitability verdict not cross-validated."
+  ]
+}

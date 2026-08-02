@@ -2,7 +2,7 @@
 
 End-to-end guide for **users and operators**: what to enter, what happens, how to read results, suitability rules, and when to trust outputs before DFT/SCAPS.
 
-Related: [TECHNICAL_WORKFLOW.md](TECHNICAL_WORKFLOW.md) (engineering) · [PROJECT_DEVELOPMENT_LOG.md](PROJECT_DEVELOPMENT_LOG.md) (history) · [DATASETS.md](DATASETS.md) · [README.md](../README.md)
+Related: [TOOL_FLOWCHART.md](TOOL_FLOWCHART.md) (runtime + training Mermaid flowcharts) · [TECHNICAL_WORKFLOW.md](TECHNICAL_WORKFLOW.md) (engineering) · [PROJECT_DEVELOPMENT_LOG.md](PROJECT_DEVELOPMENT_LOG.md) (history) · [DATASETS.md](DATASETS.md) · [README.md](../README.md) · [cross-validation report](../data/cross_validation_report.md)
 
 ---
 
