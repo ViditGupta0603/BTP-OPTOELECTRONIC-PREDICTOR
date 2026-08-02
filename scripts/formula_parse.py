@@ -106,6 +106,11 @@ MATERIAL_ALIASES: dict[str, str] = {
     "niox": "NiO",
     "nio_x": "NiO",
     "nioₓ": "NiO",
+    # Triple-cation mixed-halide (Saliba) — fractional-X shorthand → parenthetical form
+    "cs0.06fa0.78ma0.16pbbr0.17i0.83": "Cs0.05(FA0.83MA0.17)0.95Pb(I0.83Br0.17)3",
+    "cs0.05fa0.79ma0.16pbbr0.17i0.83": "Cs0.05(FA0.83MA0.17)0.95Pb(I0.83Br0.17)3",
+    "cs0.05(fa0.83ma0.17)0.95pb(i0.83br0.17)3": "Cs0.05(FA0.83MA0.17)0.95Pb(I0.83Br0.17)3",
+    "csfama": "Cs0.05(FA0.83MA0.17)0.95Pb(I0.83Br0.17)3",
 }
 
 

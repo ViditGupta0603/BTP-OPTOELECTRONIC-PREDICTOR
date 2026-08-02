@@ -2135,3 +2135,5 @@ ZnSe,2.81,4.09,etl,literature_SCAPS
 ZnTe,2.25,3.73,htl,literature_SCAPS
 ZrS3,1.89,2.5700000000000003,monolayer,literature_HSE06_monolayer
 ZrSe3,0.95,3.26,monolayer,literature_HSE06_monolayer
+Cs0.05(FA0.83MA0.17)0.95Pb(I0.83Br0.17)3,1.63,3.90,absorber,literature_triple_cation
+Cs0.06FA0.78MA0.16PbBr0.17I0.83,1.63,3.90,absorber,literature_triple_cation
