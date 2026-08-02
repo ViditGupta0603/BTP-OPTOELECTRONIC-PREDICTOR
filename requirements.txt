@@ -1,8 +1,10 @@
-pandas>=2.0.0
-numpy>=1.24.0
-scikit-learn>=1.3.0
+pandas>=2.0.0,<3
+numpy>=1.24.0,<3
+# Pin sklearn: shipped .joblib models are not portable across sklearn majors.
+# Mismatch (e.g. 1.8 train vs older Render resolve) raises: No module named '_loss'.
+scikit-learn==1.8.0
 matminer>=0.9.0
-joblib>=1.3.0
+joblib>=1.3.0,<2
 flask>=3.0.0
 # LLM (optional — needed for CLI --llm only; UI keeps LLM off)
 openai>=1.40.0
