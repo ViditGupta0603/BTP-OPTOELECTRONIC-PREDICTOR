@@ -19,6 +19,7 @@ import traceback
 from pathlib import Path
 
 from flask import Flask, render_template_string, request
+import joblib
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -474,11 +475,12 @@ def healthz():
 
 
 def ensure_models(verbose: bool = False, timeout: float | None = None) -> bool:
-    """Load shipped model artifacts, or train only if they are missing.
+    """Ensure model artifacts exist and load on this sklearn version.
 
-    Production ``.joblib`` files are committed under ``data/models/`` so a
-    normal deploy / restart loads in seconds. Training runs only as a fallback
-    when an artifact is absent (e.g. a fresh clone before first local train).
+    Production ``.joblib`` files are committed under ``data/models/``. If they
+    were trained on a different scikit-learn build, ``joblib.load`` can fail
+    with ``No module named '_loss'`` — in that case we delete the bad
+    artifacts and retrain once on the running environment.
 
     A lock keeps the startup warm-up and a concurrent request from training the
     same artifact twice. ``timeout`` caps how long a caller waits for a warm-up
@@ -490,27 +492,55 @@ def ensure_models(verbose: bool = False, timeout: float | None = None) -> bool:
     if not _MODELS_LOCK.acquire(timeout=-1 if timeout is None else timeout):
         return False
     try:
-        if EG_MODEL.exists() and TYPE_MODEL.exists() and EG_CHI_MODEL.exists():
+        if _models_loadable():
             _MODELS_READY.set()
             return True
         if verbose:
-            print("Training models (first run)...", flush=True)
+            print("Training models (missing or incompatible with this sklearn)...", flush=True)
         load_layer_lookup()
-        for exists, train in (
-            (EG_CHI_MODEL.exists(), train_estimators),
-            (EG_MODEL.exists(), train_eg_model),
-            (TYPE_MODEL.exists(), train_type_models),
+        for path, train in (
+            (EG_CHI_MODEL, train_estimators),
+            (EG_MODEL, train_eg_model),
+            (TYPE_MODEL, train_type_models),
         ):
-            if not exists:
+            if path.exists() and not _joblib_loadable(path):
+                if verbose:
+                    print(f"Removing incompatible artifact: {path.name}", flush=True)
+                path.unlink(missing_ok=True)
+            if not path.exists():
                 out = train()
                 if verbose:
                     print(out, flush=True)
+        if not _models_loadable():
+            if verbose:
+                print("Model warm-up failed: artifacts still unloadable.", flush=True)
+            return False
         _MODELS_READY.set()
         if verbose:
             print("Models ready.", flush=True)
         return True
     finally:
         _MODELS_LOCK.release()
+
+
+def _joblib_loadable(path: Path) -> bool:
+    try:
+        joblib.load(path)
+        return True
+    except Exception as exc:  # noqa: BLE001 — any unpickle failure means retrain
+        print(f"Cannot load {path.name}: {exc}", flush=True)
+        return False
+
+
+def _models_loadable() -> bool:
+    return (
+        EG_MODEL.exists()
+        and TYPE_MODEL.exists()
+        and EG_CHI_MODEL.exists()
+        and _joblib_loadable(EG_MODEL)
+        and _joblib_loadable(TYPE_MODEL)
+        and _joblib_loadable(EG_CHI_MODEL)
+    )
 
 
 def main() -> None:
