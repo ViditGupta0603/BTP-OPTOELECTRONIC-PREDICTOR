@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-01",
+  "date": "2026-08-02",
   "pass": 39,
   "fail": 0,
   "total": 39,
@@ -417,7 +417,7 @@
       "category": "stability",
       "stack": "MAPbI3 / TiO2 / Spiro-OMeTAD",
       "expected": "identical key fields",
-      "got": "('YES', 'Type II', 'Type II', 1.55, 3.2, 3.0, 'compute_from_Eg_chi', False)",
+      "got": "('YES', 'Type II', 'Type II', 1.55, 3.4, 3.0, 'literature_stack_row', False)",
       "types": "Type II/Type II",
       "eg": "1.550",
       "result": "PASS",

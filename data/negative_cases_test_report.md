@@ -1,6 +1,6 @@
 # OptoStack negative-case test report
 
-**Date:** 2026-08-01  
+**Date:** 2026-08-02  
 **Mode:** `predict_stack(..., use_llm=False)`  
 **Totals:** 39 PASS / 0 FAIL / 39 cases  
 
@@ -42,7 +42,7 @@
 | 32 | `block_precursor_GeI2` | should_block | GeI2 / TiO2 / NiO | BLOCKED | BLOCKED | — | — | **PASS** |
 | 33 | `block_precursor_PbBr2` | should_block | PbBr2 / TiO2 / NiO | BLOCKED | BLOCKED | — | — | **PASS** |
 | 34 | `edge_widegap_BaTiO3` | edge | BaTiO3 / TiO2 / NiO | not in ['CRASH'] | YES; types=Type I/Type II; Eg=3.391 | Type I/Type II | 3.391 | **PASS** |
-| 35 | `stability_MAPbI3` | stability | MAPbI3 / TiO2 / Spiro-OMeTAD | identical key fields | ('YES', 'Type II', 'Type II', 1.55, 3.2, 3.0, 'compute_from_Eg_chi', F | Type II/Type II | 1.550 | **PASS** |
+| 35 | `stability_MAPbI3` | stability | MAPbI3 / TiO2 / Spiro-OMeTAD | identical key fields | ('YES', 'Type II', 'Type II', 1.55, 3.4, 3.0, 'literature_stack_row',  | Type II/Type II | 1.550 | **PASS** |
 | 36 | `stability_Cs2TiI6` | stability | Cs2TiI6 / TiO2 / NiO | identical key fields | ('YES', 'Type I', 'Type II', 1.58, 3.2, 3.6, 'compute_from_Eg_chi', Fa | Type I/Type II | 1.580 | **PASS** |
 | 37 | `stability_blocked_ZnO` | stability | ZnO / TiO2 / NiO | identical key fields | ('BLOCKED', None, None, None, None, None, 'blocked_non_perovskite', Tr | — | — | **PASS** |
 | 38 | `stability_garbage_asdf` | stability | asdf / TiO2 / NiO | identical key fields | ('BLOCKED', None, None, None, None, None, 'blocked_non_perovskite', Tr | — | — | **PASS** |

@@ -1,0 +1,9 @@
+layer_role,material,Eg_eV,chi_eV,source_table,source_doi,notes
+absorber,CdTe,1.547,3.90,pratyush.pdf extract / DFT+device,10.1002/pssb.70269,CdTe thin-film absorber (Phys. Status Solidi B); training-only — blocked as perovskite absorber at inference
+etl,CdS,2.40,4.18,pratyush.pdf SnO2/CdS/CdTe stack family,10.1002/pssb.70269,CdS buffer/window paired with CdTe in paper device (χ unified to CsPb SCAPS 4.18)
+etl,SnO2,3.60,4.00,pratyush.pdf SnO2/CdS/CdTe stack family,10.1002/pssb.70269,TCO/window layer in CdTe cell architecture (PSC-aligned χ=4.0)
+htl,Cu2Te,1.18,4.20,aligned to CsPbZnIBr2 SCAPS Cu2Te (CdTe back-contact family),10.1038/s41598-024-81797-x,Common CdTe back-contact / HTL analogue used for Type-training offsets
+htl,ZnTe,2.25,3.73,aligned to CsPbZnIBr2 SCAPS ZnTe,10.1038/s41598-024-81797-x,CdTe-family back contact used in SCAPS tables
+htl,MoO3,3.00,6.70,UPS/IPES deep-affinity (Kröger APL 2009) — corner-case HTL,10.1063/1.3231928,Deep-χ oxide for Type III broken-gap training vs CdTe
+htl,NiO,3.60,1.80,BeSiP2/PSC SCAPS NiO,10.1007/s11082-026-08738-y,Hole-extraction oxide used with CdTe/PSC devices
+htl,CuI,3.10,2.10,BeSiP2 SCAPS CuI,10.1007/s11082-026-08738-y,Wide-gap iodide HTL corner case

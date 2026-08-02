@@ -1,0 +1,12 @@
+material,Eg_eV,chi_eV,perovskite_family,material_class,source_doi,source_paper,notes
+CH3NH3PbI3,1.55,3.90,ABX3_organic_inorganic_halide,lead_halide_perovskite_absorber,10.1038/nature12340,"Liu et al. Nature 2013 — MAPbI3; χ≈3.9 eV SCAPS/UPS consensus (Minemoto/Murata family)"
+HC(NH2)2PbI3,1.48,3.90,ABX3_organic_inorganic_halide,lead_halide_perovskite_absorber,10.1038/ncomms7382,"Eperon et al. Nat Commun 2015 — FAPbI3 α-phase; χ≈3.9 eV device-table consensus"
+CsPbI3,1.73,3.95,ABX3_lead_halide_perovskite,lead_halide_perovskite_absorber,10.3390/physchem5010003,"Suto et al. PhysChem 2025 — α-CsPbI3; χ≈3.95 eV SCAPS/device consensus"
+CsPbBr3,2.36,3.80,ABX3_lead_halide_perovskite,lead_halide_perovskite_absorber,10.1039/D3CP05956A,"Zhang et al. PCCP 2024 — CsPbBr3 optical gap; χ≈3.80 eV halide-shifted vs iodide"
+HC(NH2)2SnI3,1.35,3.90,ABX3_tin_halide,lead_free_halide_perovskite,10.1002/aenm.201802488,"Milot et al. Adv Energy Mater 2018 — FASnI3 optical gap 1.35 eV; χ≈3.9 eV tin-halide prior"
+CsSnI3,1.30,3.62,ABX3_tin_halide,lead_free_halide_perovskite,10.1021/ja301539s,"Chung et al. JACS 2012 — black CsSnI3; χ≈3.62 eV SCAPS/device consensus"
+CsSnBr3,1.75,3.90,ABX3_tin_halide,lead_free_halide_perovskite,10.1021/ja301539s,"CsSnBr3 optical/SCAPS gap ≈1.75 eV (Sn-halide Br end-member vs CsSnI3); χ≈3.9 eV"
+Cs2AgBiBr6,2.19,3.86,A2BBX6_halide_double,halide_double_perovskite_absorber,10.1021/acs.chemmater.5b04231,"McClure et al. Chem Mater 2016 — Eg 2.19 eV; χ 3.86 eV (DOI 10.1039/D0TA07145E)"
+Cs2SnI6,1.35,4.80,A2BX6_vacancy_ordered,vacancy_ordered_halide_double_perovskite,10.1021/acs.chemmater.9b03267,"Karim et al. Chem Mater 2019 — Eg 1.35 eV; EA 4.8 eV (DOI 10.1021/acs.chemmater.6b00433)"
+Cs2TiI6,1.58,4.00,A2BX6_vacancy_ordered,vacancy_ordered_halide_double_perovskite,10.1021/jacs.7b09379,"Xiao/Ju A2TiI6 family — Eg≈1.58 eV; χ=4.0 like K2TiI6"
+K2GeI6,1.28,4.05,A2BX6_halide_double_perovskite,vacancy_ordered_halide_double_perovskite,10.1007/s44291-026-00245-4,"Raj et al. Discover Electronics 2026 — DFT Eg 1.28 eV; χ family prior 4.05"

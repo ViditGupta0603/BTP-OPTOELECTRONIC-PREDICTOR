@@ -11,15 +11,38 @@
     "absorbers": "C:\\Users\\vidit\\Desktop\\btp\\data\\perovskite_absorber_library.csv"
   },
   "stacks": {
-    "n_stack_rows": 726,
+    "n_stack_rows": 1030,
     "stack_recompute_failures": [],
     "stack_all_rows_verified": true,
-    "n_unique_stack_materials": 36,
+    "n_unique_stack_materials": 47,
     "stack_material_counts": {
-      "PASS": 35,
+      "PASS": 46,
       "PASS_PAPER": 1
     },
     "stack_material_audits": [
+      {
+        "material": "Al2O3",
+        "Eg_dataset_eV": 8.8,
+        "roles": [
+          "etl"
+        ],
+        "source_dois": [
+          "10.1002/aenm.201802488",
+          "10.1007/s44291-026-00245-4",
+          "10.1016/j.nxmate.2026.102491",
+          "10.1021/acs.chemmater.5b04231",
+          "10.1021/ja301539s",
+          "10.1038/nature12340",
+          "10.1038/ncomms7382",
+          "10.1038/s41598-024-81797-x",
+          "10.1038/s41598-025-98351-y",
+          "10.3390/physchem5010003"
+        ],
+        "status": "PASS",
+        "flags": [],
+        "web_check": "wide-gap insulator optical Eg\u22488.8 / \u03c7\u22481.35 (Robertson)",
+        "confidence": "high"
+      },
       {
         "material": "C6PcH2",
         "Eg_dataset_eV": 1.6,
@@ -69,6 +92,20 @@
         "confidence": "medium"
       },
       {
+        "material": "CH3NH3PbI3",
+        "Eg_dataset_eV": 1.55,
+        "roles": [
+          "absorber"
+        ],
+        "source_dois": [
+          "10.1038/nature12340"
+        ],
+        "status": "PASS",
+        "flags": [],
+        "web_check": "MAPbI3 optical ~1.55; \u03c7\u22483.9",
+        "confidence": "high"
+      },
+      {
         "material": "CNTS",
         "Eg_dataset_eV": 1.74,
         "roles": [
@@ -91,6 +128,7 @@
           "etl"
         ],
         "source_dois": [
+          "10.1007/s11082-026-08738-y",
           "10.1016/j.nxmate.2026.102491",
           "10.1038/s41598-024-81797-x",
           "10.1038/s41598-025-98351-y"
@@ -98,6 +136,20 @@
         "status": "PASS",
         "flags": [],
         "web_check": "expt ~2.4",
+        "confidence": "high"
+      },
+      {
+        "material": "CdTe",
+        "Eg_dataset_eV": 1.547,
+        "roles": [
+          "absorber"
+        ],
+        "source_dois": [
+          "10.1007/s11082-026-08738-y"
+        ],
+        "status": "PASS",
+        "flags": [],
+        "web_check": "bulk CdTe ~1.5 eV; paper DFT 1.547 \u2014 training-only stacks",
         "confidence": "high"
       },
       {
@@ -114,6 +166,20 @@
         "status": "PASS",
         "flags": [],
         "web_check": "Paper4 SCAPS",
+        "confidence": "high"
+      },
+      {
+        "material": "Cs2AgBiBr6",
+        "Eg_dataset_eV": 2.19,
+        "roles": [
+          "absorber"
+        ],
+        "source_dois": [
+          "10.1021/acs.chemmater.5b04231"
+        ],
+        "status": "PASS",
+        "flags": [],
+        "web_check": "McClure optical 2.19; \u03c7\u22483.86",
         "confidence": "high"
       },
       {
@@ -145,12 +211,41 @@
         "confidence": "medium"
       },
       {
+        "material": "CsPbI3",
+        "Eg_dataset_eV": 1.73,
+        "roles": [
+          "absorber"
+        ],
+        "source_dois": [
+          "10.3390/physchem5010003"
+        ],
+        "status": "PASS",
+        "flags": [],
+        "web_check": "\u03b1-CsPbI3 ~1.73",
+        "confidence": "high"
+      },
+      {
+        "material": "CsSnBr3",
+        "Eg_dataset_eV": 1.75,
+        "roles": [
+          "absorber"
+        ],
+        "source_dois": [
+          "10.1021/ja301539s"
+        ],
+        "status": "PASS",
+        "flags": [],
+        "web_check": "CsSnBr3 optical/SCAPS ~1.75",
+        "confidence": "medium"
+      },
+      {
         "material": "Cu2Te",
         "Eg_dataset_eV": 1.18,
         "roles": [
           "htl"
         ],
         "source_dois": [
+          "10.1007/s11082-026-08738-y",
           "10.1016/j.nxmate.2026.102491",
           "10.1038/s41598-024-81797-x",
           "10.1038/s41598-025-98351-y"
@@ -183,6 +278,7 @@
           "htl"
         ],
         "source_dois": [
+          "10.1007/s11082-026-08738-y",
           "10.1016/j.nxmate.2026.102491",
           "10.1038/s41598-024-81797-x",
           "10.1038/s41598-025-98351-y"
@@ -238,6 +334,48 @@
         "status": "PASS",
         "flags": [],
         "web_check": "bulk GaAs 1.42",
+        "confidence": "high"
+      },
+      {
+        "material": "HC(NH2)2PbI3",
+        "Eg_dataset_eV": 1.48,
+        "roles": [
+          "absorber"
+        ],
+        "source_dois": [
+          "10.1038/ncomms7382"
+        ],
+        "status": "PASS",
+        "flags": [],
+        "web_check": "FAPbI3 \u03b1-phase ~1.48",
+        "confidence": "high"
+      },
+      {
+        "material": "HC(NH2)2SnI3",
+        "Eg_dataset_eV": 1.35,
+        "roles": [
+          "absorber"
+        ],
+        "source_dois": [
+          "10.1002/aenm.201802488"
+        ],
+        "status": "PASS",
+        "flags": [],
+        "web_check": "FASnI3 optical ~1.35",
+        "confidence": "medium"
+      },
+      {
+        "material": "K2GeI6",
+        "Eg_dataset_eV": 1.28,
+        "roles": [
+          "absorber"
+        ],
+        "source_dois": [
+          "10.1007/s44291-026-00245-4"
+        ],
+        "status": "PASS",
+        "flags": [],
+        "web_check": "Noor DFT ~1.27; Raj DFT 1.28",
         "confidence": "high"
       },
       {
@@ -303,19 +441,51 @@
         "confidence": "medium"
       },
       {
+        "material": "MgO",
+        "Eg_dataset_eV": 7.8,
+        "roles": [
+          "etl"
+        ],
+        "source_dois": [
+          "10.1002/aenm.201802488",
+          "10.1007/s11082-026-08738-y",
+          "10.1007/s44291-026-00245-4",
+          "10.1016/j.nxmate.2026.102491",
+          "10.1021/acs.chemmater.5b04231",
+          "10.1021/ja301539s",
+          "10.1038/nature12340",
+          "10.1038/ncomms7382",
+          "10.1038/s41598-024-81797-x",
+          "10.1038/s41598-025-98351-y",
+          "10.3390/physchem5010003"
+        ],
+        "status": "PASS",
+        "flags": [],
+        "web_check": "wide-gap insulator optical Eg\u22487.8 / \u03c7\u22480.85",
+        "confidence": "high"
+      },
+      {
         "material": "MoO3",
         "Eg_dataset_eV": 3.0,
         "roles": [
           "htl"
         ],
         "source_dois": [
+          "10.1002/aenm.201802488",
+          "10.1007/s11082-026-08738-y",
+          "10.1007/s44291-026-00245-4",
           "10.1016/j.nxmate.2026.102491",
+          "10.1021/acs.chemmater.5b04231",
+          "10.1021/ja301539s",
+          "10.1038/nature12340",
+          "10.1038/ncomms7382",
           "10.1038/s41598-024-81797-x",
-          "10.1038/s41598-025-98351-y"
+          "10.1038/s41598-025-98351-y",
+          "10.3390/physchem5010003"
         ],
         "status": "PASS",
         "flags": [],
-        "web_check": "SCAPS Eg=3.0",
+        "web_check": "UPS/IPES deep-affinity \u03c7\u22486.7 (Kr\u00f6ger APL 2009); SCAPS fitting \u03c7~2.3 superseded for Type III",
         "confidence": "high"
       },
       {
@@ -373,9 +543,17 @@
           "htl"
         ],
         "source_dois": [
+          "10.1002/aenm.201802488",
+          "10.1007/s11082-026-08738-y",
+          "10.1007/s44291-026-00245-4",
           "10.1016/j.nxmate.2026.102491",
+          "10.1021/acs.chemmater.5b04231",
+          "10.1021/ja301539s",
+          "10.1038/nature12340",
+          "10.1038/ncomms7382",
           "10.1038/s41598-024-81797-x",
-          "10.1038/s41598-025-98351-y"
+          "10.1038/s41598-025-98351-y",
+          "10.3390/physchem5010003"
         ],
         "status": "PASS",
         "flags": [],
@@ -437,9 +615,17 @@
           "etl"
         ],
         "source_dois": [
+          "10.1002/aenm.201802488",
+          "10.1007/s11082-026-08738-y",
+          "10.1007/s44291-026-00245-4",
           "10.1016/j.nxmate.2026.102491",
+          "10.1021/acs.chemmater.5b04231",
+          "10.1021/ja301539s",
+          "10.1038/nature12340",
+          "10.1038/ncomms7382",
           "10.1038/s41598-024-81797-x",
-          "10.1038/s41598-025-98351-y"
+          "10.1038/s41598-025-98351-y",
+          "10.3390/physchem5010003"
         ],
         "status": "PASS",
         "flags": [],
@@ -463,15 +649,46 @@
         "confidence": "medium"
       },
       {
+        "material": "Spiro-OMeTAD",
+        "Eg_dataset_eV": 3.0,
+        "roles": [
+          "htl"
+        ],
+        "source_dois": [
+          "10.1002/aenm.201802488",
+          "10.1007/s11082-026-08738-y",
+          "10.1007/s44291-026-00245-4",
+          "10.1016/j.nxmate.2026.102491",
+          "10.1021/acs.chemmater.5b04231",
+          "10.1021/ja301539s",
+          "10.1038/nature12340",
+          "10.1038/ncomms7382",
+          "10.1038/s41598-024-81797-x",
+          "10.1038/s41598-025-98351-y",
+          "10.3390/physchem5010003"
+        ],
+        "status": "PASS",
+        "flags": [],
+        "web_check": "Minemoto SCAPS Spiro Eg=3.0 \u03c7\u22482.05",
+        "confidence": "high"
+      },
+      {
         "material": "TiO2",
         "Eg_dataset_eV": 3.4,
         "roles": [
           "etl"
         ],
         "source_dois": [
+          "10.1002/aenm.201802488",
+          "10.1007/s44291-026-00245-4",
           "10.1016/j.nxmate.2026.102491",
+          "10.1021/acs.chemmater.5b04231",
+          "10.1021/ja301539s",
+          "10.1038/nature12340",
+          "10.1038/ncomms7382",
           "10.1038/s41598-024-81797-x",
-          "10.1038/s41598-025-98351-y"
+          "10.1038/s41598-025-98351-y",
+          "10.3390/physchem5010003"
         ],
         "status": "PASS",
         "flags": [],
@@ -496,19 +713,27 @@
       },
       {
         "material": "V2O5",
-        "Eg_dataset_eV": 2.2,
+        "Eg_dataset_eV": 2.8,
         "roles": [
           "htl"
         ],
         "source_dois": [
+          "10.1002/aenm.201802488",
+          "10.1007/s11082-026-08738-y",
+          "10.1007/s44291-026-00245-4",
           "10.1016/j.nxmate.2026.102491",
+          "10.1021/acs.chemmater.5b04231",
+          "10.1021/ja301539s",
+          "10.1038/nature12340",
+          "10.1038/ncomms7382",
           "10.1038/s41598-024-81797-x",
-          "10.1038/s41598-025-98351-y"
+          "10.1038/s41598-025-98351-y",
+          "10.3390/physchem5010003"
         ],
         "status": "PASS",
         "flags": [],
-        "web_check": "V2O5 HTL SCAPS",
-        "confidence": "medium"
+        "web_check": "UPS/IPES deep-affinity \u03c7\u22486.6 (Meyer Adv Mater 2012); SCAPS fitting \u03c7~3.4 superseded",
+        "confidence": "high"
       },
       {
         "material": "WS2",
@@ -565,6 +790,7 @@
           "htl"
         ],
         "source_dois": [
+          "10.1007/s11082-026-08738-y",
           "10.1016/j.nxmate.2026.102491",
           "10.1038/s41598-024-81797-x",
           "10.1038/s41598-025-98351-y"
@@ -595,15 +821,22 @@
     "stack_warnings": []
   },
   "absorbers": {
-    "n_absorber_rows": 1748,
+    "n_absorber_rows": 1764,
     "by_source_doi": {
       "10.1038/s41524-019-0177-0": 441,
       "10.1038/srep19375": 1306,
-      "10.1007/s44291-026-00245-4": 1
+      "10.1007/s44291-026-00245-4": 1,
+      "10.3390/physchem5010003": 1,
+      "10.1039/D3CP05956A": 2,
+      "10.1038/nature12340": 1,
+      "10.1038/ncomms7382": 3,
+      "10.1021/acs.chemmater.5b02716": 1,
+      "10.1038/ncomms7228": 2,
+      "10.1039/D5CC00735F": 6
     },
     "absorber_counts": {
-      "PASS_PAPER": 1742,
-      "PASS": 6
+      "PASS_PAPER": 1755,
+      "PASS": 9
     },
     "n_sanity_fail": 0,
     "spot_checks": [
@@ -19893,6 +20126,182 @@
         "flags": [],
         "web_check": "Noor DFT ~1.27; Raj DFT 1.28",
         "confidence": "high"
+      },
+      {
+        "material": "CsPbI3",
+        "Eg_dataset_eV": 1.73,
+        "source_doi": "10.3390/physchem5010003",
+        "functional": "UV-Vis_Tauc",
+        "perovskite_family": "ABX3_lead_halide_perovskite",
+        "status": "PASS",
+        "flags": [],
+        "web_check": "\u03b1-CsPbI3 ~1.73",
+        "confidence": "high"
+      },
+      {
+        "material": "CsPbBr3",
+        "Eg_dataset_eV": 2.36,
+        "source_doi": "10.1039/D3CP05956A",
+        "functional": "UV-Vis_Tauc",
+        "perovskite_family": "ABX3_lead_halide_perovskite",
+        "status": "PASS_PAPER",
+        "flags": [],
+        "web_check": "Absorber Eg taken from cited perovskite DFT table (Paper5 halide DP or Pilania GLLB-SC oxide DP).",
+        "confidence": "paper_primary"
+      },
+      {
+        "material": "CsPbCl3",
+        "Eg_dataset_eV": 2.98,
+        "source_doi": "10.1039/D3CP05956A",
+        "functional": "UV-Vis_Tauc",
+        "perovskite_family": "ABX3_lead_halide_perovskite",
+        "status": "PASS_PAPER",
+        "flags": [],
+        "web_check": "Absorber Eg taken from cited perovskite DFT table (Paper5 halide DP or Pilania GLLB-SC oxide DP).",
+        "confidence": "paper_primary"
+      },
+      {
+        "material": "CH3NH3PbI3",
+        "Eg_dataset_eV": 1.55,
+        "source_doi": "10.1038/nature12340",
+        "functional": "UV-Vis_Tauc",
+        "perovskite_family": "ABX3_organic_inorganic_halide",
+        "status": "PASS",
+        "flags": [],
+        "web_check": "MAPbI3 optical ~1.55; \u03c7\u22483.9",
+        "confidence": "high"
+      },
+      {
+        "material": "HC(NH2)2PbI3",
+        "Eg_dataset_eV": 1.48,
+        "source_doi": "10.1038/ncomms7382",
+        "functional": "UV-Vis_Tauc",
+        "perovskite_family": "ABX3_organic_inorganic_halide",
+        "status": "PASS",
+        "flags": [],
+        "web_check": "FAPbI3 \u03b1-phase ~1.48",
+        "confidence": "high"
+      },
+      {
+        "material": "RbPbI3",
+        "Eg_dataset_eV": 2.1,
+        "source_doi": "10.1021/acs.chemmater.5b02716",
+        "functional": "UV-Vis_Tauc",
+        "perovskite_family": "ABX3_lead_halide_perovskite",
+        "status": "PASS_PAPER",
+        "flags": [],
+        "web_check": "Absorber Eg taken from cited perovskite DFT table (Paper5 halide DP or Pilania GLLB-SC oxide DP).",
+        "confidence": "paper_primary"
+      },
+      {
+        "material": "CH3NH3PbBr3",
+        "Eg_dataset_eV": 2.32,
+        "source_doi": "10.1038/ncomms7228",
+        "functional": "UV-Vis_Tauc",
+        "perovskite_family": "ABX3_organic_inorganic_halide",
+        "status": "PASS_PAPER",
+        "flags": [],
+        "web_check": "Absorber Eg taken from cited perovskite DFT table (Paper5 halide DP or Pilania GLLB-SC oxide DP).",
+        "confidence": "paper_primary"
+      },
+      {
+        "material": "CH3NH3PbCl3",
+        "Eg_dataset_eV": 2.88,
+        "source_doi": "10.1038/ncomms7228",
+        "functional": "UV-Vis_Tauc",
+        "perovskite_family": "ABX3_organic_inorganic_halide",
+        "status": "PASS_PAPER",
+        "flags": [],
+        "web_check": "Absorber Eg taken from cited perovskite DFT table (Paper5 halide DP or Pilania GLLB-SC oxide DP).",
+        "confidence": "paper_primary"
+      },
+      {
+        "material": "HC(NH2)2PbBr3",
+        "Eg_dataset_eV": 2.23,
+        "source_doi": "10.1038/ncomms7382",
+        "functional": "UV-Vis_Tauc",
+        "perovskite_family": "ABX3_organic_inorganic_halide",
+        "status": "PASS_PAPER",
+        "flags": [],
+        "web_check": "Absorber Eg taken from cited perovskite DFT table (Paper5 halide DP or Pilania GLLB-SC oxide DP).",
+        "confidence": "paper_primary"
+      },
+      {
+        "material": "HC(NH2)2PbCl3",
+        "Eg_dataset_eV": 2.9,
+        "source_doi": "10.1038/ncomms7382",
+        "functional": "UV-Vis_Tauc",
+        "perovskite_family": "ABX3_organic_inorganic_halide",
+        "status": "PASS_PAPER",
+        "flags": [],
+        "web_check": "Absorber Eg taken from cited perovskite DFT table (Paper5 halide DP or Pilania GLLB-SC oxide DP).",
+        "confidence": "paper_primary"
+      },
+      {
+        "material": "CsPbI2Br",
+        "Eg_dataset_eV": 2.0,
+        "source_doi": "10.1039/D5CC00735F",
+        "functional": "UV-Vis_Tauc",
+        "perovskite_family": "ABX3_mixed_halide",
+        "status": "PASS_PAPER",
+        "flags": [],
+        "web_check": "Absorber Eg taken from cited perovskite DFT table (Paper5 halide DP or Pilania GLLB-SC oxide DP).",
+        "confidence": "paper_primary"
+      },
+      {
+        "material": "CsPbBr2Cl",
+        "Eg_dataset_eV": 2.65,
+        "source_doi": "10.1039/D5CC00735F",
+        "functional": "UV-Vis_Tauc",
+        "perovskite_family": "ABX3_mixed_halide",
+        "status": "PASS_PAPER",
+        "flags": [],
+        "web_check": "Absorber Eg taken from cited perovskite DFT table (Paper5 halide DP or Pilania GLLB-SC oxide DP).",
+        "confidence": "paper_primary"
+      },
+      {
+        "material": "CsPbBrI2",
+        "Eg_dataset_eV": 1.92,
+        "source_doi": "10.1039/D5CC00735F",
+        "functional": "UV-Vis_Tauc",
+        "perovskite_family": "ABX3_mixed_halide",
+        "status": "PASS_PAPER",
+        "flags": [],
+        "web_check": "Absorber Eg taken from cited perovskite DFT table (Paper5 halide DP or Pilania GLLB-SC oxide DP).",
+        "confidence": "paper_primary"
+      },
+      {
+        "material": "CsPbBr2I",
+        "Eg_dataset_eV": 2.11,
+        "source_doi": "10.1039/D5CC00735F",
+        "functional": "UV-Vis_Tauc",
+        "perovskite_family": "ABX3_mixed_halide",
+        "status": "PASS_PAPER",
+        "flags": [],
+        "web_check": "Absorber Eg taken from cited perovskite DFT table (Paper5 halide DP or Pilania GLLB-SC oxide DP).",
+        "confidence": "paper_primary"
+      },
+      {
+        "material": "CsPbClBr2",
+        "Eg_dataset_eV": 2.51,
+        "source_doi": "10.1039/D5CC00735F",
+        "functional": "UV-Vis_Tauc",
+        "perovskite_family": "ABX3_mixed_halide",
+        "status": "PASS_PAPER",
+        "flags": [],
+        "web_check": "Absorber Eg taken from cited perovskite DFT table (Paper5 halide DP or Pilania GLLB-SC oxide DP).",
+        "confidence": "paper_primary"
+      },
+      {
+        "material": "CsPbCl2Br",
+        "Eg_dataset_eV": 2.74,
+        "source_doi": "10.1039/D5CC00735F",
+        "functional": "UV-Vis_Tauc",
+        "perovskite_family": "ABX3_mixed_halide",
+        "status": "PASS_PAPER",
+        "flags": [],
+        "web_check": "Absorber Eg taken from cited perovskite DFT table (Paper5 halide DP or Pilania GLLB-SC oxide DP).",
+        "confidence": "paper_primary"
       }
     ]
   },

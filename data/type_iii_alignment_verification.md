@@ -1,6 +1,6 @@
 # Anderson Type I / II / III verification
 
-**Date:** 2026-08-01  
+**Date:** 2026-08-02  
 **Convention:** `CBM = -χ`, `VBM = -(χ + Eg)` (eV vs vacuum)  
 **Type III test:** `VBM_a ≥ CBM_b or VBM_b ≥ CBM_a` (gaps do not overlap)
 

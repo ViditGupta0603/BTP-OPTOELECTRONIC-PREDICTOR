@@ -10,7 +10,7 @@ Project overview: [README.md](../README.md) · [TOOL_WORKFLOW.md](TOOL_WORKFLOW.
 
 | File | Rows | What it is | Verified |
 |------|-----:|------------|----------|
-| [`data/perovskite_stack_dataset.csv`](../data/perovskite_stack_dataset.csv) | **726** | Perovskite **full stacks** (Eg, CBO/VBO, Type, DOI) — expanded ETL×HTL pool | Yes — `PEROVSKITE DATASET VERIFIED` |
+| [`data/perovskite_stack_dataset.csv`](../data/perovskite_stack_dataset.csv) | **~1030** | Perovskite **full stacks** (Eg, CBO/VBO, Type, DOI) — SCAPS pool + expansion absorbers + CdTe training-only corner cases | Yes — physics-labeled Types via `junction_type` |
 | [`data/perovskite_absorber_library.csv`](../data/perovskite_absorber_library.csv) | **1763** | Perovskite **absorber Eg+χ** library (Paper5 + Pilania + K₂GeI₆ + verified ABX₃ lead halides) | Eg yes; χ = literature or estimated (`chi_source`) |
 | [`data/etl_material_library.csv`](../data/etl_material_library.csv) | ~11–15 | **ETL** Eg+χ (SCAPS contacts) | Literature χ where present |
 | [`data/htl_material_library.csv`](../data/htl_material_library.csv) | ~20–25 | **HTL** Eg+χ (SCAPS contacts) | Literature χ where present |
@@ -29,17 +29,35 @@ Run `python scripts/enrich_chi_dataset.py` to (re)fill χ and rebuild contact li
 
 **Estimated χ is for stack screening only — not measured literature.**
 
-### Stack provenance (726)
+### Stack provenance (~1030)
 
-Each of **3** perovskite absorbers (with Eg+χ) is crossed with a **pooled** set of **11 ETLs × 22 HTLs** that have literature Eg+χ. χ is used only to *label* Type; the larger table trains Type-ML on names+Eg so inference can skip χ for combos in this set.
+Types are **physics-derived** from Eg+χ via `junction_type` (not hand-labeled). Build: `python scripts/build_perovskite_dataset.py`.
 
-| Source absorber | DOI | Role |
-|-----------------|-----|------|
+| Slice | Approx. rows | Notes |
+|-------|-------------:|-------|
+| SCAPS perovskite absorbers × pooled contacts | ~897 | K₂TiI₆, CsPbZnIBr₂, Cs₃Sb₂Br₉ × ETL/HTL pool with **physical** MoO₃/V₂O₅ χ (UPS/IPES) and wide-gap **MgO/Al₂O₃** for Type I/III corners |
+| Expansion absorbers × curated grid | ~112 | MAPbI₃, FAPbI₃, CsPbI₃, FASnI₃, CsSnBr₃, Cs₂AgBiBr₆, K₂GeI₆ × TiO₂/SnO₂/MgO/Al₂O₃ × NiO/Spiro/MoO₃/V₂O₅ |
+| CdTe paper training-only | ~21 | See CdTe policy below |
+
+| Source absorber (SCAPS pool) | DOI | Role |
+|------------------------------|-----|------|
 | K₂TiI₆ | 10.1038/s41598-025-98351-y | absorber × pooled contacts |
 | CsPb₀.₆₂₅Zn₀.₃₇₅IBr₂ | 10.1038/s41598-024-81797-x | absorber × pooled contacts |
 | Cs₃Sb₂Br₉ | 10.1016/j.nxmate.2026.102491 | absorber × pooled contacts |
 
-**Limit:** only 3 absorbers in the *stack* table have original SCAPS χ. The absorber library now also carries χ (literature or estimated via `chi_source`) so free-text absorbers can use physics Type when contacts are known.
+**Limit:** only SCAPS / expansion absorbers with Eg+χ enter the *stack* table. The absorber library still carries many Eg-only rows (Paper5 / Pilania) for Eg regression — do not inflate that library with fake χ.
+
+### CdTe inclusion policy
+
+The CdTe device paper (`pratyush.pdf`, DOI **10.1002/pssb.70269**; PDF removed from `research paper/` earlier) is **ingested for Type-ML training only**:
+
+- Raw layers: `data/raw/paper_cdte_scaps_materials.csv` (CdTe Eg=1.547, χ=3.9; SnO₂/CdS family + corner HTLs)
+- Stack rows tagged `perovskite_family=CdTe_chalcogenide_training_only`, `record_type=literature_corner_case_non_perovskite`
+- **Product gate unchanged:** `check_absorber_perovskite` still **blocks CdTe** (and CZTS/CIGS/GaAs/…) at inference / UI screening
+
+Rebuild meta: `data/perovskite_dataset_build_meta.json`.
+
+---
 
 ### Absorber library provenance (1763)
 
@@ -81,19 +99,22 @@ SCAPS / DFT layer **Eg + χ** used to rebuild stacks:
 - `paper_cs_pb_scaps_materials.csv` — CsPbZnIBr₂ family  
 - `paper_cs3sb2br9_scaps_materials.csv` — Cs₃Sb₂Br₉ / TiO₂ / CFTS  
 - `paper_k2gei6_dft_absorber.csv` — K₂GeI₆ Eg only  
+- `paper_cdte_scaps_materials.csv` — CdTe training-only layers (DOI 10.1002/pssb.70269)  
+- `verified_expansion_absorbers.csv` — ABX₃ / tin / double-perovskite Eg+χ for stack expansion  
 - `paper_besip2_scaps_materials.csv`, `paper1_*`, `paper2_*`, `ozcelik_*`, `paper5_double_perovskites.csv`, `pilania_double_perovskites_gap.csv`, `verified_lead_halide_perovskites.csv`
 
 ---
 
-## 4. Not in datasets (by design)
+## 4. Not in product screening (by design)
 
 | Item | Reason |
 |------|--------|
-| DSSC / GaInP / CdTe papers | Non-perovskite — skipped |
+| DSSC / GaInP absorbers | Non-perovskite — skipped from product screening |
+| CdTe as **absorber** at inference | Blocked by perovskite-only gate; **training stacks** from the CdTe paper are included (see CdTe policy above) |
 | Ca₃NI₃ bifacial extract | Failed literature verification |
 | PDF text extracts | Removed as regenerable clutter |
 
-Kept perovskite-related PDFs under `research paper/` (kaushiki, Dubey, tilt excluded paper kept for reference only).
+Kept perovskite-related PDFs under `research paper/` (kaushiki, Dubey, tilt excluded paper kept for reference only). CdTe PDF was deleted earlier; values live in `data/raw/paper_cdte_scaps_materials.csv`.
 
 ---
 

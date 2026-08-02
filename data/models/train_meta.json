@@ -1,5 +1,5 @@
 {
-  "layers": 1726,
+  "layers": 1747,
   "formula": {
     "eg_holdout_mae_eV": 0.3164,
     "chi_holdout_mae_eV": 0.0141,
@@ -14,10 +14,10 @@
     "path": "C:\\Users\\vidit\\Desktop\\btp\\data\\models\\perovskite_eg_regressor.joblib"
   },
   "type": {
-    "etl_holdout_acc": 0.9090909090909091,
-    "htl_holdout_acc": 0.9212121212121213,
-    "n_etl": 822,
-    "n_htl": 822,
+    "etl_holdout_acc": 0.9292035398230089,
+    "htl_holdout_acc": 0.9380530973451328,
+    "n_etl": 1126,
+    "n_htl": 1126,
     "path": "C:\\Users\\vidit\\Desktop\\btp\\data\\models\\stack_type_classifier.joblib"
   }
 }

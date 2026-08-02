@@ -6779,41 +6779,8 @@
     "Eg_eV": 0.95,
     "chi_eV": 3.26
   },
-  "CH3NH3SnI3": {
-    "Eg_eV": 1.3
-  },
-  "HC(NH2)2SnI3": {
-    "Eg_eV": 1.35
-  },
-  "CsSnI3": {
-    "Eg_eV": 1.3,
-    "chi_eV": 3.62
-  },
-  "CsGeI3": {
-    "Eg_eV": 1.6
-  },
-  "CH3NH3GeI3": {
-    "Eg_eV": 1.9
-  },
-  "Cs2SnI6": {
-    "Eg_eV": 1.35,
-    "chi_eV": 4.8
-  },
-  "Cs2SnBr6": {
-    "Eg_eV": 3.23
-  },
-  "Cs2SnCl6": {
-    "Eg_eV": 4.89
-  },
-  "Cs2TiBr6": {
-    "Eg_eV": 1.88,
-    "chi_eV": 4.0
-  },
-  "Cs3Sb2I9": {
-    "Eg_eV": 2.05
-  },
-  "Cs3Bi2I9": {
-    "Eg_eV": 2.0
+  "HC(NH2)2PbCl3": {
+    "Eg_eV": 2.9
   },
   "ZnO": {
     "Eg_eV": 3.3,
@@ -6851,17 +6818,44 @@
   "FePS3": {
     "Eg_eV": 1.35
   },
-  "HC(NH2)2PbCl3": {
-    "Eg_eV": 2.9
+  "CH3NH3SnI3": {
+    "Eg_eV": 1.3
   },
   "MASnI3": {
     "Eg_eV": 1.3
   },
+  "HC(NH2)2SnI3": {
+    "Eg_eV": 1.35
+  },
   "FASnI3": {
     "Eg_eV": 1.35
   },
+  "CsSnI3": {
+    "Eg_eV": 1.3,
+    "chi_eV": 3.62
+  },
+  "CsGeI3": {
+    "Eg_eV": 1.6
+  },
+  "CH3NH3GeI3": {
+    "Eg_eV": 1.9
+  },
   "MAGeI3": {
     "Eg_eV": 1.9
+  },
+  "Cs2SnI6": {
+    "Eg_eV": 1.35,
+    "chi_eV": 4.8
+  },
+  "Cs2SnBr6": {
+    "Eg_eV": 3.23
+  },
+  "Cs2SnCl6": {
+    "Eg_eV": 4.89
+  },
+  "Cs2TiBr6": {
+    "Eg_eV": 1.88,
+    "chi_eV": 4.0
   },
   "Cs2TiCl6": {
     "Eg_eV": 2.9,
@@ -6900,6 +6894,12 @@
   },
   "Cs2PtCl6": {
     "Eg_eV": 2.7
+  },
+  "Cs3Sb2I9": {
+    "Eg_eV": 2.05
+  },
+  "Cs3Bi2I9": {
+    "Eg_eV": 2.0
   },
   "Cs2TiI6": {
     "Eg_eV": 1.58,
