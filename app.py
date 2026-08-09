@@ -76,6 +76,17 @@ def _ui_notes(notes: list | None) -> list[str]:
                 continue
         text = _LOOKUP_WORD_RE.sub("library", text)
         text = _OOD_PHRASE_RE.sub("unusual material family", text)
+        # Suitability screening is no longer user-facing.
+        if re.search(r"(?i)\bsuitabilit", text):
+            text = re.sub(
+                r"(?i);\s*suitability\s+YES\s+should\s+be\s+read\s+with\s+an\s+optical-absorption\s+caveat\.?",
+                "; optical absorption may be weaker than for a direct-gap material.",
+                text,
+            )
+            text = re.sub(r"(?i)\bsuitabilit\w*\b", "", text)
+            text = re.sub(r"\s{2,}", " ", text).strip(" ·,;")
+            if not text:
+                continue
         out.append(text)
     return out
 
@@ -84,7 +95,7 @@ _CHI_JSON_KEYS = re.compile(r"(?i)(^|_)(chi|electron_affinity)(_|$)")
 
 
 def _ui_result_json(result: dict | None) -> str:
-    """JSON dump for the UI details panel — strip χ fields and lookup labels."""
+    """JSON dump for the UI details panel — strip χ, suitability, and lookup labels."""
     if not result:
         return ""
 
@@ -92,13 +103,17 @@ def _ui_result_json(result: dict | None) -> str:
         if isinstance(obj, dict):
             out = {}
             for k, v in obj.items():
+                if k == "optoelectronic":
+                    continue
                 if _CHI_JSON_KEYS.search(str(k)):
                     continue
                 if k == "field_labels" and isinstance(v, dict):
                     out[k] = {
                         fk: fv
                         for fk, fv in v.items()
-                        if fv == "predicted" and not _CHI_JSON_KEYS.search(str(fk))
+                        if fk != "optoelectronic"
+                        and fv == "predicted"
+                        and not _CHI_JSON_KEYS.search(str(fk))
                     }
                     continue
                 if k == "notes" and isinstance(v, list):
@@ -198,9 +213,6 @@ PAGE = r"""
       margin-bottom: 0.25rem;
     }
     .pill.warn { background: #f3e6d8; color: var(--accent2); }
-    .pill.yes { background: #d8efe0; color: #1e5c3a; }
-    .pill.marginal { background: #f5e8c8; color: #7a5a12; }
-    .pill.no { background: #f0d8d8; color: #7a1e1e; }
     .pill.blocked { background: #f0d8d8; color: #7a1e1e; }
     .pill.predicted { background: #f3e6d8; color: var(--accent2); }
     .pill.user { background: #ebe8f5; color: #4a3a7a; }
@@ -241,7 +253,7 @@ PAGE = r"""
 <body>
 <main>
   <h1>OptoStack</h1>
-  <p class="sub">Enter a <strong>perovskite absorber</strong> + ETL + HTL. Get junction Type (I / II / III) and optoelectronic suitability.
+  <p class="sub">Enter a <strong>perovskite absorber</strong> + ETL + HTL. Get junction Type (I / II / III) at each interface.
      Screening is perovskite-only: non-perovskite absorbers (CZTS, CIGS, CdTe, GaAs, Si, …) are blocked.
      Values that are not measured for a given material are estimated and tagged <strong>predicted</strong>.</p>
 
@@ -274,7 +286,7 @@ PAGE = r"""
     <p class="hint">OptoStack does not validate whether a material is conventionally ETL or HTL, and the person is responsible for correct role assignment.</p>
     <p class="hint">Perovskite formulas only (ABX₃, A₂BB′X₆, A₂BX₆, A₃B₂X₉, …). Non-perovskites are rejected. Estimated values are tagged <strong>predicted</strong>.</p>
 
-    <button type="submit">Predict Type &amp; suitability</button>
+    <button type="submit">Predict Type</button>
   </form>
 
   {% if error %}
@@ -336,18 +348,6 @@ PAGE = r"""
         </b>
       </div>
     </div>
-
-    {% if result.optoelectronic %}
-    <div class="verdict">
-      <span>Optoelectronic device use?</span>
-      {% set v = result.optoelectronic.verdict %}
-      <span class="pill {{ 'yes' if v == 'YES' else ('marginal' if v == 'MARGINAL' else ('blocked' if v == 'BLOCKED' else 'no')) }}">{{ v }}</span>
-      {% set opto_label = result.optoelectronic.label or L.get('optoelectronic') %}
-      {% if opto_label == 'predicted' %}<span class="pill src predicted">predicted</span>{% endif %}
-      <p>{{ result.optoelectronic.reason }}</p>
-      <p class="hint">Rule: Type I/II OK · Type III usually not preferred · both I/II → YES · one III → MARGINAL · both III → NO</p>
-    </div>
-    {% endif %}
 
     {% if ui_notes and not result.blocked %}
     <p class="hint" style="margin-top:0.9rem">{{ ui_notes | join(' · ') }}</p>

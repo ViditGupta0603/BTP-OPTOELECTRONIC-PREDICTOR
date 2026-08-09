@@ -35,6 +35,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from formula_parse import (  # noqa: E402
     _ELEMENT_SYMBOLS,
+    _tokenises_as_written,
     base_name as _base_name,
     canonicalize_material_alias,
     formula_feature_dict,
@@ -1040,7 +1041,7 @@ def _apply_degenerate_htl_caveat(result: dict, htl: str) -> None:
     reason = opto.get("reason") or ""
     caveat = (
         f" Caveat: {base_name(normalize_material_name(htl))} is a degenerate/metallic HTL — "
-        "Eg-based junction Type and YES/MARGINAL suitability should be treated with low confidence."
+        "Eg-based junction Type should be treated with low confidence."
     )
     if "degenerate/metallic HTL" not in reason:
         opto["reason"] = reason + caveat
@@ -1371,13 +1372,13 @@ def _result_from_literature_row(
     if abs_bn in INDIRECT_GAP_MATERIALS:
         notes.append(
             f"gap_type: indirect — {abs_bn} is a known indirect-gap absorber; "
-            "suitability YES should be read with an optical-absorption caveat."
+            "optical absorption may be weaker than for a direct-gap material."
         )
         opto["gap_type"] = "indirect"
         if opto.get("verdict") == "YES":
             opto["reason"] = (
                 opto.get("reason", "")
-                + f" Caveat: {abs_bn} is an indirect-gap absorber — optical absorption may be weaker than a direct-gap YES."
+                + f" Caveat: {abs_bn} is an indirect-gap absorber — optical absorption may be weaker than for a direct-gap material."
             )
 
     result: dict = {
@@ -1494,9 +1495,40 @@ def _named_contact_keys() -> set[str]:
             "fto",
             "azo",
             "igzo",
+            "lbso",
         }
     )
     return keys
+
+
+# Free-text inorganic contacts must look like metal + anion chemistry, not letter soup
+# where _ELEMENT.findall invents tokens (A/D/E/L/T/X/Z) and a real symbol (B, C, H, O…)
+# accidentally makes ABCD / HELLO / WXYZ look eligible.
+_CONTACT_ANIONS = frozenset({"O", "S", "Se", "Te", "F", "Cl", "Br", "I", "N", "P", "As", "Sb"})
+_CONTACT_INERT = frozenset({"H", "C", "He", "Ne", "Ar", "Kr", "Xe", "Rn"})
+
+
+def _plausible_inorganic_contact_formula(formula: str, counts: dict[str, float]) -> bool:
+    """True when free-text fully tokenises as elements and looks like a contact formula."""
+    clean = re.sub(r"[^A-Za-z0-9().]", "", base_name(formula).replace(" ", ""))
+    if not clean or not any(c.isalpha() for c in clean):
+        return False
+    # Require the whole string to be valid element/cation tokens — rejects ABCD/HELLO
+    # where findall still emits leftover pseudo-symbols alongside B/C/H/O.
+    if not _tokenises_as_written(clean):
+        return False
+    real = {el for el in counts if el in _ELEMENT_SYMBOLS}
+    if not real:
+        return False
+    metals = _ELEMENT_SYMBOLS - _CONTACT_ANIONS - _CONTACT_INERT
+    has_metal = bool(real & metals)
+    has_anion = bool(real & _CONTACT_ANIONS)
+    if has_metal and has_anion:
+        return True
+    # Stoichiometric multi-element formulas without a classic anion (rare)
+    if has_metal and re.search(r"\d", clean) and len(real) >= 2:
+        return True
+    return False
 
 
 def validate_contact_material(
@@ -1527,8 +1559,7 @@ def validate_contact_material(
         return {"eligible": True}
 
     counts = parse_formula_counts(normalized)
-    real_els = {el for el in counts if el in _ELEMENT_SYMBOLS}
-    if real_els:
+    if _plausible_inorganic_contact_formula(normalized, counts):
         return {"eligible": True}
 
     return {
@@ -1617,7 +1648,7 @@ def predict_stack(
     if abs_bn in INDIRECT_GAP_MATERIALS:
         notes.append(
             f"gap_type: indirect — {abs_bn} is a known indirect-gap absorber; "
-            "suitability YES should be read with an optical-absorption caveat."
+            "optical absorption may be weaker than for a direct-gap material."
         )
 
     sources: dict = {}
@@ -1764,7 +1795,7 @@ def predict_stack(
             if opto.get("verdict") == "YES":
                 opto["reason"] = (
                     opto.get("reason", "")
-                    + f" Caveat: {abs_bn} is an indirect-gap absorber — optical absorption may be weaker than a direct-gap YES."
+                    + f" Caveat: {abs_bn} is an indirect-gap absorber — optical absorption may be weaker than for a direct-gap material."
                 )
             else:
                 opto["reason"] = (
@@ -1801,7 +1832,7 @@ def predict_stack(
         if opto.get("verdict") == "YES":
             opto["reason"] = (
                 opto.get("reason", "")
-                + f" Caveat: {abs_bn} is an indirect-gap absorber — optical absorption may be weaker than a direct-gap YES."
+                + f" Caveat: {abs_bn} is an indirect-gap absorber — optical absorption may be weaker than for a direct-gap material."
             )
     result["optoelectronic"] = opto
     field_labels["optoelectronic"] = "predicted"
