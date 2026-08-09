@@ -209,6 +209,8 @@ Use OptoStack to **rank and reject** stacks quickly; confirm promising YES cases
 
 ## Docs
 
+- [docs/USER_MANUAL.md](docs/USER_MANUAL.md) — local run methodology (Step I–X + screenshots)  
+- [docs/NEGATIVE_TEST_CASES.md](docs/NEGATIVE_TEST_CASES.md) — QA negative cases (must block / fail)  
 - [docs/OPTOSTACK_FULL_REPORT.md](docs/OPTOSTACK_FULL_REPORT.md) — **full advisor report** (start here for demos)  
 - [docs/REPORT_README.txt](docs/REPORT_README.txt) — how to present / share the report  
 - [docs/TOOL_FLOWCHART.md](docs/TOOL_FLOWCHART.md) — runtime + training Mermaid flowcharts  
