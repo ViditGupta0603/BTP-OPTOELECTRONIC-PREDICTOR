@@ -41,7 +41,13 @@ from formula_parse import (  # noqa: E402
     formula_feature_dict,
     parse_formula_counts as _parse_formula_counts,
 )
-from literature_bands import Layer, optoelectronic_suitability, stack_row  # noqa: E402
+from literature_bands import (  # noqa: E402
+    Layer,
+    junction_type,
+    multilayer_suitability,
+    optoelectronic_suitability,
+    stack_row,
+)
 
 DATA = ROOT / "data"
 RAW = DATA / "raw"
@@ -1538,7 +1544,12 @@ def validate_contact_material(
 ) -> dict:
     """Return eligibility for an ETL/HTL contact field (reject garbage / empty)."""
     role_l = (role or "etl").strip().lower()
-    role_label = "ETL" if role_l == "etl" else "HTL"
+    if role_l == "etl":
+        role_label = "ETL"
+    elif role_l == "htl":
+        role_label = "HTL"
+    else:
+        role_label = "transport layer"
     raw = (name or "").strip()
     if not raw:
         return {
@@ -1606,6 +1617,362 @@ def _blocked_contact_result(
     if contact_check.get("hint"):
         result["hint"] = contact_check["hint"]
         result["notes"].append(contact_check["hint"])
+    return result
+
+
+def _validate_multilayer_input(layer_specs: list[dict]) -> tuple[list[dict], str | None]:
+    """Normalize layer specs; return (specs, error_message)."""
+    if not isinstance(layer_specs, list):
+        return [], "layers must be a list"
+    n = len(layer_specs)
+    if n < 2 or n > 7:
+        return [], "Stack must have between 2 and 7 layers (inclusive)."
+    absorber_count = sum(1 for s in layer_specs if s.get("is_absorber"))
+    if absorber_count < 1:
+        return [], "Flag at least one layer as Absorber."
+
+    out: list[dict] = []
+    for spec in layer_specs:
+        raw = str(spec.get("name") or "").strip()
+        if not raw:
+            return [], "Every layer must have a material name."
+        out.append(
+            {
+                "name": normalize_material_name(raw),
+                "is_absorber": bool(spec.get("is_absorber")),
+            }
+        )
+    return out, None
+
+
+def _resolve_multilayer_absorber_eg_chi(
+    name: str,
+    layers: dict[str, dict[str, float]],
+    *,
+    eg_override: float | None = None,
+    chi_override: float | None = None,
+) -> tuple[float | None, float | None, str, str]:
+    """Absorber: library → ML fallback (same order as standard stack)."""
+    entry = dict(resolve_layer(layers, name) or {})
+    if eg_override is not None:
+        abs_eg: float | None = float(eg_override)
+        eg_method = "user_override"
+    elif "Eg_eV" in entry:
+        abs_eg = float(entry["Eg_eV"])
+        eg_method = "lookup"
+    else:
+        est = ml_estimate_eg_chi(name, "absorber")
+        abs_eg = float(est["Eg_eV"])
+        eg_method = est.get("source", "ml_formula_estimator")
+
+    if chi_override is not None:
+        abs_chi: float | None = float(chi_override)
+        chi_method = "user_override"
+    elif _has_chi(entry):
+        abs_chi = float(entry["chi_eV"])
+        chi_method = "lookup"
+    else:
+        est = ml_estimate_eg_chi(name, "absorber")
+        abs_chi = float(est["chi_eV"])
+        chi_method = est.get("source", "ml_formula_estimator")
+
+    return abs_eg, abs_chi, eg_method, chi_method
+
+
+def _resolve_multilayer_transport_eg_chi(
+    name: str,
+    layers: dict[str, dict[str, float]],
+) -> tuple[float | None, float | None, str, str]:
+    """Transport layer: library only — no ML Eg/χ fallback (FR-8)."""
+    entry = resolve_layer(layers, name)
+    if entry and "Eg_eV" in entry and _has_chi(entry):
+        return (
+            float(entry["Eg_eV"]),
+            float(entry["chi_eV"]),
+            "lookup",
+            "lookup",
+        )
+    if entry and "Eg_eV" in entry:
+        return float(entry["Eg_eV"]), None, "lookup", "missing"
+    return None, None, "missing", "missing"
+
+
+def _junction_method_label(kind: str) -> str:
+    if kind == "physics":
+        return "physics/known"
+    if kind == "ml":
+        return "ML/predicted"
+    if kind == "unknown":
+        return "UNKNOWN"
+    return kind
+
+
+def _blocked_multilayer_result(
+    layer_specs: list[dict],
+    *,
+    message: str,
+    hint: str | None = None,
+    not_perovskite: bool = False,
+    invalid_contact: bool = False,
+    invalid_index: int | None = None,
+) -> dict:
+    result: dict = {
+        "layers": [
+            {
+                "name": s.get("name", ""),
+                "role": "absorber" if s.get("is_absorber") else "transport",
+                "eg_ev": None,
+                "method": "blocked",
+            }
+            for s in layer_specs
+        ],
+        "junctions": [],
+        "suitability": {
+            "verdict": "BLOCKED",
+            "suitable": False,
+            "reason": message,
+            "label": "blocked",
+        },
+        "blocked": True,
+        "screening_blocked": True,
+        "message": message,
+        "method": "blocked_multilayer",
+        "notes": [message],
+    }
+    if not_perovskite:
+        result["not_perovskite"] = True
+    if invalid_contact:
+        result["invalid_contact"] = True
+        if invalid_index is not None:
+            result["invalid_layer_index"] = invalid_index
+    if hint:
+        result["hint"] = hint
+        result["notes"].append(hint)
+    return result
+
+
+def predict_multilayer(
+    layer_specs: list[dict],
+    *,
+    eg: float | None = None,
+    chi: float | None = None,
+    use_llm: bool | None = None,
+) -> dict:
+    """Predict Types for an ordered N-layer stack (2–7 layers, ≥1 Absorber).
+
+    Skips exact literature-table lookup. ML Type fallback for junctions with
+    exactly one Absorber layer; absorber–absorber and contact–contact pairs use
+    physics only, else UNKNOWN when band data is incomplete.
+    """
+    specs, err = _validate_multilayer_input(layer_specs)
+    if err:
+        return _blocked_multilayer_result(layer_specs, message=err)
+
+    layers_lookup = load_layer_lookup()
+    absorber_indices = [i for i, s in enumerate(specs) if s["is_absorber"]]
+    absorber_names = [specs[i]["name"] for i in absorber_indices]
+    single_absorber = len(absorber_indices) == 1
+    eg_override = eg if single_absorber else None
+    chi_override = chi if single_absorber else None
+
+    for i in absorber_indices:
+        perovskite_check = check_absorber_perovskite(specs[i]["name"])
+        if not perovskite_check.get("eligible", True):
+            msg = perovskite_check["message"]
+            if len(absorber_indices) > 1:
+                msg = f"Layer {i + 1} ({specs[i]['name']}): {msg}"
+            return _blocked_multilayer_result(
+                specs,
+                message=msg,
+                hint=perovskite_check.get("hint"),
+                not_perovskite=True,
+            )
+
+    for i, spec in enumerate(specs):
+        if spec["is_absorber"]:
+            continue
+        contact_check = validate_contact_material(
+            spec["name"], role="transport", layers=layers_lookup
+        )
+        if not contact_check.get("eligible", True):
+            msg = contact_check["message"].replace("ETL", "transport layer").replace(
+                "HTL", "transport layer"
+            )
+            return _blocked_multilayer_result(
+                specs,
+                message=msg,
+                hint=contact_check.get("hint"),
+                invalid_contact=True,
+                invalid_index=i,
+            )
+
+    notes: list[str] = []
+    if len(absorber_indices) > 1:
+        notes.append(
+            f"Multi-absorber stack ({len(absorber_indices)} perovskite layers): "
+            "absorber–absorber junctions use physics only (no ML Type fallback)."
+        )
+
+    for i in absorber_indices:
+        perovskite_check = check_absorber_perovskite(specs[i]["name"])
+        if perovskite_check.get("warning"):
+            notes.append(f"Layer {i + 1}: {perovskite_check['warning']}")
+        abs_bn = base_name(specs[i]["name"])
+        if abs_bn in INDIRECT_GAP_MATERIALS:
+            notes.append(
+                f"gap_type: indirect — layer {i + 1} ({abs_bn}) is a known indirect-gap absorber; "
+                "optical absorption may be weaker than for a direct-gap material."
+            )
+
+    layer_rows: list[dict] = []
+    layer_objects: list[Layer | None] = []
+
+    for i, spec in enumerate(specs):
+        name = spec["name"]
+        if spec["is_absorber"]:
+            layer_eg_override = eg_override if single_absorber else None
+            layer_chi_override = chi_override if single_absorber else None
+            eg_v, chi_v, eg_m, chi_m = _resolve_multilayer_absorber_eg_chi(
+                name,
+                layers_lookup,
+                eg_override=layer_eg_override,
+                chi_override=layer_chi_override,
+            )
+            role = "absorber"
+            if eg_m not in ("lookup", "user_override"):
+                notes.append(f"Layer {i + 1} estimated absorber Eg={eg_v:.3f} eV ({eg_m})")
+        else:
+            eg_v, chi_v, eg_m, chi_m = _resolve_multilayer_transport_eg_chi(
+                name, layers_lookup
+            )
+            role = "transport"
+            if eg_m == "missing":
+                notes.append(
+                    f"Layer {i + 1} ({name}): not in material library — "
+                    "Eg/χ unavailable (no contact ML fallback)."
+                )
+
+        method = _src_kind(eg_m) if eg_m != "missing" else "missing"
+        layer_rows.append(
+            {
+                "index": i,
+                "name": name,
+                "role": role,
+                "eg_ev": eg_v,
+                "chi_ev": chi_v,
+                "method": _junction_method_label("physics")
+                if method == "lookup"
+                else ("predicted" if method == "predicted" else method),
+                "eg_method": method,
+                "chi_method": _src_kind(chi_m) if chi_m != "missing" else "missing",
+            }
+        )
+        if eg_v is not None and chi_v is not None:
+            layer_objects.append(Layer(name, float(eg_v), float(chi_v)))
+        else:
+            layer_objects.append(None)
+
+    junction_rows: list[dict] = []
+    junction_types: list[str | None] = []
+
+    for i in range(len(specs) - 1):
+        name_a = specs[i]["name"]
+        name_b = specs[i + 1]["name"]
+        obj_a = layer_objects[i]
+        obj_b = layer_objects[i + 1]
+        is_abs_a = specs[i]["is_absorber"]
+        is_abs_b = specs[i + 1]["is_absorber"]
+        includes_absorber = is_abs_a or is_abs_b
+        is_abs_abs = is_abs_a and is_abs_b
+        jtype: str | None = None
+        jmethod = "UNKNOWN"
+        jnote: str | None = None
+
+        if obj_a is not None and obj_b is not None:
+            if is_abs_a and not is_abs_b:
+                jtype = junction_type(obj_a, obj_b)
+            elif is_abs_b and not is_abs_a:
+                jtype = junction_type(obj_b, obj_a)
+            else:
+                jtype = junction_type(obj_a, obj_b)
+            jmethod = "physics/known"
+        elif is_abs_abs:
+            jnote = (
+                "Absorber–absorber junction: no ML basis; "
+                "physics path needs library Eg/χ for both layers."
+            )
+        elif includes_absorber:
+            abs_spec_idx = i if is_abs_a else i + 1
+            partner_idx = i + 1 if abs_spec_idx == i else i
+            abs_row = layer_rows[abs_spec_idx]
+            partner_row = layer_rows[partner_idx]
+            abs_eg = abs_row.get("eg_ev")
+            partner_eg = partner_row.get("eg_ev")
+            if abs_eg is not None and partner_eg is not None:
+                side = "etl" if partner_idx < abs_spec_idx else "htl"
+                try:
+                    pred = ml_type(
+                        specs[abs_spec_idx]["name"],
+                        specs[partner_idx]["name"],
+                        float(abs_eg),
+                        float(partner_eg),
+                        side,
+                    )
+                    jtype = pred["type"]
+                    jmethod = "ML/predicted"
+                except FileNotFoundError:
+                    jtype = None
+                    jnote = "Type ML model unavailable."
+            else:
+                jnote = "Incomplete band parameters — ML fallback needs Eg for both layers."
+        else:
+            jnote = (
+                "Contact–contact junction: no ML basis; "
+                "physics path needs library Eg/χ for both layers."
+            )
+
+        if jtype is None:
+            jtype = "UNKNOWN"
+            if not jnote:
+                jnote = "Could not resolve Anderson Type for this junction."
+
+        junction_rows.append(
+            {
+                "index": i,
+                "layer_a": name_a,
+                "layer_b": name_b,
+                "includes_absorber": includes_absorber,
+                "absorber_absorber": is_abs_abs,
+                "type": jtype,
+                "method": jmethod,
+                "note": jnote,
+            }
+        )
+        junction_types.append(jtype)
+
+    suitability = multilayer_suitability(junction_types)
+    any_predicted = any(
+        r.get("eg_method") == "predicted" or r.get("method") == "predicted"
+        for r in layer_rows
+    ) or any(j.get("method") == "ML/predicted" for j in junction_rows)
+    suitability["label"] = "predicted" if any_predicted else "lookup"
+
+    result: dict = {
+        "stack_mode": "multilayer",
+        "layer_count": len(specs),
+        "absorber_indices": absorber_indices,
+        "material_absorbers": absorber_names,
+        "absorber_index": absorber_indices[0],
+        "material_absorber": absorber_names[0],
+        "layers": layer_rows,
+        "junctions": junction_rows,
+        "suitability": suitability,
+        "method": "multilayer_compute",
+        "notes": notes,
+        "blocked": False,
+    }
+    if use_llm is True:
+        result["sources"] = {"llm_mode": "on", "llm_used": False}
     return result
 
 
@@ -1849,6 +2216,19 @@ def main() -> None:
     ap.add_argument("--htl", type=str)
     ap.add_argument("--eg", type=float, default=None)
     ap.add_argument("--chi", type=float, default=None)
+    ap.add_argument("--layers", type=str, help="Comma-separated stack in order (Custom mode)")
+    ap.add_argument(
+        "--absorber-index",
+        type=int,
+        default=None,
+        help="0-based index of a single Absorber in --layers",
+    )
+    ap.add_argument(
+        "--absorber-indices",
+        type=str,
+        default=None,
+        help="Comma-separated 0-based Absorber indices in --layers (multi-absorber)",
+    )
     ap.add_argument("--llm", action="store_true", help="Optional formula-only LLM (off by default)")
     ap.add_argument("--no-llm", action="store_true")
     ap.add_argument("--predict-eg-only", action="store_true")
@@ -1877,6 +2257,24 @@ def main() -> None:
         from formula_estimator import estimate_eg_chi
 
         print(json.dumps({"absorber": args.absorber, **estimate_eg_chi(args.absorber)}, indent=2))
+        return
+
+    if args.layers is not None:
+        names = [normalize_material_name(x.strip()) for x in args.layers.split(",") if x.strip()]
+        if args.absorber_indices is not None:
+            abs_set = {int(x.strip()) for x in args.absorber_indices.split(",") if x.strip() != ""}
+        elif args.absorber_index is not None:
+            abs_set = {args.absorber_index}
+        else:
+            ap.error("Need --absorber-index or --absorber-indices with --layers")
+        specs = [
+            {"name": n, "is_absorber": i in abs_set}
+            for i, n in enumerate(names)
+        ]
+        out = predict_multilayer(
+            specs, eg=args.eg, chi=args.chi, use_llm=bool(args.llm)
+        )
+        print(json.dumps(out, indent=2))
         return
 
     if not (args.absorber and args.etl and args.htl):

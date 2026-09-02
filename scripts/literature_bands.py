@@ -56,6 +56,62 @@ def junction_type(a: Layer, b: Layer) -> str:
     return "Type II"
 
 
+def multilayer_suitability(junction_types: list[str | None]) -> dict:
+    """Generalized suitability from N−1 adjacent junction Types (FR-12).
+
+    - YES — all junctions are Type I or II
+    - MARGINAL — exactly one Type III
+    - NO — two or more Type III, or any junction is UNKNOWN/missing
+    """
+    ok = {"Type I", "Type II"}
+    bad = "Type III"
+    types = [t for t in junction_types if t]
+    if len(types) != len(junction_types) or not junction_types:
+        return {
+            "suitable": False,
+            "verdict": "UNKNOWN",
+            "reason": "Missing junction Type — cannot screen for optoelectronic use.",
+        }
+    n_bad = sum(1 for t in types if t == bad)
+    n_unknown = sum(1 for t in types if t not in ok and t != bad)
+    if n_unknown:
+        return {
+            "suitable": False,
+            "verdict": "NO",
+            "reason": (
+                f"{n_unknown} junction(s) have UNKNOWN Type — "
+                "cannot assess optoelectronic suitability."
+            ),
+        }
+    if n_bad == 0:
+        joined = ", ".join(types)
+        return {
+            "suitable": True,
+            "verdict": "YES",
+            "reason": (
+                f"All {len(types)} junction(s) are Type I/II ({joined}). "
+                "Suitable for optoelectronic stack screening."
+            ),
+        }
+    if n_bad == 1:
+        return {
+            "suitable": False,
+            "verdict": "MARGINAL",
+            "reason": (
+                f"Exactly one Type III (broken gap) among {len(types)} junction(s). "
+                "Usually not preferred; review carefully."
+            ),
+        }
+    return {
+        "suitable": False,
+        "verdict": "NO",
+        "reason": (
+            f"{n_bad} Type III (broken-gap) junction(s) among {len(types)} — "
+            "not recommended for typical optoelectronic devices."
+        ),
+    }
+
+
 def optoelectronic_suitability(etl_type: str | None, htl_type: str | None) -> dict:
     """Screen stack for optoelectronic use from junction Types (not PCE).
 
