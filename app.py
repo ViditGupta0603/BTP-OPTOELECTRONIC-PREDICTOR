@@ -18,7 +18,7 @@ import threading
 import traceback
 from pathlib import Path
 
-from flask import Flask, render_template_string, request
+from flask import Flask, jsonify, render_template_string, request
 import joblib
 
 ROOT = Path(__file__).resolve().parent
@@ -26,9 +26,25 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from formula_estimator import EG_CHI_MODEL, train_estimators  # noqa: E402
 from formula_parse import normalize_formula_text  # noqa: E402
-from predict_stack import EG_MODEL, TYPE_MODEL, load_layer_lookup, predict_stack, train_eg_model, train_type_models  # noqa: E402
+from predict_stack import (  # noqa: E402
+    EG_MODEL,
+    TYPE_MODEL,
+    load_layer_lookup,
+    predict_multilayer,
+    predict_stack,
+    train_eg_model,
+    train_type_models,
+)
 
 app = Flask(__name__)
+
+
+@app.after_request
+def _no_cache_html(response):
+    if response.content_type and "text/html" in response.content_type:
+        response.headers["Cache-Control"] = "no-store"
+    return response
+
 
 _MODELS_LOCK = threading.Lock()
 _MODELS_READY = threading.Event()
@@ -95,7 +111,7 @@ _CHI_JSON_KEYS = re.compile(r"(?i)(^|_)(chi|electron_affinity)(_|$)")
 
 
 def _ui_result_json(result: dict | None) -> str:
-    """JSON dump for the UI details panel — strip χ, suitability, and lookup labels."""
+    """JSON dump for the UI details panel — strip χ and suitability."""
     if not result:
         return ""
 
@@ -103,7 +119,7 @@ def _ui_result_json(result: dict | None) -> str:
         if isinstance(obj, dict):
             out = {}
             for k, v in obj.items():
-                if k == "optoelectronic":
+                if k in ("optoelectronic", "suitability"):
                     continue
                 if _CHI_JSON_KEYS.search(str(k)):
                     continue
@@ -140,7 +156,7 @@ PAGE = r"""
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>OptoStack</title>
+  <title>OptoStack — 2–7 layer stack</title>
   <style>
     :root {
       --bg: #f4f1ea;
@@ -247,46 +263,67 @@ PAGE = r"""
     }
     .err { color: #8b1e1e; background: #f8e8e8; border: 1px solid #e0b4b4;
            padding: 0.75rem; border-radius: 8px; }
+    .layer-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 0.65rem;
+      align-items: center;
+      margin-top: 0.55rem;
+    }
+    .layer-row input[type=checkbox] {
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+    .layer-row span.idx { color: var(--muted); font-size: 0.82rem; font-weight: 600; min-width: 3rem; }
+    button:disabled { opacity: 0.55; cursor: not-allowed; filter: none; }
+    .junction-list { margin-top: 0.75rem; }
+    .junction-item {
+      border: 1px solid var(--line); border-radius: 8px; padding: 0.65rem 0.75rem;
+      background: #fff; margin-bottom: 0.5rem;
+    }
+    .junction-item b { font-size: 1rem; }
     details { margin-top: 0.75rem; }
   </style>
 </head>
 <body>
 <main>
   <h1>OptoStack</h1>
-  <p class="sub">Enter a <strong>perovskite absorber</strong> + ETL + HTL. Get junction Type (I / II / III) at each interface.
-     Screening is perovskite-only: non-perovskite absorbers (CZTS, CIGS, CdTe, GaAs, Si, …) are blocked.
-     Values that are not measured for a given material are estimated and tagged <strong>predicted</strong>.</p>
+  <p class="sub">Enter an ordered perovskite stack of <strong>2–7 layers</strong> (top → bottom). Flag one or more as <strong>Absorber</strong>.
+     A classic 3-layer device is <em>3 layers</em> with ETL, absorber, and HTL in order.
+     Non-perovskite absorbers are blocked. Estimated values are tagged <strong>predicted</strong>.</p>
 
-  <form method="post">
-    <label>Absorber</label>
-    <input type="text" name="absorber" list="absorbers" required
-           value="{{ absorber }}" placeholder="e.g. K2TiI6 or Cs2AgBiBr6"/>
-    <datalist id="absorbers">
-      {% for a in absorbers %}<option value="{{ a }}"></option>{% endfor %}
-    </datalist>
-
-    <div class="row">
-      <div>
-        <label>ETL</label>
-        <input type="text" name="etl" list="etls" required
-               value="{{ etl }}" placeholder="e.g. TiO2, SnO2, ZnO…"/>
-        <datalist id="etls">
-          {% for e in etls %}<option value="{{ e }}"></option>{% endfor %}
-        </datalist>
+  <form method="post" id="stack-form">
+    <label for="layer_count">Number of layers (physical order, top → bottom)</label>
+    <select name="layer_count" id="layer_count">
+      {% for n in range(2, 8) %}
+      <option value="{{ n }}" {% if layer_count == n %}selected{% endif %}>{{ n }} layers</option>
+      {% endfor %}
+    </select>
+    <p class="hint">Enter materials in stack order. Flag one or more layers as <strong>Absorber</strong> (e.g. tandem perovskite).</p>
+    <div id="layer-list">
+      {% for i in range(layer_count) %}
+      <div class="layer-row">
+        <span class="idx">Layer {{ i + 1 }}</span>
+        <input type="text" name="layer_name_{{ i }}" list="materials"
+               value="{{ custom_layers[i] if custom_layers and i < custom_layers|length else '' }}"
+               placeholder="e.g. TiO2, MAPbI3, Spiro-OMeTAD"/>
+        <label style="margin:0;font-weight:600;font-size:0.82rem;white-space:nowrap;">
+          <input type="checkbox" name="absorber_flag_{{ i }}" value="1"
+                 {% if custom_absorber_flags and i < custom_absorber_flags|length and custom_absorber_flags[i] %}checked{% endif %}/> Absorber
+        </label>
       </div>
-      <div>
-        <label>HTL</label>
-        <input type="text" name="htl" list="htls" required
-               value="{{ htl }}" placeholder="e.g. MoO3, NiO, CuI…"/>
-        <datalist id="htls">
-          {% for h in htls %}<option value="{{ h }}"></option>{% endfor %}
-        </datalist>
-      </div>
+      {% endfor %}
     </div>
-    <p class="hint">OptoStack does not validate whether a material is conventionally ETL or HTL, and the person is responsible for correct role assignment.</p>
-    <p class="hint">Perovskite formulas only (ABX₃, A₂BB′X₆, A₂BX₆, A₃B₂X₉, …). Non-perovskites are rejected. Estimated values are tagged <strong>predicted</strong>.</p>
+    <datalist id="materials">
+      {% for a in absorbers %}<option value="{{ a }}"></option>{% endfor %}
+      {% for e in etls %}<option value="{{ e }}"></option>{% endfor %}
+      {% for h in htls %}<option value="{{ h }}"></option>{% endfor %}
+    </datalist>
+    <p class="hint">Transport layers use library Eg only (no ML fallback). Contact–contact junctions without library data return <strong>UNKNOWN</strong>.</p>
 
-    <button type="submit">Predict Type</button>
+    <button type="submit" id="submit-btn">Predict Type</button>
   </form>
 
   {% if error %}
@@ -294,7 +331,6 @@ PAGE = r"""
   {% endif %}
 
   {% if result %}
-  {% set L = result.field_labels or {} %}
   <div class="out">
     {% if result.blocked %}
     <div class="verdict" style="margin-top:0;margin-bottom:1rem;border-color:#e0b4b4;background:#f8ecec">
@@ -309,49 +345,36 @@ PAGE = r"""
       {% if result.hint %}
       <p class="hint">{{ result.hint }}</p>
       {% endif %}
-      {% if result.literature_reference %}
-      <p class="hint">Literature reference: {{ result.literature_reference.source_paper }} ({{ result.literature_reference.material_class }})</p>
-      {% endif %}
     </div>
     {% endif %}
 
     {% if not result.blocked %}
     <div class="grid first">
+      {% for layer in result.layers %}
       <div class="stat">
-        <span>Absorber–ETL</span>
-        <b>{{ result.absorber_etl_type or result.predicted_absorber_etl_type or '—' }}
-          {% if L.get('absorber_etl_type') == 'predicted' %}<span class="pill src predicted">predicted</span>{% endif %}
+        <span>Layer {{ layer.index + 1 }} — {{ layer.name }} ({{ layer.role }})</span>
+        <b>{% if layer.eg_ev is not none %}{{ '%.3f'|format(layer.eg_ev) }}{% else %}—{% endif %} eV
+          {% if layer.eg_method == 'predicted' %}<span class="pill src predicted">predicted</span>{% elif layer.eg_method == 'missing' %}<span class="pill warn">missing</span>{% endif %}
         </b>
       </div>
-      <div class="stat">
-        <span>Absorber–HTL</span>
-        <b>{{ result.absorber_htl_type or result.predicted_absorber_htl_type or '—' }}
-          {% if L.get('absorber_htl_type') == 'predicted' %}<span class="pill src predicted">predicted</span>{% endif %}
-        </b>
-      </div>
-      <div class="stat">
-        <span>Absorber Eg (eV)</span>
-        <b>{{ '%.3f'|format(result.absorber_band_gap_eV) if result.absorber_band_gap_eV is not none else '—' }}
-          {% if L.get('absorber_Eg') == 'predicted' %}<span class="pill src predicted">predicted</span>{% endif %}
-        </b>
-      </div>
-      <div class="stat">
-        <span>ETL Eg (eV)</span>
-        <b>{% if result.etl_band_gap_eV is not none %}{{ '%.2f'|format(result.etl_band_gap_eV) }}{% else %}—{% endif %}
-          {% if L.get('etl_Eg') == 'predicted' %}<span class="pill src predicted">predicted</span>{% endif %}
-        </b>
-      </div>
-      <div class="stat">
-        <span>HTL Eg (eV)</span>
-        <b>{% if result.htl_band_gap_eV is not none %}{{ '%.2f'|format(result.htl_band_gap_eV) }}{% else %}—{% endif %}
-          {% if L.get('htl_Eg') == 'predicted' %}<span class="pill src predicted">predicted</span>{% endif %}
-        </b>
-      </div>
+      {% endfor %}
     </div>
+    <div class="junction-list">
+      <p class="hint" style="margin-top:0.9rem"><strong>Adjacent junctions</strong></p>
+      {% for j in result.junctions %}
+      <div class="junction-item">
+        <span>{{ j.layer_a }} – {{ j.layer_b }}</span>
+        <b>{{ j.type }}
+          {% if j.method == 'ML/predicted' %}<span class="pill src predicted">predicted</span>{% elif j.method == 'UNKNOWN' %}<span class="pill warn">unknown</span>{% endif %}
+        </b>
+        {% if j.note %}<p class="hint">{{ j.note }}</p>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
 
     {% if ui_notes and not result.blocked %}
     <p class="hint" style="margin-top:0.9rem">{{ ui_notes | join(' · ') }}</p>
-    {% endif %}
     {% endif %}
 
     <details>
@@ -361,6 +384,52 @@ PAGE = r"""
   </div>
   {% endif %}
 </main>
+<script>
+(function () {
+  const layerCount = document.getElementById('layer_count');
+  const layerList = document.getElementById('layer-list');
+  const submitBtn = document.getElementById('submit-btn');
+
+  function currentLayerValues() {
+    const vals = [];
+    layerList.querySelectorAll('input[type=text]').forEach((el) => vals.push(el.value));
+    return vals;
+  }
+  function currentAbsorberFlags() {
+    const flags = [];
+    layerList.querySelectorAll('.layer-row').forEach((row) => {
+      const cb = row.querySelector('input[type=checkbox]');
+      flags.push(cb ? cb.checked : false);
+    });
+    return flags;
+  }
+  function renderLayers(n, preserve) {
+    const oldVals = preserve ? currentLayerValues() : [];
+    const oldFlags = preserve ? currentAbsorberFlags() : [false, true, false];
+    layerList.innerHTML = '';
+    for (let i = 0; i < n; i++) {
+      const row = document.createElement('div');
+      row.className = 'layer-row';
+      const checked = oldFlags[i] ? ' checked' : '';
+      row.innerHTML =
+        '<span class="idx">Layer ' + (i + 1) + '</span>' +
+        '<input type="text" name="layer_name_' + i + '" list="materials" value="' +
+        (oldVals[i] || '').replace(/"/g, '&quot;') + '" placeholder="e.g. TiO2, MAPbI3, Spiro-OMeTAD"/>' +
+        '<label style="margin:0;font-weight:600;font-size:0.82rem;white-space:nowrap;">' +
+        '<input type="checkbox" name="absorber_flag_' + i + '" value="1"' + checked + '/> Absorber</label>';
+      layerList.appendChild(row);
+    }
+    updateSubmit();
+  }
+  function updateSubmit() {
+    const boxes = layerList.querySelectorAll('input[type=checkbox]');
+    submitBtn.disabled = !Array.from(boxes).some((cb) => cb.checked);
+  }
+  layerCount.addEventListener('change', () => renderLayers(parseInt(layerCount.value, 10), true));
+  layerList.addEventListener('change', updateSubmit);
+  updateSubmit();
+})();
+</script>
 </body>
 </html>
 """
@@ -432,18 +501,13 @@ def _contact_lists() -> tuple[list[str], list[str], list[str]]:
 @app.route("/", methods=["GET", "POST"])
 def index():
     absorbers, etls, htls = _contact_lists()
-    absorber = "K2TiI6"
-    etl = "TiO2" if "TiO2" in etls else (etls[0] if etls else "")
-    htl = "MoO3" if "MoO3" in htls else (htls[0] if htls else "")
+    layer_count = 3
+    custom_layers: list[str] = ["TiO2", "MAPbI3", "MoO3"]
+    custom_absorber_flags: list[bool] = [False, True, False]
     result = None
     error = None
 
     if request.method == "POST":
-        # Fold unicode spellings (CH₃NH₃PbI₃, ＣＨ３…, NBSP) before anything else,
-        # and echo the folded text back into the form.
-        absorber = normalize_formula_text(request.form.get("absorber"))
-        etl = normalize_formula_text(request.form.get("etl"))
-        htl = normalize_formula_text(request.form.get("htl"))
         try:
             if not ensure_models(timeout=_WARMUP_WAIT_S):
                 error = (
@@ -451,8 +515,21 @@ def index():
                     "Please try again in a minute."
                 )
             else:
-                # Default: library values + ML formula estimator (no LLM)
-                result = predict_stack(absorber, etl, htl, use_llm=False)
+                layer_count = int(request.form.get("layer_count") or "3")
+                layer_count = max(2, min(7, layer_count))
+                custom_layers = [
+                    normalize_formula_text(request.form.get(f"layer_name_{i}") or "")
+                    for i in range(layer_count)
+                ]
+                custom_absorber_flags = [
+                    request.form.get(f"absorber_flag_{i}") == "1"
+                    for i in range(layer_count)
+                ]
+                specs = [
+                    {"name": n, "is_absorber": custom_absorber_flags[i]}
+                    for i, n in enumerate(custom_layers)
+                ]
+                result = predict_multilayer(specs, use_llm=False)
         except Exception as exc:
             error = str(exc)
             traceback.print_exc()
@@ -462,14 +539,73 @@ def index():
         absorbers=absorbers,
         etls=etls,
         htls=htls,
-        absorber=absorber,
-        etl=etl,
-        htl=htl,
+        layer_count=layer_count,
+        custom_layers=custom_layers,
+        custom_absorber_flags=custom_absorber_flags,
         result=result,
         ui_notes=_ui_notes(result.get("notes") if isinstance(result, dict) else None),
         result_json=_ui_result_json(result if isinstance(result, dict) else None),
         error=error,
     )
+
+
+@app.route("/predict_multilayer", methods=["POST"])
+def predict_multilayer_api():
+    """JSON API for custom N-layer stacks (FR-11 sketch)."""
+    if not ensure_models(timeout=_WARMUP_WAIT_S):
+        return jsonify(
+            {"error": "Models still warming up — retry shortly.", "models_ready": False}
+        ), 503
+    payload = request.get_json(silent=True) or {}
+    layers = payload.get("layers")
+    if not isinstance(layers, list):
+        return jsonify({"error": "Request body must include a layers array."}), 400
+    specs = [
+        {"name": str(item.get("name", "")), "is_absorber": bool(item.get("is_absorber"))}
+        for item in layers
+    ]
+    try:
+        result = predict_multilayer(
+            specs,
+            eg=payload.get("eg"),
+            chi=payload.get("chi"),
+            use_llm=bool(payload.get("use_llm")),
+        )
+        status = 400 if result.get("blocked") and not result.get("not_perovskite") else 200
+        if result.get("not_perovskite"):
+            status = 422
+        return jsonify(result), status
+    except Exception as exc:
+        traceback.print_exc()
+        return jsonify({"error": str(exc)}), 500
+
+
+@app.route("/predict_stack", methods=["POST"])
+def predict_stack_api():
+    """JSON API — existing 3-field stack (unchanged semantics)."""
+    if not ensure_models(timeout=_WARMUP_WAIT_S):
+        return jsonify(
+            {"error": "Models still warming up — retry shortly.", "models_ready": False}
+        ), 503
+    payload = request.get_json(silent=True) or {}
+    absorber = normalize_formula_text(payload.get("absorber") or "")
+    etl = normalize_formula_text(payload.get("etl") or "")
+    htl = normalize_formula_text(payload.get("htl") or "")
+    if not (absorber and etl and htl):
+        return jsonify({"error": "absorber, etl, and htl are required."}), 400
+    try:
+        result = predict_stack(
+            absorber,
+            etl,
+            htl,
+            eg=payload.get("eg"),
+            chi=payload.get("chi"),
+            use_llm=bool(payload.get("use_llm")),
+        )
+        return jsonify(result)
+    except Exception as exc:
+        traceback.print_exc()
+        return jsonify({"error": str(exc)}), 500
 
 
 @app.route("/healthz")
