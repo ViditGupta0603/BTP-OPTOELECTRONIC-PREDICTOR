@@ -16,3 +16,8 @@ Al2O3,8.8000,1.3500,etl,contact_layer,verified_contact,10.1063/1.1940727,Amorpho
 SiO2,9.0000,0.9000,etl,contact_layer,verified_contact,10.1063/1.1940727,SiO2 Eg≈9.0 eV; electron affinity ≈0.9 eV (Robertson band-offset compilation),optical+UPS,Wide-gap insulating barrier layer
 HfO2,5.7000,2.5000,etl,contact_layer,verified_contact,10.1063/1.1940727,HfO2 Eg≈5.7 eV; electron affinity ≈2.5 eV (Robertson high-κ band-offset compilation),optical+UPS,High-κ wide-gap buffer layer
 ZrO2,5.8000,2.5000,etl,contact_layer,verified_contact,10.1063/1.1940727,ZrO2 Eg≈5.8 eV; electron affinity ≈2.5 eV (Robertson high-κ band-offset compilation),optical+UPS,High-κ wide-gap buffer layer
+FTO,3.5000,4.0000,etl,contact_layer,verified_contact,10.3390/ma15144761,F-doped SnO2 TCO: SCAPS Eg=3.5 eV / χ=4.0 eV (PSC window-layer consensus; χ aligned with SnO2 in this library),Table 1,Fluorine-doped tin oxide TCO
+ITO,3.5000,4.0000,etl,contact_layer,verified_contact,10.3390/mi13122201,ITO TCO SCAPS Eg=3.5 eV / χ=4.0 eV (Micromachines 2022 ITO/WS2/perovskite table),Table 1,Indium tin oxide TCO
+AZO,3.3700,4.4000,etl,contact_layer,verified_contact,10.15251/cl.2021.1811.667,Al-doped ZnO TCO SCAPS Eg≈3.37 eV / χ≈4.4 eV,Table 1,Aluminum-doped zinc oxide TCO
+IGZO,3.0500,4.1600,etl,contact_layer,verified_contact,10.3390/solar2030020,IGZO ETL/TCO SCAPS Eg=3.05 eV / χ=4.16 eV,Table 1,Indium gallium zinc oxide
+CaRbON,2.8300,2.4300,htl,contact_layer,formula_library,composition_estimate,Ca–Rb oxynitride (CaRbON): Eg/χ from OptoStack formula estimator HTL blend (no published SCAPS table for this stoichiometry),composition,Ca Rb O N oxynitride contact

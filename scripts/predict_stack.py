@@ -172,6 +172,10 @@ MATERIAL_ROLE_ALIASES = {
     "spiro": "Spiro-OMeTAD",
     "spiro-ometad": "Spiro-OMeTAD",
     "spiroometad": "Spiro-OMeTAD",
+    "fto": "FTO",
+    "ito": "ITO",
+    "azo": "AZO",
+    "igzo": "IGZO",
 }
 
 _STACK_INDEX: dict[tuple[str, str, str], dict[str, str]] | None = None

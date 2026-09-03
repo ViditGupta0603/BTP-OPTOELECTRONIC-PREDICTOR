@@ -6798,6 +6798,22 @@
     "Eg_eV": 1.7,
     "chi_eV": 3.9
   },
+  "FTO": {
+    "Eg_eV": 3.5,
+    "chi_eV": 4.0
+  },
+  "ITO": {
+    "Eg_eV": 3.5,
+    "chi_eV": 4.0
+  },
+  "AZO": {
+    "Eg_eV": 3.37,
+    "chi_eV": 4.4
+  },
+  "IGZO": {
+    "Eg_eV": 3.05,
+    "chi_eV": 4.16
+  },
   "Spiro-OMeTAD": {
     "Eg_eV": 3.0,
     "chi_eV": 2.05
@@ -6809,6 +6825,10 @@
   "P3HT": {
     "Eg_eV": 1.9,
     "chi_eV": 3.1
+  },
+  "CaRbON": {
+    "Eg_eV": 2.83,
+    "chi_eV": 2.43
   },
   "MnPS3": {
     "Eg_eV": 2.85
