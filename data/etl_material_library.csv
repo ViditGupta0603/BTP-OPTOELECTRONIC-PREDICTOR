@@ -13,3 +13,7 @@ ZnO,3.3000,4.0000,literature_SCAPS,etl,contact_layer,etl_library,10.1038/s41598-
 BaSnO3,3.1200,4.4000,literature_SCAPS,etl,contact_layer,etl_library,10.1038/s41598-025-98351-y,K2TiI6 SCAPS device tables,Table 1
 C60,1.7000,3.9000,literature_SCAPS,etl,contact_layer,verified_contact,10.1007/s11082-026-08738-y,Fullerene ETL family; Eg/χ aligned with PCBM SCAPS parameters in BeSiP2 tables,Table 1 family
 ZnSe,2.8100,4.0900,literature_SCAPS,etl,contact_layer,verified_contact,10.1038/s41598-025-98351-y,K2TiI6 SCAPS device tables (ZnSe ETL),Table 1
+FTO,3.5000,4.0000,literature_SCAPS,etl,contact_layer,verified_contact,10.3390/ma15144761,F-doped SnO2 TCO: SCAPS Eg=3.5 eV / χ=4.0 eV (PSC window-layer consensus; χ aligned with SnO2 in this library),Table 1
+ITO,3.5000,4.0000,literature_SCAPS,etl,contact_layer,verified_contact,10.3390/mi13122201,ITO TCO SCAPS Eg=3.5 eV / χ=4.0 eV (Micromachines 2022 ITO/WS2/perovskite table),Table 1
+AZO,3.3700,4.4000,literature_SCAPS,etl,contact_layer,verified_contact,10.15251/cl.2021.1811.667,Al-doped ZnO TCO SCAPS Eg≈3.37 eV / χ≈4.4 eV,Table 1
+IGZO,3.0500,4.1600,literature_SCAPS,etl,contact_layer,verified_contact,10.3390/solar2030020,IGZO ETL/TCO SCAPS Eg=3.05 eV / χ=4.16 eV,Table 1

@@ -102,6 +102,10 @@ MATERIAL_ALIASES: dict[str, str] = {
     "spiro-ometad": "Spiro-OMeTAD",
     "spiro-meotad": "Spiro-OMeTAD",
     "spiromeotad": "Spiro-OMeTAD",
+    "fto": "FTO",
+    "ito": "ITO",
+    "azo": "AZO",
+    "igzo": "IGZO",
     # Non-stoichiometric nickel oxide spellings → SCAPS NiO (Eg≈3.6 eV)
     "niox": "NiO",
     "nio_x": "NiO",

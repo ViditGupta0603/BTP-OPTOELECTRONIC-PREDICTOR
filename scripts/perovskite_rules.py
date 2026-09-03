@@ -325,6 +325,11 @@ NAMED_CONTACT_BANDS: dict[str, tuple[float, float]] = {
     "SiO2": (9.00, 0.90),
     "HfO2": (5.70, 2.50),
     "ZrO2": (5.80, 2.50),
+    "FTO": (3.50, 4.00),
+    "ITO": (3.50, 4.00),
+    "AZO": (3.37, 4.40),
+    "IGZO": (3.05, 4.16),
+    "CaRbON": (2.83, 2.43),
 }
 
 CONTACT_ETL = {
@@ -364,6 +369,7 @@ CONTACT_HTL = {
     "PEDOT",
     "PEDOT:PSS",
     "P3HT",
+    "CaRbON",
 }
 
 
